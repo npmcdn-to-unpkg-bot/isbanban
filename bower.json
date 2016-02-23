@@ -27,6 +27,7 @@
     "pnotify": "https://github.com/sciactive/pnotify.git#~2.1.0"
   },
   "dependencies": {
-    "ckeditor": "https://github.com/ckeditor/ckeditor-releases.git#~4.5.7"
+    "ckeditor": "https://github.com/ckeditor/ckeditor-releases.git#~4.5.7",
+    "pickadate": "~3.5.6"
   }
 }

@@ -1,0 +1,313 @@
+@import "less/bootstrap.less";
+
+// @brand-primary: #01c8e7; Isbanban blue
+@brand-primary: #00aced;
+@brand-secondary: #FF8200;
+
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	.nunito();
+}
+
+.padding(@tb) {
+	padding-top: @tb;
+	padding-bottom: @tb;
+}
+
+.padding-full(@tb) {
+	padding: @tb;
+}
+
+.margin(@tb) {
+	margin-bottom: @tb;
+}
+
+.reset-row {
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+.open-sans {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.nunito {
+	font-family: 'Nunito', sans-serif;
+}
+
+.text-lead {
+	font-size: 21px;
+	line-height: 28px;
+}
+
+.text-normal {
+	font-size: 18px;
+	line-height: 25px;
+}
+
+.font(@type) {
+	font-weight: @type;
+}
+
+.jumbotron {
+
+	background-size: cover !important;
+
+	&.bigger {
+		.padding(400px);
+		margin-top: -210px;
+		.text-center();
+		color:white;
+		.text-capitalize();
+
+		h1 {
+			font-size:51px;
+			line-height: 58px;
+		}
+
+		p {
+			.text-lead();
+		}
+
+		hr {
+			width:10%;
+		}
+	}
+}
+
+.bg-gradient(@color1, @color2) {
+	// background: -webkit-linear-gradient(@color1, @color2 85%);
+ //    background: -o-linear-gradient(@color1, @color2 85%); 
+ //    background: -moz-linear-gradient(@color1, @color2 85%);
+ //    background: linear-gradient(@color1, @color2 85%);
+
+    background: -webkit-linear-gradient(@color1, @color2);
+    background: -o-linear-gradient(@color1, @color2); 
+    background: -moz-linear-gradient(@color1, @color2);
+    background: linear-gradient(@color1, @color2);  
+}
+
+
+header {
+	.navbar-before {
+		.padding(30px);
+
+		img {
+			margin:0px auto;
+		}
+	}
+
+	.container {
+		.text-center();
+	}
+
+	.navbar-nav {
+		text-align: center;
+		float: none;
+		display: inline-block;
+		margin: 0px auto;
+		margin-bottom: -5px;
+		.text-uppercase();
+		font-weight: 800
+	}
+}
+
+.navbar-inverse {
+	.bg-gradient(rgba(0,0,0,0.6), transparent);
+	border:0px;
+	position:relative;
+	z-index:2;
+
+	.navbar-nav {
+
+		li {
+
+			a {
+				color: white;
+
+				&:hover,
+				&:focus {
+					background: @brand-primary;
+					color:white;
+					.transition(all .35s ease);
+				}
+			}
+
+			&.active {
+
+				a {
+					background: @brand-primary;
+					color:white;
+
+					&:hover,
+					&:focus {
+					background: @brand-primary;
+					color:white;
+					.transition(all .35s ease);
+				}
+				}
+			}
+		}
+	}
+}
+
+.navbar-default {
+	background: white;
+	border:0px;
+	position:relative;
+	z-index:2;
+
+	.navbar-nav {
+
+		li {
+
+			a {
+				color: @brand-primary;
+				.text-uppercase();
+				.transition(all .35s ease);
+
+				&:hover,
+				&:focus {
+					background: @brand-primary;
+					color:white;
+					.transition(all .35s ease);
+				}
+			}
+
+			&.active {
+				a {
+					background: @brand-primary;
+					color:white;
+
+					&:hover,
+					&:focus {
+						background: @brand-primary;
+						color:white;
+						.transition(all .35s ease);
+					}
+				}
+
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Frontpage */
+.donate-list {
+	.start {
+		.reset-row();
+		.padding(10px);
+		.text-center();
+		background:@brand-primary;
+		margin-top:-110px;
+		color:white;
+	}
+
+	.margin(10px);
+}
+
+.event-reminder {
+	.margin(10px);
+
+	a {
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: none;
+		}
+	}
+
+	.start {
+		.padding-full(10px);
+		background: darken(white, 5%);
+		vertical-align: middle;
+
+
+		i {
+			color: darken(white, 30%);
+		}
+
+		span {
+			position: relative;
+		    top: -3px;
+		    margin-left: 5px;
+
+		}
+
+		&:hover {
+
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.pre-title {
+	.text-center();
+
+	hr {
+		width: 50%;
+	}
+}
+
+
+/* Recruitment Form */
+.recruitment {
+
+	margin-bottom:40px;
+	margin-top: 40px;
+
+	.ichiban {
+		img {
+			height: 170px;
+			margin: 0px auto;
+		}
+	}
+
+	.start {
+		border:1px solid darken(white, 10%);
+		.padding-full(10px);
+		background:rgba(255,255,255, 0.7);
+
+		img {
+			margin: 0px auto;
+			height: 100px;
+		}
+
+		.form-start {
+
+			input,select,textarea,option {
+				border-radius: 0px;
+
+				.placeholder(#ccc);
+			}
+		}
+	}
+}

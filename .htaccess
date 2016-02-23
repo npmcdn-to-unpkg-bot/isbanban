@@ -1,15 +1,4 @@
-# ----------------------------------------------------------------------
-# REMOVE INDEX.PHP FROM THE URL
-# ----------------------------------------------------------------------
- 
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /
- 
-    RewriteCond %{REQUEST_URI} ^system.*
-    RewriteRule ^(.*)$ /index.php?/$1
- 
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ index.php?/$1
-</IfModule>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php?/$1 [L]

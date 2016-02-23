@@ -42,6 +42,11 @@ class M_blog extends CI_Model {
 		return $this->db->where('parameter_code', $parameter_code)->update('blog', $data);
 	}
 
+	function delete($parameter_code)
+	{
+		$this->db->delete('blog', array('parameter_code'=>$parameter_code));
+	}
+
 }
 
 /* End of file welcome.php */

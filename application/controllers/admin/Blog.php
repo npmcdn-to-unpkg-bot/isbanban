@@ -198,6 +198,12 @@ class Blog extends CI_Controller {
 		$this->load->view('admin/blog/edit');
 		$this->load->view('admin/footer');
 	}
+
+	function delete($parameter_code)
+	{
+		$this->m_blog->delete($parameter_code);
+		redirect('admin/blog');
+	}
 }
 
 /* End of file welcome.php */

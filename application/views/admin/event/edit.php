@@ -59,7 +59,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Tanggal</label>
-                                <input class="form-control" type="text" name="tanggal" value="<?php echo $item->tanggal; ?>"></input>
+                                <input class="form-control pickdate" type="text" name="tanggal" value="<?php echo $item->tanggal; ?>"></input>
                             </div>
                         </div>
                     </div>
@@ -100,16 +100,27 @@
     .row .col-sm-6 {
         margin-bottom: 0px;
     }
+    .pickdate {
+        background: transparent !important
+    }
 </style>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>template/assets/css/dataTables.bootstrap.css">
-<script type="text/javascript" src="<?php echo base_url() ?>template/assets/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>template/assets/js/dataTables.bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>template/assets/vendor/pickadate/lib/themes/default.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>template/assets/vendor/pickadate/lib/themes/default.date.css">
 <script src="<?php echo base_url() ?>template/assets/vendor/ckeditor/ckeditor.js"></script>
 <script src="<?php echo base_url() ?>template/assets/vendor/ckeditor/config.js"></script>
 <script src="<?php echo base_url() ?>template/assets/vendor/ckeditor/styles.js"></script>
+<script src="<?php echo base_url() ?>template/assets/vendor/pickadate/lib/picker.js"></script>
+<script src="<?php echo base_url() ?>template/assets/vendor/pickadate/lib/picker.date.js"></script>
 <script>
 CKEDITOR.replace( 'editor1', {
   extraPlugins: 'imageuploader'
 });
-$(".datatable").DataTable();
+$('.pickdate').pickadate({
+    today: '',
+    clear: '',
+    close: '',
+    format: 'yyyy-mm-dd',
+    selectYears: true,
+    selectMonths: true
+})
 </script>

@@ -245,6 +245,12 @@ class Event extends CI_Controller {
 		$this->load->view('admin/event/edit');
 		$this->load->view('admin/footer');
 	}
+
+	function delete($parameter_code)
+	{
+		$this->m_event->delete($parameter_code);
+		redirect('admin/event');
+	}
 }
 
 /* End of file welcome.php */

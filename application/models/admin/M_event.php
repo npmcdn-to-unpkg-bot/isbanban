@@ -37,6 +37,11 @@ class M_event extends CI_Model {
 		return $this->db->where('parameter_code', $parameter_code)->update('event', $data);
 	}
 
+	function delete($parameter_code)
+	{
+		$this->db->delete('event', array('parameter_code'=>$parameter_code));
+	}
+
 }
 
 /* End of file welcome.php */

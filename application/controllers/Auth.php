@@ -23,7 +23,7 @@ class Auth extends CI_Controller {
 		parent:: __construct();
 
 		if($this->session->userdata('logged_in')) {
-			redirect('admin/volunteer');
+			redirect('admin/dashboard/');
 		}
 	}
 
@@ -44,7 +44,7 @@ class Auth extends CI_Controller {
 		if(strtolower($this->input->post('username')) == 'admin' && strtolower($this->input->post('password')) == 'official'.$today) {
 
 			$this->session->set_userdata('logged_in', true);
-			redirect('admin/volunteer');
+			redirect('admin/dashboard/');
 
 		} else {
 

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class m_volunteer extends CI_Model {
+class M_volunteer extends CI_Model {
 
 	/**
 	 * Index Page for this controller.

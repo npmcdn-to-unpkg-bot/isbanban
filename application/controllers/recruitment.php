@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class recruitment extends CI_Controller {
+class Recruitment extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.

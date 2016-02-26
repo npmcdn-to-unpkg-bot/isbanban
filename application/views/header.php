@@ -25,10 +25,18 @@
 
 	<script src="<?php echo base_url() ?>template/assets/vendor/jquery/dist/jquery.min.js"></script>
 	<script src="<?php echo base_url() ?>template/assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url() ?>template/assets/vendor/bootstrap-material-design/dist/js/material.min.js"></script>
+	<script src="<?php echo base_url() ?>template/assets/vendor/bootstrap-material-design/dist/js/ripples.min.js"></script>
+	<script type="text/javascript">
+	$.material.init();
+	</script>
 </head>
 <body>
 
-<header class="navbar-inverse">
+
+
+<?php if($role=='full') { ?>
+<!-- <header class="navbar-inverse">
 	<div class="navbar-before">
 		<div class="container">
 				<img src="http://isbanban.org/wp-content/uploads/2015/07/isbanban1-e1437047014513.png" alt="" class="img-responsive">
@@ -55,4 +63,65 @@
 			<li><a href="">donate</a></li>
 		</ul>
 	</div>
+</header> -->
+<?php } ?>
+
+
+
+<?php if($role=='normal') { ?>
+<!-- <header class="navbar-inverse">
+	<div class="container">
+		<div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	    </div>
+
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="">home</a></li>
+			<li><a href="">about us</a></li>
+			<li><a href="">people</a></li>
+			<li><a href="">village</a></li>
+			<li><a href="">blog</a></li>
+			<li><a href="">events</a></li>
+			<li><a href="">donate</a></li>
+		</ul>
+	</div>
+</header> -->
+
+
+
+<header class="navbar-default">
+	<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">
+				<img class="img-responsive" src="<?php echo base_url() ?>template/assets/image/typetext-black.png"></img>
+			</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">home</a></li>
+				<li><a href="#">about</a></li>
+				<li><a href="#">people</a></li>
+				<li><a href="#">village</a></li>
+				<li><a href="#">blog</a></li>
+				<li><a href="#">events</a></li>
+				<li><a href="#">donate</a></li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
 </header>
+
+
+<?php } ?>

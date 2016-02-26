@@ -27,6 +27,7 @@ class Home extends CI_Controller {
 	{
 		$data	= [
 			'title'			=> 'Home',
+			'role'			=> 'normal'
 		];
 
 		$this->load->view('header', $data);

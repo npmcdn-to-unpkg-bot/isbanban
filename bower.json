@@ -28,6 +28,9 @@
   },
   "dependencies": {
     "ckeditor": "https://github.com/ckeditor/ckeditor-releases.git#~4.5.7",
-    "pickadate": "~3.5.6"
+    "pickadate": "~3.5.6",
+    "counter.js": "https://github.com/tombruijn/counter.js.git#^0.0.3",
+    "bootstrap-material-design": "^0.5.8",
+    "lightslider": "^1.1.5"
   }
 }

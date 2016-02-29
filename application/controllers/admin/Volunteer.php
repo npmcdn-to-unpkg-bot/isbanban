@@ -58,17 +58,29 @@ class Volunteer extends CI_Controller {
 		$this->load->view('admin/footer');
 	}
 
-	function insert()
+	function add()
 	{
+
+		$data	= [
+			'title'			=> 'Istana Belajar Anak Banten',
+			'role'		 	=> 'volunteer',
+			'getAll'		=> $this->m_volunteer->getAll(),
+			'getChapter'	=> $this->m_volunteer->getChapter(),
+			'getDepartment'	=> $this->m_volunteer->getDepartment(),
+			'getPosition'	=> $this->m_volunteer->getPosition()
+		];
+
 		$slug		= strtolower(url_title($this->input->post('nama')));
 		$randomCode = random_string('numeric', 4);
 
 		$chapter = $this->input->post('chapter');
 		
-		// Get Bulan Masuk
+// Get Bulan Masuk
 		$date = $this->input->post('bulan_masuk');
 		$dateExplode = explode("-", $date);
-		
+
+
+// Generate Clean Code For Volunteer		
 		$cleanCode	= $chapter.$randomCode.$dateExplode[0];
 
 		$config	= array(
@@ -152,53 +164,85 @@ class Volunteer extends CI_Controller {
 		);
 		$this->form_validation->set_rules($config);
 
-		$data	= array(
-			'nama'            => $this->input->post('nama'),
-			'tempat_lahir'    => $this->input->post('tempat_lahir'),
-			'tanggal_lahir'   => $this->input->post('tanggal_lahir'),
-			'jenis_kelamin'   => $this->input->post('jenis_kelamin'),
-			'golongan_darah'  => $this->input->post('golongan_darah'),
-			'alamat_pribadi'  => $this->input->post('alamat_pribadi'),
-			'agama'           => $this->input->post('agama'),
-			'asal'            => $this->input->post('asal'),
-			'pekerjaan'       => $this->input->post('pekerjaan'),
-			'email'           => $this->input->post('email'),
-			'nomor_pribadi'   => $this->input->post('nomor_pribadi'),
-			'bulan_masuk'     => $this->input->post('bulan_masuk'),
-			'chapter'         => $this->input->post('chapter'),
-			'visi'            => $this->input->post('visi'),
-			'facebook_link'   => $this->input->post('facebook_link'),
-			'twitter_link'    => $this->input->post('twitter_link'),
-			'instagram_link'  => $this->input->post('instagram_link'),
-			'alamat_orangtua' => $this->input->post('alamat_orangtua'),
-			'nomor_orangtua'  => $this->input->post('nomor_orangtua'),
-			'created_at'      => date('Y-m-d'),
-			'kode'            => $cleanCode,
-			'slug'            => url_title(strtolower($this->input->post('nama'))),
-			'parameter_code'  => md5($cleanCode.$slug),
-		);
+// File Uploads Settings
+		$config['upload_path']   = './uploads/relawan/';
+		$config['encrypt_name']  = true;
+		$config['allowed_types'] = 'gif|jpg|png';
+		$this->load->library('upload', $config);	
+
 		
 		if($this->form_validation->run()) {
+
+			if($this->upload->do_upload('gambar')) {
+
+				$path    = "uploads/relawan/";
+				$dataImg = $this->upload->data();
+
+				$data	= array(
+					'nama'            => $this->input->post('nama'),
+					'tempat_lahir'    => $this->input->post('tempat_lahir'),
+					'tanggal_lahir'   => $this->input->post('tanggal_lahir'),
+					'jenis_kelamin'   => $this->input->post('jenis_kelamin'),
+					'golongan_darah'  => $this->input->post('golongan_darah'),
+					'alamat_pribadi'  => $this->input->post('alamat_pribadi'),
+					'agama'           => $this->input->post('agama'),
+					'asal'            => $this->input->post('asal'),
+					'pekerjaan'       => $this->input->post('pekerjaan'),
+					'email'           => $this->input->post('email'),
+					'nomor_pribadi'   => $this->input->post('nomor_pribadi'),
+					'bulan_masuk'     => $this->input->post('bulan_masuk'),
+					'chapter'         => $this->input->post('chapter'),
+					'visi'            => $this->input->post('visi'),
+					'alasan'          => $this->input->post('alasan'),
+					'facebook_link'   => $this->input->post('facebook_link'),
+					'twitter_link'    => $this->input->post('twitter_link'),
+					'instagram_link'  => $this->input->post('instagram_link'),
+					'alamat_orangtua' => $this->input->post('alamat_orangtua'),
+					'nomor_orangtua'  => $this->input->post('nomor_orangtua'),
+					'created_at'      => date('Y-m-d'),
+					'path_foto'		  => $path.$dataImg['file_name'],
+					'kode'            => $cleanCode,
+					'slug'            => url_title(strtolower($this->input->post('nama'))),
+					'parameter_code'  => md5($cleanCode.$slug),
+				);
+
+
+			} else {
+
+				$data	= array(
+					'nama'            => $this->input->post('nama'),
+					'tempat_lahir'    => $this->input->post('tempat_lahir'),
+					'tanggal_lahir'   => $this->input->post('tanggal_lahir'),
+					'jenis_kelamin'   => $this->input->post('jenis_kelamin'),
+					'golongan_darah'  => $this->input->post('golongan_darah'),
+					'alamat_pribadi'  => $this->input->post('alamat_pribadi'),
+					'agama'           => $this->input->post('agama'),
+					'asal'            => $this->input->post('asal'),
+					'pekerjaan'       => $this->input->post('pekerjaan'),
+					'email'           => $this->input->post('email'),
+					'nomor_pribadi'   => $this->input->post('nomor_pribadi'),
+					'bulan_masuk'     => $this->input->post('bulan_masuk'),
+					'chapter'         => $this->input->post('chapter'),
+					'visi'            => $this->input->post('visi'),
+					'alasan'          => $this->input->post('alasan'),
+					'facebook_link'   => $this->input->post('facebook_link'),
+					'twitter_link'    => $this->input->post('twitter_link'),
+					'instagram_link'  => $this->input->post('instagram_link'),
+					'alamat_orangtua' => $this->input->post('alamat_orangtua'),
+					'nomor_orangtua'  => $this->input->post('nomor_orangtua'),
+					'created_at'      => date('Y-m-d'),
+					'kode'            => $cleanCode,
+					'slug'            => url_title(strtolower($this->input->post('nama'))),
+					'parameter_code'  => md5($cleanCode.$slug),
+				);
+			
+
+			}
+
 			$this->m_volunteer->insert($data);
 			$this->session->set_flashdata('SIR', 'Berhasil Insert Data Relawan');
 			redirect('/admin/volunteer');
-		} else {
-			$this->add();	
-		}	
-	}
-
-
-	function add()
-	{
-
-		$data	= [
-			'title'			=> 'Istana Belajar Anak Banten',
-			'role'		 	=> 'volunteer',
-			'getAll'		=> $this->m_volunteer->getAll(),
-			'getChapter'	=> $this->m_volunteer->getChapter(),
-			'getDepartment'	=> $this->m_volunteer->getDepartment(),
-			'getPosition'	=> $this->m_volunteer->getPosition()
-		];
+		}
 
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/volunteer/index');
@@ -216,6 +260,8 @@ class Volunteer extends CI_Controller {
 			'getPosition'	=> $this->m_volunteer->getPosition()
 		];
 
+
+// configuration data
 		$config	= array(
 				array(
 					'field'	=> 'nama',
@@ -309,36 +355,82 @@ class Volunteer extends CI_Controller {
 		);
 		$this->form_validation->set_rules($config);
 
-		$datadb	= array(
-			'nama'            => $this->input->post('nama'),
-			'tempat_lahir'    => $this->input->post('tempat_lahir'),
-			'tanggal_lahir'   => $this->input->post('tanggal_lahir'),
-			'jenis_kelamin'   => $this->input->post('jenis_kelamin'),
-			'golongan_darah'  => $this->input->post('golongan_darah'),
-			'alamat_pribadi'  => $this->input->post('alamat_pribadi'),
-			'agama'           => $this->input->post('agama'),
-			'asal'            => $this->input->post('asal'),
-			'pekerjaan'       => $this->input->post('pekerjaan'),
-			'email'           => $this->input->post('email'),
-			'nomor_pribadi'   => $this->input->post('nomor_pribadi'),
-			'bulan_masuk'     => $this->input->post('bulan_masuk'),
-			'chapter'         => $this->input->post('chapter'),
-			'departemen'      => $this->input->post('departemen'),
-			'posisi'      	  => $this->input->post('posisi'),
-			'alasan'          => $this->input->post('alasan'),
-			'visi'            => $this->input->post('visi'),
-			'facebook_link'   => $this->input->post('facebook_link'),
-			'twitter_link'    => $this->input->post('twitter_link'),
-			'instagram_link'  => $this->input->post('instagram_link'),
-			'alamat_orangtua' => $this->input->post('alamat_orangtua'),
-			'nomor_orangtua'  => $this->input->post('nomor_orangtua'),
-			'updated_at'      => date('Y-m-d'),
-			'slug'            => url_title(strtolower($this->input->post('nama'))),
-		);
+
+// File Uploads Settings
+		$config['upload_path']   = './uploads/relawan/';
+		$config['encrypt_name']  = true;
+		$config['allowed_types'] = 'gif|jpg|png';
+		$this->load->library('upload', $config);
 
 
 		if($this->input->post()) {
 			if($this->form_validation->run()) {
+
+				if($_FILES['gambar']['name']) {
+					if($this->upload->do_upload('gambar')) {
+
+						$path 	 = "uploads/relawan/";
+						$dataImg = $this->upload->data();
+							
+						$datadb	= array(
+							'nama'            => $this->input->post('nama'),
+							'tempat_lahir'    => $this->input->post('tempat_lahir'),
+							'tanggal_lahir'   => $this->input->post('tanggal_lahir'),
+							'jenis_kelamin'   => $this->input->post('jenis_kelamin'),
+							'golongan_darah'  => $this->input->post('golongan_darah'),
+							'alamat_pribadi'  => $this->input->post('alamat_pribadi'),
+							'agama'           => $this->input->post('agama'),
+							'asal'            => $this->input->post('asal'),
+							'pekerjaan'       => $this->input->post('pekerjaan'),
+							'email'           => $this->input->post('email'),
+							'nomor_pribadi'   => $this->input->post('nomor_pribadi'),
+							'bulan_masuk'     => $this->input->post('bulan_masuk'),
+							'chapter'         => $this->input->post('chapter'),
+							'departemen'      => $this->input->post('departemen'),
+							'posisi'      	  => $this->input->post('posisi'),
+							'alasan'          => $this->input->post('alasan'),
+							'visi'            => $this->input->post('visi'),
+							'path_foto'		  => $path.$dataImg['file_name'],
+							'facebook_link'   => $this->input->post('facebook_link'),
+							'twitter_link'    => $this->input->post('twitter_link'),
+							'instagram_link'  => $this->input->post('instagram_link'),
+							'alamat_orangtua' => $this->input->post('alamat_orangtua'),
+							'nomor_orangtua'  => $this->input->post('nomor_orangtua'),
+							'updated_at'      => date('Y-m-d'),
+							'slug'            => url_title(strtolower($this->input->post('nama'))),
+						);
+					}
+
+				} else {
+
+					$datadb	= array(
+							'nama'            => $this->input->post('nama'),
+							'tempat_lahir'    => $this->input->post('tempat_lahir'),
+							'tanggal_lahir'   => $this->input->post('tanggal_lahir'),
+							'jenis_kelamin'   => $this->input->post('jenis_kelamin'),
+							'golongan_darah'  => $this->input->post('golongan_darah'),
+							'alamat_pribadi'  => $this->input->post('alamat_pribadi'),
+							'agama'           => $this->input->post('agama'),
+							'asal'            => $this->input->post('asal'),
+							'pekerjaan'       => $this->input->post('pekerjaan'),
+							'email'           => $this->input->post('email'),
+							'nomor_pribadi'   => $this->input->post('nomor_pribadi'),
+							'bulan_masuk'     => $this->input->post('bulan_masuk'),
+							'chapter'         => $this->input->post('chapter'),
+							'departemen'      => $this->input->post('departemen'),
+							'posisi'      	  => $this->input->post('posisi'),
+							'alasan'          => $this->input->post('alasan'),
+							'visi'            => $this->input->post('visi'),
+							'facebook_link'   => $this->input->post('facebook_link'),
+							'twitter_link'    => $this->input->post('twitter_link'),
+							'instagram_link'  => $this->input->post('instagram_link'),
+							'alamat_orangtua' => $this->input->post('alamat_orangtua'),
+							'nomor_orangtua'  => $this->input->post('nomor_orangtua'),
+							'updated_at'      => date('Y-m-d'),
+							'slug'            => url_title(strtolower($this->input->post('nama'))),
+						);
+				}
+
 				$this->m_volunteer->update($datadb, $parameter_code);
 				$this->session->set_flashdata('SIR', 'Berhasil update data relawan');
 				redirect('/admin/volunteer');
@@ -347,6 +439,24 @@ class Volunteer extends CI_Controller {
 
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/volunteer/detail');
+		$this->load->view('admin/footer');
+	}
+
+	function view($parameter_code)
+	{
+		$data	= [
+			'title'			=> 'Istana Belajar Anak Banten',
+			'role'		 	=> 'volunteer',
+			'getThis'		=> $this->m_volunteer->getByParameter($parameter_code),
+			'getChapter'	=> $this->m_volunteer->getChapter(),
+			'getDepartment'	=> $this->m_volunteer->getDepartment(),
+			'getPosition'	=> $this->m_volunteer->getPosition()
+		];
+
+
+
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/volunteer/view');
 		$this->load->view('admin/footer');
 	}
 }

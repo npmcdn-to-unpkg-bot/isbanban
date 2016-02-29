@@ -1,5 +1,5 @@
 <div class="card-body">
-	<div class="alert alert-info" role="alert">
+	<!-- <div class="alert alert-info" role="alert">
 		<strong>Perhatian:</strong>
 		<p>
 			Mohon untuk melengkapi alamat dibawah ini dengan lengkap, seperti nama jalan, nomor rumah dan informasi penting lainnya.
@@ -12,7 +12,7 @@
 		<p>
 			Perumahan Taman Surga Indah, Blok F43 Nomor 8. Jl Kemuning nomor 13 Serang, Banten
 		</p>
-	</div>
+	</div> -->
 	
 	<div class="form-group">
 		<label>Alamat</label>

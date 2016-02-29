@@ -1,10 +1,10 @@
 <div class="container-fluid">
 	<div class="side-body">
-		<div class="page-title">
+		<!-- <div class="page-title">
             <span class="title text-center">Edit Data Relawan</span>
-        </div>
+        </div> -->
 
-		
+	
 		<?php if(validation_errors()) { ?>
 		<div class="panel panel-danger">
 			<div class="panel-heading">
@@ -18,7 +18,7 @@
 
 
 		<?php foreach($getThis as $row) { ?>
-		<form action="" method="post">
+		<form method="post" enctype="multipart/form-data">
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="card">
@@ -32,6 +32,22 @@
 			</div>
 
 			<div class="col-sm-6">
+				<div class="card" style="margin-bottom: 20px">
+					<div class="card-header">
+						<div class="card-title">
+							<div class="title">Gambar</div>
+						</div>
+					</div>
+
+					<div class="card-body">
+						<?php if($row->path_foto) { ?>
+						<img class="img-responsive" src="<?php echo base_url() ?><?php echo $row->path_foto ?>" alt="">
+						<?php } ?>
+
+						<input type="file" name="gambar">
+					</div>
+				</div>
+
 				<div class="card">
 					<div class="card-header">
 						<div class="card-title">

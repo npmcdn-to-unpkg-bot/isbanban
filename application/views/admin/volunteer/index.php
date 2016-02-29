@@ -19,7 +19,7 @@
 		</div>
 		<?php } ?>
 
-		<form action="<?php echo base_url() ?>admin/volunteer/insert" method="post">
+		<form method="post" enctype="multipart/form-data">
 		<div class="row">
 			<div class="col-sm-6">
 				<div class="card">
@@ -33,6 +33,21 @@
 			</div>
 
 			<div class="col-sm-6">
+				<div class="card" style="margin-bottom: 20px">
+					<div class="card-header">
+						<div class="card-title">
+							<div class="title">Gambar</div>
+						</div>
+					</div>
+
+					<div class="card-body">
+						<div class="form-group">
+							<input type="file" name="gambar">
+						</div>
+					</div>
+				</div>
+
+
 				<div class="card">
 					<div class="card-header">
 						<div class="card-title">

@@ -15,6 +15,14 @@
                     <div class="card-body">
                         <table class="table table-bordered">
                             <tbody>
+                                <?php if($row->path_foto) { ?>
+                                <tr>
+                                    <td colspan="2">
+                                        <img style="margin:0px auto" class="img-responsive" src="<?php echo base_url() ?><?php echo $row->path_foto; ?>"></img>
+                                    </td>
+                                </tr>
+                                <?php } ?>
+
                                 <tr>
                                     <td>Nama</td>
                                     <td><?php echo $row->nama; ?></td>

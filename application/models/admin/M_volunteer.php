@@ -24,7 +24,7 @@ class M_volunteer extends CI_Model {
 
 	function update($data, $parameter_code)
 	{
-		return $this->db->where('parameter_code', $parameter_code)->update('relawan', $data);
+		$this->db->where('parameter_code', $parameter_code)->update('relawan', $data);
 	}
 
 	function getByParameter($parameter_code)

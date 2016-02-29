@@ -53,7 +53,7 @@
 		</select>
 	</div>
 
-	<div class="alert alert-info" role="alert">
+	<!-- <div class="alert alert-info" role="alert">
 		<strong>Perhatian:</strong>
 		<p>
 			Mohon untuk melengkapi alamat dibawah ini dengan lengkap, seperti nama jalan, nomor rumah dan informasi penting lainnya.
@@ -66,7 +66,7 @@
 		<p>
 			Perumahan Taman Surga Indah, Blok F43 Nomor 8. Jl Kemuning nomor 13 Serang, Banten
 		</p>
-	</div>
+	</div> -->
 
 	<div class="form-group">
 		<label>Alamat</label>
@@ -184,7 +184,7 @@
 
 	<!-- Social Info -->
 	<hr>
-	<div class="alert alert-info" role="alert">
+	<!-- <div class="alert alert-info" role="alert">
 	  <strong>Perhatian:</strong> 
 	  <p>Mohon untuk mengisi <b>Link Sosial Media</b> relawan yang berkaitan, bukan username atau nama pengguna. Apabila data yang berkaitan
 	  berupa nama pengguna atau username, mohon ditindak lanjuti dengan menghubungi kak <b><?php echo $row->nama; ?></b>
@@ -195,7 +195,7 @@
 	  <b>http://www.facebook.com/BogelDR</b><br> 
 	  <b>http://www.twitter.com/barnessan</b><br> 
 	  <b>http//www.instagram.com/anapple_cilegon</b>
-	</div>
+	</div> -->
 
 	<div class="form-group">
 		<label>Facebook Link</label>

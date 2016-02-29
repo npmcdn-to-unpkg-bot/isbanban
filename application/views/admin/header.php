@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>template/assets/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>template/assets/css/dataTables.bootstrap.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>template/assets/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>template/assets/css/print.css">
     <style>
     .remove-margin {
         margin-bottom: 0px !important;
@@ -85,20 +86,10 @@
                             </li>
 
 <!-- Relawan -->
-                            <li class="panel panel-default dropdown">
-                              <a data-toggle="collapse" href="#component-example">
-                                <span class="icon fa fa-group"></span><span class="title">Relawan</span>
-                              </a>
-
-                              <div id="component-example" class="collapse">
-                                <div class="panel-body">
-                                  <ul class="nav navbar-nav">
-                                    <li><a href="<?php echo base_url() ?>admin/volunteer/add">Tambah Data</a></li>
-                                    <li><a href="<?php echo base_url() ?>admin/volunteer">Lihat Data</a></li>
-                                    <li><a href="<?php echo base_url() ?>admin/volunteer/recruitment">RECRUITMENT</a></li>
-                                  </ul>
-                                </div>
-                              </div>
+                            <li <?php if($role == 'volunteer') { echo "class=active"; }?>>
+                                <a href="<?php echo base_url() ?>admin/volunteer">
+                                    <span class="icon fa fa-group"></span><span class="title">Relawan</span>
+                                </a>
                             </li>
 
 <!-- Desa Binaan -->
@@ -116,7 +107,7 @@
                                 </a>
                             </li>
 
-<!-- Campaign -->
+<!-- Donatur -->
                             <li <?php if($role == 'donatur') { echo "class=active"; } ?>>
                                 <a href="<?php echo base_url() ?>admin/blog">
                                     <span class="icon fa fa-male"></span><span class="title">Donatur</span>

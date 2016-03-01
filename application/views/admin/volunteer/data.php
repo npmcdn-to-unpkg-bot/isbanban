@@ -37,7 +37,11 @@
 
                     <tbody>
                     	<?php foreach($getAll as $row) { ?>
-                    	<tr>
+                    	<tr
+                        <?php if(!$row->path_foto) { ?>
+                        class="info"
+                        <?php } ?>
+                        >
                     		<td><?php echo $row->nama; ?></td>
                     		<td><?php echo $row->departemen; ?></td>
                     		<td><?php echo $row->chapter; ?></td>

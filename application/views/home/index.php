@@ -6,10 +6,8 @@
 	</div>
 </div>
 
-
-
 <!-- Service List -->
-<div class="donate-list">
+<!-- <div class="donate-list">
 	<div class="container">
 		<div class="row start">
 			<div class="col-sm-4">
@@ -37,9 +35,9 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> -->
 
-<div class="event-reminder">
+<!-- <div class="event-reminder">
 	<div class="container">
 		<a href="">
 			<div class="start">
@@ -48,11 +46,13 @@
 		</a>
 	</div>
 </div>
+ -->
+
 
 <div class="content">
 <!-- 5W1H -->
 	<div class="container">
-		<div class="definition">
+		<!-- <div class="definition">
 			<div class="row">
 				<div class="col-sm-4">
 				<div class="panel panel-info">
@@ -156,6 +156,110 @@
 					</div>
 				</div>
 			</div>
+		</div> -->
+
+
+		<div class="definition">
+			<div class="row" style="display: -webkit-flex;display: flex;">
+				<div class="col-md-8 col-sm-6 col-xs-12">
+					<div class="panel-group" id="accordion">
+					  <div class="panel panel-info">
+					    <div class="panel-heading">
+					      <h4 class="panel-title">
+					        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+					          What
+					        </a><i class="indicator fa fa-chevron-down  pull-right"></i>
+					      </h4>
+					    </div>
+					    <div id="collapseOne" class="panel-collapse collapse in">
+					      <div class="panel-body">
+					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					      </div>
+					    </div>
+					  </div>
+
+					  <div class="panel panel-info">
+					    <div class="panel-heading">
+					      <h4 class="panel-title">
+					        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+					           Where 
+					        </a><i class="indicator fa fa-chevron-up  pull-right"></i>
+					      </h4>
+					    </div>
+					    <div id="collapseTwo" class="panel-collapse collapse">
+					      <div class="panel-body">
+					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					      </div>
+					    </div>
+					  </div>
+
+					  <div class="panel panel-info">
+					    <div class="panel-heading">
+					      <h4 class="panel-title">
+					        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+					          Who
+					        </a><i class="indicator fa fa-chevron-up pull-right"></i>
+					      </h4>
+					    </div>
+					    <div id="collapseThree" class="panel-collapse collapse">
+					      <div class="panel-body">
+					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					      </div>
+					    </div>
+					  </div>
+
+					  <div class="panel panel-info">
+					    <div class="panel-heading">
+					      <h4 class="panel-title">
+					        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+					          When
+					        </a><i class="indicator fa fa-chevron-up pull-right"></i>
+					      </h4>
+					    </div>
+					    <div id="collapseFour" class="panel-collapse collapse">
+					      <div class="panel-body">
+					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					      </div>
+					    </div>
+					  </div>
+
+					  <div class="panel panel-info">
+					    <div class="panel-heading">
+					      <h4 class="panel-title">
+					        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+					          Why
+					        </a><i class="indicator fa fa-chevron-up pull-right"></i>
+					      </h4>
+					    </div>
+					    <div id="collapseFive" class="panel-collapse collapse">
+					      <div class="panel-body">
+					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					      </div>
+					    </div>
+					  </div>
+
+					  <div class="panel panel-info">
+					    <div class="panel-heading">
+					      <h4 class="panel-title">
+					        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+					          How
+					        </a><i class="indicator fa fa-chevron-up pull-right"></i>
+					      </h4>
+					    </div>
+					    <div id="collapseSix" class="panel-collapse collapse">
+					      <div class="panel-body">
+					        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					      </div>
+					    </div>
+					  </div>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-6 col-xs-12 banners" style="background: url(http://placemi.com/800x800) no-repeat top center; background-size: cover;">
+
+				<!-- <img class="img-responsive" src="http://placemi.com/"></img> -->
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -201,25 +305,28 @@
 
 <!-- Blog Post -->
 	<div class="container">
-		<h3>blogs</h3>
-		<div class="row">
-			<?php for($i=0; $i<6; $i++) { ?>
-			<div class="col-sm-4">
-				<div class="post blog" style="background:url(http://placemi.com/1280x500) no-repeat top center">
-					<a href="#">
-					<div class="shade"></div>
-					<div class="title">Jumping fox
-					<hr>
+		<div class="post">
+			<h2>Blogs</h2>
+			<div class="row">
+				<?php for($i=0; $i<6; $i++) { ?>
+				<div class="col-sm-6 col-md-4">
+					<div class="begin-post blog" style="background:url(http://placemi.com/1280x500) no-repeat top center">
+						<a href="#">
+						<div class="shade"></div>
+						<div class="title">Jumping fox
+						</div>
+						</a>
 					</div>
-					</a>
 				</div>
-			</div>
-			<?php } ?>
-		</div>
+				<?php } ?>
 
-		<div class="sparator">
-			<a href="" class="btn btn-raised btn-primary">View All</a>
-		</div>
+				<div class="col-sm-12">
+					<div class="sparator">
+						<a href="" class="btn btn-raised btn-primary">View All</a>
+					</div>
+				</div>
+			</div>		
+		</div>		
 	</div>
 
 
@@ -230,11 +337,14 @@
 
 	<div class="jumbotron partner">
 		<div class="container">
+
+			<h2>Our Partners</h2>
+
 			<div id="lightSlider">
 				<?php for($i=0; $i<10; $i++) { ?>
 				<div class="item">
 					<a href="#">
-					<img src="http://placemi.com/150x150">
+					<img class="img-responsive img-full" src="http://placemi.com/150x150">
 					</a>
 				</div>
 				<?php } ?>
@@ -242,10 +352,6 @@
 		</div>
 	</div>
 </div>
-
-
-
-
 
 
 <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>template/assets/vendor/lightslider/dist/css/lightslider.min.css">
@@ -256,14 +362,22 @@
 $(".banner").hover(function(){
 	$(".donation .big").counter({
 		  autoStart: true,           // true/false, default: true
-		  duration: 5000,             // milliseconds, default: 1500
+		  duration: 5000,            // milliseconds, default: 1500
 		  countFrom: 0,              // start counting at this number, default: 0
 		  countTo: 255,
 	});
 });
 
-
 $("#lightSlider").lightSlider({
 	item: 5,
 });
+
+function toggleChevron(e) {
+    $(e.target)
+        .prev('.panel-heading')
+        .find("i.indicator")
+        .toggleClass('fa-chevron-down fa-chevron-up');
+}
+$('#accordion').on('hidden.bs.collapse', toggleChevron);
+$('#accordion').on('shown.bs.collapse', toggleChevron);
 </script>

@@ -32,7 +32,7 @@ class Home extends CI_Controller {
 
 		$this->load->view('header', $data);
 		$this->load->view('home/index');
-		// $this->load->view('admin/footer');
+		$this->load->view('footer');
 	}
 }
 

@@ -9892,6 +9892,7 @@ hr.on-light {
 }
 body {
   font-family: 'Open Sans', sans-serif;
+  background: white;
 }
 h1,
 h2,
@@ -9931,6 +9932,26 @@ h6 {
   font-size: 18px;
   line-height: 25px;
 }
+img.img-full {
+  width: 100%;
+}
+img.img-center {
+  margin: 0px auto;
+}
+.definition {
+  padding: 50px 0px;
+}
+.definition .panel-group {
+  margin-bottom: 0px;
+}
+.definition .panel-group .panel-heading a {
+  color: white;
+}
+.definition .panel-group .panel-heading a:hover,
+.definition .panel-group .panel-heading a:focus {
+  color: white;
+  text-decoration: none;
+}
 .jumbotron {
   background-size: cover !important;
 }
@@ -9967,7 +9988,13 @@ h6 {
   font-size: 41px;
 }
 .jumbotron.partner {
-  background: #fafafa;
+  background: #ddd;
+  margin-bottom: 0px;
+}
+.jumbotron.partner h2 {
+  margin-top: 0px;
+  margin-bottom: 40px;
+  text-align: center;
 }
 header .navbar-before {
   padding-top: 30px;
@@ -9977,8 +10004,8 @@ header .navbar-before img {
   margin: 0px auto;
 }
 header .navbar-brand img {
-  height: 90px;
-  margin-top: -15px;
+  height: 65px;
+  margin-top: -5px;
 }
 header .container {
   text-align: center;
@@ -10150,20 +10177,20 @@ header .navbar-nav li a {
 .recruitment .start .form-start option::-webkit-input-placeholder {
   color: #ccc;
 }
-.post.blog {
+.post .begin-post.blog {
   background-size: cover;
   height: 350px;
   position: relative;
   margin-bottom: 20px;
 }
-.post.blog .shade {
+.post .begin-post.blog .shade {
   transition: all 0.35s ease;
   position: absolute;
   width: 100%;
   height: 100%;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
 }
-.post.blog .title {
+.post .begin-post.blog .title {
   position: absolute;
   padding: 10px;
   color: #fff;
@@ -10171,11 +10198,55 @@ header .navbar-nav li a {
   bottom: 0px;
   font-size: 18px;
 }
-.post.blog .title hr {
+.post .begin-post.blog .title hr {
   color: white;
   text-align: left;
   width: 100%;
 }
-.post.blog .sparator {
+.post .sparator {
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
+}
+footer {
+  background-size: cover !important;
+  padding: 40px 0px;
+  text-align: center;
+  color: white;
+}
+footer .callcenter {
+  padding: 20px;
+  font-size: 21px;
+  line-height: 28px;
+  text-transform: capitalize;
+}
+footer .callcenter a {
+  color: white;
+}
+footer .callcenter a:hover,
+footer .callcenter a:focus {
+  text-decoration: none;
+}
+footer .social-media {
+  padding: 20px 0px;
+  border-top: 1px dashed white;
+  border-bottom: 1px dashed white;
+}
+footer .social-media ul {
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+footer .social-media ul li {
+  margin-right: 10px;
+}
+footer .social-media ul li:last-child {
+  margin-right: 0px;
+}
+footer .copyright {
+  padding: 20px 0px;
+  font-size: 18px;
+  line-height: 25px;
+}
+footer .copyright p {
+  margin-bottom: 0px;
 }

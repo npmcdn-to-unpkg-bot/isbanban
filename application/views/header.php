@@ -103,7 +103,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">
+			<a class="navbar-brand" href="<?php echo base_url() ?>">
 				<img class="img-responsive" src="<?php echo base_url() ?>template/assets/image/typetext-black.png"></img>
 			</a>
 		</div>
@@ -111,13 +111,13 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">home</a></li>
-				<li><a href="#">about</a></li>
-				<li><a href="#">people</a></li>
-				<li><a href="#">village</a></li>
-				<li><a href="#">blog</a></li>
-				<li><a href="#">events</a></li>
-				<li><a href="#">donate</a></li>
+				<li><a href="<?php echo base_url() ?>">home</a></li>
+				<li><a href="<?php echo base_url() ?>about">about</a></li>
+				<li><a href="<?php echo base_url() ?>people">people</a></li>
+				<li><a href="<?php echo base_url() ?>village">village</a></li>
+				<li><a href="<?php echo base_url() ?>blog">blog</a></li>
+				<li><a href="<?php echo base_url() ?>event">events</a></li>
+				<li><a href="<?php echo base_url() ?>donate">donate</a></li>
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->

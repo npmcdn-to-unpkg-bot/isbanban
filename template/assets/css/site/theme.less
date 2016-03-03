@@ -123,7 +123,6 @@ img {
 
 	&.bigger {
 		.padding(200px);
-		// margin-top: -210px;
 		.text-center();
 		color:white;
 		.text-capitalize();
@@ -139,6 +138,20 @@ img {
 
 		hr {
 			width:10%;
+		}
+
+		@media (max-width: @screen-sm) {
+			.padding(50px);
+
+			h1 {
+				font-size: 21px;
+				line-height: 28px;
+			}
+
+			p {
+				font-size: 18px;
+				line-height: 25px;
+			}
 		}
 	}
 
@@ -187,6 +200,34 @@ img {
 
 
 header {
+
+	@media (max-width: @screen-sm) {
+		height: 90px;
+
+
+		.navbar-toggle {
+			margin-top: 25px;
+		}
+
+		.navbar-collapse {
+			margin-top: 20px;
+    		background: white;
+		}
+	}
+
+	.navmenu {
+		background: #666;
+		border-left: 1px solid #333;
+
+		li {
+			a {
+			    color: #fff !important;
+    			text-transform: uppercase;
+			}
+		}
+	}
+
+
 	.navbar-before {
 		.padding(30px);
 

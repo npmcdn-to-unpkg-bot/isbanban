@@ -9973,6 +9973,20 @@ img.img-center {
 .jumbotron.bigger hr {
   width: 10%;
 }
+@media (max-width: 768px) {
+  .jumbotron.bigger {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .jumbotron.bigger h1 {
+    font-size: 21px;
+    line-height: 28px;
+  }
+  .jumbotron.bigger p {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
 .jumbotron.banner {
   color: #fff;
   margin-top: 20px;
@@ -9995,6 +10009,26 @@ img.img-center {
   margin-top: 0px;
   margin-bottom: 40px;
   text-align: center;
+}
+@media (max-width: 768px) {
+  header {
+    height: 90px;
+  }
+  header .navbar-toggle {
+    margin-top: 25px;
+  }
+  header .navbar-collapse {
+    margin-top: 20px;
+    background: white;
+  }
+}
+header .navmenu {
+  background: #666;
+  border-left: 1px solid #333;
+}
+header .navmenu li a {
+  color: #fff !important;
+  text-transform: uppercase;
 }
 header .navbar-before {
   padding-top: 30px;

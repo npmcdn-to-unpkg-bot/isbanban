@@ -22,11 +22,13 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300italic,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?php echo base_url() ?>template/assets/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>template/assets/vendor/jasny-bootstrap/dist/css/jasny-bootstrap.min.css">
 
 	<script src="<?php echo base_url() ?>template/assets/vendor/jquery/dist/jquery.min.js"></script>
 	<script src="<?php echo base_url() ?>template/assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="<?php echo base_url() ?>template/assets/vendor/bootstrap-material-design/dist/js/material.min.js"></script>
 	<script src="<?php echo base_url() ?>template/assets/vendor/bootstrap-material-design/dist/js/ripples.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url() ?>template/assets/vendor/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
 	<script type="text/javascript">
 	$.material.init();
 	</script>
@@ -97,7 +99,7 @@
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body" aria-expanded="false">
 			<span class="sr-only">Toggle navigation</span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
@@ -119,8 +121,22 @@
 				<li><a href="<?php echo base_url() ?>event">events</a></li>
 				<li><a href="<?php echo base_url() ?>donate">donate</a></li>
 			</ul>
-		</div><!-- /.navbar-collapse -->
-	</div><!-- /.container-fluid -->
+		</div>
+	</div>
+
+
+
+	<div class="navmenu navmenu-default navmenu-fixed-right offcanvas">
+		<ul class="nav navmenu-nav">
+			<li><a href="<?php echo base_url() ?>">home</a></li>
+			<li><a href="<?php echo base_url() ?>about">about</a></li>
+			<li><a href="<?php echo base_url() ?>people">people</a></li>
+			<li><a href="<?php echo base_url() ?>village">village</a></li>
+			<li><a href="<?php echo base_url() ?>blog">blog</a></li>
+			<li><a href="<?php echo base_url() ?>event">events</a></li>
+			<li><a href="<?php echo base_url() ?>donate">donate</a></li>
+		</ul>
+	</div>
 </header>
 
 

@@ -34,6 +34,17 @@ class Blog extends CI_Controller {
 		$this->load->view('blog/index');
 		$this->load->view('footer');
 	}
+
+	function detail($slug) {
+		$data	= [
+			'title'			=> 'Blogs',
+			'role'			=> 'normal'
+		];
+
+		$this->load->view('header', $data);
+		$this->load->view('blog/detail');
+		$this->load->view('footer');
+	}
 }
 
 /* End of file welcome.php */

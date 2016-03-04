@@ -160,7 +160,7 @@
 
 
 		<div class="definition">
-			<div class="row" style="display: -webkit-flex;display: flex;">
+			<div class="row remove-flex" style="display: -webkit-flex;display: flex;">
 				<div class="col-md-8 col-sm-6 col-xs-12">
 					<div class="panel-group" id="accordion">
 					  <div class="panel panel-info">
@@ -311,7 +311,7 @@
 				<?php for($i=0; $i<6; $i++) { ?>
 				<div class="col-sm-6 col-md-4">
 					<div class="begin-post blog" style="background:url(http://placemi.com/1280x500) no-repeat top center">
-						<a href="#">
+						<a href="<?php echo base_url() ?>blog/detail/default">
 						<div class="shade"></div>
 						<div class="title">Jumping fox
 						</div>
@@ -322,7 +322,7 @@
 
 				<div class="col-sm-12">
 					<div class="sparator">
-						<a href="" class="btn btn-raised btn-primary">View All</a>
+						<a href="<?php echo base_url() ?>blog" class="btn btn-raised btn-primary">View All</a>
 					</div>
 				</div>
 			</div>		

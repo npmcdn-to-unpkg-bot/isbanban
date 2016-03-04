@@ -17,14 +17,38 @@ class M_home extends CI_Model {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	function countData($data)
+	function insert($data)
 	{
-		return $this->db->get($data)->num_rows();
+		$this->db->insert('relawan', $data);
 	}
 
-	function getBlogPost($limit, $table)
+	function update($data, $parameter_code)
 	{
-		return $this->db->get($table, $limit)->result();
+		return $this->db->where('parameter_code', $parameter_code)->update('relawan', $data);
+	}
+
+	function getByParameter($parameter_code)
+	{
+		return $this->db->get_where('relawan', array('parameter_code' => $parameter_code))->result();
+	}
+
+	function getAll() {
+		return $this->db->get('relawan')->result();
+	}
+
+	function getChapter()
+	{
+		return $this->db->get('relawan_chapter')->result();
+	}
+
+	function getDepartment()
+	{
+		return $this->db->get('relawan_departemen')->result();
+	}
+
+	function getPosition()
+	{
+		return $this->db->get('relawan_posisi')->result();
 	}
 
 }

@@ -21,13 +21,17 @@ class Home extends CI_Controller {
 	function __construct()
 	{
 		parent:: __construct();
+		$this->load->model('m_home');
 	}
 
 	function index()
 	{
 		$data	= [
 			'title'			=> 'Home',
-			'role'			=> 'normal'
+			'role'			=> 'normal',
+			'getBlogPost'	=> $this->m_home->getBlogPost('8', 'blog'),
+			'countVillage'	=> $this->m_home->countData('desa'),
+			'countRelawan'	=> $this->m_home->countData('relawan'),
 		];
 
 		$this->load->view('header', $data);

@@ -308,12 +308,12 @@
 		<div class="post">
 			<h2>Blogs</h2>
 			<div class="row">
-				<?php for($i=0; $i<6; $i++) { ?>
+				<?php foreach ($getBlogPost as $item) { ?>
 				<div class="col-sm-6 col-md-4">
-					<div class="begin-post blog" style="background:url(http://placemi.com/1280x500) no-repeat top center">
-						<a href="<?php echo base_url() ?>blog/detail/default">
+					<div class="begin-post blog" style="background:url(<?php echo base_url() ?><?php echo $row->path_foto; ?>) no-repeat top center">
+						<a href="<?php echo base_url() ?>blog/detail/<?php echo $row->slug; ?>">
 						<div class="shade"></div>
-						<div class="title">Jumping fox
+						<div class="title"><?php echo $row->judul; ?>
 						</div>
 						</a>
 					</div>
@@ -339,7 +339,6 @@
 		<div class="container">
 
 			<h2>Our Partners</h2>
-
 			<div id="lightSlider">
 				<?php for($i=0; $i<10; $i++) { ?>
 				<div class="item">
@@ -358,6 +357,7 @@
 <script type="text/javascript" src="<?php echo base_url() ?>template/assets/vendor/counter.js/js/jquery.easing.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>template/assets/vendor/counter.js/js/counter.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>template/assets/vendor/lightslider/dist/js/lightslider.min.js"></script>
+
 <script type="text/javascript">
 $(".banner").hover(function(){
 	$(".people .big").counter({

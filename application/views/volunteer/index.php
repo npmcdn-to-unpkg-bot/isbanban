@@ -10,10 +10,10 @@
 
 <div class="post">
 	<div class="container">
-		<div class="row" style="padding:0px">
+		<div class="row">
 			<?php for($i=0; $i<12; $i++) { ?>
 			<a href="javascript:void(0);" data-toggle="modal" data-target="#peopleModal">
-			<div class="col-sm-3 people" style="padding:0px">
+			<div class="col-sm-3 people">
 				<img class="img-responsive" src="http://placemi.com/600x600">
 			</div>
 			</a>

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class People extends CI_Controller {
+class M_people extends CI_Model {
 
 	/**
 	 * Index Page for this controller.
@@ -17,29 +17,14 @@ class People extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-
-	function __construct()
+	function getAll()
 	{
-		parent:: __construct();
-		$this->load->model('m_people');
+		return $this->db->get('relawan')->result();
 	}
 
-	function index()
+	function getThis($slug)
 	{
-		$data	= [
-			'title'			=> 'Volunteer',
-			'role'			=> 'normal',
-			'getAll'		=> $this->m_people->getAll(),
-		];
-
-		$this->load->view('header', $data);
-		$this->load->view('volunteer/index');
-		$this->load->view('footer');
-	}
-
-	function detail($slug)
-	{
-		$data['result'] = $this->m_people->getThis($slug);
+		return $this->db->get_where('relawan', array('slug' => $slug));
 	}
 }
 

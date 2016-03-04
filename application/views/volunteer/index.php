@@ -11,10 +11,16 @@
 <div class="post">
 	<div class="container">
 		<div class="row">
-			<?php for($i=0; $i<12; $i++) { ?>
-			<a href="javascript:void(0);" data-toggle="modal" data-target="#peopleModal">
-			<div class="col-sm-3 people">
-				<img class="img-responsive" src="http://placemi.com/600x600">
+			<?php
+			foreach($getAll as $row) { ?>
+			<a href="javascript:void(0);" class="openModal" id="<?php echo $row->slug; ?>">
+			<div class="col-sm-3">
+				<div class="people">
+					<img class="img-responsive" src="http://placemi.com/600x600">
+					<div class="caption">
+						<h4 class="name"><?php echo $row->nama; ?></h4>
+					</div>
+				</div>
 			</div>
 			</a>
 			<?php } ?>
@@ -30,12 +36,7 @@
 </div>
 
 
-
-
-
-
-
-
+<!-- Modal -->
 <div class="modal fade" tabindex="-1" role="dialog" id="peopleModal">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
@@ -90,4 +91,29 @@
 			</div>
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+</div>
+
+
+<script>
+$(".openModal").click(function(){
+
+	var essay_id = $(this).attr('id');
+	console.log(essay_id);
+
+	$.ajax({
+          type : 'POST',
+           url : '/people/detail/', // in here you should put your query 
+          data : essay_id, // here you pass your id via ajax .
+                     // in php you should use $_POST['post_id'] to get this value 
+       success : function(r)
+       {
+              $('#peopleModal').show();  // put your modal id 
+       },
+       error: function(r)
+       {
+       		console.log(r);
+       }
+    });
+
+})
+</script>

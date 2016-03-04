@@ -360,11 +360,18 @@
 <script type="text/javascript" src="<?php echo base_url() ?>template/assets/vendor/lightslider/dist/js/lightslider.min.js"></script>
 <script type="text/javascript">
 $(".banner").hover(function(){
-	$(".donation .big").counter({
+	$(".people .big").counter({
 		  autoStart: true,           // true/false, default: true
 		  duration: 5000,            // milliseconds, default: 1500
 		  countFrom: 0,              // start counting at this number, default: 0
-		  countTo: 255,
+		  countTo: <?php echo $countRelawan; ?>,
+	});
+
+	$(".village .big").counter({
+		  autoStart: true,           // true/false, default: true
+		  duration: 5000,            // milliseconds, default: 1500
+		  countFrom: 0,              // start counting at this number, default: 0
+		  countTo: <?php echo $countVillage; ?>,
 	});
 });
 

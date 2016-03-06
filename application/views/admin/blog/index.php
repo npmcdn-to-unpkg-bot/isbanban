@@ -41,8 +41,8 @@
                 		<td><?php echo $nomor; ?></td>
                         <td><?php echo $item->judul; ?></td>
                         <td><?php echo $item->kategori; ?></td>
-                        <td><?php echo $item->created_at; ?></td>
-                        <td><?php echo $item->updated_at; ?></td>
+                        <td><?php $this->barnlibs->dateForHuman($item->created_at) ?></td>
+                        <td><?php $this->barnlibs->dateForHuman($item->updated_at); ?></td>
                 		<td>
                             <a href="<?php echo base_url() ?>admin/blog/edit/<?php echo $item->parameter_code; ?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i></a>
 

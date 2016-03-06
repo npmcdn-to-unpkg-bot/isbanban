@@ -43,8 +43,8 @@
                         <td><?php echo $item->judul; ?></td>
                         <td><?php echo $item->lokasi; ?></td>
                         <td><?php echo $item->tanggal; ?></td>
-                        <td><?php echo $item->created_at; ?></td>
-                        <td><?php echo $item->updated_at; ?></td>
+                        <td><?php $this->barnlibs->dateForHuman($item->created_at) ?></td>
+                        <td><?php $this->barnlibs->dateForHuman($item->updated_at) ?></td>
                 		<td>
                             <a href="<?php echo base_url() ?>admin/event/edit/<?php echo $item->parameter_code; ?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i></a>
 

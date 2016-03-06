@@ -35,8 +35,8 @@
                         <td><?php echo $item->nama; ?></td>
                         <td><?php echo $item->lokasi; ?></td>
                         <td><u><?php echo $item->latitude; ?></u> &amp; <u><?php echo $item->longitude; ?></u></td>
-                        <td><?php echo $item->created_at; ?></td>
-                        <td><?php echo $item->updated_at; ?></td>
+                        <td><?php $this->barnlibs->dateForHuman($item->created_at) ?></td>
+                        <td></td>
                 		<td>
                             <a href="<?php echo base_url() ?>admin/village/edit/<?php echo $item->parameter_code; ?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i></a>     
                             <a href="javascript:void(0);" onclick="deleteThis('<?php echo $item->parameter_code; ?>')" class="btn btn-danger btn-xs" data-toggle="dropdown"><i class="fa fa-trash"></i></a>     

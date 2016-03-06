@@ -48,7 +48,7 @@ class Volunteer extends CI_Controller {
 	{
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
-			'role'		 	=> 'volunteer',
+			'role'		 	=> 'oprec',
 			'getAll'		=> $this->m_volunteer->getRecruitment(),
 		];
 

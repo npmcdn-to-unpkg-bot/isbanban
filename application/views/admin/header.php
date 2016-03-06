@@ -92,6 +92,12 @@
                                 </a>
                             </li>
 
+                            <li <?php if($role == 'oprec') { echo "class=active"; }?>>
+                                <a href="<?php echo base_url() ?>admin/volunteer/recruitment">
+                                    <span class="icon fa fa-user"></span><span class="title">Open Recruitment</span>
+                                </a>
+                            </li>
+
 <!-- Desa Binaan -->
                             <li <?php if($role == 'village') { echo "class=active"; } ?>>
                                 <a href="<?php echo base_url() ?>admin/village">

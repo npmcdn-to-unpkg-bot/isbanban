@@ -453,11 +453,15 @@ class Volunteer extends CI_Controller {
 			'getPosition'	=> $this->m_volunteer->getPosition()
 		];
 
-
-
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/volunteer/view');
 		$this->load->view('admin/footer');
+	}
+
+	function delete($parameter_code)
+	{
+		$this->m_volunteer->delete($parameter_code);
+		redirect('admin/volunteer');
 	}
 }
 

@@ -29,12 +29,45 @@ class M_volunteer extends CI_Model {
 
 	function getByParameter($parameter_code)
 	{
-		return $this->db->get_where('relawan', array('parameter_code' => $parameter_code))->result();
+		$query = 
+		"
+		SELECT relawan.*,
+			   relawan_posisi.nama as posisi_relawan,
+			   relawan_departemen.nama as departemen_relawan,
+			   relawan_chapter.nama as chapter_relawan
+		FROM relawan
+			   LEFT JOIN relawan_posisi
+			   		ON relawan_posisi.`id` = relawan.`posisi`
+			   LEFT JOIN relawan_departemen
+			   		ON relawan_departemen.`kode` = relawan.`departemen`
+		   	   LEFT JOIN relawan_chapter
+					ON relawan_chapter.`kode` = relawan.`chapter`
+		WHERE parameter_code='$parameter_code'
+		";
+
+		return $this->db->query($query)->result();
+		// return $this->db->get_where('relawan', array('parameter_code' => $parameter_code))->result();
 	}
 
 	function getAll()
 	{
-		return $this->db->get('relawan')->result();
+		$query = 
+		"
+		SELECT relawan.*,
+			   relawan_posisi.nama as posisi_relawan,
+			   relawan_departemen.nama as departemen_relawan,
+			   relawan_chapter.nama as chapter_relawan
+		FROM relawan
+			   LEFT JOIN relawan_posisi
+			   		ON relawan_posisi.`id` = relawan.`posisi`
+			   LEFT JOIN relawan_departemen
+			   		ON relawan_departemen.`kode` = relawan.`departemen`
+		   	   LEFT JOIN relawan_chapter
+					ON relawan_chapter.`kode` = relawan.`chapter`
+		";
+
+		return $this->db->query($query)->result();
+		// return $this->db->get('relawan')->result();
 	}
 
 	function getRecruitment()
@@ -57,6 +90,11 @@ class M_volunteer extends CI_Model {
 	function getPosition()
 	{
 		return $this->db->get('relawan_posisi')->result();
+	}
+
+	function delete($parameter_code)
+	{
+		$this->db->delete('relawan', array('parameter_code' => $parameter_code)); 
 	}
 
 }

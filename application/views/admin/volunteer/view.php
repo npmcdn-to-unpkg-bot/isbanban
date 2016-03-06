@@ -30,7 +30,7 @@
 
                                  <tr>
                                     <td>Tempat, Tanggal Lahir</td>
-                                    <td><?php echo $row->tempat_lahir; ?>, <?php echo $row->tanggal_lahir; ?></td>
+                                    <td><?php echo $row->tempat_lahir; ?>, <?php echo $this->barnlibs->dateForHuman($row->tanggal_lahir); ?></td>
                                 </tr>
 
                                 <tr>
@@ -126,25 +126,25 @@
 
                                 <tr>
                                     <td>Chapter</td>
-                                    <td><?php echo $row->chapter; ?></td>
+                                    <td><?php echo $row->chapter_relawan; ?></td>
                                 </tr>
 
                                 <tr>
                                     <td>Bergabung</td>
-                                    <td><?php echo $row->bulan_masuk; ?></td>
+                                    <td><?php echo $this->barnlibs->monthForHuman($row->bulan_masuk); ?></td>
                                 </tr>
 
                                 <?php if($row->posisi) { ?>
                                 <tr>
                                     <td>Posisi</td>
-                                    <td><?php echo $row->posisi; ?></td>
+                                    <td><?php echo $row->posisi_relawan; ?></td>
                                 </tr>
                                 <?php } ?>
 
                                 <?php if($row->departemen) { ?>
                                 <tr>
                                     <td>Departemen</td>
-                                    <td><?php echo $row->departemen; ?></td>
+                                    <td><?php echo $row->departemen_relawan; ?></td>
                                 </tr>
                                 <?php } ?>
 

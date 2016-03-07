@@ -39,7 +39,11 @@ class People extends CI_Controller {
 
 	function detail($slug)
 	{
-		$data['result'] = $this->m_people->getThis($slug);
+		$data = [
+			'getThis' => $this->m_people->getThis($slug),	
+		];
+
+		$this->load->view('volunteer/modal', $data);
 	}
 }
 

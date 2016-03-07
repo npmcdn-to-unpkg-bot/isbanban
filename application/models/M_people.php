@@ -17,14 +17,19 @@ class M_people extends CI_Model {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+	// function getAll($limit, $offset)
 	function getAll()
 	{
-		return $this->db->get('relawan')->result();
+        // $this->db->limit($limit,$offset);
+        // $query = $this->db->get('relawan');
+        // return $query->result();
+        // 
+        return $this->db->get('relawan')->result();
 	}
 
 	function getThis($slug)
 	{
-		return $this->db->get_where('relawan', array('slug' => $slug));
+		return $this->db->get_where('relawan', array('slug' => $slug))->result();
 	}
 }
 

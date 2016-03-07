@@ -7,13 +7,12 @@
 </div>
 
 
-
 <div class="post">
 	<div class="container">
 		<div class="row">
 			<?php
 			foreach($getAll as $row) { ?>
-			<a href="javascript:void(0);" class="openModal" id="<?php echo $row->slug; ?>">
+			<a href="javascript:void(0);" onclick="throwModal('<?php echo $row->slug; ?>');">
 			<div class="col-sm-3">
 				<div class="people">
 					<img class="img-responsive" src="http://placemi.com/600x600">
@@ -35,85 +34,28 @@
 	</div>
 </div>
 
+<div id="modal_target"></div>
 
-<!-- Modal -->
-<div class="modal fade" tabindex="-1" role="dialog" id="peopleModal">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			</div>
-
-			<div class="modal-body">
-				<div class="row">
-					<div class="col-sm-6">
-						<img class="img-responsive img-full" src="http://placemi.com/400x250"></img>
-						<div class="name">John Doe</div>
-					</div>
-
-					<div class="col-sm-6">
-						<div class="table-responsive">
-							<table class="table table-stripped">
-								<tbody>
-									<tr>
-										<td><b>Jabatan</b></td>
-										<td>Kota Tanggerang</td>
-									</tr>
-
-									<tr>
-										<td><b>Departemen</b></td>
-										<td>Dangdut</td>
-									</tr>
-
-									<tr>
-										<td><b>Chapter</b></td>
-										<td>Kota Tanggerang</td>
-									</tr>
-								</tbody>
-							</table>
-
-							<div class="post">
-								<div class="title">Visi</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi</p>
-							</div>
-
-							<div class="post">
-								<div class="title">Visi</div>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal-dialog -->
-</div>
 
 
 <script>
-$(".openModal").click(function(){
-
-	var essay_id = $(this).attr('id');
-	console.log(essay_id);
-
-	$.ajax({
-          type : 'POST',
-           url : '/people/detail/', // in here you should put your query 
-          data : essay_id, // here you pass your id via ajax .
-                     // in php you should use $_POST['post_id'] to get this value 
-       success : function(r)
-       {
-              $('#peopleModal').show();  // put your modal id 
-       },
-       error: function(r)
-       {
-       		console.log(r);
-       }
+function throwModal(slug) {
+    $.ajax({
+        type    : 'POST', 
+        url     : '<?php echo base_url(); ?>people/detail/'+slug,
+        success : function(data){ 
+           if(data){
+                console.log("Berhasil : "+ slug);
+                // console.log(data);
+                // 
+                
+                $('#modal_target').html(data);
+                $("#peopleModal").modal();
+           }
+        },
+        error: function(r) {
+        	console.log(r);
+        }
     });
-
-})
+}
 </script>

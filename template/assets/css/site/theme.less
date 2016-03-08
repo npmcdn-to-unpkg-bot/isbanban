@@ -205,6 +205,10 @@ img {
 		    height: 50%;
 		    bottom: 0px;
 		    position: absolute;
+
+		    &.white {
+		    	.bg-gradient(transparent, white);
+		    }
 		}
 
 
@@ -466,10 +470,34 @@ header {
 
 // Single Post
 .single-post {
-	.post {
-		p {
-			font-size: 16px;
-			line-height: 24px;
+
+	&.blog {
+
+		.meta {
+			.text-center();
+			margin-bottom:20px;
+
+			h1 {
+				text-transform:uppercase;
+				font-size: 41px;
+				line-height: 48px;
+				margin-top: 0px;
+			}
+
+			.postdate {
+				span {
+					font-size: 12px;
+				}
+			}
+		}
+
+		.post {
+			font-size: 18px;
+			line-height: 25px;
+
+			h1,h2,h3,h4,h5,h6,h7 {
+				.open-sans();
+			}
 		}
 	}
 }
@@ -575,7 +603,6 @@ header {
 		}
 	}
 
-
 	.people {
 		margin-bottom: 20px;
 		overflow: hidden;
@@ -645,6 +672,27 @@ header {
 
 
 
+
+
+
+
+
+
+// Another Post
+.another-post {
+	&.blog {
+		background: #f5f5f5;
+		margin-top: 20px;
+		margin-bottom: -20px;
+
+		h3 {
+			.text-center();
+			text-transform: uppercase;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+	}
+}
 
 
 

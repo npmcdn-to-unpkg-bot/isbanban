@@ -10029,6 +10029,9 @@ img.img-center {
   bottom: 0px;
   position: absolute;
 }
+.jumbotron.blogpost .shade.white {
+  background: linear-gradient(transparent, white);
+}
 .jumbotron.blogpost .title {
   position: absolute !important;
   bottom: 0px;
@@ -10188,9 +10191,31 @@ header .navbar-nav li a {
 .progress-today .people {
   text-align: left;
 }
-.single-post .post p {
-  font-size: 16px;
-  line-height: 24px;
+.single-post.blog .meta {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.single-post.blog .meta h1 {
+  text-transform: uppercase;
+  font-size: 41px;
+  line-height: 48px;
+  margin-top: 0px;
+}
+.single-post.blog .meta .postdate span {
+  font-size: 12px;
+}
+.single-post.blog .post {
+  font-size: 18px;
+  line-height: 25px;
+}
+.single-post.blog .post h1,
+.single-post.blog .post h2,
+.single-post.blog .post h3,
+.single-post.blog .post h4,
+.single-post.blog .post h5,
+.single-post.blog .post h6,
+.single-post.blog .post h7 {
+  font-family: 'Open Sans', sans-serif;
 }
 .pre-title {
   text-align: center;
@@ -10312,6 +10337,17 @@ header .navbar-nav li a {
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
+}
+.another-post.blog {
+  background: #f5f5f5;
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+.another-post.blog h3 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 footer {
   margin-top: 20px;

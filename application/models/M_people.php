@@ -29,7 +29,24 @@ class M_people extends CI_Model {
 
 	function getThis($slug)
 	{
-		return $this->db->get_where('relawan', array('slug' => $slug))->result();
+		$query = 
+		"
+		SELECT relawan.*,
+			   relawan_posisi.nama as posisi_relawan,
+			   relawan_departemen.nama as departemen_relawan,
+			   relawan_chapter.nama as chapter_relawan
+		FROM relawan
+			   LEFT JOIN relawan_posisi
+			   		ON relawan_posisi.`id` = relawan.`posisi`
+			   LEFT JOIN relawan_departemen
+			   		ON relawan_departemen.`kode` = relawan.`departemen`
+		   	   LEFT JOIN relawan_chapter
+					ON relawan_chapter.`kode` = relawan.`chapter`
+		WHERE relawan.`slug`='$slug'
+		";
+
+		return $this->db->query($query)->result();
+		// return $this->db->get_where('relawan', array('slug' => $slug))->result();
 	}
 }
 

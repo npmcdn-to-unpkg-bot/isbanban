@@ -44,11 +44,7 @@ function throwModal(slug) {
         type    : 'POST', 
         url     : '<?php echo base_url(); ?>people/detail/'+slug,
         success : function(data){ 
-           if(data){
-                console.log("Berhasil : "+ slug);
-                // console.log(data);
-                // 
-                
+           if(data) {
                 $('#modal_target').html(data);
                 $("#peopleModal").modal();
            }

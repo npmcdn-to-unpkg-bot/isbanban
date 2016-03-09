@@ -32,6 +32,7 @@
     "counter.js": "https://github.com/tombruijn/counter.js.git#^0.0.3",
     "bootstrap-material-design": "^0.5.8",
     "lightslider": "^1.1.5",
-    "fastclick": "https://github.com/ftlabs/fastclick.git#^1.0.6"
+    "fastclick": "https://github.com/ftlabs/fastclick.git#^1.0.6",
+    "typeahead.js": "https://github.com/twitter/typeahead.js.git#^0.11.1"
   }
 }

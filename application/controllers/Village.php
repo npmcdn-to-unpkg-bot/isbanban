@@ -21,18 +21,34 @@ class Village extends CI_Controller {
 	function __construct()
 	{
 		parent:: __construct();
+		$this->load->model('m_village');
 	}
 
 	function index()
 	{
 		$data	= [
 			'title'			=> 'Village',
-			'role'			=> 'normal'
+			'role'			=> 'normal',
+			'getAll'		=> $this->m_village->getAll(),
 		];
 
 		$this->load->view('header', $data);
 		$this->load->view('village/index');
 		$this->load->view('footer');
+	}
+
+	function detail($slug)
+	{
+		$data	= [
+			'title'			=> 'Village',
+			'role'			=> 'normal',
+			'getThis'		=> $this->m_village->getThis($slug)
+		];
+
+		$this->load->view('header', $data);
+		$this->load->view('village/detail');
+		$this->load->view('footer');
+
 	}
 }
 

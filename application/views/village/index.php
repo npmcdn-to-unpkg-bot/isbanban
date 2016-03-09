@@ -1,26 +1,53 @@
 <div id="map" style="height:600px"></div>
 
-
-
 <div class="post village">
-	<div class="container">
-		<h2>Our Village</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		<div class="row">
-			<div class="col-sm-6">
-				<div class="title">Test</div>
-			</div>
-		</div>
-	</div>
+    <div class="precontent">
+        <div class="container">
+    		<h1>Our Village</h1>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+    	<div class="row">
+            <?php foreach($getAll as $row) { ?>
+    		<div class="col-sm-6">
+                <div class="begin-post">                        
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img src="http://placemi.com/600x600" alt="" class="img-responsive">
+                            </div>
+
+                        <div class="col-sm-8">
+                            <h3 class="title"><?php echo $row->nama; ?></h3>
+                            <ul class="fa-ul">
+                                <li><i class="fa fa-li fa-map-marker"></i> <span><?php echo $row->lokasi; ?></span></li>
+                                <li><i class="fa fa-li fa-globe"></i> <span><u><?php echo $row->latitude; ?></u> &amp; <u><?php echo $row->longitude; ?></u></span></li>
+                            </ul>
+                            <a href="<?php echo base_url() ?>village/detail/<?php echo $row->slug; ?>" class="btn btn-primary btn-sm btn-raised">view detail</a>
+                        </div>
+                    </div>
+                </div>
+    		</div>
+            <?php } ?>
+    	</div>
+    </div>
 </div>
 
 
 
+
+<!-- Modal -->
+<?php include ('modal.php'); ?>
 
 
 
@@ -148,11 +175,14 @@ function initialize() {
     });
 
     var dataMarker = [
+        <?php foreach($getAll as $row) { ?>
     	{
-            "name"      : "Taman Expresi",
-            "latitude"  : "-6.59214",
-            "longitude" : "106.8017",
-        }
+            "name"      : "<?php echo $row->nama; ?>",
+            "latitude"  : "<?php echo $row->latitude; ?>",
+            "longitude" : "<?php echo $row->longitude; ?>",
+        },
+        <?php } ?>
+
     ];
 
     var clusterMarker = [];
@@ -161,7 +191,6 @@ function initialize() {
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(dataMarker[i].latitude, dataMarker[i].longitude),
             map: map,
-            icon: dataMarker[i].icon
         });
 
         clusterMarker.push(marker);
@@ -169,41 +198,27 @@ function initialize() {
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
                 return function() {
                     map.setCenter(marker.getPosition());
-                    $('#myModal').modal('show');
-                    $('#myModal').find('h4').text(dataMarker[i].name);
+                    $('#villageModal').modal('show');
+                    $('#villageModal').find('h4').text(dataMarker[i].name);
 
                     if(dataMarker[i].alamat.length > 0) {   
-                        $('#myModal').find('.fa-ul').show();
-                        $('#myModal').find('.address').text(dataMarker[i].alamat);
+                        $('#villageModal').find('.fa-ul').show();
+                        $('#villageModal').find('.address').text(dataMarker[i].alamat);
                     } else {
-                        $('#myModal').find('.fa-ul').hide();
+                        $('#villageModal').find('.fa-ul').hide();
                     }
 
                     if(dataMarker[i].image.length > 0) {
-                        $('#myModal').find('.park-image').attr('src', dataMarker[i].image);
+                        $('#villageModal').find('.park-image').attr('src', dataMarker[i].image);
                     } else {
-                        $('#myModal').find('.park-image').attr('src', 'http://kotahijau.dev/themes/kota-hijau/assets/images/placeholder-kh.png');
+                        $('#villageModal').find('.park-image').attr('src', 'http://kotahijau.dev/themes/kota-hijau/assets/images/placeholder-kh.png');
                     }
 
-                    $('#myModal').find('.link').attr('href', '/explore/'+dataMarker[i].slug);
-                    // map.setZoom(8);
-                    // document.getElementById("title").innerHTML = dataMarker[i].Alamat;
+                    $('#villageModal').find('.link').attr('href', '/explore/'+dataMarker[i].slug);
+                    map.setZoom(8);
+                    document.getElementById("title").innerHTML = dataMarker[i].Alamat;
                 }
         })(marker, i));;
-
-        // google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
-        //         return function() {
-        //             marker.setAnimation(google.maps.Animation.BOUNCE);
-        //         }
-        // })(marker, i));;
-
-        // google.maps.event.addListener(marker, 'mouseout', (function(marker, i) {
-        //         return function() {
-        //             marker.setAnimation(null);
-        //         }
-        // })(marker, i));;
-
-
     }
 
     var option = [

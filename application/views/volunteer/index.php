@@ -28,7 +28,12 @@
 			<a href="javascript:void(0);" onclick="throwModal('<?php echo $row->slug; ?>');">
 			<div class="col-sm-3">
 				<div class="people">
-					<img class="img-responsive" src="http://placemi.com/600x600">
+					<?php if($row->path_foto) { ?>
+						<img class="img-responsive" src="<?php echo base_url() ?><?php echo $row->path_foto; ?>">
+					<?php } else { ?>
+						<img class="img-responsive" src="http://placemi.com/600x600">
+					<?php } ?>
+
 					<div class="caption">
 						<h4 class="name"><?php echo $row->nama; ?></h4>
 					</div>
@@ -114,7 +119,7 @@ $(".twitter-typeahead").typeahead(null, {
     },
    templates: {
         suggestion: function(data) {
-            return "<a  onclick=throwModal('"+data.slug+"') class='text-left' href='javascript:void(0);'><div class='tt-row'>"+data.nama+"</div></a><";
+            return "<div class=tt-data tt-people><a  onclick=throwModal('"+data.slug+"') class='text-left' href='javascript:void(0);'><div class='tt-row'>"+data.nama+"</div></a><";
         },
         empty: [
           '<div class="empty-message">',
@@ -124,9 +129,10 @@ $(".twitter-typeahead").typeahead(null, {
     }
 })
 .on('typeahead:asyncrequest', function() {
-    $(".Typeahead-spinner").show();
+	
 })
 .on('typeahead:asynccancel typeahead:asyncreceive', function() {
-    $(".Typeahead-spinner").hide();
+	// $(".tt-menu").addClass('tt-custom').show();
+	// $(".tt-custom").text("Sedang Mencari...");
 });
 </script>

@@ -158,3 +158,8 @@ $useruploadfolder = "$browserfolder/uploads";
 $useruploadpath = $usersiteroot."$useruploadfolder/";
 $foldershistory[] = $useruploadfolder;
 
+
+    $useruploadfolder = "uploads/";
+    $useruploadpath = $usersiteroot."$useruploadfolder/";
+    $foldershistory[] = "uploads/";
+        

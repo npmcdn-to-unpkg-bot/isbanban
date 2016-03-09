@@ -1,6 +1,6 @@
 
 <?php
-session_start();
+// session_start();
 ?>
 
 <!-- Copyright (c) 2015, Fujana Solutions - Moritz Maleck. All rights reserved. -->
@@ -36,17 +36,19 @@ require(__DIR__ . '/function.php');
 // Including the check_permission file, don't delete the following row!
 require(__DIR__ . '/check_permission.php');
 
-if ($username == "" and $password == "") {
-    if(!isset($_SESSION['username'])){
-        include(__DIR__ . '/new.php');
-        exit;	
-    }
-} else {
-    if(!isset($_SESSION['username'])){
-        include(__DIR__ . '/loginindex.php');
-        exit;	
-    }
-}
+// if ($username == "" and $password == "") {
+//     if(!isset($_SESSION['username'])){
+//         include(__DIR__ . '/new.php');
+//         exit;	
+//     }
+// } else {
+//     if(!isset($_SESSION['username'])){
+//         include(__DIR__ . '/loginindex.php');
+//         exit;	
+//     }
+// }
+$_SESSION["username"] = "disabled_pw";
+
 
 ?>
 

@@ -126,7 +126,7 @@
 				<li><a href="<?php echo base_url() ?>about">about</a></li>
 				<li><a href="<?php echo base_url() ?>people">people</a></li>
 				<li><a href="<?php echo base_url() ?>village">village</a></li>
-				<li><a href="<?php echo base_url() ?>blog">blog</a></li>
+				<li><a href="<?php echo base_url() ?>blog">blogs</a></li>
 				<li><a href="<?php echo base_url() ?>event">events</a></li>
 				<li><a href="<?php echo base_url() ?>donate">donate</a></li>
 			</ul>
@@ -141,7 +141,7 @@
 			<li><a href="<?php echo base_url() ?>about">about</a></li>
 			<li><a href="<?php echo base_url() ?>people">people</a></li>
 			<li><a href="<?php echo base_url() ?>village">village</a></li>
-			<li><a href="<?php echo base_url() ?>blog">blog</a></li>
+			<li><a href="<?php echo base_url() ?>blog">blogs</a></li>
 			<li><a href="<?php echo base_url() ?>event">events</a></li>
 			<li><a href="<?php echo base_url() ?>donate">donate</a></li>
 		</ul>

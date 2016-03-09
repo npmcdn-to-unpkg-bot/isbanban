@@ -471,7 +471,16 @@ header {
 // Single Post
 .single-post {
 
-	&.blog {
+	&.village {
+		margin-top: 20px;
+
+		.thumbnails {
+			margin-bottom: 20px;
+		}
+	}
+
+	&.blog,
+	&.village {
 
 		.meta {
 			.text-center();
@@ -658,6 +667,37 @@ header {
 			-o-transition: all 0.5s;
 			transition: all 0.5s;
 			transform: translate3d(-110%, 0px, 0px);
+		}
+	}
+
+
+	&.village {
+
+		.precontent {
+			.text-center();
+			background: #fafafa;
+			padding:40px 0px;
+			margin-bottom: 20px;
+
+			h1 {
+				margin-top: 0px;
+			}
+		}
+
+		.begin-post {
+			margin-bottom: 20px;
+			padding-bottom: 20px;
+			border-bottom: 1px solid #ccc;
+
+			.title {
+				margin-top: 0px;
+			}
+
+			.fa-ul {
+				padding-left: 0px;
+				margin-left: 20px;
+				color: #999;
+			}
 		}
 	}
 

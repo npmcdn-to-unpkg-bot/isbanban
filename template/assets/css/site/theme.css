@@ -10191,30 +10191,47 @@ header .navbar-nav li a {
 .progress-today .people {
   text-align: left;
 }
-.single-post.blog .meta {
+.single-post.village {
+  margin-top: 20px;
+}
+.single-post.village .thumbnails {
+  margin-bottom: 20px;
+}
+.single-post.blog .meta,
+.single-post.village .meta {
   text-align: center;
   margin-bottom: 20px;
 }
-.single-post.blog .meta h1 {
+.single-post.blog .meta h1,
+.single-post.village .meta h1 {
   text-transform: uppercase;
   font-size: 41px;
   line-height: 48px;
   margin-top: 0px;
 }
-.single-post.blog .meta .postdate span {
+.single-post.blog .meta .postdate span,
+.single-post.village .meta .postdate span {
   font-size: 12px;
 }
-.single-post.blog .post {
+.single-post.blog .post,
+.single-post.village .post {
   font-size: 18px;
   line-height: 25px;
 }
 .single-post.blog .post h1,
+.single-post.village .post h1,
 .single-post.blog .post h2,
+.single-post.village .post h2,
 .single-post.blog .post h3,
+.single-post.village .post h3,
 .single-post.blog .post h4,
+.single-post.village .post h4,
 .single-post.blog .post h5,
+.single-post.village .post h5,
 .single-post.blog .post h6,
-.single-post.blog .post h7 {
+.single-post.village .post h6,
+.single-post.blog .post h7,
+.single-post.village .post h7 {
   font-family: 'Open Sans', sans-serif;
 }
 .pre-title {
@@ -10332,6 +10349,28 @@ header .navbar-nav li a {
   transition: all 0.5s;
   -webkit-transform: translate3d(-110%, 0px, 0px);
           transform: translate3d(-110%, 0px, 0px);
+}
+.post.village .precontent {
+  text-align: center;
+  background: #fafafa;
+  padding: 40px 0px;
+  margin-bottom: 20px;
+}
+.post.village .precontent h1 {
+  margin-top: 0px;
+}
+.post.village .begin-post {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+.post.village .begin-post .title {
+  margin-top: 0px;
+}
+.post.village .begin-post .fa-ul {
+  padding-left: 0px;
+  margin-left: 20px;
+  color: #999;
 }
 .post .sparator {
   margin-top: 20px;

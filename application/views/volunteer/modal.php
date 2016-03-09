@@ -10,7 +10,11 @@
 			<div class="modal-body">
 				<div class="row">
 					<div class="col-sm-5">
-						<img class="img-responsive img-full" src="http://placemi.com/600x600"></img>
+						<?php if($row->path_foto) { ?>
+							<img class="img-responsive" src="<?php echo base_url() ?><?php echo $row->path_foto; ?>">
+						<?php } else { ?>
+							<img class="img-responsive" src="http://placemi.com/600x600">
+						<?php } ?>
 					</div>
 
 					<div class="col-sm-7">

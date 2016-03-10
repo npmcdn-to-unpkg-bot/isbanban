@@ -107,16 +107,16 @@
 
 
 <!-- Campaign -->
-                            <li <?php if($role == 'campaign') { echo "class=active"; } ?>>
+                            <!-- <li <?php if($role == 'campaign') { echo "class=active"; } ?>>
                                 <a href="<?php echo base_url() ?>admin/campaign">
                                     <span class="icon fa fa-building-o"></span><span class="title">Campaign</span>
                                 </a>
-                            </li>
+                            </li> -->
 
 <!-- Donatur -->
-                            <li <?php if($role == 'donatur') { echo "class=active"; } ?>>
-                                <a href="<?php echo base_url() ?>admin/blog">
-                                    <span class="icon fa fa-male"></span><span class="title">Donatur</span>
+                            <li <?php if($role == 'donation') { echo "class=active"; } ?>>
+                                <a href="<?php echo base_url() ?>admin/donation">
+                                    <span class="icon fa fa-male"></span><span class="title">Donation</span>
                                 </a>
                             </li>
 

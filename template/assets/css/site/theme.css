@@ -10251,6 +10251,9 @@ header .navbar-nav li a {
   margin-top: 0px;
 }
 /* Recruitment Form */
+body.recruitment {
+  background: linear-gradient(#28C7F3, #B9DD2D);
+}
 .recruitment {
   margin-bottom: 40px;
   margin-top: 40px;

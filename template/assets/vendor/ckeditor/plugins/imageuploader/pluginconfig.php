@@ -163,3 +163,8 @@ $foldershistory[] = $useruploadfolder;
     $useruploadpath = $usersiteroot."$useruploadfolder/";
     $foldershistory[] = "uploads/";
         
+
+    $useruploadfolder = "template/assets/vendor/ckeditor/plugins/imageuploader/uploads";
+    $useruploadpath = $usersiteroot."$useruploadfolder/";
+    $foldershistory[] = "template/assets/vendor/ckeditor/plugins/imageuploader/uploads";
+        

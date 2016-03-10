@@ -23,95 +23,19 @@
 	<link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="<?php echo base_url() ?>template/assets/vendor/font-awesome/css/font-awesome.min.css">
 
-	<script src="<?php echo base_url() ?>template/assets/vendor/jquery/dist/jquery.min.js"></script>
-	<script src="<?php echo base_url() ?>template/assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-</head>
-<body>
-
-<!-- <header class="navbar-inverse">
-	<div class="navbar-before">
-		<div class="container">
-				<img src="http://isbanban.org/wp-content/uploads/2015/07/isbanban1-e1437047014513.png" alt="" class="img-responsive">
-			</div>
-		</div>
-	</div>
-
-	<div class="container">
-		<div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	    </div>
-
-		<ul class="nav navbar-nav">
-			<li class="active"><a href="">home</a></li>
-			<li><a href="">about us</a></li>
-			<li><a href="">people</a></li>
-			<li><a href="">village</a></li>
-			<li><a href="">blog</a></li>
-			<li><a href="">events</a></li>
-			<li><a href="">donate</a></li>
-		</ul>
-	</div>
-</header>
-
-<div class="jumbotron bigger" style="background: url(<?php echo base_url() ?>template/assets/image/bg-hero.jpg) no-repeat top center;">
-	<div class="container">
-		<h1>istana belajar anak banten</h1>
-		<p>Share you best smiley today!</p>
-		<hr>
-	</div>
-</div>
-
-<div class="donate-list">
-	<div class="container">
-		<div class="row start">
-			<div class="col-sm-4">
-				<div class="donate-post">
-					<i class="fa fa-archive fa-3x"></i>
-					<h4>Tools</h4>
-					<p>We need more tools for support their unstoppable creativity</p>
-				</div>
-			</div>
-
-			<div class="col-sm-4">
-				<div class="donate-post">
-					<i class="fa fa-book fa-3x"></i>
-					<h4>Books</h4>
-					<p>Share your best smile today with giving your usefull book</p>
-				</div>
-			</div>
-
-			<div class="col-sm-4">
-				<div class="donate-post">
-					<i class="fa fa-briefcase fa-3x"></i>
-					<h4>Briefcase</h4>
-					<p>Curious with <b>ISBANBAN?</b> Why not coming and get your free coffee</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="event-reminder">
-	<div class="container">
-		<a href="">
-			<div class="start">
-				<i class="fa fa-calendar fa-2x"></i> <span>Peringatan maulid nabi muhamad</span>
-
-				<div class="pull-right">
-					<a href=""> view more</a>
-				</div>
-			</div>
-		</a>
-	</div>
-</div> -->
-
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>template/assets/vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
 
+
+
+	<script src="<?php echo base_url() ?>template/assets/vendor/jquery/dist/jquery.min.js"></script>
+	<script src="<?php echo base_url() ?>template/assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
 	<script type="text/javascript" src="<?php echo base_url() ?>template/assets/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+	<script type='text/javascript' src='//dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js' data-shr-siteid='45c2c0913d1dafb0d0ac48aa531690cb' data-cfasync='false' async='async'></script>
+	
+	<script src="<?php echo base_url() ?>template/assets/vendor/dist/js/material.min.js"></script>
+	<script src="<?php echo base_url() ?>template/assets/vendor/dist/js/ripples.min.js"></script>
 
 	<script type="text/javascript">
 	$(document).ready(function(){
@@ -119,11 +43,13 @@
 			format: "yyyy-mm-dd"
 		});
 	});	
+
+	$.material.init()
 	</script>
 
-	<script type='text/javascript' src='//dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js' data-shr-siteid='45c2c0913d1dafb0d0ac48aa531690cb' data-cfasync='false' async='async'></script>
 
-	
+</head>
+<body class="recruitment">
 	<div class="recruitment">
 		<div class="container">
 			<div class="row">
@@ -177,30 +103,30 @@
 						</div>
 
 						<div class="form-start">
-							<div class="form-group">
-								<label>Nama</label>
-								<input class="form-control" placeholder="Nama Saya adalah..." name="nama"></input>
+							<div class="form-group label-floating">
+								<label class="control-label" for="focusedInput1">Nama</label>
+								<input class="form-control" id="focusedInput1" name="nama"></input>
 							</div>
 
 							<div class="row">
 								<div class="col-sm-6">
-									<div class="form-group">
-										<label>Tempat Lahir</label>
-										<input class="form-control" placeholder="Lahir di kota..." name="tempat_lahir"></input>
+									<div class="form-group label-floating">
+										<label class="control-label" for="focusedInput2">Tempat Lahir</label>
+										<input class="form-control" id="focusedInput2" name="tempat_lahir"></input>
 									</div>
 								</div>
 
 								<div class="col-sm-6">
-									<div class="form-group">
-										<label>Tanggal Lahir</label>
-										<input class="form-control picker" placeholder="Lahir pada..." name="tanggal_lahir"></input>
+									<div class="form-group label-floating">
+										<label class="control-label" for="focusedInput3">Tanggal Lahir</label>
+										<input class="form-control picker" id="focusedInput3" name="tanggal_lahir"></input>
 									</div>
 								</div>
 							</div>
 
-							<div class="form-group">
-								<label>Agama</label>
-								<select class="form-control" name="agama">
+							<div class="form-group label-floating">
+								<label class="control-label" for="focusedInput4">Agama</label>
+								<select class="form-control" id="focusedInput4" name="agama">
 									<option value="">-- Pilih Agama --</option>
 									<option value="Islam">Islam</option>
 									<option value="Katolik">Katolik</option>
@@ -210,8 +136,8 @@
 								</select>
 							</div>
 
-							<div class="form-group">
-								<label>Jenis Kelamin</label>
+							<div class="form-group label-floating">
+								<label class="control-label" for="focusedInput5">Jenis Kelamin</label>
 								<div class="row">
 									<div class="col-xs-6">
 										<label class="radio-inline">
@@ -227,9 +153,9 @@
 								</div>
 							</div>
 
-							<div class="form-group">
-								<label>Golongan Darah</label>
-								<select class="form-control" name="golongan_darah">
+							<div class="form-group label-floating">
+								<label class="control-label" for="focusedInput6">Golongan Darah</label>
+								<select class="form-control" id="focusedInput6" name="golongan_darah">
 									<option value="">-- Pilih Golongan Darah --</option>
 									<option value="a">a</option>
 									<option value="b">b</option>
@@ -238,37 +164,37 @@
 								</select>
 							</div>
 
-							<div class="form-group">
-								<label>Alamat</label>
-								<textarea class="form-control" placeholder="Saya tinggal di..." name="alamat_pribadi"></textarea>
+							<div class="form-group label-floating">
+								<label class="control-label" for="focusedInput7">Alamat</label>
+								<textarea class="form-control" id="focusedInput7" name="alamat_pribadi"></textarea>
 							</div>
 
-							<div class="form-group">
-								<label>Email</label>
-								<input class="form-control" placeholder="Email saya adalah..." name="email"></input>
+							<div class="form-group label-floating">
+								<label class="control-label" for="focusedInput8">Email</label>
+								<input class="form-control" id="focusedInput8" name="email"></input>
 							</div>
 
-							<div class="form-group">
-								<label>Nomor Telefon</label>
+							<div class="form-group label-floating">
+								<label class="control-label" for="focusedInput9">Nomor Telefon</label>
 								<div class="input-group">
 						        	<div class="input-group-addon">+62</div>
-						        	<input type="text" class="form-control" placeholder="8788122919" name="nomor_pribadi">
+						        	<input type="text" id="focusedInput9" class="form-control" name="nomor_pribadi">
 						        </div>
 							</div>
 
-							<div class="form-group">
-								<label>Asal Pendidikan</label>
-								<input class="form-control" placeholder="Saya sedang menjalani studi di..." name="asal_sekolah"></input>
+							<div class="form-group label-floating">
+								<label class="control-label" for="focusedInput10">Asal Pendidikan</label>
+								<input class="form-control" id="focusedInput10" name="asal_sekolah"></input>
 							</div>
 
-							<div class="form-group">
-								<label>Pekerjaan</label>
-								<input class="form-control" placeholder="Saya seorang..." name="pekerjaan"></input>
+							<div class="form-group label-floating">
+								<label class="control-label" for="focusedInput11">Pekerjaan</label>
+								<input class="form-control" id="focusedInput11" name="pekerjaan"></input>
 							</div>
 
-							<div class="form-group">
-								<label>Domisili Pilihan</label>
-								<select class="form-control" name="chapter">
+							<div class="form-group label-floating">
+								<label class="control-label" for="focusedInput12">Domisili Pilihan</label>
+								<select class="form-control" id="focusedInput12" name="chapter">
 									<option value="">-- Pilih Domisili --</option>
 									<?php foreach($getChapter as $row) { ?>
 									<option value="<?php echo $row->kode; ?>"><?php echo $row->nama; ?></option>
@@ -276,13 +202,13 @@
 								</select>
 							</div>
 
-							<div class="form-group">
-								<label>Alasan Bergabung Dengan Isbanban</label>
-								<textarea class="form-control" placeholder="Saya bergabung karena..." name="alasan"></textarea>
+							<div class="form-group label-floating">
+								<label class="control-label" for="focusedInput13">Alasan Bergabung Dengan Isbanban</label>
+								<textarea class="form-control" id="focusedInput13" name="alasan"></textarea>
 							</div>
 
-							<div class="form-group">
-								<label>Darimana Kamu Tahu Isbanban?</label>
+							<div class="form-group label-floating">
+								<label class="control-label" for="focusedInput1">Darimana Kamu Tahu Isbanban?</label>
 								<div class="radio">
 								  <label><input type="radio" name="referensi" value="media sosial">Media Sosial</label>
 								</div>
@@ -295,10 +221,10 @@
 								<div class="radio">
 								  <label><input type="radio" name="referensi" value="televisi">Televisi</label>
 								</div>
-								<input class="form-control" name="referensi" placeholder="Lainnya..."></input>
+								<input class="form-control" name="referensi" nput>
 							</div>
 
-							<button class="btn btn-primary btn-block" type="submit">Submit</button>
+							<button class="btn btn-primary btn-block btn-raised" type="submit">Submit</button>
 						</div>
 						</form>
 					</div>

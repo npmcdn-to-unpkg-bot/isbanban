@@ -151,7 +151,7 @@ class Recruitment extends CI_Controller {
 			}
 		}
 
-		$this->load->view('header', $data);
+		$this->load->view('recruitment', $data);
 	}
 
 

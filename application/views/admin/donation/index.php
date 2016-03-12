@@ -30,6 +30,7 @@
                         <th>Nama</th>
                         <th>Donasi</th>
                         <th>Status</th>
+                        <th>Confirm Code</th>
                         <th>Created</th>
                         <th>Confirmed</th>
                         <th></th>
@@ -38,7 +39,11 @@
 
                 <tbody>
                 	<?php $nomor=1; foreach($getAll as $item) { ?>
-                	<tr>
+                	<tr
+                    <?php if($item->status == 0) { ?>
+                    class="warning"
+                    <?php } ?>
+                    >
                 		<td><?php echo $nomor; ?></td>
                         <td><?php echo $item->nama; ?></td>
                         <td><?php echo $item->donasi_jenis; ?></td>
@@ -47,7 +52,8 @@
                             if($item->status==0) { echo "Unconfirmed"; } else { echo "Confirmed"; }
                             ?>
                         </td>
-                        <td><?php $this->barnlibs->dateForHuman($item->created_at) ?></td>
+                        <td><?php echo $item->confirm_code; ?></td>
+                        <td><?php $this->barnlibs->dateForHuman($item->donasi_created_at) ?></td>
                         <td><?php $this->barnlibs->dateForHuman($item->confirmed_at) ?></td>
                 		<td>
                             <a href="<?php echo base_url() ?>admin/donation/view/<?php echo $item->parameter_code; ?>" class="btn btn-info btn-xs"><i class="fa fa-info-circle"></i></a>

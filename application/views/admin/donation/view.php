@@ -2,19 +2,24 @@
 	<div class="side-body">
 
     <?php foreach($getThis as $row) { ?>
+
+    <?php if($row->status == 0) { ?>
     <div class="row">
         <div class="col-sm-12">
             <div class="panel panel-warning">
                 <div class="panel-heading">
-                    Information
+                    Informasi
                 </div>
 
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur consequatur at iusto itaque laborum, et ipsam, soluta explicabo doloremque, modi reiciendis totam consectetur. Iusto ullam velit necessitatibus, sed quos obcaecati.</p>
+                    <p>
+                        Status donasi masih dinyatakan <em>Pending</em>. Silahkan menghubungi donatur yang terhormat <b><?php echo $row->donatur_nama; ?></b> melalui nomor <b><?php echo $row->telefon; ?></b> atau alamat email <b><?php echo $row->email; ?></b>
+                    </p>
                 </div>
             </div>
         </div>
     </div>
+    <?php } ?>
 
     <div class="row">
 <!-- Personal Information -->
@@ -44,13 +49,13 @@
                         </tr>
 
                         <tr>
-                            <td>Tanggal Donasi</td>
-                            <td><?php echo $this->barnlibs->dateForHuman($row->donatur_created_at); ?></td>
-                        </tr>
+                            <td colspan="2">
+                                <p>Additional Message:</p>
 
-                        <tr>
-                            <td>Tanggal Konfirmasi</td>
-                            <td><?php echo $this->barnlibs->dateForHuman($row->donatur_confirmed_at); ?></td>
+                                <p style="font-weight: normal">
+                                    <?php echo $row->pesan; ?>
+                                </p>
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -70,6 +75,40 @@
                 <div class="card-body">
                     <table class="table table-stripped">
                         <tr>
+                            <td>Confirm Code</td>
+                            <td><?php echo $row->confirm_code; ?></td>
+                        </tr>
+
+                        <tr>
+                            <td>Tanggal Donasi</td>
+                            <td><?php echo $this->barnlibs->dateForHuman($row->donatur_created_at); ?></td>
+                        </tr>
+
+                        <tr>
+                            <td>Tanggal Konfirmasi</td>
+                            <td><?php echo $this->barnlibs->dateForHuman($row->donatur_confirmed_at); ?></td>
+                        </tr>
+
+
+                        <tr>
+                            <td>Jenis Donasi</td>
+                            <td><?php echo $row->donatur_jenis; ?></td>
+                        </tr>
+
+                        <tr>
+                            <td>Banyak</td>
+                            <td>
+                                <?php if($row->id_jenis == 3) { ?>
+                                Rp. <?php echo $row->donasi_banyak; ?>
+                                <?php } else { ?>
+                                <?php echo $row->donasi_banyak; ?>
+                                <?php } ?>
+                            </td>
+                        </tr>
+
+
+                        <?php if($row->id_jenis == 3) { ?>
+                        <tr>
                             <td>Nama Rekening</td>
                             <td><?php echo $row->donasi_nama_rekening; ?></td>
                         </tr>
@@ -77,23 +116,6 @@
                         <tr>
                             <td>Nomor Rekening</td>
                             <td><?php echo $row->donasi_nomor_rekening; ?></td>
-                        </tr>
-
-                        <tr>
-                            <td>Jenis Donasi</td>
-                            <td><?php echo $row->donatur_jenis; ?></td>
-                        </tr>
-
-<!-- If Books -->
-                        <tr>
-                            <td>Banyak</td>
-                            <td><?php echo $row->telefon; ?></td>
-                        </tr>
-
-<!-- If Money -->
-                        <tr>
-                            <td>Banyak</td>
-                            <td><?php echo $row->email; ?></td>
                         </tr>
 
                         <tr class="text-center">
@@ -107,6 +129,7 @@
                                 </div>
                             </td>
                         </tr>
+                        <?php } ?>
                     </table>
                 </div>
             </div>

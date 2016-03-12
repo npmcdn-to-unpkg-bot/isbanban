@@ -21,7 +21,10 @@ class M_donation extends CI_Model {
 	{
 		$sql =
 		"
-		SELECT donasi.*, donasi_jenis.*, donasi_jenis.`jenis` as donasi_jenis
+		SELECT  donasi.*,
+				donasi.created_at as donasi_created_at,
+				donasi_jenis.*, 
+				donasi_jenis.`jenis` as donasi_jenis
 		FROM donasi
 			LEFT JOIN donasi_jenis
 			ON donasi_jenis.`id` = donasi.`id_jenis`
@@ -37,6 +40,7 @@ class M_donation extends CI_Model {
 			   donasi.nama as donatur_nama,
 			   donasi.created_at as donatur_created_at,
 			   donasi.confirmed_at as donatur_confirmed_at,
+			   donasi.parameter_code as parameter_update,
 			   donasi_jenis.*,
 			   donasi_jenis.jenis as donatur_jenis,
 			   donasi_bank_info.*,
@@ -63,7 +67,12 @@ class M_donation extends CI_Model {
 
 	function update($parameter_code, $data)
 	{
+		$this->db->where('parameter_code', $parameter_code)->update('donasi', $data);
+	}
 
+	function insert($data)
+	{
+		$this->db->insert('donasi', $data);
 	}
 
 }

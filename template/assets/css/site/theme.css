@@ -10363,6 +10363,124 @@ body.recruitment {
   -webkit-transform: translate3d(-110%, 0px, 0px);
           transform: translate3d(-110%, 0px, 0px);
 }
+.post .event {
+  width: 100%;
+  margin: 30px auto;
+  position: relative;
+  padding: 0 10px;
+  transition: all 0.4s ease;
+}
+.post .event:before {
+  content: "";
+  width: 3px;
+  height: 100%;
+  background: #00aced;
+  left: 50%;
+  top: 0;
+  position: absolute;
+}
+.post .event:after {
+  content: "";
+  clear: both;
+  display: table;
+  width: 100%;
+}
+.post .event .timeline-item {
+  margin-bottom: 50px;
+  position: relative;
+  clear: both;
+}
+.post .event .timeline-item .timeline-icon {
+  background: #00aced;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  overflow: hidden;
+  margin-left: -23px;
+  border-radius: 50%;
+}
+.post .event .timeline-item .timeline-icon i {
+  position: relative;
+  top: 10px;
+  left: 12px;
+  color: white;
+}
+.post .event .timeline-item .timeline-content {
+  width: 45%;
+  background: #fff;
+  padding: 20px;
+  -ms-box-shadow: 0 1px 0 1px #ccc;
+  box-shadow: 0 1px 0 1px #ccc;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.post .event .timeline-item .timeline-content h3 {
+  padding: 15px;
+  background: #00aced;
+  color: #fff;
+  margin: -20px -20px 0 -20px;
+  font-weight: 300;
+  border-radius: 3px 3px 0 0;
+}
+.post .event .timeline-item .timeline-content:before {
+  content: '';
+  position: absolute;
+  left: 45%;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid #00aced;
+}
+.post .event .timeline-item .timeline-content.right {
+  float: right;
+}
+.post .event .timeline-item .timeline-content.right:before {
+  content: '';
+  right: 45%;
+  left: inherit;
+  border-left: 0;
+  border-right: 7px solid #00aced;
+}
+.post .event .timeline-item .timeline-content .timeline-text {
+  margin-top: 10px;
+}
+.post .event .timeline-item .timeline-content .timeline-text ul {
+  margin-left: 20px;
+}
+@media (max-width: 768px) {
+  .post .event {
+    margin: 30px;
+    padding: 0px;
+    width: 90%;
+  }
+  .post .event:before {
+    left: 0;
+  }
+  .post .event .timeline-item .timeline-content {
+    width: 90%;
+    float: right;
+    margin-bottom: 50px;
+  }
+  .post .event .timeline-item .timeline-content:before {
+    left: 10%;
+    margin-left: -6px;
+    border-left: 0;
+    border-right: 7px solid #00aced;
+  }
+  .post .event .timeline-item .timeline-content.right:before {
+    left: 10%;
+    margin-left: -6px;
+    border-left: 0;
+    border-right: 7px solid #00aced;
+  }
+  .post .event .timeline-item .timeline-icon {
+    left: 0px;
+  }
+}
 .post.village .precontent {
   text-align: center;
   background: #fafafa;

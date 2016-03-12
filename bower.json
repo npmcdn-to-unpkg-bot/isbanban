@@ -35,6 +35,7 @@
     "fastclick": "https://github.com/ftlabs/fastclick.git#^1.0.6",
     "typeahead.js": "https://github.com/twitter/typeahead.js.git#^0.11.1",
     "jquery-mask-plugin": "https://github.com/igorescobar/jQuery-Mask-Plugin.git#^1.13.8",
-    "autoNumeric": "https://github.com/BobKnothe/autoNumeric.git#^1.9.43"
+    "autoNumeric": "https://github.com/BobKnothe/autoNumeric.git#^1.9.43",
+    "waypoints": "https://github.com/imakewebthings/waypoints.git#^4.0.0"
   }
 }

@@ -22,8 +22,8 @@ class Village extends CI_Controller {
 	{
 		parent:: __construct();
 		$this->load->model('admin/m_village');
-		if($this->session->userdata('logged_in')) {
-			redirect('admin/dashboard/');
+		if(!$this->session->userdata('logged_in')) {
+			redirect('/auth');
 		}
 	}
 

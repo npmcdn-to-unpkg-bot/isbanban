@@ -18,13 +18,26 @@ class M_people extends CI_Model {
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
 	// function getAll($limit, $offset)
-	function getAll()
+	function countAll()
+	{
+		return $this->db->get('relawan')->num_rows();
+	}
+
+
+	function getAll($limit, $perpage)
 	{
         // $this->db->limit($limit,$offset);
         // $query = $this->db->get('relawan');
         // return $query->result();
         // 
-        return $this->db->get('relawan')->result();
+        // return $this->db->get('relawan')->result();
+		// $this->db->limit($limit);
+		// return $this->db->get('relawan')->result();
+		$sql =
+		"
+		SELECT * FROM relawan ORDER BY nama LIMIT $limit, $perpage
+		";
+		return $this->db->query($sql)->result();
 	}
 
 	function getThis($slug)

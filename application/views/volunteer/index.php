@@ -22,10 +22,10 @@
 
 <div class="post">
 	<div class="container">
-		<div class="row">
+		<div class="row infinite-container">
 			<?php
 			foreach($getAll as $row) { ?>
-			<a href="javascript:void(0);" onclick="throwModal('<?php echo $row->slug; ?>');">
+			<a class="infinite-item" href="javascript:void(0);" onclick="throwModal('<?php echo $row->slug; ?>');">
 			<div class="col-sm-3">
 				<div class="people">
 					<?php if($row->path_foto) { ?>
@@ -41,12 +41,11 @@
 			</div>
 			</a>
 			<?php } ?>
+		</div>
 
-
+		<div class="row">
 			<div class="col-sm-12">
-				<div class="sparator">
-					<a href=""><i class="fa fa-circle-o-notch fa-spin fa-4x"></i></a>
-				</div>
+				<?php echo $this->pagination->create_links(); ?>
 			</div>
 		</div>
 	</div>
@@ -76,7 +75,15 @@
 </style>
 
 <script src="<?php echo base_url() ?>template/assets/vendor/typeahead.js/dist/typeahead.bundle.min.js"></script>
+<script src="<?php echo base_url() ?>template/assets/vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+<script src="<?php echo base_url() ?>template/assets/vendor/waypoints/lib/shortcuts/infinite.min.js"></script>
 <script>
+var infinite = new Waypoint.Infinite({
+    element: $('.infinite-container')[0],
+    items: '.infinite-item',
+    more: '.sparator a',
+})
+
 function throwModal(slug) {
     $.ajax({
         type    : 'POST', 

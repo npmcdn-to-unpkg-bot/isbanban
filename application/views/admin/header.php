@@ -23,6 +23,9 @@
     .remove-margin {
         margin-bottom: 0px !important;
     }
+    .input-group-addon {
+        border-radius: 0px;
+    }
     </style>
 
     <!-- CSS App -->

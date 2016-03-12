@@ -51,19 +51,23 @@ class M_volunteer extends CI_Model {
 
 	function getAll()
 	{
-		$query = 
+		// $query = 
+		// "
+		// SELECT relawan.*,
+		// 	   relawan_posisi.nama as posisi_relawan,
+		// 	   relawan_departemen.nama as departemen_relawan,
+		// 	   relawan_chapter.nama as chapter_relawan
+		// FROM relawan
+		// 	   LEFT JOIN relawan_posisi
+		// 	   		ON relawan_posisi.`id` = relawan.`posisi`
+		// 	   LEFT JOIN relawan_departemen
+		// 	   		ON relawan_departemen.`kode` = relawan.`departemen`
+		//    	   LEFT JOIN relawan_chapter
+		// 			ON relawan_chapter.`kode` = relawan.`chapter`
+		// ";
+		$query	=
 		"
-		SELECT relawan.*,
-			   relawan_posisi.nama as posisi_relawan,
-			   relawan_departemen.nama as departemen_relawan,
-			   relawan_chapter.nama as chapter_relawan
-		FROM relawan
-			   LEFT JOIN relawan_posisi
-			   		ON relawan_posisi.`id` = relawan.`posisi`
-			   LEFT JOIN relawan_departemen
-			   		ON relawan_departemen.`kode` = relawan.`departemen`
-		   	   LEFT JOIN relawan_chapter
-					ON relawan_chapter.`kode` = relawan.`chapter`
+		SELECT * FROM relawan WHERE YEAR(bulan_masuk) != '2016' AND MONTH(bulan_masuk) != '01' AND MONTH(bulan_masuk) != '02' AND MONTH(bulan_masuk) != '03' AND MONTH(bulan_masuk) != '04'
 		";
 
 		return $this->db->query($query)->result();

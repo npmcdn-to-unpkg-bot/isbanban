@@ -16,38 +16,30 @@
 
 <div class="post">
 	<div class="container">
-		<div class="row">
-			<div class="col-sm-6">
-				<div class="begin-post event">
-					<div class="row">
-						<div class="col-sm-5">
-							<div class="thumbnails">
-								<img src="http://placemi.com/800x400" alt="" class="img-responsive">
-							</div>
-						</div>
+		<div class="event">
+			<?php for($i=1; $i<5; $i++) { ?>
+			<div class="timeline-item">
+				<div class="timeline-icon">
+					<i class="fa fa-star fa-2x"></i>
+				</div>
+				<div class="timeline-content <?php if($i%2 ==0) { ?> right <?php } ?>">
+					<h3>LOREM IPSUM DOLOR</h3>
 
-						<div class="col-sm-7">
-							<h1>Jumping Fox River</h1>
+					<div class="timeline-text">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ratione, sapiente odit nostrum asperiores quasi iste. Odit non accusamus, magnam voluptates accusantium sit harum eum ipsam vel quisquam illum repellat.</p>
+
+						<ul class="fa-ul">
+							<li><i class="fa fa-li fa-calendar"></i> wew</li>
+							<li><i class="fa fa-li fa-map-marker"></i> wew</li>
+						</ul>
+
+						<div class="text-center">
+							<a href="" class="btn btn-primary btn-raised">View Detail</a>
 						</div>
 					</div>
 				</div>
 			</div>
-
-			<div class="col-sm-6">
-				<div class="begin-post event">
-					<div class="row">
-						<div class="col-sm-5">
-							<div class="thumbnails">
-								<img src="http://placemi.com/800x400" alt="" class="img-responsive">
-							</div>
-						</div>
-
-						<div class="col-sm-7">
-							<h1>Jumping Fox River</h1>
-						</div>
-					</div>
-				</div>
-			</div>
+			<?php } ?>
 		</div>
 	</div>
 </div>

@@ -7,39 +7,46 @@
 </div>
 
 
-<div class="precontent">
+<div class="precontent event">
 	<div class="container">
 		<h1>Mark your calendar</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam libero, quis nisi expedita perferendis voluptatem doloremque labore officiis aspernatur optio debitis placeat, atque, perspiciatis voluptas tempore. Cum repellendus, quas dolor.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit repellat voluptatibus reprehenderit et ratione.</p>
 	</div>
 </div>
 
 <div class="post">
 	<div class="container">
 		<div class="event">
-			<?php for($i=1; $i<5; $i++) { ?>
+			<?php 
+			$i=0;
+			foreach($getAll as $row) {
+		 	?>
 			<div class="timeline-item">
 				<div class="timeline-icon">
-					<i class="fa fa-star fa-2x"></i>
+					<span>
+						<?php echo $this->barlibs->getMonth($row->tanggal); ?>
+					</span>
+					<span>
+						<?php echo $this->barlibs->getDate($row->tanggal); ?>
+					</span>
 				</div>
 				<div class="timeline-content <?php if($i%2 ==0) { ?> right <?php } ?>">
-					<h3>LOREM IPSUM DOLOR</h3>
+					<h4><?php echo $row->title; ?></h4>
 
 					<div class="timeline-text">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta ratione, sapiente odit nostrum asperiores quasi iste. Odit non accusamus, magnam voluptates accusantium sit harum eum ipsam vel quisquam illum repellat.</p>
+						<?php echo $row->konten; ?>
 
 						<ul class="fa-ul">
-							<li><i class="fa fa-li fa-calendar"></i> wew</li>
-							<li><i class="fa fa-li fa-map-marker"></i> wew</li>
+							<li><i class="fa fa-li fa-map-marker"></i> <?php echo $row->lokasi; ?></li>
 						</ul>
 
-						<div class="text-center">
-							<a href="" class="btn btn-primary btn-raised">View Detail</a>
+						<div class="text-left">
+							<a href="<?php echo base_url() ?>event/detail/<?php echo $row->slug; ?>" class="btn btn-primary btn-raised">View Detail</a>
 						</div>
 					</div>
 				</div>
 			</div>
-			<?php } ?>
+			<?php $i++; } ?>
 		</div>
 	</div>
 </div>

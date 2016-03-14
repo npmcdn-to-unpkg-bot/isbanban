@@ -19,8 +19,9 @@
 
 
 	<link rel="stylesheet" href="<?php echo base_url() ?>template/assets/css/site/theme.min.css">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300italic,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:100,400,600,300italic,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+	
 	<link rel="stylesheet" href="<?php echo base_url() ?>template/assets/vendor/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>template/assets/vendor/jasny-bootstrap/dist/css/jasny-bootstrap.min.css">
 
@@ -31,80 +32,27 @@
 	<script type="text/javascript" src="<?php echo base_url() ?>template/assets/vendor/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
 	<script src="<?php echo base_url() ?>template/assets/vendor/fastclick/lib/fastclick.js"></script>
 	<script type="text/javascript">
-	// Bootstrap Material
-	$.material.init();
+	$(document).ready(function(){	
+// Bootstrap Material
+		$.material.init();
 
-	// Fastclick Init
-	if ('addEventListener' in document) {
-	    document.addEventListener('DOMContentLoaded', function() {
-	        FastClick.attach(document.body);
-	    }, false);
-	}
+// Fastclick Init
+		if ('addEventListener' in document) {
+		    document.addEventListener('DOMContentLoaded', function() {
+		        FastClick.attach(document.body);
+		    }, false);
+		}
+
+		var domain = 'http://isbanban.dev/';	
+		if($("header").hasClass('navbar-inverse')) {
+			$(".navbar-brand img").attr('src', domain +'template/assets/image/typetext-white.png')
+		}
+	})
 	</script>
 </head>
 <body>
 
-
-
-<?php if($role=='full') { ?>
-<!-- <header class="navbar-inverse">
-	<div class="navbar-before">
-		<div class="container">
-				<img src="http://isbanban.org/wp-content/uploads/2015/07/isbanban1-e1437047014513.png" alt="" class="img-responsive">
-			</div>
-		</div>
-	</div>
-
-	<div class="container">
-		<div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	    </div>
-
-		<ul class="nav navbar-nav">
-			<li class="active"><a href="">home</a></li>
-			<li><a href="">about us</a></li>
-			<li><a href="">people</a></li>
-			<li><a href="">village</a></li>
-			<li><a href="">blog</a></li>
-			<li><a href="">events</a></li>
-			<li><a href="">donate</a></li>
-		</ul>
-	</div>
-</header> -->
-<?php } ?>
-
-
-
-<?php if($role=='normal') { ?>
-<!-- <header class="navbar-inverse">
-	<div class="container">
-		<div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	    </div>
-
-		<ul class="nav navbar-nav">
-			<li class="active"><a href="">home</a></li>
-			<li><a href="">about us</a></li>
-			<li><a href="">people</a></li>
-			<li><a href="">village</a></li>
-			<li><a href="">blog</a></li>
-			<li><a href="">events</a></li>
-			<li><a href="">donate</a></li>
-		</ul>
-	</div>
-</header> -->
-
-
-
-<header class="navbar-default">
+<header class="navbar-<?php if($role=='normal') { echo "default"; } else { echo "inverse"; } ?>">
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -134,7 +82,7 @@
 	</div>
 
 
-
+<!-- Pull Right Navigation -->
 	<div class="navmenu navmenu-default navmenu-fixed-right offcanvas">
 		<ul class="nav navmenu-nav">
 			<li><a href="<?php echo base_url() ?>">home</a></li>
@@ -147,6 +95,3 @@
 		</ul>
 	</div>
 </header>
-
-
-<?php } ?>

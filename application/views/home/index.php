@@ -6,37 +6,6 @@
 	</div>
 </div>
 
-<!-- Service List -->
-<!-- <div class="donate-list">
-	<div class="container">
-		<div class="row start">
-			<div class="col-sm-4">
-				<div class="donate-post">
-					<i class="fa fa-archive fa-3x"></i>
-					<h4>Tools</h4>
-					<p>We need more tools for support their unstoppable creativity</p>
-				</div>
-			</div>
-
-			<div class="col-sm-4">
-				<div class="donate-post">
-					<i class="fa fa-book fa-3x"></i>
-					<h4>Books</h4>
-					<p>Share your best smile today with giving your usefull book</p>
-				</div>
-			</div>
-
-			<div class="col-sm-4">
-				<div class="donate-post">
-					<i class="fa fa-briefcase fa-3x"></i>
-					<h4>Briefcase</h4>
-					<p>Curious with <b>ISBANBAN?</b> Why not coming and get your free coffee</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> -->
-
 <!-- <div class="event-reminder">
 	<div class="container">
 		<a href="">
@@ -161,7 +130,7 @@
 
 		<div class="definition">
 			<div class="row remove-flex" style="display: -webkit-flex;display: flex;">
-				<div class="col-md-8 col-sm-6 col-xs-12">
+				<div class="col-sm-8 col-xs-12">
 					<div class="panel-group" id="accordion">
 					  <div class="panel panel-info">
 					    <div class="panel-heading">
@@ -255,7 +224,7 @@
 					</div>
 				</div>
 
-				<div class="col-md-4 col-sm-6 col-xs-12 banners" style="background: url(http://placemi.com/800x800) no-repeat top center; background-size: cover;">
+				<div class="col-sm-4 col-xs-12 banners">
 
 				<!-- <img class="img-responsive" src="http://placemi.com/"></img> -->
 				</div>
@@ -269,7 +238,7 @@
 
 
 <!-- Jumbotron Banner -->
-	<div class="jumbotron banner" style="background:url(http://placemi.com/1280x400) no-repeat center center">
+	<div class="jumbotron banner" style="background:url(http://unsplash.it/1280/600?random) no-repeat center center">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
@@ -287,14 +256,14 @@
 					<div class="small">People</div>
 				</div>
 
-				<div class="col-sm-6 col-md-3 point donation">
+				<div class="col-sm-6 col-md-3 point cash_donation">
 					<div class="big">0</div>
-					<div class="small">Donation</div>
+					<div class="small">Cash Donation</div>
 				</div>
 
-				<div class="col-sm-6 col-md-3 point point4">
+				<div class="col-sm-6 col-md-3 point book_donation">
 					<div class="big">0</div>
-					<div class="small">Point4</div>
+					<div class="small">Book Donation</div>
 				</div>
 			</div>
 		</div>

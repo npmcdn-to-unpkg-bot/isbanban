@@ -27,8 +27,6 @@ class People extends CI_Controller {
 
 	function index()
 	{
-
-
 		$this->load->library('pagination');
 		$total_row 		= $this->m_people->countAll();
 

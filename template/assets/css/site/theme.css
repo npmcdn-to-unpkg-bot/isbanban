@@ -10002,9 +10002,14 @@ img.img-center {
 }
 .jumbotron.banner h2 {
   margin-top: 0px;
+  margin-bottom: 40px;
 }
 .jumbotron.banner .big {
   font-size: 41px;
+}
+.jumbotron.banner .small {
+  text-transform: uppercase;
+  font-weight: 100;
 }
 .jumbotron.partner {
   background: #ddd;
@@ -10036,6 +10041,14 @@ img.img-center {
   position: absolute !important;
   bottom: 0px;
   padding: 10px 0px;
+  color: white;
+}
+.jumbotron.solid {
+  background: #00aced;
+  padding-top: 190px;
+  padding-bottom: 150px;
+  margin-top: -90px;
+  text-align: center;
   color: white;
 }
 @media (max-width: 768px) {
@@ -10089,8 +10102,8 @@ header .navbar-nav li a {
   padding-bottom: 15px;
 }
 .navbar-inverse {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), transparent);
-  border: 0px;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 0px 1px rbga(0, 0, 0, 0.1);
   position: relative;
   z-index: 2;
 }
@@ -10234,6 +10247,30 @@ header .navbar-nav li a {
 .single-post.village .post h7 {
   font-family: 'Open Sans', sans-serif;
 }
+.single-post.event .meta {
+  padding: 40px 0px;
+  background: #fafafa;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: -30px;
+}
+.single-post.event .meta .place i {
+  color: #00aced;
+  vertical-align: middle;
+}
+.single-post.event .post {
+  font-size: 18px;
+  line-height: 25px;
+}
+.single-post.event .post h1,
+.single-post.event .post h2,
+.single-post.event .post h3,
+.single-post.event .post h4,
+.single-post.event .post h5,
+.single-post.event .post h6,
+.single-post.event .post h7 {
+  font-family: 'Open Sans', sans-serif;
+}
 .pre-title {
   text-align: center;
 }
@@ -10242,13 +10279,40 @@ header .navbar-nav li a {
 }
 .precontent {
   background: #fafafa;
-  margin-top: -30px;
   margin-bottom: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 .precontent h1 {
   margin-top: 0px;
+}
+.precontent.donation {
+  margin-top: 20px;
+  margin-bottom: -20px;
+  text-align: center;
+}
+.precontent.donation i {
+  color: #00aced;
+}
+.precontent.donation .poin {
+  border-right: 1px solid #ccc;
+}
+.precontent.donation .poin:last-child {
+  border-right: 0px;
+}
+.precontent.donation-info {
+  margin-top: -30px;
+  margin-bottom: 20px;
+}
+.precontent.donation-info .poin {
+  border-right: 0px;
+}
+.precontent.donation-info p {
+  text-transform: uppercase;
+  font-weight: 100;
+}
+.precontent.event {
+  margin-top: -30px;
 }
 /* Recruitment Form */
 body.recruitment {
@@ -10323,7 +10387,8 @@ body.recruitment {
   width: 100%;
 }
 .post .people {
-  margin-bottom: 20px;
+  margin-right: -15px;
+  margin-left: -15px;
   overflow: hidden;
   position: relative;
   box-shadow: 0 0 0 0 #555;
@@ -10400,12 +10465,19 @@ body.recruitment {
   overflow: hidden;
   margin-left: -23px;
   border-radius: 50%;
+  text-align: center;
+  padding-top: 5px;
 }
-.post .event .timeline-item .timeline-icon i {
-  position: relative;
-  top: 10px;
-  left: 12px;
+.post .event .timeline-item .timeline-icon span {
+  display: block;
   color: white;
+  text-transform: uppercase;
+}
+.post .event .timeline-item .timeline-icon span:first-child {
+  font-weight: bold;
+}
+.post .event .timeline-item .timeline-icon span:last-child {
+  margin-top: -5px;
 }
 .post .event .timeline-item .timeline-content {
   width: 45%;
@@ -10416,7 +10488,7 @@ body.recruitment {
   border-radius: 5px;
   transition: all 0.3s ease;
 }
-.post .event .timeline-item .timeline-content h3 {
+.post .event .timeline-item .timeline-content h4 {
   padding: 15px;
   background: #00aced;
   color: #fff;
@@ -10518,6 +10590,19 @@ body.recruitment {
   text-transform: uppercase;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+.panel.donation {
+  box-shadow: 0 1px 6px 0 #00aced;
+}
+.panel.donation .panel-heading {
+  text-transform: uppercase;
+  background: transparent;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bolder;
+}
+.banners {
+  background-position: 200px auto;
+  background: url(../../image/logo.png) no-repeat center center #00aced;
 }
 footer {
   margin-top: 20px;

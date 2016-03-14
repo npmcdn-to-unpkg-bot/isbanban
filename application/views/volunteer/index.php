@@ -10,11 +10,9 @@
 <div class="search-box people">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-12">
-				<div class="form-group label-floating">
-				  <label class="control-label" for="focusedInput1">Quick find your people</label>
-				  <input class="form-control twitter-typeahead" id="focusedInput1" type="text">
-				</div>
+			<div class="form-group label-floating">
+			  <label class="control-label" for="focusedInput1">Quick find your people</label>
+			  <input class="form-control twitter-typeahead" id="focusedInput1" type="text">
 			</div>
 		</div>
 	</div>
@@ -55,7 +53,9 @@
 
 
 <style>
-.twitter-typeahead {width:100%; background: white; border-radius: 80px}
+.twitter-typeahead {
+	width:100%; border-radius: 80px
+}
 .tt-menu {
 	width:100%;
 	background-color:white;

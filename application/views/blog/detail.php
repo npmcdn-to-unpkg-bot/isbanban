@@ -1,10 +1,11 @@
 <?php foreach($getThis as $row) { ?>
 
 <?php if($row->path_foto) { ?>
-<div class="jumbotron blogpost" style="background:url(<?php echo base_url() ?><?php echo $row->path; ?>) no-repeat top center;">
+<div class="jumbotron blogpost" style="background:url(<?php echo base_url() ?><?php echo $row->path_foto; ?>) no-repeat center center;">
 <?php } else { ?>
-<div class="jumbotron blogpost" style="background:url(http://unsplash.it/1280x500) no-repeat top center;">
+<div class="jumbotron blogpost" style="background:url(http://unsplash.it/1280x500) no-repeat center center;">
 <?php } ?>
+
 	<div class="shade white"></div>
 </div>
 

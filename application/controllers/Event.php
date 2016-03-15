@@ -33,9 +33,10 @@ class Event extends CI_Controller {
 		$config['display_pages'] = FALSE;
 		$config["base_url"] 	 = base_url()."event/page/";
 		$config["total_rows"] 	 = $total_row;
-		$config["per_page"]		 = 12;
+		$config["per_page"]		 = 6;
 		$config["first_link"]	 = FALSE;
 		$config["last_link"]	 = FALSE;
+		$config["prev_link"]	 = FALSE;
 		$config["next_link"]	 = "Loading more data...";
 		$config["next_tag_open"] = '<div class="sparator">';
 		$config["next_tag_close"]= '</div>';
@@ -60,22 +61,24 @@ class Event extends CI_Controller {
 
 
 	function page($number = FALSE) {
+
 		$this->load->library('pagination');
 		$total_row 		= $this->m_event->countAll();
 
 		if($number == FALSE) {
-			redirect('event');
+			redirect('people');
 		}
 
-		$config 				= array();
-		$config['display_pages']= FALSE;
-		$config["base_url"] 	= base_url()."event/page/";
-		$config["total_rows"] 	= $total_row;
-		$config["per_page"]		= 12;
-		$config["first_link"]	= FALSE;
-		$config["last_link"]	= FALSE;
-		$config["next_link"]	= "Loading more data...";
-		$config["next_tag_open"]= '<div class="sparator">';
+		$config 				 = array();
+		$config['display_pages'] = FALSE;
+		$config["base_url"] 	 = base_url()."event/page/";
+		$config["total_rows"] 	 = $total_row;
+		$config["per_page"]		 = 6;
+		$config["first_link"]	 = FALSE;
+		$config["last_link"]	 = FALSE;
+		$config["prev_link"]	 = FALSE;
+		$config["next_link"]	 = "Loading more data...";
+		$config["next_tag_open"] = '<div class="sparator">';
 		$config["next_tag_close"]= '</div>';
 		$this->pagination->initialize($config);
 
@@ -86,7 +89,7 @@ class Event extends CI_Controller {
 		}
 
 		$data	= [
-			'title'			=> 'Blog',
+			'title'			=> 'Events',
 			'role'			=> 'normal',
 			'getAll'		=> $this->m_event->getAll($page, $config["per_page"]),
 		];

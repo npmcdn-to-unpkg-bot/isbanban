@@ -17,7 +17,6 @@ class M_event extends CI_Model {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-	// function getAll($limit, $offset)
 	function countAll()
 	{
 		return $this->db->get('event')->num_rows();
@@ -34,7 +33,7 @@ class M_event extends CI_Model {
 		// return $this->db->get('relawan')->result();
 		$sql =
 		"
-		SELECT * FROM event ORDER BY created_at LIMIT $limit, $perpage
+		SELECT * FROM event ORDER BY MONTH(tanggal), YEAR(tanggal) LIMIT $limit, $perpage
 		";
 		return $this->db->query($sql)->result();
 	}

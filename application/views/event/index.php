@@ -16,7 +16,7 @@
 
 <div class="post">
 	<div class="container">
-		<div class="event">
+		<div class="event infinite-container">
 			<?php 
 			$i=0;
 			foreach($getAll as $row) {
@@ -24,17 +24,20 @@
 			<div class="timeline-item">
 				<div class="timeline-icon">
 					<span>
-						<?php echo $this->barlibs->getMonth($row->tanggal); ?>
+						<?php echo $this->barnlibs->getMonth($row->tanggal); ?>
 					</span>
 					<span>
-						<?php echo $this->barlibs->getDate($row->tanggal); ?>
+						<?php echo $this->barnlibs->getDate($row->tanggal); ?>
 					</span>
 				</div>
+
 				<div class="timeline-content <?php if($i%2 ==0) { ?> right <?php } ?>">
-					<h4><?php echo $row->title; ?></h4>
+					<h4><?php echo $row->judul; ?></h4>
 
 					<div class="timeline-text">
-						<?php echo $row->konten; ?>
+						<p>
+							dont let you you <?php echo $row->judul; ?>
+						</p>
 
 						<ul class="fa-ul">
 							<li><i class="fa fa-li fa-map-marker"></i> <?php echo $row->lokasi; ?></li>
@@ -48,5 +51,21 @@
 			</div>
 			<?php $i++; } ?>
 		</div>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<?php echo $this->pagination->create_links(); ?>
+			</div>
+		</div>
 	</div>
 </div>
+
+<script src="<?php echo base_url() ?>template/assets/vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+<script src="<?php echo base_url() ?>template/assets/vendor/waypoints/lib/shortcuts/infinite.min.js"></script>
+<script>
+var infinite = new Waypoint.Infinite({
+    element: $('.infinite-container')[0],
+    items: '.timeline-item',
+    more: '.sparator a',
+});
+</script>

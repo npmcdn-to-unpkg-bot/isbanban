@@ -21,13 +21,13 @@
 				<div class="col-sm-10 col-sm-offset-1">					
 					<div class="col-sm-6">
 						<div class="place">							
-							<i class="fa fa-4x fa-building"></i> This events will be held on <?php echo $row->lokasi; ?>
+							<i class="fa fa-3x fa-building"></i> This events will be held on <?php echo $row->lokasi; ?>
 						</div>
 					</div>
 
 					<div class="col-sm-6">
 						<div class="place">							
-							<i class="fa fa-4x fa-calendar"></i> This events will start at <?php echo $row->tanggal; ?>
+							<i class="fa fa-3x fa-calendar"></i> This events will start at <?php echo $this->barnlibs->dateForHumanClean($row->tanggal); ?>
 						</div>
 					</div>
 				</div>
@@ -39,7 +39,15 @@
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1">
 				<div class="post">
-					<?php echo $row->konten; ?>
+					<div class="row">
+						<div class="col-sm-4">
+							<img src="<?php echo base_url() ?><?php echo $row->path_foto; ?>" alt="" class="img-responsive">
+						</div>
+
+						<div class="col-sm-8">
+							<?php echo $row->konten; ?>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

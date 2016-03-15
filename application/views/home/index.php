@@ -279,10 +279,10 @@
 			<div class="row">
 				<?php foreach ($getBlogPost as $item) { ?>
 				<div class="col-sm-6 col-md-4">
-					<div class="begin-post blog" style="background:url(<?php echo base_url() ?><?php echo $row->path_foto; ?>) no-repeat top center">
-						<a href="<?php echo base_url() ?>blog/detail/<?php echo $row->slug; ?>">
+					<div class="begin-post blog" style="background:url(<?php echo base_url() ?><?php echo $item->path_foto; ?>) no-repeat top center">
+						<a href="<?php echo base_url() ?>blog/detail/<?php echo $item->slug; ?>">
 						<div class="shade"></div>
-						<div class="title"><?php echo $row->judul; ?>
+						<div class="title"><?php echo $item->judul; ?>
 						</div>
 						</a>
 					</div>

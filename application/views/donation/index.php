@@ -49,42 +49,63 @@
 					</div>
 
 					<div class="panel-body">
-						<div class="form-group label-floating">
-							<label for="#uname" class="control-label">Full Name</label>
-							<input id="uname" type="text" class="form-control">
+
+<!-- If Errors -->
+						<div class="panel panel-wargnin">
+							<div class="panel-heading">
+								Terjadi Kesalahan
+							</div>
+
+							<div class="panel-body">
+								<?php echo validation_errors() ;?>
+							</div>
 						</div>
 
-						<div class="form-group label-floating">
-							<label for="#uname" class="control-label">Phone Number</label>
-							<input type="text" id="uname" class="form-control">
-						</div>
+						<form method="post">
+							<div class="form-group label-floating">
+								<label for="#uname" class="control-label">Full Name</label>
+								<input id="uname" type="text" class="form-control" name="donatur_name">
+							</div>
 
-						<div class="form-group label-floating">
-							<label for="#uname" class="control-label">Email</label>
-							<input id="uname" type="text" class="form-control">
-						</div>
+							<div class="form-group label-floating">
+								<label for="#uname" class="control-label">Phone Number</label>
+								<input type="text" id="uname" class="form-control" name="donatur_number">
+							</div>
 
-						<div class="form-group label-floating">
-							<label for="#uname" class="control-label">Message</label>
-							<textarea name="" id="uname" class="form-control"></textarea>
-						</div>
+							<div class="form-group label-floating">
+								<label for="#uname" class="control-label">Email</label>
+								<input id="uname" type="text" class="form-control" name="donatur_email">
+							</div>
 
+							<div class="form-group label-floating">
+								<label for="#uname" class="control-label">Message</label>
+								<textarea id="uname" class="form-control" name="donatur_message"></textarea>
+							</div>
 
-						<div class="form-group label-floating">
-							<label for="#uname">Transfer Methode</label>
-							<select name="" id="uname" class="form-control">
-								<option value="">-- Choose Option --</option>
-								<?php foreach($getBankAccount as $item) { ?>
-								<option value="<?php echo $item->id; ?>">
-								<?php echo $item->nama; ?> &mdash; <?php echo $item->nomor_rekening; ?>
-								</option>
-								<?php } ?>
-							</select>
-						</div>
+							<hr>
 
-						<div class="form-group">
-							<button class="btn btn-primary btn-raised btn-block" type="submit">confirm</button>							
-						</div>
+							<div class="form-group label-floating">
+								<label for="#default" class="control-label">Donation</label>
+								<input id="default" type="text" class="form-control moneyFormat">
+								<input class="realFormat" type="hidden" name="donation_cash">
+							</div>
+
+							<div class="form-group label-floating">
+								<label for="#uname">Transfer Method</label>
+								<select name="donation_method" id="uname" class="form-control">
+									<option value="">-- Choose Option --</option>
+									<?php foreach($getBankAccount as $item) { ?>
+									<option value="<?php echo $item->id; ?>">
+									<?php echo $item->nama; ?> &mdash; <?php echo $item->nomor_rekening; ?>
+									</option>
+									<?php } ?>
+								</select>
+							</div>
+
+							<div class="form-group">
+								<button class="btn btn-primary btn-raised btn-block" type="submit">confirm</button>							
+							</div>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -117,13 +138,43 @@
 	</div>
 </section>
 
-
-<script src="<?php echo base_url() ?>template/assets/vendor/autoNumeric/autoNumeric-min.js"></script>
+<link rel="stylesheet" href="<?php echo base_url() ?>template/assets/vendor/sweetalert/dist/sweetalert.css">
+<script src="<?php echo base_url() ?>template/assets/vendor/sweetalert/dist/sweetalert.min.js"></script>
+<script src="<?php echo base_url() ?>template/assets/vendor/autoNumeric/autoNumeric.js"></script>
 <script>
-$(".money, .book").autoNumeric('init',{
-    aSep: ',',
+$(".moneyFormat").autoNumeric('init',{
+    aSep: '.',
     dGroup: '3',
     aDec: " ",
     aPad: false
 });
+
+$("#default").bind('blur focusout keypress keyup', function() {
+    var realValue = $("#default").autoNumeric('get');
+
+    $(".realFormat").val(realValue);
+});
+
+<?php if($this->session->flashdata('success', true)) { ?>
+swal({
+  title: "Thank you!",
+  text: "Please confirm to our number you finished transfer to bank account that we mentioned before <?php echo $confirm_code; ?> | <?php echo $this->input->post('donation_cash'); ?>",
+  type: "success",
+  confirmButtonText: "Close",
+},
+function(){ 
+	window.location.href = "<?php echo base_url() ?>donate";
+});
+
+<?php $this->session->unset_userdata('success'); ?>
+<?php } ?>
+
+
+<?php if(validation_errors()) { ?>
+swal({
+  title: "Something Errors!",
+  text: "<?php echo validation_errors(); ?>",
+  type: "danger",
+});
+<?php } ?>
 </script>

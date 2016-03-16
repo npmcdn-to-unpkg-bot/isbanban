@@ -53,12 +53,10 @@ class Donation extends CI_Controller {
 
 // Create Unique Confirm Code
 		$seed = str_split('abcdefghjkmnpqrstuvwxyz'.'ABCDEFGHJKMNPQRSTUVWXYZ');
-	    shuffle($seed); // probably optional since array_is randomized; this may be redundant
+	    shuffle($seed);
 	    $rand = '';
 	    foreach (array_rand($seed, 5) as $k) $rand .= $seed[$k];
-
 	    $confirm_code	= $rand.date('hi');
-
 
 // Validation Configuration
 		$config	= array(

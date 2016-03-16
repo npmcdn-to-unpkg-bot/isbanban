@@ -35,6 +35,11 @@ class M_donation extends CI_Model {
 	{
 		return $this->db->get('donasi_bank_info')->result();
 	}
+
+	function insert($datadb)
+	{
+		$this->db->insert('donasi', $datadb);
+	}
 }
 
 /* End of file welcome.php */

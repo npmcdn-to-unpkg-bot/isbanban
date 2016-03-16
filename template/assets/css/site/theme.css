@@ -10303,6 +10303,7 @@ header .navbar-nav li a {
 .precontent.donation-info {
   margin-top: -30px;
   margin-bottom: 20px;
+  box-shadow: 0px 1px 1px 0px #ccc;
 }
 .precontent.donation-info .poin {
   border-right: 0px;

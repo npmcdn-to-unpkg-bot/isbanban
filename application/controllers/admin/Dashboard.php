@@ -40,6 +40,9 @@ class dashboard extends CI_Controller {
 			'countBlog'		=> $this->m_dashboard->count('blog'),
 			'countVillage'	=> $this->m_dashboard->count('desa'),
 
+			// Donation
+			'getPendingDonation'	=> $this->m_dashboard->getPendingDonation(),
+
 			// Data For Chart Men
 			'countRLPast2'	=> $this->m_dashboard->countRelawan($jk[0], $now-2),
 			'countRLPast1'	=> $this->m_dashboard->countRelawan($jk[0], $now-1),

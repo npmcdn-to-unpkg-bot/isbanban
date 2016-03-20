@@ -46,6 +46,15 @@ class M_dashboard extends CI_Model {
 		$query = "SELECT * FROM relawan WHERE departemen='$kode_departemen'";
 		return $this->db->query($query)->num_rows();
 	}
+
+	function getPendingDonation()
+	{
+		$sql	=
+		"
+			SELECT * FROM donasi WHERE status=0 AND id_jenis='3'
+		";
+		return $this->db->query($sql)->num_rows();
+	}
 }
 
 /* End of file welcome.php */

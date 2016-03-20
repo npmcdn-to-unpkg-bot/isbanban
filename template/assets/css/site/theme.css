@@ -10648,3 +10648,13 @@ footer .copyright {
 footer .copyright p {
   margin-bottom: 0px;
 }
+.panel.panel-insight {
+  text-align: center;
+}
+.panel.panel-insight h1 {
+  margin-top: 0px;
+}
+.panel.panel-insight p {
+  font-size: 18px;
+  line-height: 25px;
+}

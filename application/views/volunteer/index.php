@@ -29,7 +29,7 @@
 					<?php if($row->path_foto) { ?>
 						<img class="img-responsive" src="<?php echo base_url() ?><?php echo $row->path_foto; ?>">
 					<?php } else { ?>
-						<img class="img-responsive" src="http://placemi.com/600x600">
+						<img class="img-responsive" src="http://unsplash.it/600/600">
 					<?php } ?>
 
 					<div class="caption">

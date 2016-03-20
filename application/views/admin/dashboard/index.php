@@ -60,6 +60,12 @@
         </div>
       </div>
 
+<!-- Alert Donation -->
+    <?php if($getPendingDonation) { ?>
+    <div class="alert alert-danger" role="alert">
+        <strong></strong> We have <?php echo $getPendingDonation; ?> donation waiting for your follow up. <a href="<?php echo base_url() ?>admin/donation"><u>See Details</u></a>
+    </div>
+    <?php } ?>
     
       <div class="row">
         <div class="col-sm-12">

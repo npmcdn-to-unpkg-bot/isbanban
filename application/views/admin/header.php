@@ -108,6 +108,14 @@
                                 </a>
                             </li>
 
+<!-- Desa Binaan -->
+                            <li <?php if($role == 'feedback') { echo "class=active"; } ?>>
+                                <a href="<?php echo base_url() ?>admin/feedback">
+                                    <span class="icon fa fa-comment"></span><span class="title">Feedback</span>
+                                </a>
+                            </li>
+
+
 
 <!-- Campaign -->
                             <!-- <li <?php if($role == 'campaign') { echo "class=active"; } ?>>

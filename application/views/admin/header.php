@@ -108,7 +108,7 @@
                                 </a>
                             </li>
 
-<!-- Desa Binaan -->
+<!-- Feedback -->
                             <li <?php if($role == 'feedback') { echo "class=active"; } ?>>
                                 <a href="<?php echo base_url() ?>admin/feedback">
                                     <span class="icon fa fa-comment"></span><span class="title">Feedback</span>

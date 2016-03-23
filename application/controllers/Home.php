@@ -32,6 +32,7 @@ class Home extends CI_Controller {
 			'getBlogPost'	=> $this->m_home->getBlogPost('8', 'blog'),
 			'countVillage'	=> $this->m_home->countData('desa'),
 			'countRelawan'	=> $this->m_home->countData('relawan'),
+			'getFeedback'	=> $this->m_home->getFeedback(),
 		];
 
 		$this->load->view('header', $data);

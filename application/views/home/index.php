@@ -303,17 +303,25 @@
 
 			<h2>What They Say</h2>
 			<div id="lightSlider">
-				<?php for($i=0; $i<10; $i++) { ?>
+				<?php foreach($getFeedback as $item) { ?>
 				<div class="item">
 					<div class="post post-testimoni">
-						<a href="#">
+						<a href="<?php echo base_url() ?>blog/detail/<?php echo $item->blog_slug; ?>">
+							<?php if($item->testimoni_path_foto) { ?>
 							<div class="avatar">
-								<img class="img-center img-responsive" src="http://unsplash.it/120/120?random"></img>
+								<img class="img-center img-responsive" src="<?php echo base_url() ?><?php echo $item->testimoni_path_foto; ?>"></img>
 							</div>
-							<h3 class="name">Markus Horison</h3>
+							<?php } else { ?>
+							<div class="avatar">
+								<img style="height:100px" class="img-center img-responsive" src="<?php echo base_url() ?>template/assets/image/placeholder.png"></img>
+							</div>
+							<?php } ?>
+
+							<h3 class="name"><?php echo $item->nama; ?></h3>
+							<h4 class="role"><?php echo $item->role; ?></h4>
 
 							<div class="testimoni">
-								<blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo pariatur ex, assumenda in officia veniam molestias? Omnis minima dolorum optio, aperiam impedit sit similique, labore quam dicta ex enim animi!</blockquote>
+								<blockquote><?php echo $item->quote; ?></blockquote>
 							</div>
 						</a>
 					</div>

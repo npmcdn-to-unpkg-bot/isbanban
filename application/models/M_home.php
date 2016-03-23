@@ -24,7 +24,28 @@ class M_home extends CI_Model {
 
 	function getBlogPost($limit, $table)
 	{
-		return $this->db->get($table, $limit)->result();
+		$sql =
+		"
+			SELECT * FROM blog WHERE kategori != 2 LIMIT 0, 6
+		";
+		return $this->db->query($sql)->result();
+		// return $this->db->get($table, $limit)->result();
+	}
+
+	function getFeedback()
+	{
+		$sql	=
+		"
+		SELECT 
+			testimoni.*,
+			testimoni.path_foto as testimoni_path_foto,
+			blog.slug as blog_slug
+		FROM testimoni
+		LEFT JOIN blog
+		ON testimoni.id_detail=blog.kategori;
+		";
+		return $this->db->query($sql)->result();
+
 	}
 
 }

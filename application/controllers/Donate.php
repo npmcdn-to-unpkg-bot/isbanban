@@ -81,7 +81,7 @@ class Donate extends CI_Controller {
 					'donasi_banyak'		=> $this->input->post('donation_cash'),
 					'donasi_transfer'	=> $this->input->post('donation_method'),
 					'pesan'				=> $this->input->post('donatur_message'),
-					'telefon'			=> $this->input->post('donatur_phone'),
+					'telefon'			=> $this->input->post('donatur_number'),
 					'email'				=> $this->input->post('donatur_email'),
 					'status'			=> '0',
 					'created_at'		=> date('Y-m-d'),

@@ -29,7 +29,7 @@
 					<?php if($row->path_foto) { ?>
 						<img class="img-responsive" src="<?php echo base_url() ?><?php echo $row->path_foto; ?>">
 					<?php } else { ?>
-						<img class="img-responsive" src="http://unsplash.it/600/600">
+						<img class="img-responsive" src="<?php echo base_url() ?>/template/assets/image/placeholder.png">
 					<?php } ?>
 
 					<div class="caption">

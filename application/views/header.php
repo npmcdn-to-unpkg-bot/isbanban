@@ -74,8 +74,8 @@
 				<li><a href="<?php echo base_url() ?>about">about</a></li>
 				<li><a href="<?php echo base_url() ?>people">people</a></li>
 				<li><a href="<?php echo base_url() ?>village">village</a></li>
-				<li><a href="<?php echo base_url() ?>blog">blogs</a></li>
-				<li><a href="<?php echo base_url() ?>event">events</a></li>
+				<li><a href="<?php echo base_url() ?>blog">blog</a></li>
+				<li><a href="<?php echo base_url() ?>event">event</a></li>
 				<li><a href="<?php echo base_url() ?>donate">donate</a></li>
 			</ul>
 		</div>
@@ -85,13 +85,13 @@
 <!-- Pull Right Navigation -->
 	<div class="navmenu navmenu-default navmenu-fixed-right offcanvas">
 		<ul class="nav navmenu-nav">
-			<li><a href="<?php echo base_url() ?>">home</a></li>
-			<li><a href="<?php echo base_url() ?>about">about</a></li>
-			<li><a href="<?php echo base_url() ?>people">people</a></li>
-			<li><a href="<?php echo base_url() ?>village">village</a></li>
-			<li><a href="<?php echo base_url() ?>blog">blogs</a></li>
-			<li><a href="<?php echo base_url() ?>event">events</a></li>
-			<li><a href="<?php echo base_url() ?>donate">donate</a></li>
+			<li><a href="<?php echo base_url() ?>">home <i class="fa fa-fw fa-home pull-right"></i></a></li>
+			<li><a href="<?php echo base_url() ?>about">about <i class="fa fa-fw fa-info-circle pull-right"></i></a></li>
+			<li><a href="<?php echo base_url() ?>people">people <i class="fa fa-fw fa-group pull-right"></i></a></li>
+			<li><a href="<?php echo base_url() ?>village">village <i class="fa fa-fw fa-building pull-right"></i></a></li>
+			<li><a href="<?php echo base_url() ?>blog">blog <i class="fa fa-fw fa-pencil pull-right"></i></a></li>
+			<li><a href="<?php echo base_url() ?>event">event <i class="fa fa-fw fa-calendar pull-right"></i></a></li>
+			<li><a href="<?php echo base_url() ?>donate">donate <i class="fa fa-fw fa-bank pull-right"></i></a></li>
 		</ul>
 	</div>
 </header>

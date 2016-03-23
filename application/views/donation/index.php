@@ -14,7 +14,7 @@
 			</div>
 			<div class="col-sm-6 poin">
 				<h2 class="bigger">
-				Rp. <span class="money"><?php foreach($totalMoney as $item) {
+				Rp. <span class="money moneyFormat"><?php foreach($totalMoney as $item) {
 						echo $item->total_donasi_uang;
 					} ?></span>
 				</h2>
@@ -45,13 +45,15 @@
 			<div class="col-sm-4">
 				<div class="panel panel-default donation">
 					<div class="panel-heading">
-						Donation Form
+						<b>Donation Form</b>
 					</div>
 
 					<div class="panel-body">
 
+
+						<?php if(validation_errors()) { ?>
 <!-- If Errors -->
-						<div class="panel panel-wargnin">
+						<div class="panel panel-danger">
 							<div class="panel-heading">
 								Terjadi Kesalahan
 							</div>
@@ -60,6 +62,7 @@
 								<?php echo validation_errors() ;?>
 							</div>
 						</div>
+						<?php } ?>
 
 						<form method="post">
 							<div class="form-group label-floating">

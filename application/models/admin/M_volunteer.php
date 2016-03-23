@@ -65,13 +65,10 @@ class M_volunteer extends CI_Model {
 		//    	   LEFT JOIN relawan_chapter
 		// 			ON relawan_chapter.`kode` = relawan.`chapter`
 		// ";
-		$query	=
-		"
-		SELECT * FROM relawan WHERE YEAR(bulan_masuk) != '2016' AND MONTH(bulan_masuk) != '01' AND MONTH(bulan_masuk) != '02' AND MONTH(bulan_masuk) != '03' AND MONTH(bulan_masuk) != '04'
-		";
 
-		return $this->db->query($query)->result();
+		// return $this->db->query($query)->result();
 		// return $this->db->get('relawan')->result();
+		return $this->db->get('relawan')->result();
 	}
 
 	function getRecruitment()

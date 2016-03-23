@@ -124,7 +124,6 @@ img {
 
 // Jumbotron
 .jumbotron {
-
 	background-size: cover !important;
 
 	&.bigger {
@@ -147,7 +146,7 @@ img {
 		}
 
 		@media (max-width: @screen-sm) {
-			.padding(50px);
+			.padding(100px);
 
 			h1 {
 				font-size: 21px;
@@ -165,8 +164,8 @@ img {
 		color: #fff;
 		margin-top: 20px;
 		margin-bottom: 20px;
-		padding-top:60px;
-		padding-bottom: 60px;
+		padding-top:100px;
+		padding-bottom: 100px;
 		.text-center();
 
 		h2 {
@@ -182,11 +181,26 @@ img {
 			text-transform: uppercase;
 			font-weight: 100;
 		}
+
+		@media(max-width: @screen-sm) {
+			padding-top: 20px;
+			padding-bottom: 20px;
+
+			.banner-point {
+				margin-bottom: 50px;
+			}
+		}
+
+		@media(min-width: @screen-sm) and (max-width: @screen-md) {
+			.banner-point {
+				margin-bottom: 30px;
+			}
+		}
 	}
 
 
-	&.partner {
-		background: #ddd;
+	&.jumbotron-testimoni {
+		background: #fafafa;
 		margin-bottom: -20px;
 
 		h2 {
@@ -266,12 +280,13 @@ header {
 	}
 
 	.navmenu {
-		background: #666;
-		border-left: 1px solid #333;
+		background: @brand-primary;
+		border-left: 1px solid darken(@brand-primary, 10%);
 
 		li {
 			a {
-			    color: #fff !important;
+				color: white !important;
+			    border-bottom: 1px solid darken(@brand-primary, 10%);
     			text-transform: uppercase;
 			}
 		}
@@ -966,11 +981,43 @@ body.recruitment {
 		}
 	}
 
-
 	.sparator {
 		margin-top: 20px;
 	    margin-bottom: 20px;
 	    text-align: center;
+	}
+
+
+	&.post-testimoni {
+		.text-center();
+		padding:15px;
+		margin-left:20px;
+		background: white;
+
+		&:first-child {
+			margin-left: 0px;
+		}
+
+		a {
+			color: #333;
+
+			&:hover,
+			&:focus {
+				color: darken(#333, 10%);
+				text-decoration: none;
+			}
+		}
+
+		.avatar {
+			img {
+				border-radius:100%;
+			}
+		}
+
+		blockquote {
+			.text-left();
+			border-color: @brand-primary;
+		}
 	}
 }
 
@@ -979,6 +1026,11 @@ body.recruitment {
 
 
 
+
+// lightSlider
+.lSPager {
+	.hidden();
+}
 
 
 
@@ -1018,6 +1070,14 @@ body.recruitment {
 			font-weight: bolder;
 		}
 	}
+
+
+	&.panel-danger {
+		.panel-heading {
+			background: @brand-danger !important;
+			color: white;
+		}
+	}
 }
 
 section {
@@ -1030,8 +1090,12 @@ section {
 
 
 .banners {
-	background-position: 200px auto;
+	background-size: auto 150px !important;
 	background: url(../../image/logo.png) no-repeat center center @brand-primary;
+
+	@media(max-width: @screen-sm) {
+		.hidden();
+	}
 }
 
 

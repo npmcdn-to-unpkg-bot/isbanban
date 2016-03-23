@@ -225,7 +225,6 @@
 				</div>
 
 				<div class="col-sm-4 col-xs-12 banners">
-
 				<!-- <img class="img-responsive" src="http://placemi.com/"></img> -->
 				</div>
 			</div>
@@ -246,22 +245,22 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-6 col-md-3 point village">
+				<div class="col-sm-6 col-md-3 banner-point village">
 					<div class="big">0</div>
 					<div class="small">Village</div>
 				</div>
 
-				<div class="col-sm-6 col-md-3 point people">
+				<div class="col-sm-6 col-md-3 banner-point people">
 					<div class="big">0</div>
 					<div class="small">People</div>
 				</div>
 
-				<div class="col-sm-6 col-md-3 point cash_donation">
+				<div class="col-sm-6 col-md-3 banner-point cash_donation">
 					<div class="big">0</div>
 					<div class="small">Cash Donation</div>
 				</div>
 
-				<div class="col-sm-6 col-md-3 point book_donation">
+				<div class="col-sm-6 col-md-3 banner-point book_donation">
 					<div class="big">0</div>
 					<div class="small">Book Donation</div>
 				</div>
@@ -299,21 +298,25 @@
 	</div>
 
 
-
-
-
-
-
-	<div class="jumbotron partner">
+	<div class="jumbotron jumbotron-testimoni">
 		<div class="container">
 
-			<h2>Our Partners</h2>
+			<h2>What They Say</h2>
 			<div id="lightSlider">
 				<?php for($i=0; $i<10; $i++) { ?>
 				<div class="item">
-					<a href="#">
-					<img class="img-responsive img-full" src="http://placemi.com/150x150">
-					</a>
+					<div class="post post-testimoni">
+						<a href="#">
+							<div class="avatar">
+								<img class="img-center img-responsive" src="http://unsplash.it/120/120?random"></img>
+							</div>
+							<h3 class="name">Markus Horison</h3>
+
+							<div class="testimoni">
+								<blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo pariatur ex, assumenda in officia veniam molestias? Omnis minima dolorum optio, aperiam impedit sit similique, labore quam dicta ex enim animi!</blockquote>
+							</div>
+						</a>
+					</div>
 				</div>
 				<?php } ?>
 			</div>
@@ -328,24 +331,22 @@
 <script type="text/javascript" src="<?php echo base_url() ?>template/assets/vendor/lightslider/dist/js/lightslider.min.js"></script>
 
 <script type="text/javascript">
-$(".banner").hover(function(){
-	$(".people .big").counter({
-		  autoStart: true,           // true/false, default: true
-		  duration: 5000,            // milliseconds, default: 1500
-		  countFrom: 0,              // start counting at this number, default: 0
-		  countTo: <?php echo $countRelawan; ?>,
-	});
+$(".people .big").counter({
+	  autoStart: true,           // true/false, default: true
+	  duration: 5000,            // milliseconds, default: 1500
+	  countFrom: 0,              // start counting at this number, default: 0
+	  countTo: <?php echo $countRelawan; ?>,
+});
 
-	$(".village .big").counter({
-		  autoStart: true,           // true/false, default: true
-		  duration: 5000,            // milliseconds, default: 1500
-		  countFrom: 0,              // start counting at this number, default: 0
-		  countTo: <?php echo $countVillage; ?>,
-	});
+$(".village .big").counter({
+	  autoStart: true,           // true/false, default: true
+	  duration: 5000,            // milliseconds, default: 1500
+	  countFrom: 0,              // start counting at this number, default: 0
+	  countTo: <?php echo $countVillage; ?>,
 });
 
 $("#lightSlider").lightSlider({
-	item: 5,
+	item: 2,
 });
 
 function toggleChevron(e) {

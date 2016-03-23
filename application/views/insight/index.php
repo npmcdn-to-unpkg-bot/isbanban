@@ -144,8 +144,8 @@
 						<thead>
 							<tr>
 								<th>Chapter</th>
-								<th>Perempuan</th>
 								<th>Laki-laki</th>
+								<th>Perempuan</th>
 								<th>Total</th>
 							</tr>
 						</thead>

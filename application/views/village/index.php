@@ -24,13 +24,17 @@
                 <div class="begin-post">                        
                     <div class="row">
                         <div class="col-sm-4">
-                            <img src="http://placemi.com/600x600" alt="" class="img-responsive">
+                            <?php if($row->picture_path) { ?>
+                            <img src="<?php echo base_url() ?><?php echo $row->picture_path; ?>" alt="" class="img-responsive">
+                            <?php } else { ?>
+                            <img src="<?php echo base_url() ?>template/assets/image/placeholder.png" alt="" class="img-responsive">
+                            <?php } ?>
                             </div>
 
                         <div class="col-sm-8">
                             <h3 class="title"><?php echo $row->nama; ?></h3>
                             <ul class="fa-ul">
-                                <li><i class="fa fa-li fa-map-marker"></i> <span><?php echo $row->lokasi; ?></span></li>
+                                <li style="text-transform: capitalize"><i class="fa fa-li fa-map-marker"></i> <span><?php echo $row->lokasi; ?></span></li>
                                 <li><i class="fa fa-li fa-globe"></i> <span><u><?php echo $row->latitude; ?></u> &amp; <u><?php echo $row->longitude; ?></u></span></li>
                             </ul>
                             <a href="<?php echo base_url() ?>village/detail/<?php echo $row->slug; ?>" class="btn btn-primary btn-sm btn-raised">view detail</a>

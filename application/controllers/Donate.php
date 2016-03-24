@@ -93,8 +93,36 @@ class Donate extends CI_Controller {
 // Insert to DB
 				$this->m_donation->insert($datadb);
 
-// Alert for Donatur
+
+
 				$data['confirm_code']	= $confirm_code;
+				$data['donatur_nama']	= $this->input->post('donatur_name');
+				$data['donasi_cash']	= $this->input->post('donation_cash');
+
+// Send Mail
+				$this->load->library('email');
+				$configMail = Array(
+					'protocol'  => 'smtp',
+					'smtp_host' => 'mail.smtp2go.com',
+					'smtp_port' => 2525,
+					'smtp_user' => 'muhammad-ihsan@outlook.com',
+					'smtp_pass' => '1JujCMNAHuz1',
+					'crlf'      => "\r\n",
+					'newline'   => "\r\n",
+					'mailtype'  => 'html',
+					'priority'  => 1
+				);
+				$this->email->initialize($configMail);
+
+				$this->email->from('admin@isbanban.org', 'Admin');
+				$this->email->to($this->input->post('donatur_email')); 
+
+				$this->email->subject('Email Test');
+        		$message=$this->load->view('mail',$data,TRUE);
+				$this->email->message($message);
+				$this->email->send();
+
+// Alert for Donatur
 				$this->session->set_flashdata('success', true);
 			} else {
 				echo validation_errors();

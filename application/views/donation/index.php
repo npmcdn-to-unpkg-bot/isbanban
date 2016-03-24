@@ -171,13 +171,4 @@ function(){
 
 <?php $this->session->unset_userdata('success'); ?>
 <?php } ?>
-
-
-<?php if(validation_errors()) { ?>
-swal({
-  title: "Something Errors!",
-  text: "<?php echo validation_errors(); ?>",
-  type: "danger",
-});
-<?php } ?>
 </script>

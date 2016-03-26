@@ -10,7 +10,7 @@
 
 <section>
 	<div class="container">
-		<div class="row">
+		<div class="row parent_sticky">
 			<div class="col-md-3" id="sectionNav">
 				<ul class="nav nav-pills nav-stacked">
 					<li><a href="#secProfile">Profile</a></li>
@@ -18,14 +18,18 @@
 				</ul>
 			</div>
 
-			<div class="col-md-9">
+			<div class="col-md-9 col-md-offset-3">
 				<section id="secProfile">
-					<h1>Profile</h1>
+					<div class="page-header">
+						<h1>Profile</h1>      
+					</div>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam nihil ipsam adipisci repellat. Itaque ipsa temporibus ipsum quos officiis, sint asperiores dolores dolor inventore. Praesentium dolores quidem quisquam corporis. Recusandae.</p>					
 				</section>
 
 				<section id="secVision">
-					<h1>Vision</h1>
+					<div class="page-header">
+						<h1>Vision</h1>      
+					</div>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam nihil ipsam adipisci repellat. Itaque ipsa temporibus ipsum quos officiis, sint asperiores dolores dolor inventore. Praesentium dolores quidem quisquam corporis. Recusandae.</p>					
 				</section>
 			</div>
@@ -36,29 +40,18 @@
 
 
 
-<style>
-section#secProfile,
-section#secVision {
-	height: 1000px;
-}
-
-#sectionNav.affix {
-	position: fixed;
-	top:70px;
-}
-</style>
 
 
+<script src="<?php echo base_url() ?>template/assets/vendor/sticky-kit/jquery.sticky-kit.min.js"></script>
 <script>
 var $body   = $(document.body);
-
 $body.scrollspy({
 	target: '#sectionNav',
 });
 
-$('#sectionNav').affix({
-  offset: {
-    top: 235
-  }
+$("#sectionNav").stick_in_parent({
+	parent: '.parent_sticky',
+	offset_top: 20
 });
+
 </script>

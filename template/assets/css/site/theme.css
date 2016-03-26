@@ -10721,3 +10721,15 @@ footer .copyright p {
   font-size: 18px;
   line-height: 25px;
 }
+#sectionNav {
+  position: static;
+  background: #fafafa;
+  padding: 0px;
+}
+#sectionNav ul li a {
+  border-radius: 0px;
+}
+#secProfile,
+#secVision {
+  height: 1000px;
+}

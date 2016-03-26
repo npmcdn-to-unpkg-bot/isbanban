@@ -34,17 +34,18 @@
 
 	<script type='text/javascript' src='//dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js' data-shr-siteid='45c2c0913d1dafb0d0ac48aa531690cb' data-cfasync='false' async='async'></script>
 	
-	<script src="<?php echo base_url() ?>template/assets/vendor/dist/js/material.min.js"></script>
-	<script src="<?php echo base_url() ?>template/assets/vendor/dist/js/ripples.min.js"></script>
+	<script src="<?php echo base_url() ?>template/assets/vendor/bootstrap-material-design/dist/js/material.min.js"></script>
+	<script src="<?php echo base_url() ?>template/assets/vendor/bootstrap-material-design/dist/js/ripples.min.js"></script>
 
 	<script type="text/javascript">
 	$(document).ready(function(){
 		$(".picker").datepicker({
 			format: "yyyy-mm-dd"
 		});
+
+		$.material.init();
 	});	
 
-	$.material.init()
 	</script>
 
 

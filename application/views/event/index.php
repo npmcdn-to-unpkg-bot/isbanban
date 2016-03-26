@@ -1,7 +1,8 @@
-<div class="jumbotron bigger" style="background: url(<?php echo base_url() ?>template/assets/image/bg-event.png) no-repeat top center;">
+<!-- <div class="jumbotron bigger" style="background: url(<?php echo base_url() ?>template/assets/image/bg-event.png) no-repeat top center;"> -->
+<div class="jumbotron bigger" style="background: url(http://unsplash.it/1280/800?random&blur) no-repeat center center;">
 	<div class="container">
 		<h1>Events</h1>
-		<p>Leading text event blog here</p>
+		<p>Reach our events in various activities at Istana Belajar Anak Banten</p>
 		<hr>
 	</div>
 </div>

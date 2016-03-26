@@ -1,7 +1,8 @@
-<div class="jumbotron bigger" style="background: url(<?php echo base_url() ?>template/assets/image/bg-donation.jpg) no-repeat center center;">
+<!-- <div class="jumbotron bigger" style="background: url(<?php echo base_url() ?>template/assets/image/bg-donation.jpg) no-repeat center center;"> -->
+<div class="jumbotron bigger" style="background: url(http://unsplash.it/1280/800?random&blur) no-repeat center center;">
 	<div class="container">
 		<h1>Donation</h1>
-		<p>start sharing your best smile today with them</p>
+		<p>Your donation help us to make access of education through builiding a learning center and teaching for 455 children in 8 rural areas of Banten</p>
 		<hr>
 	</div>
 </div>

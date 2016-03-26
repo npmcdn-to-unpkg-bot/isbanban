@@ -1,7 +1,8 @@
-<div class="jumbotron bigger" style="background: url(<?php echo base_url() ?>template/assets/image/bg-people.jpg) no-repeat center center;">
+<!-- <div class="jumbotron bigger" style="background: url(<?php echo base_url() ?>template/assets/image/bg-people.jpg) no-repeat center center;"> -->
+<div class="jumbotron bigger" style="background: url(http://unsplash.it/1280/800?random&blur) no-repeat center center;">
 	<div class="container">
 		<h1>People</h1>
-		<p>Leading text about people here</p>
+		<p>You can participate with us as young volunteer to share your spirit.</p>
 		<hr>
 	</div>
 </div>

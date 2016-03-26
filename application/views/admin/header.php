@@ -66,56 +66,54 @@
                             </button>
                         </div>
                         <ul class="nav navbar-nav">
-
 <!-- Dashboard -->
                             <li <?php if($role == 'dashboard') { echo "class=active"; } ?>>
                                 <a href="<?php echo base_url() ?>admin/dashboard">
                                     <span class="icon fa fa-tachometer"></span><span class="title">Dashboard</span>
                                 </a>
                             </li>
-
 <!-- Blog -->
                             <li <?php if($role == 'blog') { echo "class=active"; } ?>>
                                 <a href="<?php echo base_url() ?>admin/blog">
                                     <span class="icon fa fa-pencil"></span><span class="title">Blog</span>
                                 </a>
                             </li>
-
 <!-- Event -->
                              <li <?php if($role == 'event') { echo "class=active"; }?>>
                                 <a href="<?php echo base_url() ?>admin/event">
                                     <span class="icon fa fa-calendar-o"></span><span class="title">Event</span>
                                 </a>
                             </li>
-
 <!-- Relawan -->
                             <li <?php if($role == 'volunteer') { echo "class=active"; }?>>
                                 <a href="<?php echo base_url() ?>admin/volunteer">
                                     <span class="icon fa fa-group"></span><span class="title">Relawan</span>
                                 </a>
                             </li>
-
+<!-- Open Recruitment -->
                             <li <?php if($role == 'oprec') { echo "class=active"; }?>>
                                 <a href="<?php echo base_url() ?>admin/volunteer/recruitment">
                                     <span class="icon fa fa-user"></span><span class="title">Open Recruitment</span>
                                 </a>
                             </li>
-
 <!-- Desa Binaan -->
                             <li <?php if($role == 'village') { echo "class=active"; } ?>>
                                 <a href="<?php echo base_url() ?>admin/village">
                                     <span class="icon fa fa-map"></span><span class="title">Desa Binaan</span>
                                 </a>
                             </li>
-
 <!-- Feedback -->
                             <li <?php if($role == 'feedback') { echo "class=active"; } ?>>
                                 <a href="<?php echo base_url() ?>admin/feedback">
                                     <span class="icon fa fa-comment"></span><span class="title">Feedback</span>
                                 </a>
                             </li>
-
-
+<!-- Mail -->
+                            <li <?php if($role == 'mail') { echo "class=active"; } ?>>
+                                <a href="<?php echo base_url() ?>admin/mail">
+                                    <span class="icon fa fa-envelope-o"></span><span class="title">Mail</span>
+                                </a>
+                            </li>
 
 <!-- Campaign -->
                             <!-- <li <?php if($role == 'campaign') { echo "class=active"; } ?>>

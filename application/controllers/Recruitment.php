@@ -84,7 +84,7 @@ class Recruitment extends CI_Controller {
 			array(
 				'field'	=> 'email',
 				'label'	=> 'Alamat Email',
-				'rules'	=> 'required|email'
+				'rules'	=> 'required'
 			),
 
 			array(
@@ -131,7 +131,7 @@ class Recruitment extends CI_Controller {
 					'asal'   		 =>$this->input->post('asal_sekolah'),
 					'chapter'        =>$this->input->post('chapter'),
 					'jenis_kelamin'  =>$this->input->post('jenis_kelamin'),
-					'bulan_masuk'    =>$date,
+					'bulan_masuk'    =>'2016-04-00',
 					'alasan'    	 =>$this->input->post('alasan'),
 					'kode'  		 =>$cleanCode,
 					'created_at'     =>$date,
@@ -147,6 +147,42 @@ class Recruitment extends CI_Controller {
 				$this->m_recruitment->insert($datadb);
 				$this->m_recruitment->referensi($datareferensi);
 				$this->session->set_flashdata('success', true);
+
+// Send Mail
+				$this->load->library('email');
+				// $configMail = Array(
+				// 	'protocol'  => 'smtp',
+				// 	'smtp_host' => 'mail.smtp2go.com',
+				// 	'smtp_port' => 2525,
+				// 	'smtp_user' => 'muhammad-ihsan@outlook.com',
+				// 	'smtp_pass' => '1JujCMNAHuz1',
+				// 	'crlf'      => "\r\n",
+				// 	'newline'   => "\r\n",
+				// 	'mailtype'  => 'html',
+				// 	'priority'  => 1
+				// );
+				// 
+				$configMail = Array(
+				  'protocol' => 'smtp',
+				  'smtp_host' => 'mailtrap.io',
+				  'smtp_port' => 2525,
+				  'smtp_user' => '573617400c51f2f73',
+				  'smtp_pass' => '4ee968dc28496c',
+				  'crlf' => "\r\n",
+				  'newline' => "\r\n",
+				  'mailtype'  => 'html',  
+				);
+				$this->email->initialize($configMail);
+
+				$data['relawan_nama']	= $this->input->post('nama');
+
+				$this->email->from('noreply@isbanban.org', 'Istana Belajar Anak Banten');
+				$this->email->to($this->input->post('email')); 
+
+				$this->email->subject('Pendaftaran Calon Relawan');
+        		$message=$this->load->view('mail_recruitment',$data,TRUE);
+				$this->email->message($message);
+				$this->email->send();
 				redirect('/recruitment');
 			}
 		}

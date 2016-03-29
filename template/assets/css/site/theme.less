@@ -634,8 +634,11 @@ header {
 
 /* Recruitment Form */
 body.recruitment {
-	.bg-gradient(#28C7F3, #B9DD2D)
+	// .bg-gradient(#28C7F3, #B9DD2D);
+	// .bg-gradient(#DADFE1, #EB974E);
 	// background: linear-gradient(#28C7F3,#B9DD2D);
+	background: url('http://unsplash.it/1280x1280?image=534') no-repeat center center;
+	background-size: cover;
 }
 
 .recruitment {
@@ -653,7 +656,8 @@ body.recruitment {
 	.start {
 		border:1px solid darken(white, 10%);
 		.padding-full(10px);
-		background:rgba(255,255,255, 0.7);
+		// background:rgba(255,255,255, 0.7);
+		background: white;
 
 		img {
 			margin: 0px auto;
@@ -785,6 +789,10 @@ body.recruitment {
 			-o-transition: all 0.5s;
 			transition: all 0.5s;
 			transform: translate3d(-110%, 0px, 0px);
+		}
+
+		.name {
+			text-transform: capitalize;
 		}
 	}
 

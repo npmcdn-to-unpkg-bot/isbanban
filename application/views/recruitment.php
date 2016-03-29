@@ -39,13 +39,8 @@
 
 	<script type="text/javascript">
 	$(document).ready(function(){
-		$(".picker").datepicker({
-			format: "yyyy-mm-dd"
-		});
-
 		$.material.init();
 	});	
-
 	</script>
 
 
@@ -95,140 +90,137 @@
 
 <!-- Start Form -->
 					<form method="POST">
-					<div class="start">
-						<div class="pre-title">
-							<a href="<?php echo base_url() ?>recruitment"><img class="img-responsive" src="<?php echo base_url() ?>template/assets/image/typetext-black.png"></img></a>
-							<h3>Formulir Penerimaan Relawan Baru</h3>
-							<p>Mohon untuk melengkapi data diri anda selengkap dan seinformatif mungkin</p>
-							<hr>
-						</div>
-
-						<div class="form-start">
-							<div class="form-group label-floating">
-								<label class="control-label" for="focusedInput1">Nama</label>
-								<input class="form-control" id="focusedInput1" name="nama"></input>
+						<div class="start">
+							<div class="pre-title">
+								<a href="<?php echo base_url() ?>recruitment"><img class="img-responsive" src="<?php echo base_url() ?>template/assets/image/typetext-black.png"></img></a>
+								<h3>Formulir Penerimaan Relawan Baru</h3>
+								<p>Mohon untuk melengkapi data diri anda selengkap dan seinformatif mungkin</p>
+								<hr>
 							</div>
 
-							<div class="row">
-								<div class="col-sm-6">
-									<div class="form-group label-floating">
-										<label class="control-label" for="focusedInput2">Tempat Lahir</label>
-										<input class="form-control" id="focusedInput2" name="tempat_lahir"></input>
-									</div>
+							<div class="form-start">
+								<div class="form-group label-floating">
+									<label class="control-label" for="focusedInput1">Nama</label>
+									<input class="form-control" id="focusedInput1" name="nama"></input>
 								</div>
 
-								<div class="col-sm-6">
-									<div class="form-group label-floating">
-										<label class="control-label" for="focusedInput3">Tanggal Lahir</label>
-										<input class="form-control picker" id="focusedInput3" name="tanggal_lahir"></input>
-									</div>
-								</div>
-							</div>
-
-							<div class="form-group label-floating">
-								<label class="control-label" for="focusedInput4">Agama</label>
-								<select class="form-control" id="focusedInput4" name="agama">
-									<option value="">-- Pilih Agama --</option>
-									<option value="Islam">Islam</option>
-									<option value="Katolik">Katolik</option>
-									<option value="Protestan">Protestan</option>
-									<option value="Hindu">Hindu</option>
-									<option value="Budha">Budha</option>
-								</select>
-							</div>
-
-							<div class="form-group label-floating">
-								<label class="control-label" for="focusedInput5">Jenis Kelamin</label>
 								<div class="row">
-									<div class="col-xs-6">
-										<label class="radio-inline">
-									      <input type="radio" name="jenis_kelamin" value="laki-laki">Laki-laki
-									    </label>
+									<div class="col-sm-6">
+										<div class="form-group label-floating">
+											<label class="control-label" for="focusedInput2">Tempat Lahir</label>
+											<input class="form-control" id="focusedInput2" name="tempat_lahir" pattern="[a-zA-Z0-9]+"></input>
+										</div>
 									</div>
 
-									<div class="col-xs-6">
-										<label class="radio-inline">
-									      <input type="radio" name="jenis_kelamin" value="perempuan">Perempuan
-									    </label>
+									<div class="col-sm-6">
+										<div class="form-group label-floating">
+											<label class="control-label" for="focusedInput3">Tanggal Lahir (yyyy-mm-dd)</label>
+											<input class="form-control picker" id="focusedInput3" name="tanggal_lahir" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])"></input>
+										</div>
 									</div>
 								</div>
-							</div>
 
-							<div class="form-group label-floating">
-								<label class="control-label" for="focusedInput6">Golongan Darah</label>
-								<select class="form-control" id="focusedInput6" name="golongan_darah">
-									<option value="">-- Pilih Golongan Darah --</option>
-									<option value="a">a</option>
-									<option value="b">b</option>
-									<option value="ab">ab</option>
-									<option value="o">o</option>
-								</select>
-							</div>
+								<div class="form-group">
+									<label class="control-label" for="focusedInput4">Agama</label>
+									<select class="form-control" id="focusedInput4" name="agama">
+										<option value="">-- Pilih --</option>
+										<option value="Islam">Islam</option>
+										<option value="Katolik">Katolik</option>
+										<option value="Protestan">Protestan</option>
+										<option value="Hindu">Hindu</option>
+										<option value="Budha">Budha</option>
+									</select>
+								</div>
 
-							<div class="form-group label-floating">
-								<label class="control-label" for="focusedInput7">Alamat</label>
-								<textarea class="form-control" id="focusedInput7" name="alamat_pribadi"></textarea>
-							</div>
+								<div class="form-group label-floating">
+									<label class="control-label" for="focusedInput5">Jenis Kelamin</label>
+									<div class="row">
+										<div class="col-xs-6">
+											<div class="radio">
+												<label><input type="radio" name="jenis_kelamin" value="laki-laki">Laki-laki</label>
+											</div>
+										</div>
 
-							<div class="form-group label-floating">
-								<label class="control-label" for="focusedInput8">Email</label>
-								<input class="form-control" id="focusedInput8" name="email"></input>
-							</div>
+										<div class="col-xs-6">
+											<div class="radio">											
+												<label><input type="radio" name="jenis_kelamin" value="perempuan">Perempuan</label>
+											</div>
+										</div>
+									</div>
+								</div>
 
-							<div class="form-group label-floating">
-								<label class="control-label" for="focusedInput9">Nomor Telefon</label>
-								<div class="input-group">
-						        	<div class="input-group-addon">+62</div>
+								<div class="form-group">
+									<label class="control-label" for="focusedInput6">Golongan Darah</label>
+									<select class="form-control" id="focusedInput6" name="golongan_darah">
+										<option value="">-- Pilih --</option>
+										<option value="a">a</option>
+										<option value="b">b</option>
+										<option value="ab">ab</option>
+										<option value="o">o</option>
+									</select>
+								</div>
+
+								<div class="form-group label-floating">
+									<label class="control-label" for="focusedInput7">Alamat</label>
+									<textarea class="form-control" id="focusedInput7" name="alamat_pribadi"></textarea>
+								</div>
+
+								<div class="form-group label-floating">
+									<label class="control-label" for="focusedInput8">Email</label>
+									<input class="form-control" id="focusedInput8" name="email"></input>
+								</div>
+
+								<div class="form-group label-floating">
+									<label class="control-label" for="focusedInput9">Nomor Telefon (+62xxxx)</label>
 						        	<input type="text" id="focusedInput9" class="form-control" name="nomor_pribadi">
-						        </div>
-							</div>
-
-							<div class="form-group label-floating">
-								<label class="control-label" for="focusedInput10">Asal Pendidikan</label>
-								<input class="form-control" id="focusedInput10" name="asal_sekolah"></input>
-							</div>
-
-							<div class="form-group label-floating">
-								<label class="control-label" for="focusedInput11">Pekerjaan</label>
-								<input class="form-control" id="focusedInput11" name="pekerjaan"></input>
-							</div>
-
-							<div class="form-group label-floating">
-								<label class="control-label" for="focusedInput12">Domisili Pilihan</label>
-								<select class="form-control" id="focusedInput12" name="chapter">
-									<option value="">-- Pilih Domisili --</option>
-									<?php foreach($getChapter as $row) { ?>
-									<option value="<?php echo $row->kode; ?>"><?php echo $row->nama; ?></option>
-									<?php } ?>
-								</select>
-							</div>
-
-							<div class="form-group label-floating">
-								<label class="control-label" for="focusedInput13">Alasan Bergabung Dengan Isbanban</label>
-								<textarea class="form-control" id="focusedInput13" name="alasan"></textarea>
-							</div>
-
-							<div class="form-group label-floating">
-								<label class="control-label" for="focusedInput1">Darimana Kamu Tahu Isbanban?</label>
-								<div class="radio">
-								  <label><input type="radio" name="referensi" value="media sosial">Media Sosial</label>
 								</div>
-								<div class="radio">
-								  <label><input type="radio" name="referensi" value="teman">Teman</label>
-								</div>
-								<div class="radio">
-								  <label><input type="radio" name="referensi" value="koran">Koran</label>
-								</div>
-								<div class="radio">
-								  <label><input type="radio" name="referensi" value="televisi">Televisi</label>
-								</div>
-								<input class="form-control" name="referensi" nput>
-							</div>
 
-							<button class="btn btn-primary btn-block btn-raised" type="submit">Submit</button>
+								<div class="form-group label-floating">
+									<label class="control-label" for="focusedInput10">Asal Pendidikan</label>
+									<input class="form-control" id="focusedInput10" name="asal_sekolah"></input>
+								</div>
+
+								<div class="form-group label-floating">
+									<label class="control-label" for="focusedInput11">Pekerjaan</label>
+									<input class="form-control" id="focusedInput11" name="pekerjaan"></input>
+								</div>
+
+								<div class="form-group">
+									<label class="control-label" for="focusedInput12">Domisili Pilihan</label>
+									<select class="form-control" id="focusedInput12" name="chapter">
+										<option value="">-- Pilih --</option>
+										<?php foreach($getChapter as $row) { ?>
+										<option value="<?php echo $row->kode; ?>"><?php echo $row->nama; ?></option>
+										<?php } ?>
+									</select>
+								</div>
+
+								<div class="form-group label-floating">
+									<label class="control-label" for="focusedInput13">Alasan Bergabung Dengan Isbanban</label>
+									<textarea class="form-control" id="focusedInput13" name="alasan"></textarea>
+								</div>
+
+								<!-- <div class="form-group label-floating">
+									<label class="control-label" for="focusedInput1">Darimana Kamu Tahu Isbanban?</label>
+									<div class="radio">
+									  <label><input type="radio" name="referensi" value="media sosial">Media Sosial</label>
+									</div>
+									<div class="radio">
+									  <label><input type="radio" name="referensi" value="teman">Teman</label>
+									</div>
+									<div class="radio">
+									  <label><input type="radio" name="referensi" value="koran">Koran</label>
+									</div>
+									<div class="radio">
+									  <label><input type="radio" name="referensi" value="televisi">Televisi</label>
+									</div>
+									<input class="form-control" name="referensi" nput>
+								</div> -->
+
+								<button class="btn btn-primary btn-block btn-raised" type="submit">Submit</button>
+							</div>
 						</div>
-						</form>
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>

@@ -10332,7 +10332,8 @@ header .navbar-nav li a {
 }
 /* Recruitment Form */
 body.recruitment {
-  background: linear-gradient(#28C7F3, #B9DD2D);
+  background: url('http://unsplash.it/1280x1280?image=534') no-repeat center center;
+  background-size: cover;
 }
 .recruitment {
   margin-bottom: 40px;
@@ -10345,7 +10346,7 @@ body.recruitment {
 .recruitment .start {
   border: 1px solid #e6e6e6;
   padding: 10px;
-  background: rgba(255, 255, 255, 0.7);
+  background: white;
 }
 .recruitment .start img {
   margin: 0px auto;
@@ -10449,6 +10450,9 @@ body.recruitment {
   transition: all 0.5s;
   -webkit-transform: translate3d(-110%, 0px, 0px);
           transform: translate3d(-110%, 0px, 0px);
+}
+.post .people .name {
+  text-transform: capitalize;
 }
 .post .event {
   width: 100%;

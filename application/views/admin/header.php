@@ -57,7 +57,7 @@
                 <nav class="navbar navbar-default" role="navigation">
                     <div class="side-menu-container">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="<?php echo base_url() ?>">
+                            <a class="navbar-brand" href="<?php echo base_url() ?>/admin/dashboard">
                                 <div class="icon fa fa-paper-plane"></div>
                                 <div class="title">Isbanban Panel</div>
                             </a>
@@ -85,11 +85,11 @@
                                 </a>
                             </li>
 <!-- Relawan -->
-                            <li <?php if($role == 'volunteer') { echo "class=active"; }?>>
+<!--                             <li <?php if($role == 'volunteer') { echo "class=active"; }?>>
                                 <a href="<?php echo base_url() ?>admin/volunteer">
                                     <span class="icon fa fa-group"></span><span class="title">Relawan</span>
                                 </a>
-                            </li>
+                            </li> -->
 <!-- Open Recruitment -->
                             <li <?php if($role == 'oprec') { echo "class=active"; }?>>
                                 <a href="<?php echo base_url() ?>admin/volunteer/recruitment">
@@ -103,17 +103,17 @@
                                 </a>
                             </li>
 <!-- Feedback -->
-                            <li <?php if($role == 'feedback') { echo "class=active"; } ?>>
+<!--                             <li <?php if($role == 'feedback') { echo "class=active"; } ?>>
                                 <a href="<?php echo base_url() ?>admin/feedback">
                                     <span class="icon fa fa-comment"></span><span class="title">Feedback</span>
                                 </a>
-                            </li>
+                            </li> -->
 <!-- Mail -->
-                            <li <?php if($role == 'mail') { echo "class=active"; } ?>>
+<!--                             <li <?php if($role == 'mail') { echo "class=active"; } ?>>
                                 <a href="<?php echo base_url() ?>admin/mail">
                                     <span class="icon fa fa-envelope-o"></span><span class="title">Mail</span>
                                 </a>
-                            </li>
+                            </li> -->
 
 <!-- Campaign -->
                             <!-- <li <?php if($role == 'campaign') { echo "class=active"; } ?>>
@@ -123,12 +123,17 @@
                             </li> -->
 
 <!-- Donatur -->
-                            <li <?php if($role == 'donation') { echo "class=active"; } ?>>
+<!--                             <li <?php if($role == 'donation') { echo "class=active"; } ?>>
                                 <a href="<?php echo base_url() ?>admin/donation">
                                     <span class="icon fa fa-male"></span><span class="title">Donation</span>
                                 </a>
+                            </li> -->
+<!-- Preview Website -->
+                            <li>
+                                <a href="<?php echo base_url() ?>" target="_blank">
+                                    <span class="icon fa fa-crosshairs"></span><span class="title">Preview Website</span>
+                                </a>
                             </li>
-
 <!-- Logout -->
                             <li>
                                 <a href="<?php echo base_url() ?>logout">

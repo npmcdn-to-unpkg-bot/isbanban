@@ -105,8 +105,8 @@ class Donate extends CI_Controller {
 					'protocol'  => 'smtp',
 					'smtp_host' => 'mail.smtp2go.com',
 					'smtp_port' => 2525,
-					'smtp_user' => 'muhammad-ihsan@outlook.com',
-					'smtp_pass' => '1JujCMNAHuz1',
+					'smtp_user' => 'ihsan@isbanban.org',
+					'smtp_pass' => 'TWGAqI4wPReo',
 					'crlf'      => "\r\n",
 					'newline'   => "\r\n",
 					'mailtype'  => 'html',
@@ -114,18 +114,16 @@ class Donate extends CI_Controller {
 				);
 				$this->email->initialize($configMail);
 
-				$this->email->from('admin@isbanban.org', 'Admin');
+				$this->email->from('admin@isbanban.org', 'Istana Belajar Anak Banten');
 				$this->email->to($this->input->post('donatur_email')); 
 
-				$this->email->subject('Email Test');
+				$this->email->subject('Konfirmasi Donasi');
         		$message=$this->load->view('mail',$data,TRUE);
 				$this->email->message($message);
 				$this->email->send();
 
 // Alert for Donatur
 				$this->session->set_flashdata('success', true);
-			} else {
-				echo validation_errors();
 			}
 		}
 

@@ -150,28 +150,28 @@ class Recruitment extends CI_Controller {
 
 // Send Mail
 				$this->load->library('email');
-				// $configMail = Array(
-				// 	'protocol'  => 'smtp',
-				// 	'smtp_host' => 'mail.smtp2go.com',
-				// 	'smtp_port' => 2525,
-				// 	'smtp_user' => 'muhammad-ihsan@outlook.com',
-				// 	'smtp_pass' => '1JujCMNAHuz1',
-				// 	'crlf'      => "\r\n",
-				// 	'newline'   => "\r\n",
-				// 	'mailtype'  => 'html',
-				// 	'priority'  => 1
-				// );
-				// 
 				$configMail = Array(
-				  'protocol' => 'smtp',
-				  'smtp_host' => 'mailtrap.io',
-				  'smtp_port' => 2525,
-				  'smtp_user' => '573617400c51f2f73',
-				  'smtp_pass' => '4ee968dc28496c',
-				  'crlf' => "\r\n",
-				  'newline' => "\r\n",
-				  'mailtype'  => 'html',  
+					'protocol'  => 'smtp',
+					'smtp_host' => 'mail.smtp2go.com',
+					'smtp_port' => 2525,
+					'smtp_user' => 'ihsan@isbanban.org',
+					'smtp_pass' => 'TWGAqI4wPReo',
+					'crlf'      => "\r\n",
+					'newline'   => "\r\n",
+					'mailtype'  => 'html',
+					'priority'  => 1
 				);
+
+				// $configMail = Array(
+				//   'protocol' => 'smtp',
+				//   'smtp_host' => 'mailtrap.io',
+				//   'smtp_port' => 2525,
+				//   'smtp_user' => '573617400c51f2f73',
+				//   'smtp_pass' => '4ee968dc28496c',
+				//   'crlf' => "\r\n",
+				//   'newline' => "\r\n",
+				//   'mailtype'  => 'html',  
+				// );
 				$this->email->initialize($configMail);
 
 				$data['relawan_nama']	= $this->input->post('nama');

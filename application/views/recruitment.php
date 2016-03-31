@@ -67,8 +67,7 @@
 						</div>
 
 						<div class="panel-body">
-							Apabila anda mengalami kesulitan ketika melengkapi formulir pendaftaran dibawah ini ataupun punya pertanyaa seputar <b>Istana Belajar Anak Banten</b>,
-							Silahkan hubungi <b>Isbanban Information Center: <a href="tel:089665656796">+6289665656796</a></b>.
+							Apabila anda mempunyai pertanyaa seputar <b>Istana Belajar Anak Banten (ISBANBAN)</b>, jangan ragu untuk menghubungi <b>Isbanban Information Center: <a href="tel:089665656796">+6289665656796</a></b>
 							<br>
 							<b>Jam Kerja</b>: Senin - Sabtu | 08:00 - 19:00
 						</div>

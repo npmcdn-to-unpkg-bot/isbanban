@@ -51,6 +51,7 @@ class Blog extends CI_Controller {
 
 		$data	= [
 			'title'			=> 'Blogs',
+			'current'		=> 'blog',
 			'role'			=> 'normal',
 			'getAll'		=> $this->m_blog->getAll($page, $config["per_page"]),
 		];
@@ -103,6 +104,7 @@ class Blog extends CI_Controller {
 	function detail($slug = FALSE) {
 		$data	= [
 			'title'			=> 'Blogs',
+			'current'		=> 'blog',
 			'role'			=> 'normal',
 			'getThis'		=> $this->m_blog->getThis($slug),
 		];

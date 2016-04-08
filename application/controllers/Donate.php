@@ -29,6 +29,7 @@ class Donate extends CI_Controller {
 	{
 		$data	= [
 			'title'			=> 'Donation',
+			'current'		=> 'donate',
 			'role'			=> 'normal',
 			'totalBook'		=> $this->m_donation->countDonate('1'),
 			'totalMoney'	=> $this->m_donation->countDonate('3'),

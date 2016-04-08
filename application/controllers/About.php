@@ -27,6 +27,7 @@ class About extends CI_Controller {
 	{
 		$data	= [
 			'title'			=> 'About Us',
+			'current'		=> 'about',
 			'role'			=> 'normal',
 		];
 

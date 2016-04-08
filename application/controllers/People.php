@@ -50,7 +50,8 @@ class People extends CI_Controller {
 		}
 
 		$data	= [
-			'title'			=> 'Volunteer',
+			'title'			=> 'People',
+			'current'		=> 'people',
 			'role'			=> 'normal',
 			'getAll'		=> $this->m_people->getAll($page, $config["per_page"]),
 		];
@@ -87,7 +88,8 @@ class People extends CI_Controller {
 		}
 
 		$data	= [
-			'title'			=> 'Volunteer',
+			'title'			=> 'People',
+			'current'		=> 'people',
 			'role'			=> 'normal',
 			'getAll'		=> $this->m_people->getAll($page, $config["per_page"]),
 		];

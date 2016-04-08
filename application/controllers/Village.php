@@ -28,6 +28,7 @@ class Village extends CI_Controller {
 	{
 		$data	= [
 			'title'			=> 'Village',
+			'current'		=> 'village',
 			'role'			=> 'normal',
 			'getAll'		=> $this->m_village->getAll(),
 		];
@@ -41,6 +42,7 @@ class Village extends CI_Controller {
 	{
 		$data	= [
 			'title'			=> 'Village',
+			'current'		=> 'village',
 			'role'			=> 'normal',
 			'getThis'		=> $this->m_village->getThis($slug)
 		];

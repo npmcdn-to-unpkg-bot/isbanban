@@ -28,6 +28,7 @@ class Home extends CI_Controller {
 	{
 		$data	= [
 			'title'			=> 'Home',
+			'current'		=> 'home',
 			'role'			=> 'normal',
 			'getBlogPost'	=> $this->m_home->getBlogPost('8', 'blog'),
 			'countVillage'	=> $this->m_home->countData('desa'),

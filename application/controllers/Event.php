@@ -50,6 +50,7 @@ class Event extends CI_Controller {
 
 		$data	= [
 			'title'			=> 'Event',
+			'current'		=> 'event',
 			'role'			=> 'normal',
 			'getAll'		=> $this->m_event->getAll($page, $config["per_page"]),
 		];
@@ -90,6 +91,7 @@ class Event extends CI_Controller {
 
 		$data	= [
 			'title'			=> 'Events',
+			'current'		=> 'event',
 			'role'			=> 'normal',
 			'getAll'		=> $this->m_event->getAll($page, $config["per_page"]),
 		];
@@ -103,6 +105,7 @@ class Event extends CI_Controller {
 	{
 		$data	= [
 			'title'			=> 'Event',
+			'current'		=> 'event',
 			'role'			=> 'inverse',
 			'getThis'		=> $this->m_event->getThis($slug)
 		];

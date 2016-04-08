@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>Open Recruitment &mdash; Istana Belajar Anak Banten</title>
+	<title><?php echo $title; ?> &mdash; Istana Belajar Anak Banten</title>
 
 	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
@@ -70,13 +70,13 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="<?php echo base_url() ?>">home</a></li>
-				<li><a href="<?php echo base_url() ?>about">about</a></li>
-				<li><a href="<?php echo base_url() ?>people">people</a></li>
-				<li><a href="<?php echo base_url() ?>village">village</a></li>
-				<li><a href="<?php echo base_url() ?>blog">blog</a></li>
-				<li><a href="<?php echo base_url() ?>event">event</a></li>
-				<li><a href="<?php echo base_url() ?>donate">donate</a></li>
+				<li <?php if($current =='home') { ?> class="active" <?php } ?>><a href="<?php echo base_url() ?>">home</a></li>
+				<li <?php if($current =='about') { ?> class="active" <?php } ?>><a href="<?php echo base_url() ?>about">about</a></li>
+				<li <?php if($current =='people') { ?> class="active" <?php } ?>><a href="<?php echo base_url() ?>people">people</a></li>
+				<li <?php if($current =='village') { ?> class="active" <?php } ?>><a href="<?php echo base_url() ?>village">village</a></li>
+				<li <?php if($current =='blog') { ?> class="active" <?php } ?>><a href="<?php echo base_url() ?>blog">blog</a></li>
+				<li <?php if($current =='event') { ?> class="active" <?php } ?>><a href="<?php echo base_url() ?>event">event</a></li>
+				<li <?php if($current =='donate') { ?> class="active" <?php } ?>><a href="<?php echo base_url() ?>donate">donate</a></li>
 			</ul>
 		</div>
 	</div>

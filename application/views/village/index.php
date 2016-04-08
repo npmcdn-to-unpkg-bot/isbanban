@@ -6,7 +6,7 @@
     		<h1>Our Village</h1>
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
-                    <p>Our movement reached out in 8 rural areas of 7 districts/cities in Banten</p>
+                    <p class="lead">Our movement reached out in 8 rural areas of 7 districts/cities in Banten</p>
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 <div class="jumbotron bigger" style="background: url(<?php echo base_url() ?>template/assets/image/hero-home1.jpg) no-repeat top center;">
 	<div class="container">
 		<h1>istana belajar anak banten</h1>
-		<p>We are Youth Led-Organization that focus on helping education of children in Rural Areas.</p>
+		<p class="lead">We are Youth Led-Organization that focus on helping education of children in Rural Areas.</p>
 		<hr>
 	</div>
 </div>

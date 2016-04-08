@@ -1,7 +1,7 @@
 <div class="jumbotron bigger" style="background: url(<?php echo base_url() ?>template/assets/image/bg-blog.jpg) no-repeat top center;">
 	<div class="container">
 		<h1>Blogs</h1>
-		<p>Leading text about blog here</p>
+		<p class="lead">Leading text about blog here</p>
 		<hr>
 	</div>
 </div>

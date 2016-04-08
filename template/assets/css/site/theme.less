@@ -10,6 +10,7 @@
 body {
 	font-family: 'Open Sans', sans-serif;
 	background: white;
+	padding-top: 90px;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -63,7 +64,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .text-normal {
 	font-size: 18px;
-	line-height: 25px;
+	line-height: 1.5;
 }
 
 .font(@type) {
@@ -148,15 +149,6 @@ img {
 		@media (max-width: @screen-sm) {
 			.padding(100px);
 
-			h1 {
-				font-size: 21px;
-				line-height: 28px;
-			}
-
-			p {
-				font-size: 18px;
-				line-height: 25px;
-			}
 		}
 	}
 
@@ -198,7 +190,6 @@ img {
 		}
 	}
 
-
 	&.jumbotron-testimoni {
 		background: #fafafa;
 		margin-bottom: -20px;
@@ -230,7 +221,6 @@ img {
 		    }
 		}
 
-
 		.title {
 			position: absolute !important;
 			bottom: 0px;
@@ -251,11 +241,6 @@ img {
 
 
 .bg-gradient(@color1, @color2) {
-	// background: -webkit-linear-gradient(@color1, @color2 85%);
- //    background: -o-linear-gradient(@color1, @color2 85%); 
- //    background: -moz-linear-gradient(@color1, @color2 85%);
- //    background: linear-gradient(@color1, @color2 85%);
-
     background: -webkit-linear-gradient(@color1, @color2);
     background: -o-linear-gradient(@color1, @color2); 
     background: -moz-linear-gradient(@color1, @color2);
@@ -264,10 +249,8 @@ img {
 
 
 header {
-
 	@media (max-width: @screen-sm) {
 		height: 90px;
-
 
 		.navbar-toggle {
 			margin-top: 25px;
@@ -276,6 +259,17 @@ header {
 		.navbar-collapse {
 			margin-top: 20px;
     		background: white;
+		}
+	}
+
+	@media (min-width: @screen-sm) and (max-width: @screen-md) {
+		.navbar-nav {
+			li {
+				a {
+				    padding-left: 10px;
+					padding-right: 10px;
+				}
+			}
 		}
 	}
 
@@ -292,22 +286,9 @@ header {
 		}
 	}
 
-
-	.navbar-before {
-		.padding(30px);
-
-		img {
-			margin:0px auto;
-		}
-	}
-
 	.navbar-brand img {
         height: 65px;
     	margin-top: -5px;
-	}
-
-	.container {
-		.text-center();
 	}
 
 	.navbar-nav {
@@ -333,13 +314,10 @@ header {
 .navbar-inverse {
 	background: rgba(0,0,0,0.1);
 	box-shadow: 0px 1px 0px 1px rbga(0,0,0,0.1);
-	position:relative;
 	z-index:2;
 
 	.navbar-nav {
-
 		li {
-
 			a {
 				color: white;
 
@@ -352,17 +330,16 @@ header {
 			}
 
 			&.active {
-
 				a {
 					background: @brand-primary;
 					color:white;
 
 					&:hover,
 					&:focus {
-					background: @brand-primary;
-					color:white;
-					.transition(all .35s ease);
-				}
+						background: @brand-primary;
+						color:white;
+						.transition(all .35s ease);
+					}
 				}
 			}
 		}
@@ -372,7 +349,6 @@ header {
 .navbar-default {
 	background: white;
 	border:0px;
-	position:relative;
 	z-index:2;
 	box-shadow: 1px 1px 1px 1px #00ACED;
 
@@ -405,7 +381,6 @@ header {
 						.transition(all .35s ease);
 					}
 				}
-
 			}
 		}
 	}
@@ -691,7 +666,6 @@ body.recruitment {
 .post {
 
 	.begin-post {
-
 		&.blog {
 			background-size: cover;
 			height:350px;
@@ -782,7 +756,7 @@ body.recruitment {
 			padding: 5% 5% 5% 35%;
 			text-align: left;
 			top: 0;
-			z-index: 99;
+			z-index: 1;
 			-webkit-transition: all 0.5s;
 			-moz-transition: all 0.5s;
 			-ms-transition: all 0.5s;
@@ -963,9 +937,7 @@ body.recruitment {
 		}
 	}
 
-
 	&.village {
-
 		.precontent {
 			.text-center();
 			background: #fafafa;
@@ -1000,7 +972,6 @@ body.recruitment {
 	    text-align: center;
 	}
 
-
 	&.post-testimoni {
 		.text-center();
 		padding:15px;
@@ -1031,6 +1002,16 @@ body.recruitment {
 			.text-left();
 			border-color: @brand-primary;
 		}
+	}
+}
+
+.post-text-content {
+	p,
+	ol li,
+	ul li {
+		font-size: 16px;
+		line-height: 1.5;
+	    letter-spacing: 0.49px;
 	}
 }
 
@@ -1071,10 +1052,15 @@ body.recruitment {
 
 
 
-.panel {
+.stick_donation,
+.stick_helper {
+	position: static;
+}
 
+.panel {
 	&.donation {
 		box-shadow: 0 1px 6px 0 @brand-primary;
+		position: static;
 
 		.panel-heading {
 			text-transform:uppercase;
@@ -1083,7 +1069,6 @@ body.recruitment {
 			font-weight: bolder;
 		}
 	}
-
 
 	&.panel-danger {
 		.panel-heading {
@@ -1217,7 +1202,6 @@ footer {
 
 // Insight Page
 .panel {
-
 	&.panel-insight {
 		.text-center();
 		h1 {
@@ -1240,7 +1224,6 @@ footer {
 
 // About Page
 #sectionNav {
-	position:static;
 	background: #fafafa;
 	padding: 0px;
 
@@ -1251,9 +1234,4 @@ footer {
 			}
 		}
 	}
-}
-
-#secProfile,
-#secVision {
-	height: 1000px;
 }

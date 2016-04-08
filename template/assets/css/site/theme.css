@@ -9893,6 +9893,7 @@ hr.on-light {
 body {
   font-family: 'Open Sans', sans-serif;
   background: white;
+  padding-top: 90px;
 }
 h1,
 h2,
@@ -9930,7 +9931,7 @@ h6 {
 }
 .text-normal {
   font-size: 18px;
-  line-height: 25px;
+  line-height: 1.5;
 }
 @media (max-width: 768px) {
   .remove-flex {
@@ -9982,14 +9983,6 @@ img.img-center {
   .jumbotron.bigger {
     padding-top: 100px;
     padding-bottom: 100px;
-  }
-  .jumbotron.bigger h1 {
-    font-size: 21px;
-    line-height: 28px;
-  }
-  .jumbotron.bigger p {
-    font-size: 18px;
-    line-height: 25px;
   }
 }
 .jumbotron.banner {
@@ -10077,6 +10070,12 @@ img.img-center {
     background: white;
   }
 }
+@media (min-width: 768px) and (max-width: 992px) {
+  header .navbar-nav li a {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 header .navmenu {
   background: #00aced;
   border-left: 1px solid #0087ba;
@@ -10086,19 +10085,9 @@ header .navmenu li a {
   border-bottom: 1px solid #0087ba;
   text-transform: uppercase;
 }
-header .navbar-before {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-header .navbar-before img {
-  margin: 0px auto;
-}
 header .navbar-brand img {
   height: 65px;
   margin-top: -5px;
-}
-header .container {
-  text-align: center;
 }
 header .navbar-nav {
   text-align: center;
@@ -10119,7 +10108,6 @@ header .navbar-nav li a {
 .navbar-inverse {
   background: rgba(0, 0, 0, 0.1);
   box-shadow: 0px 1px 0px 1px rbga(0, 0, 0, 0.1);
-  position: relative;
   z-index: 2;
 }
 .navbar-inverse .navbar-nav li a {
@@ -10144,7 +10132,6 @@ header .navbar-nav li a {
 .navbar-default {
   background: white;
   border: 0px;
-  position: relative;
   z-index: 2;
   box-shadow: 1px 1px 1px 1px #00ACED;
 }
@@ -10446,7 +10433,7 @@ body.recruitment {
   padding: 5% 5% 5% 35%;
   text-align: left;
   top: 0;
-  z-index: 99;
+  z-index: 1;
   transition: all 0.5s;
   -webkit-transform: translate3d(-110%, 0px, 0px);
           transform: translate3d(-110%, 0px, 0px);
@@ -10630,6 +10617,13 @@ body.recruitment {
   text-align: left;
   border-color: #00aced;
 }
+.post-text-content p,
+.post-text-content ol li,
+.post-text-content ul li {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.49px;
+}
 .lSPager {
   display: none !important;
 }
@@ -10644,8 +10638,13 @@ body.recruitment {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.stick_donation,
+.stick_helper {
+  position: static;
+}
 .panel.donation {
   box-shadow: 0 1px 6px 0 #00aced;
+  position: static;
 }
 .panel.donation .panel-heading {
   text-transform: uppercase;
@@ -10726,14 +10725,9 @@ footer .copyright p {
   line-height: 25px;
 }
 #sectionNav {
-  position: static;
   background: #fafafa;
   padding: 0px;
 }
 #sectionNav ul li a {
   border-radius: 0px;
-}
-#secProfile,
-#secVision {
-  height: 1000px;
 }

@@ -52,7 +52,7 @@
 </head>
 <body>
 
-<header class="navbar-<?php if($role=='normal') { echo "default"; } else { echo "inverse"; } ?>">
+<header class="navbar-fixed-top navbar-<?php if($role=='normal') { echo "default"; } else { echo "inverse"; } ?>">
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">

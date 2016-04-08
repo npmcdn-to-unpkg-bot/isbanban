@@ -2,7 +2,7 @@
 <div class="jumbotron bigger" style="background: url(http://unsplash.it/1280/800?random&blur) no-repeat center center;">
 	<div class="container">
 		<h1>Events</h1>
-		<p>Reach our events in various activities at Istana Belajar Anak Banten</p>
+		<p class="lead">Reach our events in various activities at Istana Belajar Anak Banten</p>
 		<hr>
 	</div>
 </div>

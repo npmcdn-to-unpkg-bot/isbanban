@@ -244,19 +244,19 @@
 							</div>
 
 							<div class="form-group label-floating">
-								<label for="#uname" class="control-label">Message</label>
+								<label for="#uname" class="control-label">Additional Message</label>
 								<textarea id="uname" class="form-control" name="donatur_message"></textarea>
 							</div>
 
 							<div class="form-group label-floating">
-								<label for="#default" class="control-label">Donation (Rp.)</label>
-								<input id="default" type="text" class="form-control moneyFormat">
-								<input class="realFormat" type="hidden" name="donation_cash" required>
+								<label for="#default" class="control-label">Donation (Rp)</label>
+								<input id="default" type="text" class="form-control moneyFormat" required>
+								<input class="realFormat" type="hidden" name="donation_cash">
 							</div>
 
 							<div class="form-group label-floating">
 								<label for="#uname">Transfer Method</label>
-								<select name="donation_method" id="uname" class="form-control">
+								<select name="donation_method" id="uname" class="form-control" required>
 									<option value="">-- Choose Option --</option>
 									<?php foreach($getBankAccount as $item) { ?>
 									<option value="<?php echo $item->id; ?>">
@@ -328,16 +328,17 @@ $(".moneyFormat").autoNumeric('init',{
 
 $("#default").bind('blur focusout keypress keyup', function() {
     var realValue = $("#default").autoNumeric('get');
-
     $(".realFormat").val(realValue);
 });
 
 <?php if($this->session->flashdata('success', true)) { ?>
 swal({
-  title: "Thank you!",
-  text: "Please confirm to our number you finished transfer to bank account that we mentioned before <?php echo $confirm_code; ?> | <?php echo $this->input->post('donation_cash'); ?>",
+  title: "You did it!",
+  text: "Terimakasih anda sudah ikut berpartisipasi untuk kemajuan pendidikan di plosok Banten, Kami mengirimkan rincian langkah selanjutnya ke email anda, Pastikan email yang anda gunakan adalah email aktif.",
   type: "success",
   confirmButtonText: "Close",
+  allowEscapeKey: false,
+  allowOutsideClick: false
 },
 function(){ 
 	window.location.href = "<?php echo base_url() ?>donate";

@@ -94,12 +94,9 @@ class Donate extends CI_Controller {
 // Insert to DB
 				$this->m_donation->insert($datadb);
 
-
-
-				$data['confirm_code']	= $confirm_code;
-				$data['donatur_nama']	= $this->input->post('donatur_name');
-				$data['donasi_cash']	= $this->input->post('donation_cash');
-
+				$data['confirm_code']		 	 = $confirm_code;
+				$data['donatur_nama']		 	 = $this->input->post('donatur_name');
+				$data['donasi_cash']		 	 = $this->input->post('donation_cash');
 // Send Mail
 				$this->load->library('email');
 				$configMail = Array(
@@ -111,15 +108,24 @@ class Donate extends CI_Controller {
 					'crlf'      => "\r\n",
 					'newline'   => "\r\n",
 					'mailtype'  => 'html',
-					'priority'  => 1
 				);
+
+				// $configMail = Array(
+				//   'protocol' 	=> 'smtp',
+				//   'smtp_host' 	=> 'mailtrap.io',
+				//   'smtp_port' 	=> 2525,
+				//   'smtp_user' 	=> '573617400c51f2f73',
+				//   'smtp_pass' 	=> '4ee968dc28496c',
+				//   'crlf' 		=> "\r\n",
+				//   'newline' 	=> "\r\n",
+				//   'mailtype'	=> 'html'
+				// );
 				$this->email->initialize($configMail);
 
 				$this->email->from('admin@isbanban.org', 'Istana Belajar Anak Banten');
 				$this->email->to($this->input->post('donatur_email')); 
-
-				$this->email->subject('Konfirmasi Donasi');
-        		$message=$this->load->view('mail',$data,TRUE);
+				$this->email->subject('Pemberitahuan Donasi');
+        		$message 	=$this->load->view('mail',$data,TRUE);
 				$this->email->message($message);
 				$this->email->send();
 

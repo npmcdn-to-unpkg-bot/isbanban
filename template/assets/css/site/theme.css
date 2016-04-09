@@ -9944,6 +9944,10 @@ img.img-full {
 img.img-center {
   margin: 0px auto;
 }
+img.img-50 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 .definition {
   padding: 50px 0px;
 }

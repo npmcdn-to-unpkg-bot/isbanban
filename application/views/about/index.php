@@ -16,6 +16,7 @@
 					<li><a href="#secVision">Vision</a></li>
 					<li><a href="#secOurProgram">Program</a></li>
 					<li><a href="#secOurImpact">Impact</a></li>
+					<li><a href="#secOurTeam">Team</a></li>
 				</ul>
 			</div>
 
@@ -215,6 +216,10 @@
 						</p>
 
 						<p>
+							<img src="<?php echo base_url() ?>template/assets/image/about-literacy-illustrate.png" alt="" class="img-responsive img-50 img-center">
+						</p>
+
+						<p>
 							Kami memberikan Beasiswa Belajar kepada calon penerima beasiswa berdasarkan indikator dibawah ini :
 
 							<ol>
@@ -242,6 +247,8 @@
 							Dampak adalah ukuran seberapa berhasil kami menciptakan sebuah gerakan. Ketiga program yang kami rancang ditujukan untuk mencapai visi besar organisasi yaitu “Menciptakan Akses & Kualitas Pendidikan yang berkeadilan di Pelosok desa Banten”.
 							Program Beasiswa Belajar Isbanban memberikan long term impact pada 3 (tiga) aspek diantaranya aspek “Pendidikan, Ekonomi dan Sosial”.
 						</p>
+
+						<img src="<?php echo base_url() ?>template/assets/image/about-impact-illustrate.png" alt="" class="img-responsive img-center img-50">
 					</div>
 				</section>
 
@@ -254,8 +261,7 @@
 
 					<div class="post-text-content">
 						<p>
-							Gerakan kerelawanan ini ditentukan dari seberapa kuat dan hebat tim yang ada didalamnya. Kami bergerak menjadi tim yang terdiri dari anak-anak muda yang memilki semangat dan inisiatif untuk menjadi <b>a part of change</b>. <br>
-							Perkenalkan tim kami :
+							Gerakan kerelawanan ini ditentukan dari seberapa kuat dan hebat tim yang ada didalamnya. Kami bergerak menjadi tim yang terdiri dari anak-anak muda yang memilki semangat dan inisiatif untuk menjadi <b>a part of change</b>. Perkenalkan tim kami :
 						</p>
 
 						<table class="table table-bordered">
@@ -303,7 +309,7 @@
 								</tr>
 
 								<tr>
-									<td>Atika Suri (Project Manager Child Development)</td>
+									<td>Atika Suri</td>
 									<td>Project Manager Child Development</td>
 								</tr>
 
@@ -330,11 +336,6 @@
 								<tr>
 									<td>Ervi Cahyatri</td>
 									<td>Project Manager</td>
-								</tr>
-
-								<tr>
-									<td>Teja Saftiadi</td>
-									<td>Project Officer (ISBANBAN Chapter Lebak)</td>
 								</tr>
 
 								<tr>

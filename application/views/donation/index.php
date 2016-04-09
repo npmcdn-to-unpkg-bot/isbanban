@@ -235,7 +235,7 @@
 
 							<div class="form-group label-floating">
 								<label for="#uname" class="control-label">Phone Number</label>
-								<input type="text" id="uname" class="form-control" name="donatur_number" required>
+								<input type="text" id="uname" class="form-control" name="donatur_number" pattern="\d*" required>
 							</div>
 
 							<div class="form-group label-floating">
@@ -265,6 +265,14 @@
 									<?php } ?>
 								</select>
 							</div>
+
+							<div class="form-group">
+								<div class="checkbox">
+									<label>
+							            <input type="checkbox" name="is_anonim" value="1"> dont publish me
+							        </label>
+						       	</div>
+			                </div>
 
 							<div class="form-group">
 								<button class="btn btn-primary btn-raised btn-block" type="submit">confirm</button>		

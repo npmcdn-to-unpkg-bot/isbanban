@@ -35,8 +35,6 @@ class Donate extends CI_Controller {
 			'totalMoney'	=> $this->m_donation->countDonate('3'),
 			'getBankAccount'=> $this->m_donation->getBankAccount(),
 		];
-
-
 		$config		= array(
 			array(
 				'field'	=> 'donatur_name',
@@ -87,6 +85,7 @@ class Donate extends CI_Controller {
 					'status'			=> '0',
 					'created_at'		=> date('Y-m-d'),
 					'id_jenis'			=> '3',
+					'is_anonim'			=> $this->input->post('is_anonim'),
 					'confirm_code'		=> $confirm_code,
 					'parameter_code'	=> strtolower(md5($this->input->post('donatur_name').$confirm_code)),
 				);
@@ -94,10 +93,16 @@ class Donate extends CI_Controller {
 // Insert to DB
 				$this->m_donation->insert($datadb);
 
+
+// Setting for mail information
 				$data['confirm_code']		 	 = $confirm_code;
 				$data['donatur_nama']		 	 = $this->input->post('donatur_name');
 				$data['donasi_cash']		 	 = $this->input->post('donation_cash');
-// Send Mail
+				$data['donatur_number']			 = $this->input->post('donatur_number');
+				$data['donatur_email']			 = $this->input->post('donatur_email');
+				$data['donatur_message']		 = $this->input->post('donatur_message');
+
+// Config Mail
 				$this->load->library('email');
 				$configMail = Array(
 					'protocol'  => 'smtp',
@@ -122,6 +127,10 @@ class Donate extends CI_Controller {
 				// );
 				$this->email->initialize($configMail);
 
+				// Attach PDF
+				$data['path_pdf'] 	= base_url().'uploads/pdf/donation-request-'.$data['confirm_code'].".pdf";
+
+// Send email
 				$this->email->from('admin@isbanban.org', 'Istana Belajar Anak Banten');
 				$this->email->to($this->input->post('donatur_email')); 
 				$this->email->subject('Pemberitahuan Donasi');
@@ -129,14 +138,40 @@ class Donate extends CI_Controller {
 				$this->email->message($message);
 				$this->email->send();
 
+
 // Alert for Donatur
 				$this->session->set_flashdata('success', true);
+				$this->do_pdf($data);
 			}
 		}
 
 		$this->load->view('header', $data);
 		$this->load->view('donation/index');
 		$this->load->view('footer');
+	}
+
+
+	function do_pdf($data) {
+		//load the view and saved it into $html variable
+		$html=$this->load->view('pdf_template', $data, true);
+
+		// $pdfFilePath = "donation-request-"+$data['confirm_code']+".pdf";
+		$path 		= 'uploads/pdf/';
+		if(!is_dir($path))
+	    {
+	      mkdir($path,0755,TRUE);
+	    } 
+		$pdfFilePath = $path."donation-request-".$data['confirm_code'].".pdf";
+
+        //load mPDF library
+		$this->load->library('m_pdf');
+
+       //generate the PDF from the given html
+		$this->m_pdf->pdf->WriteHTML($html);
+
+        //download it.
+		// $this->m_pdf->pdf->Output($pdfFilePath, "D");
+		$this->m_pdf->pdf->Output($pdfFilePath, "F");
 	}
 }
 

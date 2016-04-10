@@ -64,7 +64,7 @@
                                 <select class="form-control" name="id_detail">
                                     <option value="">-- Pilih --</option>
                                     <?php foreach($getCategory as $item) { ?>
-                                    <option <?php if($item->id == $row->id_detail) { echo "selected"; } ?> $value="<?php echo $item->id; ?>"><?php echo $item->judul; ?></option>
+                                    <option <?php if($item->id == $row->id_detail) { echo "selected"; } ?> value="<?php echo $item->id; ?>"><?php echo $item->judul; ?></option>
                                     <?php } ?>
                                 </select>
                             </div>

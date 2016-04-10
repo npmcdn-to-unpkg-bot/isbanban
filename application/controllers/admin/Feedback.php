@@ -121,7 +121,6 @@ class Feedback extends CI_Controller {
 						$this->m_feedback->insert($datadb);
 						$this->session->set_flashdata('success', true);
 						redirect('admin/feedback');
-
 					}
 				}
 			}

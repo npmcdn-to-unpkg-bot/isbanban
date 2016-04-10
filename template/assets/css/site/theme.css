@@ -9895,6 +9895,19 @@ body {
   background: white;
   padding-top: 90px;
 }
+body.errors {
+  background: url(http://unsplash.it/1280x800?blur&image=1074) no-repeat center center;
+  background-size: cover;
+}
+@media (max-width: 768px) {
+  body.errors {
+    background: #87deff;
+  }
+}
+body.errors .errors-begin {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+}
 h1,
 h2,
 h3,

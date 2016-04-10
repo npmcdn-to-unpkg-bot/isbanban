@@ -259,9 +259,9 @@
 		<div class="container">
 
 			<h2>What They Say</h2>
-			<div id="lightSlider">
+			<div id="lightSlider" class="row">
 				<?php foreach($getFeedback as $item) { ?>
-				<div class="item">
+				<div class="col-sm-6">
 					<div class="post post-testimoni">
 						<a href="<?php echo base_url() ?>blog/detail/<?php echo $item->blog_slug; ?>">
 							<?php if($item->testimoni_path_foto) { ?>
@@ -284,16 +284,19 @@
 					</div>
 				</div>
 				<?php } ?>
-			</div>
 		</div>
 	</div>
 </div>
 
 
-<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>template/assets/vendor/lightslider/dist/css/lightslider.min.css">
+
+<link rel="stylesheet" href="<?php echo base_url() ?>template/assets/vendor/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="<?php echo base_url() ?>template/assets/vendor/slick-carousel/slick/slick-theme.css">
 <script type="text/javascript" src="<?php echo base_url() ?>template/assets/vendor/counter.js/js/jquery.easing.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>template/assets/vendor/counter.js/js/counter.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>template/assets/vendor/lightslider/dist/js/lightslider.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url() ?>template/assets/vendor/slick-carousel/slick/slick.min.js"></script>
+
+
 
 <script type="text/javascript">
 $(".people .big").counter({
@@ -310,8 +313,10 @@ $(".village .big").counter({
 	  countTo: <?php echo $countVillage; ?>,
 });
 
-$("#lightSlider").lightSlider({
-	item: 2,
+$("#lightSlider").slick({
+	slidesToShow: 2,
+	dots: false,
+	autoplay: true,
 });
 
 function toggleChevron(e) {

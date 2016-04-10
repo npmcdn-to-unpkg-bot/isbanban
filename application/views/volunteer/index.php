@@ -7,14 +7,11 @@
 	</div>
 </div>
 
-
-<div class="search-box people">
+<div class="search-box search-people">
 	<div class="container">
-		<div class="row">
-			<div class="form-group label-floating">
-			  <label class="control-label" for="focusedInput1">Quick find your people</label>
-			  <input class="form-control twitter-typeahead" id="focusedInput1" type="text">
-			</div>
+		<div class="form-group label-floating">
+		  <label class="control-label" for="focusedInput1">Quick find people</label>
+		  <input class="form-control twitter-typeahead" id="focusedInput1" type="text">
 		</div>
 	</div>
 </div>
@@ -52,28 +49,6 @@
 
 <div id="modal_target"></div>
 
-
-<style>
-.twitter-typeahead {
-	width:100%; border-radius: 80px
-}
-.tt-menu {
-	width:100%;
-	background-color:white;
-}
-.tt-row {
-	padding:10px;
-	border-bottom:1px solid #ccc;
-}
-.Typeahead-spinner {
-	position: absolute;
-	top: 9px;
-	right: 24px;
-	display: none;
-	width: 28px;
-	height: 28px;
-}
-</style>
 
 <script src="<?php echo base_url() ?>template/assets/vendor/typeahead.js/dist/typeahead.bundle.min.js"></script>
 <script src="<?php echo base_url() ?>template/assets/vendor/waypoints/lib/jquery.waypoints.min.js"></script>
@@ -127,7 +102,7 @@ $(".twitter-typeahead").typeahead(null, {
     },
    templates: {
         suggestion: function(data) {
-            return "<div class=tt-data tt-people><a  onclick=throwModal('"+data.slug+"') class='text-left' href='javascript:void(0);'><div class='tt-row'>"+data.nama+"</div></a><";
+            return "<div class=tt-data><a  onclick=throwModal('"+data.slug+"') class='text-left' href='javascript:void(0);'><div class='tt-row'>"+data.nama+"</div></a><";
         },
         empty: [
           '<div class="empty-message">',
@@ -137,10 +112,13 @@ $(".twitter-typeahead").typeahead(null, {
     }
 })
 .on('typeahead:asyncrequest', function() {
-	
+	$(".tt-menu").addClass("tt-people");
+ 	$(".tt-menu").addClass("tt-prog").show()
+ 	.css({"background":"white"})
+ 	.find(".tt-dataset")
+ 	.append('<p class="text-muted text-center lead"><i class="fa fa-spinner fa-spin"></i> Sedang mencari data...</p>');
 })
-.on('typeahead:asynccancel typeahead:asyncreceive', function() {
-	// $(".tt-menu").addClass('tt-custom').show();
-	// $(".tt-custom").text("Sedang Mencari...");
+.on('typeahead:asyncreceive', function() {
+	$(".tt-menu").removeClass("tt-prog");
 });
 </script>

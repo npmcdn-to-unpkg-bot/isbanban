@@ -39,12 +39,12 @@
 
 		<div class="post">
 			<div class="row">
-				<?php for($i=0; $i<3; $i++) { ?>
+				<?php foreach($getRandom as $item) { ?>
 				<div class="col-sm-6 col-md-4">
-					<div class="begin-post blog" style="background:url(http://placemi.com/1280x500) no-repeat top center">
-						<a href="<?php echo base_url() ?>blog/detail/default">
+					<div class="begin-post blog" style="background:url(<?php echo base_url() ?><?php echo $item->path_foto; ?>) no-repeat top center">
+						<a href="<?php echo base_url() ?>blog/detail/<?php echo $item->slug; ?>">
 						<div class="shade"></div>
-						<div class="title">Jumping fox
+						<div class="title"><?php echo $item->judul; ?>
 						</div>
 						</a>
 					</div>

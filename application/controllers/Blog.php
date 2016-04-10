@@ -109,6 +109,7 @@ class Blog extends CI_Controller {
 			'current'		=> 'blog',
 			'role'			=> 'normal',
 			'getThis'		=> $this->m_blog->getThis($slug),
+			'getRandom'		=> $this->m_blog->getRandom(),
 		];
 
 		if($slug == FALSE) {

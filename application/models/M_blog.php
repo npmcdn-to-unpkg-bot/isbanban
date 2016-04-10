@@ -61,6 +61,12 @@ class M_blog extends CI_Model {
 		// return $this->db->query($query)->result();
 		return $this->db->get_where('blog', array('slug' => $slug))->result();
 	}
+
+	function getRandom() {
+		$this->db->order_by("judul", "random"); 
+		$this->db->limit(3);
+		return $this->db->get('blog')->result();
+	}
 }
 
 /* End of file welcome.php */

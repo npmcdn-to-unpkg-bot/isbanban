@@ -5,30 +5,52 @@
 		<p class="lead">Your donation help us to make access of education through builiding a learning center and teaching for 455 children in 8 rural areas of Banten</p>
 		<hr>
 	</div>
+
+
+	<div class="precontent">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<p>Rp. 250000</p>
+					<p>Donasi Terkumpul</p>
+				</div>
+
+				<div class="col-sm-6">
+					<p>450</p>
+					<p>Buku Terkumpul</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <div class="precontent donation donation-info">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h1>Counting From Our Bank</h1>
+				<h1>Overall Calculation</h1>
 			</div>
 			<div class="col-sm-6 poin">
+				<div class="bigger">
+					<i class="fa fa-4x fa-money"></i>
+				</div>
 				<h2 class="bigger">
 				Rp. <span class="money moneyFormat"><?php foreach($totalMoney as $item) {
 						echo $item->total_donasi_uang;
 					} ?></span>
 				</h2>
-				<p>Cash</p>
 			</div>
 
 			<div class="col-sm-6 poin">
+				<div class="bigger">
+					<i class="fa fa-4x fa-book"></i>
+				</div>
+
 				<h2 class="bigger book">
 					<?php foreach($totalBook as $item) {
 						echo $item->total_donasi_uang;
 					} ?>
 				</h2>
-				<p>Books</p>
 			</div>
 		</div>
 	</div>

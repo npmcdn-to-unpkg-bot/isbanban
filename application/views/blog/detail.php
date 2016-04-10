@@ -30,7 +30,7 @@
 		</div>
 
 <!-- Shareholic -->
-		<div class='shareaholic-canvas' data-app='share_buttons' data-app-id=''></div>
+		<div class='shareaholic-canvas' data-app='share_buttons' data-app-id='24303855' expr:data-title='data:post.title' expr:data-link='data:post.url'></div>
 <!-- Disquss Comment -->
 		<hr>
 		<div id="disqus_thread"></div>

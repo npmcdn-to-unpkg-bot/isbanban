@@ -30,6 +30,8 @@ class Village extends CI_Controller {
 			'title'			=> 'Village',
 			'current'		=> 'village',
 			'role'			=> 'normal',
+			'meta_image'	=> '',
+			'meta_url'		=> base_url().'village',
 			'getAll'		=> $this->m_village->getAll(),
 		];
 
@@ -46,6 +48,14 @@ class Village extends CI_Controller {
 			'role'			=> 'normal',
 			'getThis'		=> $this->m_village->getThis($slug)
 		];
+
+		$feed = $this->m_village->getThis($slug);
+
+		foreach($feed as $row) {
+			$data['title']			= $row->nama;
+			$data['meta_image']		= $row->picture_path;
+			$data['meta_url']		= base_url().'village/detail/'.$row->slug;
+		}
 
 		$this->load->view('header', $data);
 		$this->load->view('village/detail');

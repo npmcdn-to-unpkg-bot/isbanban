@@ -30,6 +30,8 @@ class Home extends CI_Controller {
 			'title'			=> 'Home',
 			'current'		=> 'home',
 			'role'			=> 'normal',
+			'meta_image'	=> '',
+			'meta_url'		=> base_url(),
 			'getBlogPost'	=> $this->m_home->getBlogPost('8', 'blog'),
 			'countVillage'	=> $this->m_home->countData('desa'),
 			'countRelawan'	=> $this->m_home->countData('relawan'),

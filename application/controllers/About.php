@@ -29,6 +29,8 @@ class About extends CI_Controller {
 			'title'			=> 'About Us',
 			'current'		=> 'about',
 			'role'			=> 'normal',
+			'meta_image'	=> '',
+			'meta_url'		=> base_url().'about',
 		];
 
 		$this->load->view('header', $data);

@@ -53,6 +53,8 @@ class Blog extends CI_Controller {
 			'title'			=> 'Blogs',
 			'current'		=> 'blog',
 			'role'			=> 'normal',
+			'meta_image'	=> '',
+			'meta_url'		=> base_url().'blog',
 			'getAll'		=> $this->m_blog->getAll($page, $config["per_page"]),
 		];
 
@@ -111,6 +113,14 @@ class Blog extends CI_Controller {
 
 		if($slug == FALSE) {
 			redirect('blog');
+		}
+
+		$feed = $this->m_blog->getThis($slug);
+
+		foreach($feed as $row) {
+			$data['meta_image']	= base_url().$row->path_foto;
+			$data['meta_url']	= base_url()."blog/detail/".$row->slug;
+			$data['title']		= $row->judul;
 		}
 
 		$this->load->view('header', $data);

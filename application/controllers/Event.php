@@ -52,6 +52,8 @@ class Event extends CI_Controller {
 			'title'			=> 'Event',
 			'current'		=> 'event',
 			'role'			=> 'normal',
+			'meta_image'	=> '',
+			'meta_url'		=> base_url().'event',
 			'getAll'		=> $this->m_event->getAll($page, $config["per_page"]),
 		];
 
@@ -109,6 +111,14 @@ class Event extends CI_Controller {
 			'role'			=> 'inverse',
 			'getThis'		=> $this->m_event->getThis($slug)
 		];
+
+		$feed = $this->m_event->getThis($slug);
+
+		foreach($feed as $row) {
+			$data['title']		=	$row->judul;
+			$data['meta_image']	=	base_url().$row->path_foto;
+			$data['meta_url']	=	base_url().'detail/event/'.$row->judul;
+		}
 
 		$this->load->view('header', $data);
 		$this->load->view('event/detail');

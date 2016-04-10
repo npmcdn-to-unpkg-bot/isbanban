@@ -53,6 +53,8 @@ class People extends CI_Controller {
 			'title'			=> 'People',
 			'current'		=> 'people',
 			'role'			=> 'normal',
+			'meta_image'	=> '',
+			'meta_url'		=> 'people',
 			'getAll'		=> $this->m_people->getAll($page, $config["per_page"]),
 		];
 

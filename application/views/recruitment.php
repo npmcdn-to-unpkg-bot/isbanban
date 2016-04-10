@@ -170,7 +170,7 @@
 								</div>
 
 								<div class="form-group label-floating">
-									<label class="control-label" for="focusedInput9">Nomor Telefon (+62xxxx)</label>
+									<label class="control-label" for="focusedInput9">Nomor Telefon (+62xxxx or 08xxx)</label>
 						        	<input type="text" id="focusedInput9" class="form-control" name="nomor_pribadi">
 								</div>
 

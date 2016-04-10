@@ -121,7 +121,7 @@ class Blog extends CI_Controller {
 		foreach($feed as $row) {
 			$data['meta_image']	= base_url().$row->path_foto;
 			$data['meta_url']	= base_url()."blog/detail/".$row->slug;
-			$data['title']		= $row->judul;
+			$data['title']		= ucfirst($row->judul);
 		}
 
 		$this->load->view('header', $data);

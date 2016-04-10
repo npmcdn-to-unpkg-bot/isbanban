@@ -9960,6 +9960,7 @@ img.img-center {
 img.img-50 {
   margin-top: 20px;
   margin-bottom: 20px;
+  width: 50%;
 }
 .definition {
   padding: 50px 0px;
@@ -10781,6 +10782,19 @@ footer .copyright p {
   background: #fafafa;
   padding: 0px;
 }
+@media (max-width: 767px) {
+  #sectionNav {
+    display: none !important;
+  }
+}
 #sectionNav ul li a {
   border-radius: 0px;
+}
+#sectionContent {
+  margin-top: -200px;
+}
+@media (max-width: 768px) {
+  #sectionContent {
+    margin-top: 0px;
+  }
 }

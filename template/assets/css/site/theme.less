@@ -111,6 +111,7 @@ img {
 	&.img-50 {
 		margin-top: 20px;
 		margin-bottom: 20px;
+		width: 50%;
 	}
 }
 
@@ -1299,6 +1300,7 @@ footer {
 #sectionNav {
 	background: #fafafa;
 	padding: 0px;
+	.hidden-xs();
 
 	ul {
 		li {
@@ -1306,5 +1308,14 @@ footer {
 				border-radius: 0px;	
 			}
 		}
+	}
+}
+
+
+#sectionContent {
+	margin-top: -200px;
+
+	@media(max-width: @screen-sm) {
+		margin-top: 0px;
 	}
 }

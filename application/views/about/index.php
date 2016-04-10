@@ -12,15 +12,14 @@
 		<div class="row parent_sticky">
 			<div class="col-md-3 stick_helper" id="sectionNav">
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="#secProfile">Profile</a></li>
-					<li><a href="#secVision">Vision</a></li>
-					<li><a href="#secOurProgram">Program</a></li>
-					<li><a href="#secOurImpact">Impact</a></li>
-					<li><a href="#secOurTeam">Team</a></li>
+					<li><a href="#secProfile" id="toProfile">Profile</a></li>
+					<li><a href="#secProgram" id="toProgram">Program</a></li>
+					<li><a href="#secImpact" id="toImpact">Impact</a></li>
+					<li><a href="#secTeam" id="toTeam">Team</a></li>
 				</ul>
 			</div>
 
-			<div class="col-md-9 col-md-offset-3">
+			<div class="col-md-9 col-md-offset-3" id="sectionContent">
 				<section id="secProfile">
 					<div class="page-header">
 						<h1>Profile</h1>      
@@ -70,14 +69,7 @@
 					</div>
 				</section>
 
-				<section id="secVision">
-					<div class="page-header">
-						<h1>Vision</h1>      
-					</div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam nihil ipsam adipisci repellat. Itaque ipsa temporibus ipsum quos officiis, sint asperiores dolores dolor inventore. Praesentium dolores quidem quisquam corporis. Recusandae.</p>					
-				</section>
-
-				<section id="secOurProgram">
+				<section id="secProgram">
 					<div class="page-header">
 						<h1>Our Program</h1>
 					</div>
@@ -216,7 +208,7 @@
 						</p>
 
 						<p>
-							<img src="<?php echo base_url() ?>template/assets/image/about-literacy-illustrate.png" alt="" class="img-responsive img-50 img-center">
+							<img src="<?php echo base_url() ?>template/assets/image/about-literacy-illustrate.png" alt="" class="img-responsive img-center">
 						</p>
 
 						<p>
@@ -237,7 +229,7 @@
 				</section>
 
 
-				<section id="secOurImpact">
+				<section id="secImpact">
 					<div class="page-header">
 						<h1>Our Impact</h1>
 					</div>
@@ -254,7 +246,7 @@
 
 
 <!-- Section Team -->
-				<section id="secOurTeam">
+				<section id="secTeam">
 					<div class="page-header">
 						<h1>Our Team</h1>
 					</div>
@@ -443,6 +435,7 @@
 
 
 
+<script src="<?php echo base_url() ?>template/assets/vendor/scrollToBySpeed/src/scrolltobyspeed.jquery.js"></script>
 <script src="<?php echo base_url() ?>template/assets/vendor/sticky-kit/jquery.sticky-kit.min.js"></script>
 <script>
 var $body   = $(document.body);
@@ -453,6 +446,19 @@ $body.scrollspy({
 if ($(window).width() > 768) {
 	doStick();
 }
+
+function scrollTo(param, to) {
+	$("#"+param).on('click', function () {
+		$("#"+to).scrollToBySpeed({
+	        easing: 'linear'
+	    });
+	});
+}
+
+scrollTo("toProfile", "secProfile");
+scrollTo("toProgram", "secProgram");
+scrollTo("toTeam", "secTeam");
+scrollTo("toImpact", "secImpact");
 
 function doStick() {
 	$("#sectionNav").stick_in_parent({

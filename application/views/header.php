@@ -30,7 +30,11 @@
     <!-- Open Graph data -->
     <meta property="og:title" content="<?php echo $title; ?> &#124; Istana Belajar Anak Banten">
     <meta property="og:url" content="<?php echo $meta_url; ?>">
+    <?php if($meta_image) { ?>
+    <meta property="og:image" content="<?php echo $meta_image; ?>">
+    <?php } else { ?>
     <meta property="og:image" content="<?php echo base_url() ?>template/assets/image/typetext-black.png">
+    <?php } ?>
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:description" content="We Are Youth Led-Organization That Focus On Helping Education Of Children In Rural Areas.">

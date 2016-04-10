@@ -1,0 +1,32 @@
+{
+  "name": "scrollToBySpeed",
+  "version": "0.3.0",
+  "authors": [
+    "Ryan Burnette <ryan.burnette@gmail.com>"
+  ],
+  "description": "Bind a scrollTo on click event to an element and animate by speed instead of duration.",
+  "main": "scrolltobyspeed.jquery.js",
+  "keywords": [
+    "jquery",
+    "scrollto"
+  ],
+  "license": "Apache2",
+  "homepage": "https://github.com/ryanburnette/scrolltobyspeed",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.3.0",
+    "commit": "a4da18dbd63c99833925b0ac7052262467d7f46e"
+  },
+  "_source": "https://github.com/ryanburnette/scrollToBySpeed.git",
+  "_target": "^0.3.0",
+  "_originalSource": "scrollToBySpeed",
+  "_direct": true
+}

@@ -112,6 +112,10 @@ class Event extends CI_Controller {
 			'getThis'		=> $this->m_event->getThis($slug)
 		];
 
+		if($this->m_blog->checkThis($slug) == 0) {
+			redirect('404');
+		}
+
 		$feed = $this->m_event->getThis($slug);
 
 		foreach($feed as $row) {

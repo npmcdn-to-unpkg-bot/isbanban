@@ -37,7 +37,7 @@ body.login-page {
             <div>
                 <div class="login-form row">
                     <div class="col-sm-12 text-center login-header">
-                        <img src="http://isbanban.org/wp-content/uploads/2015/07/isbanban1-e1437047014513.png" alt="" class="img-responsive" style="margin:0px auto">
+                        <img src="<?php echo base_url () ?>template/assets/image/logo.png" alt="" class="img-responsive" style="margin: 20px auto; height: 120px">
                         <h4 class="login-title">Isbanban Control Panel</h4>
                     </div>
 

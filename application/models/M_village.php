@@ -28,6 +28,11 @@ class M_village extends CI_Model {
 		return $this->db->where(array('slug'=>$slug))->get('desa')->result();
 	}
 
+	function checkThis($slug)
+	{
+		return $this->db->where(array('slug'=>$slug))->get('desa')->num_rows();
+	}
+
 }
 
 /* End of file welcome.php */

@@ -116,6 +116,10 @@ class Blog extends CI_Controller {
 			redirect('blog');
 		}
 
+		if($this->m_blog->checkThis($slug) == 0) {
+			redirect('404');
+		}
+
 		$feed = $this->m_blog->getThis($slug);
 
 		foreach($feed as $row) {

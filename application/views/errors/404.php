@@ -56,7 +56,7 @@
 		<div class="row">
 			<div class="col-sm-6 col-sm-offset-3 errors-begin">
 				<div class="logo">
-					<img src="<?php echo base_url() ?>template/assets/image/logo.png" alt="" class="img-responsive img-center">
+					<img src="<?php echo base_url() ?>template/assets/image/logo.png" alt="" class="img-responsive img-center" style="height:120px; margin-top: 20px">
 				</div>
 				<h3>Halaman yang anda cari tidak ditemukan atau mungkin anda tersesat</h3>
 				<a href="<?php echo base_url() ?>" class="btn btn-primary btn-raised">Halaman Utama</a>

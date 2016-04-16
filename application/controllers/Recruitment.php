@@ -124,7 +124,7 @@ class Recruitment extends CI_Controller {
 					'tanggal_lahir'  =>$this->input->post('tanggal_lahir'),
 					'golongan_darah' =>$this->input->post('golongan_darah'),
 					'agama'          =>$this->input->post('agama'),
-					'nomor_pribadi'  =>.$this->input->post('nomor_pribadi'),
+					'nomor_pribadi'  =>$this->input->post('nomor_pribadi'),
 					'alamat_pribadi' =>$this->input->post('alamat_pribadi'),
 					'email'          =>$this->input->post('email'),
 					'pekerjaan'   	 =>$this->input->post('pekerjaan'),

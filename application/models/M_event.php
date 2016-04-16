@@ -59,6 +59,11 @@ class M_event extends CI_Model {
 		// return $this->db->query($query)->result();
 		return $this->db->get_where('event', array('slug' => $slug))->result();
 	}
+
+	function checkThis($slug)
+	{
+		return $this->db->get_where('event', array('slug' => $slug))->num_rows();
+	}
 }
 
 /* End of file welcome.php */

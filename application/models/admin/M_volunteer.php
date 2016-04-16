@@ -73,7 +73,7 @@ class M_volunteer extends CI_Model {
 
 	function getRecruitment()
 	{
-		$query = "SELECT * FROM relawan WHERE bulan_masuk='2016-03-00'";
+		$query = "SELECT * FROM relawan WHERE bulan_masuk='2016-03-00' OR bulan_masuk='2016-04-00' ";
 
 		return $this->db->query($query)->result();
 	}

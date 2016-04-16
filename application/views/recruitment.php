@@ -100,28 +100,28 @@
 							<div class="form-start">
 								<div class="form-group label-floating">
 									<label class="control-label" for="focusedInput1">Nama</label>
-									<input class="form-control" id="focusedInput1" name="nama"></input>
+									<input class="form-control" id="focusedInput1" name="nama" required></input>
 								</div>
 
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="form-group label-floating">
 											<label class="control-label" for="focusedInput2">Tempat Lahir</label>
-											<input class="form-control" id="focusedInput2" name="tempat_lahir" pattern="[a-zA-Z0-9]+"></input>
+											<input class="form-control" id="focusedInput2" name="tempat_lahir" required></input>
 										</div>
 									</div>
 
 									<div class="col-sm-6">
 										<div class="form-group label-floating">
 											<label class="control-label" for="focusedInput3">Tanggal Lahir (yyyy-mm-dd)</label>
-											<input class="form-control picker" id="focusedInput3" name="tanggal_lahir" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])"></input>
+											<input class="form-control picker" id="focusedInput3" name="tanggal_lahir" pattern="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])" required></input>
 										</div>
 									</div>
 								</div>
 
 								<div class="form-group">
 									<label class="control-label" for="focusedInput4">Agama</label>
-									<select class="form-control" id="focusedInput4" name="agama">
+									<select class="form-control" id="focusedInput4" name="agama" required>
 										<option value="">-- Pilih --</option>
 										<option value="Islam">Islam</option>
 										<option value="Katolik">Katolik</option>
@@ -136,13 +136,13 @@
 									<div class="row">
 										<div class="col-xs-6">
 											<div class="radio">
-												<label><input type="radio" name="jenis_kelamin" value="laki-laki">Laki-laki</label>
+												<label><input type="radio" name="jenis_kelamin" value="laki-laki" required>Laki-laki</label>
 											</div>
 										</div>
 
 										<div class="col-xs-6">
 											<div class="radio">											
-												<label><input type="radio" name="jenis_kelamin" value="perempuan">Perempuan</label>
+												<label><input type="radio" name="jenis_kelamin" value="perempuan" required>Perempuan</label>
 											</div>
 										</div>
 									</div>
@@ -150,7 +150,7 @@
 
 								<div class="form-group">
 									<label class="control-label" for="focusedInput6">Golongan Darah</label>
-									<select class="form-control" id="focusedInput6" name="golongan_darah">
+									<select class="form-control" id="focusedInput6" name="golongan_darah" required>
 										<option value="">-- Pilih --</option>
 										<option value="a">a</option>
 										<option value="b">b</option>
@@ -161,17 +161,17 @@
 
 								<div class="form-group label-floating">
 									<label class="control-label" for="focusedInput7">Alamat</label>
-									<textarea class="form-control" id="focusedInput7" name="alamat_pribadi"></textarea>
+									<textarea class="form-control" id="focusedInput7" name="alamat_pribadi" required></textarea>
 								</div>
 
 								<div class="form-group label-floating">
 									<label class="control-label" for="focusedInput8">Email</label>
-									<input class="form-control" id="focusedInput8" name="email"></input>
+									<input class="form-control" id="focusedInput8" name="email" required></input>
 								</div>
 
 								<div class="form-group label-floating">
 									<label class="control-label" for="focusedInput9">Nomor Telefon (+62xxxx or 08xxx)</label>
-						        	<input type="text" id="focusedInput9" class="form-control" name="nomor_pribadi">
+						        	<input type="text" id="focusedInput9" class="form-control" name="nomor_pribadi" required>
 								</div>
 
 								<div class="form-group label-floating">
@@ -186,7 +186,7 @@
 
 								<div class="form-group">
 									<label class="control-label" for="focusedInput12">Domisili Pilihan</label>
-									<select class="form-control" id="focusedInput12" name="chapter">
+									<select class="form-control" id="focusedInput12" name="chapter" required>
 										<option value="">-- Pilih --</option>
 										<?php foreach($getChapter as $row) { ?>
 										<option value="<?php echo $row->kode; ?>"><?php echo $row->nama; ?></option>
@@ -196,7 +196,7 @@
 
 								<div class="form-group label-floating">
 									<label class="control-label" for="focusedInput13">Alasan Bergabung Dengan Isbanban</label>
-									<textarea class="form-control" id="focusedInput13" name="alasan"></textarea>
+									<textarea class="form-control" id="focusedInput13" name="alasan" required></textarea>
 								</div>
 
 								<!-- <div class="form-group label-floating">

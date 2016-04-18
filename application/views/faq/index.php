@@ -1,8 +1,8 @@
 <!-- <div class="jumbotron bigger" style="background: url(<?php echo base_url() ?>template/assets/image/bg-blog.jpg) no-repeat top center;"> -->
 <div class="jumbotron bigger" style="background: url(http://unsplash.it/1280/800?random&blur) no-repeat center center;">
 	<div class="container">
-		<h1>Fraquently Asked Question</h1>
-		<p class="lead">Leading text about blog here</p>
+		<h1>Frequently Asked Question</h1>
+		<!-- <p class="lead">Leading text about blog here</p> -->
 		<hr>
 	</div>
 </div>
@@ -318,21 +318,6 @@
 			<div class="col-sm-6 masonry-item">
 				<div class="panel panel-primary">
 					<div class="panel-heading">
-						Dimana lokasi Kantor Sekretariat Isbanban Foundation?
-					</div>
-
-					<div class="panel-body">
-						<p>
-							Kantor Sekretariat Isbanban berlokasi di Jl. Karya Bhakti 2A No. 98, Komplek KPPN,
-							Ciceri, Serang, Banten, 42151
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-sm-6 masonry-item">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
 						Dimana lokasi desa binaan Isbanban?
 					</div>
 
@@ -366,23 +351,7 @@
 
 					<div class="panel-body">
 						<p>
-							Lokasi first meet akan diselenggarakan di Kota Serang (Alamat lengkap first meet akan kami
-							informasikan melalui SMS ketika kamu sudah melakukan pendaftaran online)
-						</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-sm-6 masonry-item">
-				<div class="panel panel-primary">
-					<div class="panel-heading">
-						Dimana lokasi First Meet 24 April 2016 dilaksanakan?
-					</div>
-
-					<div class="panel-body">
-						<p>
-							Lokasi first meet akan diselenggarakan di Kota Serang (Alamat lengkap first meet akan kami
-							informasikan melalui SMS ketika kamu sudah melakukan pendaftaran online)
+							Lokasi first meet akan diselenggarakan di <b>Gedung Pusat Sumber Belajar Bersama (PSBB) MAN 2 Kota Serang. Jalan Ciwaru No.1 Warjok, Kota Serang-Banten</b>. <a href="https://www.google.co.id/maps/place/MAN+2+Kota+Serang/@-6.1264721,106.162258,17.8z/data=!4m5!1m2!2m1!1spsbb+man+2+serang!3m1!1s0x0000000000000000:0x74ad4e7d7c5ab1c3?hl=id" target="_blank">View on Google Maps</a>
 						</p>
 					</div>
 				</div>

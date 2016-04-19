@@ -39,19 +39,10 @@
 			</div>
 
 			<div class="copyright">
-				<p>Copyright &copy; 2016 &mdash; Istana Belajar Anak Banten</p>
+				<p>Copyright &copy; 2016 &mdash; Istana Belajar Anak Banten. All right reserverd</p>
 			</div>
 		</div>
 	</div>
 </footer>
-<!-- Hotjar Tracking Code for http://isbanban-barndev.rhcloud.com -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:165546,hjsv:5};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+</body>
+</html>

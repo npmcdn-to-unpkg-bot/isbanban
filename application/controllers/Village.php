@@ -49,7 +49,7 @@ class Village extends CI_Controller {
 			'getThis'		=> $this->m_village->getThis($slug)
 		];
 
-		if($this->m_blog->checkThis($slug) == 0) {
+		if($this->m_village->checkThis($slug) == 0) {
 			redirect('404');
 		}
 

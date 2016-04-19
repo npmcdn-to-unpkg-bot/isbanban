@@ -79,12 +79,29 @@
 		    }, false);
 		}
 
-		var domain = 'http://isbanban.dev/';	
+		var domain = 'http://isbanban.org/';	
 		if($("header").hasClass('navbar-inverse')) {
 			$(".navbar-brand img").attr('src', domain +'template/assets/image/typetext-white.png')
 		}
 	})
 	</script>
+
+	<!-- Shareholic -->
+	<script type='text/javascript' src='//dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js' data-shr-siteid='7052b25fdf339afd6e55faacc466eee0' data-cfasync='false' async='async'></script>
+
+	<!-- Hotjar Tracking Code for http://isbanban.org -->
+	<script>
+	    (function(h,o,t,j,a,r){
+	        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+	        h._hjSettings={hjid:193264,hjsv:5};
+	        a=o.getElementsByTagName('head')[0];
+	        r=o.createElement('script');r.async=1;
+	        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+	        a.appendChild(r);
+	    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+	</script>
+
+
 </head>
 <body>
 

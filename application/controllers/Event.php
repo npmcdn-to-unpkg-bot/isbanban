@@ -112,7 +112,7 @@ class Event extends CI_Controller {
 			'getThis'		=> $this->m_event->getThis($slug)
 		];
 
-		if($this->m_blog->checkThis($slug) == 0) {
+		if($this->m_event->checkThis($slug) == 0) {
 			redirect('404');
 		}
 

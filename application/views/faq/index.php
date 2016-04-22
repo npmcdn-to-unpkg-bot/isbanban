@@ -351,7 +351,7 @@
 
 					<div class="panel-body">
 						<p>
-							Lokasi first meet akan diselenggarakan di <b>Gedung Pusat Sumber Belajar Bersama (PSBB) MAN 2 Kota Serang. Jalan Ciwaru No.1 Warjok, Kota Serang-Banten</b>. <a href="https://www.google.co.id/maps/place/MAN+2+Kota+Serang/@-6.1264721,106.162258,17.8z/data=!4m5!1m2!2m1!1spsbb+man+2+serang!3m1!1s0x0000000000000000:0x74ad4e7d7c5ab1c3?hl=id" target="_blank">View on Google Maps</a>
+							Lokasi first meet akan diselenggarakan di <b>Gedung Pusat Sumber Belajar Bersama (PSBB) MAN 2 Kota Serang. Jalan Ciwaru No.1 Warjok, Kota Serang-Banten</b>. <a href="https://www.google.co.id/maps/place/MAN+2+Serang/@-6.1297145,106.1661479,20z/data=!4m2!3m1!1s0x0000000000000000:0x0eeb19bc75ee2f75?hl=en&shorturl=1" target="_blank">View on Google Maps</a>
 						</p>
 					</div>
 				</div>

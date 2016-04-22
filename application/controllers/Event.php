@@ -121,7 +121,7 @@ class Event extends CI_Controller {
 		foreach($feed as $row) {
 			$data['title']		=	ucfirst($row->judul);
 			$data['meta_image']	=	base_url().$row->path_foto;
-			$data['meta_url']	=	base_url().'detail/event/'.$row->slug;
+			$data['meta_url']	=	base_url().'event/detail/'.$row->slug;
 		}
 
 		$this->load->view('header', $data);

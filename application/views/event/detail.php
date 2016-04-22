@@ -21,13 +21,13 @@
 				<div class="col-sm-10 col-sm-offset-1">					
 					<div class="col-sm-6">
 						<div class="place">							
-							<i class="fa fa-3x fa-building"></i> This events will be held on <?php echo $row->lokasi; ?>
+							<i class="fa fa-3x fa-building"></i> <!-- This events will be held on --> Location: <?php echo $row->lokasi; ?>
 						</div>
 					</div>
 
 					<div class="col-sm-6">
 						<div class="place">							
-							<i class="fa fa-3x fa-calendar"></i> This events will start at <?php echo $this->barnlibs->dateForHumanClean($row->tanggal); ?>
+							<i class="fa fa-3x fa-calendar"></i> <!-- This events will start at --> Start: <?php echo $this->barnlibs->dateForHumanClean($row->tanggal); ?>
 						</div>
 					</div>
 				</div>

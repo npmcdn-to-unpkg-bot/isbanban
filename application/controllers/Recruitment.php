@@ -186,7 +186,8 @@ class Recruitment extends CI_Controller {
 			}
 		}
 
-		$this->load->view('recruitment', $data);
+		// $this->load->view('recruitment', $data);
+		$this->load->view('errors/404_recruitment', $data);
 	}
 
 

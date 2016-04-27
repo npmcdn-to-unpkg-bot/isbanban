@@ -9908,6 +9908,19 @@ body.errors .errors-begin {
   text-align: center;
   background: rgba(255, 255, 255, 0.5);
 }
+body.errors-recruitment {
+  background: url(../../image/bg-oprec2016.jpg) no-repeat center center;
+  background-size: cover;
+}
+@media (max-width: 768px) {
+  body.errors-recruitment {
+    background: #87deff;
+  }
+}
+body.errors-recruitment .errors-begin {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+}
 h1,
 h2,
 h3,

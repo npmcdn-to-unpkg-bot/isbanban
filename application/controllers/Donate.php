@@ -95,7 +95,6 @@ class Donate extends CI_Controller {
 // Insert to DB
 				$this->m_donation->insert($datadb);
 
-
 // Setting for mail information
 				$data['confirm_code']		 	 = $confirm_code;
 				$data['donatur_nama']		 	 = $this->input->post('donatur_name');
@@ -133,17 +132,19 @@ class Donate extends CI_Controller {
 				$data['path_pdf'] 	= base_url().'uploads/pdf/donation-request-'.$data['confirm_code'].".pdf";
 
 // Send email
+				$this->do_pdf($data);
+
 				$this->email->from('admin@isbanban.org', 'Istana Belajar Anak Banten');
 				$this->email->to($this->input->post('donatur_email')); 
 				$this->email->subject('Pemberitahuan Donasi');
         		$message 	=$this->load->view('mail',$data,TRUE);
 				$this->email->message($message);
+				$this->email->attach($data['path_pdf']);
 				$this->email->send();
 
 
 // Alert for Donatur
 				$this->session->set_flashdata('success', true);
-				$this->do_pdf($data);
 			}
 		}
 

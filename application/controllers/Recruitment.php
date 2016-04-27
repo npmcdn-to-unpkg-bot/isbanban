@@ -178,7 +178,6 @@ class Recruitment extends CI_Controller {
 
 				$this->email->from('noreply@isbanban.org', 'Istana Belajar Anak Banten');
 				$this->email->to($this->input->post('email')); 
-
 				$this->email->subject('Pendaftaran Calon Relawan');
         		$message=$this->load->view('mail_recruitment',$data,TRUE);
 				$this->email->message($message);

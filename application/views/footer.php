@@ -1,8 +1,9 @@
-<footer style="background: url(<?php echo base_url() ?>template/assets/image/bg-footer.png) no-repeat center center;">
+<footer style="background: url(http://unsplash.it/1280/800?image=588) no-repeat center center; background-size:cover">
+<!-- <footer style="background: url(<?php echo base_url() ?>template/assets/image/pattern-batik.png) repeat;"> -->
 	<div class="container">
 		<div class="begin-footer">
 			<div class="callcenter">
-				<a href="tel:089665656796">+6289665656796</a>
+				<a href="tel:089665656796">(+62)89665656796</a>
 				<p>isbanban call center</p>
 			</div>
 
@@ -39,7 +40,9 @@
 			</div>
 
 			<div class="copyright">
-				<p>Copyright &copy; 2016 &mdash; Istana Belajar Anak Banten. All right reserverd</p>
+				<p>We Are Youth Led-Organization That Focus On Helping Education Of Children In Rural Areas</p>
+				<p>Copyright &copy; 2016 &mdash; Istana Belajar Anak Banten</p>
+				<p>Made with <i class="fa fa-heart text-danger"></i> in Banten</p>
 			</div>
 		</div>
 	</div>

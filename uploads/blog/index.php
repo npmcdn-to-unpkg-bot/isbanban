@@ -1,5 +1,5 @@
 <?php
-  $base		= "http://isbanban.org";
+  $base		= "http://isbanban.dev";
   header('Location: '.$base);
   exit();
 ?>

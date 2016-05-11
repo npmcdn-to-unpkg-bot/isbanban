@@ -15,25 +15,25 @@
 
 
 <div class="single-post event">
-	<div class="meta">
+	<!-- <div class="meta">
 		<div class="container">			
 			<div class="row">
 				<div class="col-sm-10 col-sm-offset-1">					
 					<div class="col-sm-6">
 						<div class="place">							
-							<i class="fa fa-3x fa-building"></i> <!-- This events will be held on --> Location: <?php echo $row->lokasi; ?>
+							<i class="fa fa-3x fa-building"></i> Location: <?php echo $row->lokasi; ?>
 						</div>
 					</div>
 
 					<div class="col-sm-6">
 						<div class="place">							
-							<i class="fa fa-3x fa-calendar"></i> <!-- This events will start at --> Start: <?php echo $this->barnlibs->dateForHumanClean($row->tanggal); ?>
+							<i class="fa fa-3x fa-calendar"></i> Start: <?php echo $this->barnlibs->dateForHumanClean($row->tanggal); ?>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	
 	<div class="container">
 		<div class="row">
@@ -41,10 +41,23 @@
 				<div class="post">
 					<div class="row">
 						<div class="col-sm-4">
-							<img src="<?php echo base_url() ?><?php echo $row->path_foto; ?>" alt="" class="img-responsive">
+							<img src="<?php echo base_url() ?><?php echo $row->path_foto; ?>" alt="" class="img-responsive" style="margin-bottom:20px">
 						</div>
 
 						<div class="col-sm-8">
+							<table class="table table-striped">
+								<tbody>
+									<tr>
+										<td>Start</td>
+										<td><?php echo $this->barnlibs->dateForHumanClean($row->tanggal); ?></td>
+									</tr>
+									<tr>
+										<td>Location:</td>
+										<td><?php echo $row->lokasi; ?></td>
+									</tr>
+								</tbody>
+							</table>
+
 							<?php echo $row->konten; ?>
 						</div>
 					</div>

@@ -108,6 +108,22 @@
 		if($("header").hasClass('navbar-inverse')) {
 			$(".navbar-brand img").attr('src', domain +'template/assets/image/typetext-white.png')
 		}
+
+
+		var navbarTrans = $("header").hasClass('navbar-inverse');
+		if(navbarTrans) {
+        $(document).on('scroll', function() {
+            if(navbarTrans && window.scrollY >= 250) {
+                $('header').addClass('navbar-default').removeClass('navbar-inverse');
+				$(".navbar-brand img").attr('src', domain +'template/assets/image/typetext-black.png')
+                navbarTrans = false;
+            } else if(! navbarTrans && window.scrollY < 250) {
+                $('header').addClass('navbar-inverse').removeClass('navbar-default');
+				$(".navbar-brand img").attr('src', domain +'template/assets/image/typetext-white.png')
+                navbarTrans = true;
+            }
+        })
+    }
 	})
 	</script>
 

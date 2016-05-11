@@ -57,7 +57,7 @@
     <?php if($meta_image) { ?>
     <meta property="og:image" content="<?php echo $meta_image; ?>">
     <?php } else { ?>
-    <meta property="og:image" content="<?php echo base_url() ?>template/assets/image/typetext-black.png">
+    <meta property="og:image" content="<?php echo base_url() ?>template/assets/image/default-placeholder.png">
     <?php } ?>
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">

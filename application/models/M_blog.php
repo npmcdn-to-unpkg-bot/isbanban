@@ -23,7 +23,6 @@ class M_blog extends CI_Model {
 		return $this->db->get('blog')->num_rows();
 	}
 
-
 	function getAll($limit, $perpage)
 	{
         // $this->db->limit($limit,$offset);
@@ -35,7 +34,7 @@ class M_blog extends CI_Model {
 		// return $this->db->get('relawan')->result();
 		$sql =
 		"
-		SELECT * FROM blog ORDER BY created_at LIMIT $limit, $perpage
+		SELECT * FROM blog WHERE kategori != 2 ORDER BY created_at DESC LIMIT $limit, $perpage
 		";
 		return $this->db->query($sql)->result();
 	}

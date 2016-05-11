@@ -26,7 +26,7 @@ class M_home extends CI_Model {
 	{
 		$sql =
 		"
-			SELECT * FROM blog WHERE kategori != 2 LIMIT 0, 6
+			SELECT * FROM blog WHERE kategori != 2 ORDER BY created_at DESC LIMIT 0, 6
 		";
 		return $this->db->query($sql)->result();
 		// return $this->db->get($table, $limit)->result();
@@ -42,7 +42,7 @@ class M_home extends CI_Model {
 			blog.slug as blog_slug
 		FROM testimoni
 		LEFT JOIN blog
-		ON testimoni.id_detail=blog.kategori;
+		ON testimoni.id_detail=blog.id;
 		";
 		return $this->db->query($sql)->result();
 

@@ -79,7 +79,7 @@ class Blog extends CI_Controller {
 		$config["per_page"]		= 12;
 		$config["first_link"]	= FALSE;
 		$config["last_link"]	= FALSE;
-		$config["prev_link"]	 = FALSE;
+		$config["prev_link"]	= FALSE;
 		$config["next_link"]	= '<p><i class="fa fa-spin fa-3x fa-circle-o-notch"></i></p>';
 		$config["next_tag_open"]= '<div class="sparator">';
 		$config["next_tag_close"]= '</div>';

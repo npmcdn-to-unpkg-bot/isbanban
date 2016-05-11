@@ -11,9 +11,9 @@
 				<div class="row">
 					<div class="col-sm-5">
 						<?php if($row->path_foto) { ?>
-							<img class="img-responsive" src="<?php echo base_url() ?><?php echo $row->path_foto; ?>">
+							<img class="img-responsive" src="<?php echo base_url() ?><?php echo $row->path_foto; ?>" style="margin-bottom:10px">
 						<?php } else { ?>
-							<img class="img-responsive" src="<?php echo base_url() ?>template/assets/image/placeholder.png">
+							<img class="img-responsive" src="<?php echo base_url() ?>template/assets/image/placeholder.png" style="margin-bottom:10px">
 						<?php } ?>
 					</div>
 

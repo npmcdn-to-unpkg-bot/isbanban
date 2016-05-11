@@ -1,11 +1,12 @@
-<!-- <div class="jumbotron bigger" style="background: url(<?php echo base_url() ?>template/assets/image/bg-blog.jpg) no-repeat top center;"> -->
-<div class="jumbotron bigger" style="background: url(http://unsplash.it/1280/800?random&blur) no-repeat center center;">
+<div class="jumbotron small">
 	<div class="container">
-		<h1>About</h1>
-		<p class="lead">Leading text about blog here</p>
-		<hr>
+		<div class="bottom-content">
+			<h1>About</h1>
+			<p class="lead">Knowing our movement, how an impact of our program and  who is our great team</p>
+		</div>
 	</div>
 </div>
+
 
 <section>
 	<div class="container">

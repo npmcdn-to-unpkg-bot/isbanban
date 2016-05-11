@@ -5,23 +5,6 @@
 		<p class="lead">Your donation help us to make access of education through builiding a learning center and teaching for 455 children in 8 rural areas of Banten</p>
 		<hr>
 	</div>
-
-
-	<div class="precontent">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6">
-					<p>Rp. 250000</p>
-					<p>Donasi Terkumpul</p>
-				</div>
-
-				<div class="col-sm-6">
-					<p>450</p>
-					<p>Buku Terkumpul</p>
-				</div>
-			</div>
-		</div>
-	</div>
 </div>
 
 <div class="precontent donation donation-info">

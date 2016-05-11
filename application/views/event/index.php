@@ -1,17 +1,9 @@
-<!-- <div class="jumbotron bigger" style="background: url(<?php echo base_url() ?>template/assets/image/bg-event.png) no-repeat top center;"> -->
-<div class="jumbotron bigger" style="background: url(http://unsplash.it/1280/800?random&blur) no-repeat center center;">
+<div class="jumbotron small">
 	<div class="container">
-		<h1>Events</h1>
-		<p class="lead">Reach our events in various activities at Istana Belajar Anak Banten</p>
-		<hr>
-	</div>
-</div>
-
-
-<div class="precontent event">
-	<div class="container">
-		<h1>Mark your calendar</h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit repellat voluptatibus reprehenderit et ratione.</p>
+		<div class="bottom-content">
+			<h1>Events</h1>
+			<p class="lead">Reach our events in various activities at Istana Belajar Anak Banten</p>
+		</div>
 	</div>
 </div>
 
@@ -37,7 +29,7 @@
 
 					<div class="timeline-text">
 						<p>
-							dont let you you <?php echo $row->judul; ?>
+							Dont miss it and we waiting you at <?php echo $row->judul; ?>
 						</p>
 
 						<ul class="fa-ul">

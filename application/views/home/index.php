@@ -25,12 +25,9 @@
 			<div class="row remove-flex" style="display: -webkit-flex;display: flex;">
 				<div class="col-sm-8 col-xs-12">
 					<div class="panel-group" id="accordion">
-					  <div class="panel panel-info">
-					    <div class="panel-heading">
-					      <h4 class="panel-title">
-					        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-					          What
-					        </a><i class="indicator fa fa-chevron-down  pull-right"></i>
+					  <div class="panel panel-info panel-hovered">
+					    <div class="panel-heading accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+					      <h4 class="panel-title">What<i class="indicator fa fa-chevron-down  pull-right"></i>
 					      </h4>
 					    </div>
 					    <div id="collapseOne" class="panel-collapse collapse in">
@@ -47,11 +44,8 @@
 					  </div>
 
 					  <div class="panel panel-info">
-					    <div class="panel-heading">
-					      <h4 class="panel-title">
-					        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-					           Where 
-					        </a><i class="indicator fa fa-chevron-up  pull-right"></i>
+					    <div class="panel-heading accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+					      <h4 class="panel-title">Where<i class="indicator fa fa-chevron-up  pull-right"></i>
 					      </h4>
 					    </div>
 					    <div id="collapseTwo" class="panel-collapse collapse">
@@ -96,11 +90,8 @@
 					  </div>
 
 					  <div class="panel panel-info">
-					    <div class="panel-heading">
-					      <h4 class="panel-title">
-					        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-					          Who
-					        </a><i class="indicator fa fa-chevron-up pull-right"></i>
+					    <div class="panel-heading accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+					      <h4 class="panel-title">Who<i class="indicator fa fa-chevron-up pull-right"></i>
 					      </h4>
 					    </div>
 					    <div id="collapseThree" class="panel-collapse collapse">
@@ -113,11 +104,8 @@
 					  </div>
 
 					  <div class="panel panel-info">
-					    <div class="panel-heading">
-					      <h4 class="panel-title">
-					        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-					          When
-					        </a><i class="indicator fa fa-chevron-up pull-right"></i>
+					    <div class="panel-heading accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+					      <h4 class="panel-title">When<i class="indicator fa fa-chevron-up pull-right"></i>
 					      </h4>
 					    </div>
 					    <div id="collapseFour" class="panel-collapse collapse">
@@ -130,11 +118,8 @@
 					  </div>
 
 					  <div class="panel panel-info">
-					    <div class="panel-heading">
-					      <h4 class="panel-title">
-					        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
-					          Why
-					        </a><i class="indicator fa fa-chevron-up pull-right"></i>
+					    <div class="panel-heading accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+					      <h4 class="panel-title">Why<i class="indicator fa fa-chevron-up pull-right"></i>
 					      </h4>
 					    </div>
 					    <div id="collapseFive" class="panel-collapse collapse">
@@ -147,11 +132,8 @@
 					  </div>
 
 					  <div class="panel panel-info">
-					    <div class="panel-heading">
-					      <h4 class="panel-title">
-					        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
-					          How
-					        </a><i class="indicator fa fa-chevron-up pull-right"></i>
+					    <div class="panel-heading accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+					      <h4 class="panel-title">How<i class="indicator fa fa-chevron-up pull-right"></i>
 					      </h4>
 					    </div>
 					    <div id="collapseSix" class="panel-collapse collapse">
@@ -181,9 +163,7 @@
 					</div>
 				</div>
 
-				<div class="col-sm-4 col-xs-12 banners">
-				<!-- <img class="img-responsive" src="http://placemi.com/"></img> -->
-				</div>
+				<div class="col-sm-4 col-xs-12 banners"></div>
 			</div>
 		</div>
 	</div>
@@ -194,7 +174,7 @@
 
 
 <!-- Jumbotron Banner -->
-	<div class="jumbotron banner" style="background:url(http://unsplash.it/1280/600?random) no-repeat center center">
+	<div class="jumbotron banner" style="background:url(http://unsplash.it/1280/600?image=1059) no-repeat center center; background-size: cover">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
@@ -234,8 +214,8 @@
 			<h2>Blogs</h2>
 			<div class="row">
 				<?php foreach ($getBlogPost as $item) { ?>
-				<div class="col-sm-6 col-md-4">
-					<div class="begin-post blog" style="background:url(<?php echo base_url() ?><?php echo $item->path_foto; ?>) no-repeat top center">
+				<div class="col-sm-6 col-md-6">
+					<div class="begin-post blog" style="background:url(<?php echo base_url() ?><?php echo $item->path_foto; ?>) no-repeat center center">
 						<a href="<?php echo base_url() ?>blog/detail/<?php echo $item->slug; ?>">
 						<div class="shade"></div>
 						<div class="title"><?php echo $item->judul; ?>
@@ -257,33 +237,32 @@
 
 	<div class="jumbotron jumbotron-testimoni">
 		<div class="container">
-
 			<h2>What They Say</h2>
 			<div id="lightSlider" class="row">
-				<?php foreach($getFeedback as $item) { ?>
-				<div class="col-sm-6">
-					<div class="post post-testimoni">
-						<a href="<?php echo base_url() ?>blog/detail/<?php echo $item->blog_slug; ?>">
-							<?php if($item->testimoni_path_foto) { ?>
-							<div class="avatar">
-								<img class="img-center img-responsive" src="<?php echo base_url() ?><?php echo $item->testimoni_path_foto; ?>"></img>
-							</div>
-							<?php } else { ?>
-							<div class="avatar">
-								<img style="height:100px" class="img-center img-responsive" src="<?php echo base_url() ?>template/assets/image/placeholder.png"></img>
-							</div>
-							<?php } ?>
+			<?php foreach($getFeedback as $item) { ?>
+			<div class="col-sm-6">
+				<div class="post post-testimoni">
+					<a href="<?php echo base_url() ?>blog/detail/<?php echo $item->blog_slug; ?>">
+						<?php if($item->testimoni_path_foto) { ?>
+						<div class="avatar">
+							<img class="img-center img-responsive" src="<?php echo base_url() ?><?php echo $item->testimoni_path_foto; ?>"></img>
+						</div>
+						<?php } else { ?>
+						<div class="avatar">
+							<img style="height:100px" class="img-center img-responsive" src="<?php echo base_url() ?>template/assets/image/placeholder.png"></img>
+						</div>
+						<?php } ?>
 
-							<h3 class="name"><?php echo $item->nama; ?></h3>
-							<h4 class="role"><?php echo $item->role; ?></h4>
+						<h3 class="name"><?php echo $item->nama; ?></h3>
+						<h4 class="role"><?php echo $item->role; ?></h4>
 
-							<div class="testimoni">
-								<blockquote><?php echo $item->quote; ?></blockquote>
-							</div>
-						</a>
-					</div>
+						<div class="testimoni">
+							<blockquote><?php echo $item->quote; ?></blockquote>
+						</div>
+					</a>
 				</div>
-				<?php } ?>
+			</div>
+			<?php } ?>
 		</div>
 	</div>
 </div>
@@ -317,7 +296,37 @@ $("#lightSlider").slick({
 	slidesToShow: 2,
 	dots: false,
 	autoplay: true,
+	responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+      }
+    }
+    ]
 });
+
+var active = true;
+$('#collapse-init').click(function () {
+    if (active) {
+        active = false;
+        $('.panel-collapse').collapse('show');
+        $('.panel-title').attr('data-toggle', '');
+        $(this).text('Enable accordion behavior');
+    } else {
+        active = true;
+        $('.panel-collapse').collapse('hide');
+        $('.panel-title').attr('data-toggle', 'collapse');
+        $(this).text('Disable accordion behavior');
+    }
+});
+
+$('#accordion').on('show.bs.collapse', function () {
+    if (active) $('#accordion .in').collapse('hide');
+});
+
 
 function toggleChevron(e) {
     $(e.target)

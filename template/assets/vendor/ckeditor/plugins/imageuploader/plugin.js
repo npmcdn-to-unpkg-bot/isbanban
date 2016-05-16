@@ -1,6 +1,6 @@
 // Copyright (c) 2015, Fujana Solutions - Moritz Maleck. All rights reserved.
 // For licensing, see LICENSE.md
-var path = 'http://isbanban.dev';
+var path = 'http://isbanban.org';
 
 CKEDITOR.plugins.add( 'imageuploader', {
     init: function( editor ) {

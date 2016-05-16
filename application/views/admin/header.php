@@ -103,31 +103,18 @@
                                 </a>
                             </li>
 <!-- Feedback -->
-<!--                             <li <?php if($role == 'feedback') { echo "class=active"; } ?>>
+                            <li <?php if($role == 'feedback') { echo "class=active"; } ?>>
                                 <a href="<?php echo base_url() ?>admin/feedback">
                                     <span class="icon fa fa-comment"></span><span class="title">Feedback</span>
                                 </a>
-                            </li> -->
-<!-- Mail -->
-<!--                             <li <?php if($role == 'mail') { echo "class=active"; } ?>>
-                                <a href="<?php echo base_url() ?>admin/mail">
-                                    <span class="icon fa fa-envelope-o"></span><span class="title">Mail</span>
-                                </a>
-                            </li> -->
-
-<!-- Campaign -->
-                            <!-- <li <?php if($role == 'campaign') { echo "class=active"; } ?>>
-                                <a href="<?php echo base_url() ?>admin/campaign">
-                                    <span class="icon fa fa-building-o"></span><span class="title">Campaign</span>
-                                </a>
-                            </li> -->
+                            </li>
 
 <!-- Donatur -->
-<!--                             <li <?php if($role == 'donation') { echo "class=active"; } ?>>
+                            <li <?php if($role == 'donation') { echo "class=active"; } ?>>
                                 <a href="<?php echo base_url() ?>admin/donation">
                                     <span class="icon fa fa-male"></span><span class="title">Donation</span>
                                 </a>
-                            </li> -->
+                            </li>
 <!-- Preview Website -->
                             <li>
                                 <a href="<?php echo base_url() ?>" target="_blank">

@@ -1,12 +1,6 @@
 <div class="container-fluid">
 	<div class="side-body">
 
-<!-- Page  Title -->
-        <div class="page-title">
-            <span class="title">Blog</span>
-            <div class="description">Tulis, Lihat dan edit blog</div>
-        </div>
-
         <?php if(validation_errors() || $this->upload->display_errors()) { ?>
         <div class="row">
             <div class="col-sm-8 col-sm-offset-2">

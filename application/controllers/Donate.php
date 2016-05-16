@@ -108,7 +108,7 @@ class Donate extends CI_Controller {
 				$configMail = Array(
 					'protocol'  => 'smtp',
 					'smtp_host' => 'mail.smtp2go.com',
-					'smtp_port' => 2525,
+					'smtp_port' => 587,
 					'smtp_user' => 'ihsan@isbanban.org',
 					'smtp_pass' => 'TWGAqI4wPReo',
 					'crlf'      => "\r\n",

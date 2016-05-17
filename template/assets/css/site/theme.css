@@ -10369,6 +10369,11 @@ header .navbar-nav li a {
 .precontent.donation .poin:last-child {
   border-right: 0px;
 }
+@media (max-width: 768px) {
+  .precontent.donation .poin {
+    margin-bottom: 20px;
+  }
+}
 .precontent.donation-info {
   margin-top: -30px;
   margin-bottom: 20px;
@@ -10838,6 +10843,19 @@ footer .copyright p {
 }
 #sectionNav ul li a {
   border-radius: 0px;
+}
+.btn-to-donate {
+  border-radius: 0px;
+  position: fixed;
+  bottom: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+.btn-to-donate img {
+  height: 25px;
+  margin: 0px auto;
+  display: inline-block;
+  position: relative;
 }
 #sectionContent {
   margin-top: -200px;

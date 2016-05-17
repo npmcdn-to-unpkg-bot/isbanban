@@ -33,7 +33,7 @@ class M_event extends CI_Model {
 		// return $this->db->get('relawan')->result();
 		$sql =
 		"
-		SELECT * FROM event ORDER BY MONTH(tanggal) DESC, YEAR(tanggal) LIMIT $limit, $perpage
+		SELECT * FROM event ORDER BY tanggal DESC LIMIT $limit, $perpage
 		";
 		return $this->db->query($sql)->result();
 	}

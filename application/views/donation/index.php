@@ -212,7 +212,7 @@
 				</div>
 			</div>
 
-			<div class="col-md-5 col-sm-6 stick_donation">
+			<div class="col-md-5 col-sm-6 stick_donation" id="form-donation">
 				<div class="panel panel-default donation">
 					<div class="panel-heading">
 						<b>Donation Form</b>
@@ -274,7 +274,7 @@
 							<div class="form-group">
 								<div class="checkbox">
 									<label>
-							            <input type="checkbox" name="is_anonim" value="1"> dont publish me
+							            <input type="checkbox" name="is_anonim" value="1"> Dont publish me
 							        </label>
 						       	</div>
 			                </div>
@@ -315,14 +315,32 @@
 	</div>
 </section>
 
+<!-- Floating Donate Button -->
+<a href="#form-donation" class="btn btn-block btn-primary btn-to-donate btn-raised"><img src="<?php echo base_url() ?>template/assets/image/charity-money.svg" class="img-responsive"> DONATE NOW</a>
+
 <link rel="stylesheet" href="<?php echo base_url() ?>template/assets/vendor/sweetalert/dist/sweetalert.css">
 <script src="<?php echo base_url() ?>template/assets/vendor/sweetalert/dist/sweetalert.min.js"></script>
 <script src="<?php echo base_url() ?>template/assets/vendor/autoNumeric/autoNumeric.js"></script>
 <script src="<?php echo base_url() ?>template/assets/vendor/sticky-kit/jquery.sticky-kit.min.js"></script>
 <script>
+var offsetScroll = $(".jumbotron").height() + $("header").height();
+$(".btn-to-donate").hide();
 
 if ($(window).width() > 768) {
 	doStick();
+} else {
+	var lastScrollTop = 0;
+	$(window).scroll(function(event){
+		var st = $(this).scrollTop();
+
+		if (st > lastScrollTop) {
+			$(".btn-to-donate").slideUp();
+		} else {
+			$(".btn-to-donate").slideDown();
+		}
+		lastScrollTop = st;
+
+	});
 }
 
 function doStick() {

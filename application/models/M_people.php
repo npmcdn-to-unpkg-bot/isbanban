@@ -35,7 +35,7 @@ class M_people extends CI_Model {
 		// return $this->db->get('relawan')->result();
 		$sql =
 		"
-		SELECT * FROM relawan ORDER BY nama LIMIT $limit, $perpage
+		SELECT * FROM relawan WHERE path_foto != '' ORDER BY nama LIMIT $limit, $perpage
 		";
 		return $this->db->query($sql)->result();
 	}

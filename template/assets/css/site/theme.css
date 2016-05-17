@@ -10441,9 +10441,15 @@ body.recruitment {
   height: 350px;
   position: relative;
   margin-bottom: 20px;
+  border-bottom: none;
+  transition: 0.35s all ease;
+}
+.post .begin-post.blog:hover,
+.post .begin-post.blog:focus {
+  border-bottom: 10px solid #00aced;
+  transition: 0.35s all ease;
 }
 .post .begin-post.blog .shade {
-  transition: all 0.35s ease;
   position: absolute;
   width: 100%;
   height: 100%;

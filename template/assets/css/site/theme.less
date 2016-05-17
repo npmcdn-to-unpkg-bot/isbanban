@@ -743,21 +743,22 @@ body.recruitment {
 
 
 .post {
-
 	.begin-post {
 		&.blog {
 			background-size: cover !important;
 			height:350px;
 			position: relative;
 			margin-bottom: 20px;
+			border-bottom: none;
+			.transition(.35s all ease);
 
 			&:hover,
 			&:focus {
-
+				border-bottom: 10px solid @brand-primary;
+				.transition(.35s all ease);
 			}
 
 			.shade {
-				.transition(all .35s ease);
 				position: absolute;
 				width: 100%;
 				height:100%;

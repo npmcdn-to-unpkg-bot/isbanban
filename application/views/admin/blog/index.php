@@ -40,7 +40,7 @@
                 	<tr>
                 		<td><?php echo $nomor; ?></td>
                         <td><?php echo $item->judul; ?></td>
-                        <td><?php echo $item->kategori; ?></td>
+                        <td><?php echo $item->nama_kategori; ?></td>
                         <td><?php $this->barnlibs->dateForHuman($item->created_at) ?></td>
                         <td><?php $this->barnlibs->dateForHuman($item->updated_at); ?></td>
                 		<td>

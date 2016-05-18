@@ -19,7 +19,15 @@ class M_blog extends CI_Model {
 	 */
 	function getAll()
 	{
-		return $this->db->get('blog')->result();
+		$sql = "
+		SELECT blog.*,
+				blog_kategori.nama as nama_kategori
+		FROM blog
+		LEFT JOIN blog_kategori
+		ON blog.kategori = blog_kategori.id
+		";
+		return $this->db->query($sql)->result();
+		// return $this->db->get('blog')->result();
 	}
 
 	function insert($data)

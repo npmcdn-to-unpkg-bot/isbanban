@@ -446,8 +446,8 @@ table tr td {
 }
 </style>
 <script src="<?php echo base_url() ?>template/assets/vendor/autoNumeric/autoNumeric.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js"></script>
-<script src="http://kotahijau.dev/themes/kota-hijau/assets/vendor/googlemaps/markerclusterer_compiled.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJgV2HnjR7mqWBA5wp1ev6K2ItJ1g-PT8"></script>
+<script src="<?php echo base_url() ?>template/assets/vendor/google-maps/src/markerclusterer_compiled.js"></script>
 <script type="text/javascript">
 function initialize() {
     var center = new google.maps.LatLng(-6.4444075, 105.9920291);

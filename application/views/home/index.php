@@ -178,7 +178,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<h2>We Already Have</h2>
+					<h2>WE ALREADY HAVE</h2>
 				</div>
 			</div>
 			<div class="row">
@@ -211,7 +211,7 @@
 <!-- Blog Post -->
 	<div class="container">
 		<div class="post">
-			<h2>Blog</h2>
+			<h2>BLOG</h2>
 			<div class="row">
 				<?php foreach ($getBlogPost as $item) { ?>
 				<div class="col-sm-6 col-md-4">
@@ -229,9 +229,9 @@
 	</div>
 
 
-	<div class="jumbotron jumbotron-testimoni">
+	<div class="jumbotron jumbotron-testimoni" style="margin-bottom: 0px">
 		<div class="container">
-			<h2>What They Say</h2>
+			<h2>WHAT THEY SAY</h2>
 			<div id="lightSlider" class="row">
 			<?php foreach($getFeedback as $item) { ?>
 			<div class="col-sm-6">
@@ -262,16 +262,74 @@
 </div>
 
 
+<div class="jumbotron jumbotron-testimoni" style="background: #f5f5f5">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 text-center">
+				<h3 class="mg-b-20 mg-t-0">STRATEGIC PARTNER</h3>
+				<div class="partners">
+					<?php foreach($getStrategicPartners as $row) { ?>
+					<div data-toggle="tooltip" title="<?php echo $row->name; ?>">
+						<a href="<?php echo $row->link; ?>" target="_blank">
+							<img src="<?php echo base_url() ?><?php echo $row->thumbnail; ?>" alt="" class="img-responsive img-center">
+						</a>
+					</div>
+					<?php } ?>
+				</div>
+			</div>
 
-<link rel="stylesheet" href="<?php echo base_url() ?>template/assets/vendor/slick-carousel/slick/slick.css">
-<link rel="stylesheet" href="<?php echo base_url() ?>template/assets/vendor/slick-carousel/slick/slick-theme.css">
+			<div class="col-sm-6 text-center">
+				<h3 class="mg-b-20 mg-t-0">MEDIA PARTNER</h3>
+				<div class="partners">
+					<?php foreach($getMediaPartners as $row) { ?>
+					<div data-toggle="tooltip" title="<?php echo $row->name; ?>">
+						<a href="<?php echo $row->link; ?>" target="_blank">
+							<img src="<?php echo base_url() ?><?php echo $row->thumbnail; ?>" alt="" class="img-responsive img-center">
+						</a>
+					</div>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- <link rel="stylesheet" href="<?php echo base_url() ?>template/assets/vendor/slick-carousel/slick/slick.css"> -->
+<!-- <link rel="stylesheet" href="<?php echo base_url() ?>template/assets/vendor/slick-carousel/slick/slick-theme.css"> -->
+<link rel="stylesheet" href="http://sachinchoolur.github.io/lightslider/dist/css/lightslider.css">
 <script type="text/javascript" src="<?php echo base_url() ?>template/assets/vendor/counter.js/js/jquery.easing.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>template/assets/vendor/counter.js/js/counter.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>template/assets/vendor/slick-carousel/slick/slick.min.js"></script>
-
-
-
+<!-- <script type="text/javascript" src="<?php echo base_url() ?>template/assets/vendor/slick-carousel/slick/slick.min.js"></script> -->
+<script src="http://sachinchoolur.github.io/lightslider/dist/js/lightslider.js"></script>
 <script type="text/javascript">
+$("body").tooltip({ selector: '[data-toggle=tooltip]' });
+$(".partners").lightSlider({
+	item: 3,
+	pager: true,
+	auto: true,
+	controls: false,
+	responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        item: 1,
+        slidesToScroll: 1,
+		pager: true,
+      }
+    },
+    {
+      breakpoint: 992,
+      settings: {
+        item: 2,
+        slidesToScroll: 1,
+		pager: true,
+      }
+    },
+    ]
+});
+
 $(".people .big").counter({
 	  autoStart: true,           // true/false, default: true
 	  duration: 5000,            // milliseconds, default: 1500
@@ -286,15 +344,18 @@ $(".village .big").counter({
 	  countTo: <?php echo $countVillage; ?>,
 });
 
-$("#lightSlider").slick({
-	slidesToShow: 2,
+$("#lightSlider").lightSlider({
+	item: 2,
 	dots: false,
-	autoplay: true,
+	pager: false,
+	pauseOnHover: true,
+	loop:true,
+	auto: true,
 	responsive: [
     {
       breakpoint: 768,
       settings: {
-        slidesToShow: 1,
+        item: 1,
         slidesToScroll: 1,
         dots: true,
       }

@@ -1,11 +1,11 @@
 @import "less/bootstrap.less";
 @import "material/bootstrap-material-design.less";
 @import "material/ripples.less";
+@import "helpers.less";
 
 // @brand-primary: #01c8e7; Isbanban blue
 @brand-primary: #00aced;
 @brand-secondary: #FF8200;
-
 
 body {
 	font-family: 'Open Sans', sans-serif;
@@ -749,7 +749,7 @@ body.recruitment {
 			height:350px;
 			position: relative;
 			margin-bottom: 20px;
-			border-bottom: none;
+			border-bottom: 0px solid transparent;
 			.transition(.35s all ease);
 
 			&:hover,
@@ -1396,5 +1396,25 @@ footer {
 
 	@media(max-width: @screen-sm) {
 		margin-top: 0px;
+	}
+}
+
+
+.partners {
+	img {
+	    -webkit-filter: grayscale(100%);
+    	filter: grayscale(100%);
+    	.transition(.35s all ease);
+	}
+
+	.lslide {
+		&:hover,
+		&:focus {
+			img {
+				-webkit-filter: grayscale(0%);
+		    	filter: grayscale(0%);
+		    	.transition(.35s all ease);
+			}
+		}
 	}
 }

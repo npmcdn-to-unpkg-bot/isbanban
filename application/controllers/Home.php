@@ -36,6 +36,8 @@ class Home extends CI_Controller {
 			'countVillage'	=> $this->m_home->countData('desa'),
 			'countRelawan'	=> $this->m_home->countData('relawan'),
 			'getFeedback'	=> $this->m_home->getFeedback(),
+			'getStrategicPartners'	=> $this->m_home->getStrategicPartners(),
+			'getMediaPartners'	=> $this->m_home->getMediaPartners(),
 		];
 
 		$this->load->view('header', $data);

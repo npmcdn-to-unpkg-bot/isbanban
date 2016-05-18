@@ -27,6 +27,12 @@
                 </div>
 
                 <div class="card-body">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <b>Psss..</b> for a better result please make sure the image dimension is 150x150
+                        </div>
+                    </div>
+
                     <input type="file" name="gambar">
                 </div>
             </div>
@@ -40,29 +46,31 @@
 
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-sm-8">
+                        <div class="col-sm-6">
                             <div class="form-group">
-                                <label>Judul</label>
-                                <input class="form-control" type="text" name="judul"></input>
+                                <label>Nama</label>
+                                <input class="form-control" type="text" name="partner_name" required>
                             </div>
                         </div>
 
-                        <div class="col-sm-4">
+                        <div class="col-sm-6">
                             <div class="form-group">
                                 <label>Kategori</label>
-                                <select class="form-control" name="kategori">
+                                <select class="form-control" name="partner_category" required>
                                     <option value="">-- Pilih Kategori --</option>
                                     <?php foreach($getCategory as $row) { ?>
-                                    <option value="<?php echo $row->id; ?>"><?php echo $row->nama; ?></option>
+                                    <option value="<?php echo $row->id; ?>"><?php echo $row->name; ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label>Konten</label>
-                        <textarea id="editor1" class="form-control" name="konten"></textarea>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Link Url(s)</label>
+                                <input type="text" class="form-control" name="partner_url" required>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -76,20 +84,8 @@
 
 <style type="text/css">
     .card { margin-bottom: 20px }
-    .row .col-sm-8,
-    .row .col-sm-4 {
+    .row .col-sm-6,
+    .row .col-sm-12 {
         margin-bottom: 0px;
     }
 </style>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>template/assets/css/dataTables.bootstrap.css">
-<script type="text/javascript" src="<?php echo base_url() ?>template/assets/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>template/assets/js/dataTables.bootstrap.min.js"></script>
-<script src="<?php echo base_url() ?>template/assets/vendor/ckeditor/ckeditor.js"></script>
-<script src="<?php echo base_url() ?>template/assets/vendor/ckeditor/config.js"></script>
-<script src="<?php echo base_url() ?>template/assets/vendor/ckeditor/styles.js"></script>
-<script>
-CKEDITOR.replace( 'editor1', {
-  extraPlugins: 'imageuploader'
-});
-$(".datatable").DataTable();
-</script>

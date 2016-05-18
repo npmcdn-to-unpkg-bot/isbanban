@@ -115,6 +115,14 @@
                                     <span class="icon fa fa-male"></span><span class="title">Donation</span>
                                 </a>
                             </li>
+
+<!-- Partners -->
+                            <li <?php if($role == 'partners') { echo "class=active"; } ?>>
+                                <a href="<?php echo base_url() ?>admin/partners">
+                                    <span class="icon fa fa-hand-spock-o"></span><span class="title">Partners</span>
+                                </a>
+                            </li>
+
 <!-- Preview Website -->
                             <li>
                                 <a href="<?php echo base_url() ?>" target="_blank">

@@ -45,8 +45,20 @@ class M_home extends CI_Model {
 		ON testimoni.id_detail=blog.id;
 		";
 		return $this->db->query($sql)->result();
-
 	}
+
+	function getStrategicPartners()
+	{
+		$this->db->where('category_id', 1);
+		return $this->db->get('partners')->result();
+	}
+
+	function getMediaPartners()
+	{
+		$this->db->where('category_id', 2);
+		return $this->db->get('partners')->result();
+	}
+
 
 }
 

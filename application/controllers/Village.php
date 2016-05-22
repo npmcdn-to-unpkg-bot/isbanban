@@ -57,7 +57,7 @@ class Village extends CI_Controller {
 
 		foreach($feed as $row) {
 			$data['title']			= ucfirst($row->nama);
-			$data['meta_image']		= $row->picture_path;
+			$data['meta_image']		= base_url().$row->picture_path;
 			$data['meta_url']		= base_url().'village/detail/'.$row->slug;
 		}
 

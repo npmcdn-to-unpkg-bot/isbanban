@@ -37,7 +37,7 @@
     <?php if($meta_image) { ?>
 	<meta itemprop="image" content="<?php echo $meta_image; ?>">
 	<?php } else { ?>
-	<meta itemprop="image" content="<?php echo base_url() ?>template/assets/image/typetext-black.png">
+	<meta itemprop="image" content="<?php echo base_url() ?>template/assets/image/default-placeholder.png">
 	<?php } ?>
 
     <!-- Twitter Card data -->
@@ -48,7 +48,7 @@
     <?php if($meta_image) { ?>
     <meta name="twitter:image:src" content="<?php echo $meta_image; ?>">
     <?php } else { ?>
-    <meta name="twitter:image:src" content="<?php echo base_url() ?>template/assets/image/typetext-black.png">
+    <meta name="twitter:image:src" content="<?php echo base_url() ?>template/assets/image/default-placeholder.png">
     <?php } ?>
 
     <!-- Open Graph data -->

@@ -17,12 +17,13 @@
     </style>
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body style="background: url(<?php echo base_url() ?>template/assets/image/pdf_background.png) top left no-repeat;font-family: 'Open Sans', sans-serif;font-size: 14px;">
 
 
-<div style="position: fixed; top: 80px; width: 100%">
-    <p class="company-info" style="display: inline-block;line-height: 1.1em;font-size: 1.1em; text-align: right;">
+<div style="position: fixed; top: 100px; width: 100%">
+    <p class="company-info" style="display: inline-block;line-height: 1.5em;font-size: 1.1em; text-align: right;">
         <b>Yayasan Istana Belajar Anak Banten</b><br>
         <b>Jl. Karya Bhakti 2A No. 98, Komplek KPPN Ciceri</b> <br>
         <b>(+62)89665656796</b> <br>
@@ -32,8 +33,14 @@
 </div>
 
 
-<div style="position:fixed; top: 240px;">
-	<table style=" background: none; width: 100%">
+<div style="position: fixed; top: 230px; box-shadow: transparent !important;" class="panel panel-info">
+	<div class="panel-body text-info">
+		Status donasi anda adalah pending, Mohon untuk segera melakukan konfirmasi mengikuti petunjuk pada email anda.
+	</div>
+</div>
+
+<div style="position:fixed; top: 320px;">
+	<table class="table" style="background: transparent !important; width: 100%">
 		<thead>
 			<tr>
 				<th colspan="2" style="text-align: left">Donator Information</th>
@@ -41,6 +48,11 @@
 		</thead>
 
 		<tbody>
+			<tr>
+				<td style="padding: 10px; border: 1px solid #333; width: 30%"><b>Donation at</b></td>
+				<td style="padding: 10px; border: 1px solid #333"><?php echo date("d-m-Y", strtotime($donasi_date)); ?></td>
+			</tr>
+
 			<tr>
 				<td style="padding: 10px; border: 1px solid #333; width: 30%"><b>Donation Code</b></td>
 				<td style="padding: 10px; border: 1px solid #333"><?php echo $confirm_code; ?></td>
@@ -79,7 +91,7 @@
 </div>
 
 
-<div style="position:fixed; top: 620px;">
+<div style="position:fixed; top: 720px;">
 	<table style=" background: none; width: 100%">
 		<thead>
 			<tr>

@@ -71,9 +71,9 @@ class Donate extends CI_Controller {
 		$seed = str_split('abcdefghjkmnpqrstuvwxyz'.'ABCDEFGHJKMNPQRSTUVWXYZ');
 	    shuffle($seed);
 	    $rand = '';
-	    foreach (array_rand($seed, 5) as $k) $rand .= $seed[$k];
+	    foreach (array_rand($seed, 2) as $k) $rand .= $seed[$k];
 // Confirm Code Random + Time
-	    $confirm_code	= $rand.date('hi');
+	    $confirm_code	= "ISB".$rand.date('hi');
 
 		if($this->input->post()) {
 			if($this->form_validation->run()) {
@@ -97,6 +97,7 @@ class Donate extends CI_Controller {
 
 // Setting for mail information
 				$data['confirm_code']		 	 = $confirm_code;
+				$data['donasi_date']		 	 = date('Y-m-d');
 				$data['donatur_nama']		 	 = $this->input->post('donatur_name');
 				$data['donasi_cash']		 	 = $this->input->post('donation_cash');
 				$data['donatur_number']			 = $this->input->post('donatur_number');

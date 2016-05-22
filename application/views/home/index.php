@@ -193,12 +193,16 @@
 				</div>
 
 				<div class="col-sm-6 col-md-3 banner-point cash_donation">
-					<div class="big">0</div>
+					<?php foreach($countCashDonation as $row) { ?>
+					<div class="big"><?php echo number_format($row->cashDonation); ?></div>
+					<?php } ?>
 					<div class="small">Cash Donation</div>
 				</div>
 
 				<div class="col-sm-6 col-md-3 banner-point book_donation">
-					<div class="big">0</div>
+					<?php foreach($countBookDonation as $row) { ?>
+					<div class="big"><?php echo $row->bookDonation; ?></div>
+					<?php } ?>
 					<div class="small">Book Donation</div>
 				</div>
 			</div>
@@ -310,6 +314,7 @@ $(".partners").lightSlider({
 	pager: true,
 	auto: true,
 	controls: false,
+	loop: true,
 	responsive: [
     {
       breakpoint: 768,
@@ -343,6 +348,7 @@ $(".village .big").counter({
 	  countFrom: 0,              // start counting at this number, default: 0
 	  countTo: <?php echo $countVillage; ?>,
 });
+
 
 $("#lightSlider").lightSlider({
 	item: 2,

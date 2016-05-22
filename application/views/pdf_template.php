@@ -71,7 +71,7 @@
 
 			<tr>
 				<td colspan="2" style="padding: 40px 0px; border: 1px solid #333; text-align: center">
-					<b>Rp. <span style="font-size: 31px;"><?php echo $donasi_cash; ?></span></b>
+					<b>Rp. <span style="font-size: 31px;"><?php echo number_format($donasi_cash); ?></span></b>
 				</td>
 			</tr>
 		</tbody>

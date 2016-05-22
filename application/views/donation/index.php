@@ -11,15 +11,15 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">
-				<h1>Overall Calculation</h1>
+				<h1>OVERALL DATA</h1>
 			</div>
 			<div class="col-sm-6 poin">
 				<div class="bigger">
 					<i class="fa fa-4x fa-money"></i>
 				</div>
 				<h2 class="bigger">
-				Rp. <span class="money moneyFormat"><?php foreach($totalMoney as $item) {
-						echo $item->total_donasi_uang;
+				Rp. <span class="money"><?php foreach($totalMoney as $item) {
+						echo number_format($item->total_donasi_uang);
 					} ?></span>
 				</h2>
 			</div>
@@ -354,7 +354,8 @@ $(".moneyFormat").autoNumeric('init',{
     aSep: '.',
     dGroup: '3',
     aDec: " ",
-    aPad: false
+    aPad: false,
+    vMin:'0' 
 });
 
 $("#default").bind('blur focusout keypress keyup', function() {

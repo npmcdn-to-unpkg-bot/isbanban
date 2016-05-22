@@ -22,6 +22,24 @@ class M_home extends CI_Model {
 		return $this->db->get($data)->num_rows();
 	}
 
+	function countCashData()
+	{
+		$sql =
+			"
+			SELECT sum(donasi_banyak) as cashDonation FROM donasi WHERE id_jenis=3 and status=1
+			";
+		return $this->db->query($sql)->result();
+	}
+
+	function countBookData()
+	{
+		$sql =
+			"
+			SELECT sum(donasi_banyak) as bookDonation FROM donasi WHERE id_jenis=1 and status=1
+			";
+		return $this->db->query($sql)->result();
+	}
+
 	function getBlogPost($limit, $table)
 	{
 		$sql =

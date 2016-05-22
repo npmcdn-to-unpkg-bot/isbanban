@@ -133,7 +133,7 @@ p, ul, ol {
                     </tr>
                     <tr style="margin: 0;padding: 0;font-size: 100%;font-family: 'Avenir Next', &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;line-height: 1.65;">
                         <td class="content" style="margin: 0;padding: 30px 35px;font-size: 100%;font-family: 'Avenir Next', &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, Helvetica, Arial, sans-serif;line-height: 1.65;background: white;">
-                            <p>Yang terhormat donatur <b><?php echo $donatur_nama;?></b>, Anda baru saja berhasil melakukan permohonan donasi sebesar <b>Rp. <?php echo $donasi_cash; ?></b>. Kami mohon untuk segera lakukan konfirmasi dengan menggunakan kode <b><?php echo $confirm_code; ?></b> pada kami di nomor <b>+6289665656796</b>, setelah anda melakukan transaksi tersebut.</p>
+                            <p>Yang terhormat donatur <b><?php echo $donatur_nama;?></b>, Anda baru saja berhasil melakukan permohonan donasi sebesar <b>Rp. <?php echo number_format($donasi_cash); ?></b>. Kami mohon untuk segera lakukan konfirmasi dengan menggunakan kode <b><?php echo $confirm_code; ?></b> pada kami di nomor <b>+6289665656796</b>, setelah anda melakukan transaksi tersebut.</p>
 
                             <p>
                               Kami juga melampirkan file sebagai bukti bahwa anda ikut berperan dalam membangun pendidikan di plosok desa Banten.

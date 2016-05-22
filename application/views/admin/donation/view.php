@@ -99,7 +99,7 @@
                             <td>Banyak</td>
                             <td>
                                 <?php if($row->id_jenis == 3) { ?>
-                                Rp. <?php echo $row->donasi_banyak; ?>
+                                Rp. <?php echo number_format($row->donasi_banyak); ?>
                                 <?php } else { ?>
                                 <?php echo $row->donasi_banyak; ?>
                                 <?php } ?>

@@ -35,7 +35,7 @@
 
 <div style="position: fixed; top: 230px; box-shadow: transparent !important;" class="panel panel-info">
 	<div class="panel-body text-info">
-		Status donasi anda adalah pending, Mohon untuk segera melakukan konfirmasi mengikuti petunjuk pada email anda.
+		Your donation status is pending, please immediately confirm following the instructions in your email
 	</div>
 </div>
 

@@ -40,6 +40,7 @@
     "sticky-kit": "~1.1.2",
     "slick-carousel": "https://github.com/kenwheeler/slick.git#^1.5.9",
     "scrollToBySpeed": "^0.3.0",
-    "masonry": "^4.0.0"
+    "masonry": "^4.0.0",
+    "font-awesome": "^4.6.3"
   }
 }

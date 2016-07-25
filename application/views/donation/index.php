@@ -212,8 +212,8 @@
 				</div>
 			</div>
 
-			<div class="col-md-5 col-sm-6 stick_donation" id="form-donation">
-				<div class="panel panel-default donation">
+			<div class="col-md-5 col-sm-6" id="form-donation" style="position: static;">
+				<div class="panel panel-default donation stick_donation">
 					<div class="panel-heading">
 						<b>Donation Form</b>
 					</div>

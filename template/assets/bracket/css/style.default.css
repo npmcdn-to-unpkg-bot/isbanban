@@ -6,11 +6,12 @@
 @import "../css/animate.min.css";
 @import "../css/animate.delay.css";
 @import "../css/toggles.css";
-@import "../css/select2.css";
+@import "../../vendor/select2/dist/css/select2.min.css";
 @import "../css/lato.css";
 @import "../css/roboto.css";
 /********** 2. RESET STYLES **********/
 /*************************************/
+@import "../../vendor/select2-bootstrap-theme/dist/select2-bootstrap.min.css";
 body {
   background: #0087ba;
   font-family: "LatoRegular", "Lucida Grande", "Lucida Sans Unicode", Helvetica, sans-serif;

@@ -34,7 +34,14 @@
 	<script src="<?php echo base_url() ?>template/assets/bracket/js/toggles.min.js"></script>
 	<script src="<?php echo base_url() ?>template/assets/bracket/js/retina.min.js"></script>
 	<script src="<?php echo base_url() ?>template/assets/bracket/js/jquery.cookies.js"></script>
-
+	<script src="<?php echo base_url() ?>template/assets/vendor/select2/dist/js/select2.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("select").select2({
+		    theme: "bootstrap"
+		}).css({"height":"$40px", "padding-top":"9px"});
+	});
+	</script>
 	<script src="<?php echo base_url() ?>template/assets/bracket/js/flot/jquery.flot.min.js"></script>
 	<script src="<?php echo base_url() ?>template/assets/bracket/js/flot/jquery.flot.resize.min.js"></script>
 	<script src="<?php echo base_url() ?>template/assets/bracket/js/flot/jquery.flot.spline.min.js"></script>

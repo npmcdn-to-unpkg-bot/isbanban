@@ -33,15 +33,16 @@ class Volunteer extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'		 	=> 'volunteer',
+			'icon'			=> 'fa-users',
+			'pagetitle'		=> 'Volunteer',
+			'page'			=> 'pages/admin/volunteer/data',
 			'getAll'		=> $this->m_volunteer->getAll(),
 			'getChapter'	=> $this->m_volunteer->getChapter(),
 			'getDepartment'	=> $this->m_volunteer->getDepartment(),
 			'getPosition'	=> $this->m_volunteer->getPosition()
 		];
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/volunteer/data');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	function recruitment()
@@ -49,13 +50,14 @@ class Volunteer extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'		 	=> 'oprec',
+			'icon'			=> 'fa-user',
+			'pagetitle'		=> 'Recruitment 2016',
+			'page'			=> 'pages/admin/volunteer/recruitment/index',
 			'getAll'		=> $this->m_volunteer->getRecruitment(),
 		];
 
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/volunteer/recruitment/index');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	function add()
@@ -64,6 +66,9 @@ class Volunteer extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'		 	=> 'volunteer',
+			'icon'			=> 'fa-user',
+			'pagetitle'		=> 'Add Volunteer',
+			'page'			=> 'pages/admin/volunteer/index',
 			'getAll'		=> $this->m_volunteer->getAll(),
 			'getChapter'	=> $this->m_volunteer->getChapter(),
 			'getDepartment'	=> $this->m_volunteer->getDepartment(),
@@ -244,9 +249,7 @@ class Volunteer extends CI_Controller {
 			redirect('/admin/volunteer');
 		}
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/volunteer/index');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	function edit($parameter_code) {
@@ -254,6 +257,9 @@ class Volunteer extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'		 	=> 'volunteer',
+			'icon'			=> 'fa-users',
+			'pagetitle'		=> 'Edit Volunteer',
+			'page'			=> 'pages/admin/volunteer/detail',
 			'getThis'		=> $this->m_volunteer->getByParameter($parameter_code),
 			'getChapter'	=> $this->m_volunteer->getChapter(),
 			'getDepartment'	=> $this->m_volunteer->getDepartment(),
@@ -437,9 +443,7 @@ class Volunteer extends CI_Controller {
 			}
 		}
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/volunteer/detail');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	function view($parameter_code)
@@ -447,15 +451,16 @@ class Volunteer extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'		 	=> 'volunteer',
+			'icon'			=> 'fa-user',
+			'pagetitle'		=> 'Volunteer Detail',
+			'page'			=> 'pages/admin/volunteer/view',
 			'getThis'		=> $this->m_volunteer->getByParameter($parameter_code),
 			'getChapter'	=> $this->m_volunteer->getChapter(),
 			'getDepartment'	=> $this->m_volunteer->getDepartment(),
 			'getPosition'	=> $this->m_volunteer->getPosition()
 		];
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/volunteer/view');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	function delete($parameter_code)

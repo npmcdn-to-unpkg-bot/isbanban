@@ -32,8 +32,7 @@ class Auth extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 		];
-
-		$this->load->view('login');
+		$this->load->view('pages/login');
 	}
 
 

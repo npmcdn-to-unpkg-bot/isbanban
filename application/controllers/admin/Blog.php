@@ -33,12 +33,13 @@ class Blog extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'			=> 'blog',
+			'icon'			=> 'fa-pencil',
+			'pagetitle'		=> 'Blog',
+			'page'			=> 'pages/admin/blog/index',
 			'getAll'		=> $this->m_blog->getAll(),
 		];
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/blog/index');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	function add()
@@ -46,6 +47,9 @@ class Blog extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'			=> 'blog',
+			'icon'			=> 'fa-pencil',
+			'pagetitle'		=> 'Add Blog',
+			'page'			=> 'pages/admin/blog/add',
 			'getCategory'	=> $this->m_blog->getCategory(),
 		];
 
@@ -120,9 +124,7 @@ class Blog extends CI_Controller {
 			}
 		}
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/blog/add');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	function edit($parameter_code)
@@ -130,6 +132,9 @@ class Blog extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'			=> 'blog',
+			'icon'			=> 'fa-pencil',
+			'pagetitle'		=> 'Edit Blog',
+			'page'			=> 'pages/admin/blog/edit',
 			'getThis'		=> $this->m_blog->getThis($parameter_code),
 			'getCategory'	=> $this->m_blog->getCategory(),
 		];
@@ -198,9 +203,7 @@ class Blog extends CI_Controller {
 			}
 		}
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/blog/edit');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	function delete($parameter_code)

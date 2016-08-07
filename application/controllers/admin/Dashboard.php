@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class dashboard extends CI_Controller {
+class Dashboard extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -35,6 +35,9 @@ class dashboard extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'			=> 'dashboard',
+			'page'			=> 'pages/admin/dashboard/index',
+			'icon'			=> 'fa-home',
+			'pagetitle'		=> 'Dashboard',
 			'countRelawan'	=> $this->m_dashboard->count('relawan'),
 			'countEvents'	=> $this->m_dashboard->count('event'),
 			'countBlog'		=> $this->m_dashboard->count('blog'),
@@ -75,9 +78,7 @@ class dashboard extends CI_Controller {
 			'countDepartemenIO' => $this->m_dashboard->countRelawanByDepartemen('IO'),
 		];
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/dashboard/index');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 }
 

@@ -33,12 +33,13 @@ class Feedback extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'			=> 'feedback',
+			'icon'			=> 'fa-comments',
+			'pagetitle'		=> 'Feedback',
+			'page'			=> 'pages/admin/feedback/index',
 			'getAll'		=> $this->m_feedback->getAll(),
 		];
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/feedback/index');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	function add()
@@ -46,6 +47,9 @@ class Feedback extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'			=> 'feedback',
+			'icon'			=> 'fa-comments',
+			'pagetitle'		=> 'Add Feedback',
+			'page'			=> 'pages/admin/feedback/add',
 			'getCategory'	=> $this->m_feedback->getCategory(),
 		];
 
@@ -126,9 +130,7 @@ class Feedback extends CI_Controller {
 			}
 		}
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/feedback/add');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	function edit($parameter_code)
@@ -136,6 +138,9 @@ class Feedback extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'			=> 'feedback',
+			'icon'			=> 'fa-comments',
+			'pagetitle'		=> 'Edit Feedback',
+			'page'			=> 'pages/admin/feedback/edit',
 			'getThis'		=> $this->m_feedback->getThis($parameter_code),
 			'getCategory'	=> $this->m_feedback->getCategory(),
 		];
@@ -212,9 +217,7 @@ class Feedback extends CI_Controller {
 			}
 		}
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/feedback/edit');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	function delete($parameter_code)

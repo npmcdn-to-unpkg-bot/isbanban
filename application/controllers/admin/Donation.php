@@ -33,12 +33,13 @@ class Donation extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'			=> 'donation',
+			'icon'			=> 'fa-heart-o',
+			'pagetitle'		=> 'Donation',
+			'page'			=> 'pages/admin/donation/index',
 			'getAll'		=> $this->m_donation->getAll()
 		];
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/donation/index');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 
@@ -47,6 +48,9 @@ class Donation extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'			=> 'donation',
+			'icon'			=> 'fa-heart-o',
+			'pagetitle'		=> 'Add Donation',
+			'page'			=> 'pages/admin/donation/insert',
 			'getCategory'	=> $this->m_donation->getDonationCategory(),
 			'getBank'		=> $this->m_donation->getBankAccount()
 		];
@@ -142,9 +146,7 @@ class Donation extends CI_Controller {
 			}	
 		}
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/donation/insert');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 

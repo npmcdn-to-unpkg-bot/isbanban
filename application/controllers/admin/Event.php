@@ -32,12 +32,13 @@ class Event extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'		 	=> 'event',
+			'icon'			=> 'fa-calendar-o',
+			'pagetitle'		=> 'Events',
+			'page'			=> 'pages/admin/event/index',
 			'getAll'		=> $this->m_event->getAll(),
 		];
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/event/index');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	function add()
@@ -45,6 +46,9 @@ class Event extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'		 	=> 'event',
+			'icon'			=> 'fa-calendar-o',
+			'pagetitle'		=> 'Add Event',
+			'page'			=> 'pages/admin/event/add'
 		];
 
 		// Form Validation Settings
@@ -143,9 +147,7 @@ class Event extends CI_Controller {
 			}
 		}
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/event/add');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	function edit($parameter_code)
@@ -153,6 +155,9 @@ class Event extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'		 	=> 'event',
+			'icon'			=> 'fa-calendar-o',
+			'pagetitle'		=> 'Edit Event',
+			'page'			=> 'pages/admin/event/edit',
 			'getThis'		=> $this->m_event->getThis($parameter_code),
 		];
 
@@ -244,9 +249,7 @@ class Event extends CI_Controller {
 			}
 		}
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/event/edit');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	function delete($parameter_code)

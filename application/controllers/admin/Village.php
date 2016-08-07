@@ -32,13 +32,14 @@ class Village extends CI_Controller {
 		$data	= [
 			'title'      => 'Istana Belajar Anak Banten',
 			'role'		 => 'village',
+			'icon'		 => 'fa-map-marker',
+			'pagetitle'	 => 'Village',
+			'page'		 => 'pages/admin/village/index',
 			'getAll'     => $this->m_village->getAll(),
 		];
 
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/village/index');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	public function add()
@@ -46,6 +47,9 @@ class Village extends CI_Controller {
 		$data	= [
 			'title'  => 'Istana Belajar Anak Banten',
 			'role'		 => 'village',
+			'icon'		 => 'fa-map-marker',
+			'pagetitle'	 => 'Village',
+			'page'		 => 'pages/admin/village/add',
 			'getChapter' => $this->m_village->getChapter(),
 		];
 
@@ -130,9 +134,7 @@ class Village extends CI_Controller {
 		}
 
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/village/add');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	public function edit($parameter_code)
@@ -140,6 +142,9 @@ class Village extends CI_Controller {
 		$data	= [
 			'title'      => 'Istana Belajar Anak Banten',
 			'role'		 => 'village',
+			'icon'		 => 'fa-map-marker',
+			'pagetitle'	 => 'Edit Village',
+			'page'		 => 'pages/admin/village/edit',
 			'getThis'    => $this->m_village->getThis($parameter_code),
 			'getChapter' => $this->m_village->getChapter(),
 		];
@@ -229,9 +234,7 @@ class Village extends CI_Controller {
 		}
 
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/village/edit');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 

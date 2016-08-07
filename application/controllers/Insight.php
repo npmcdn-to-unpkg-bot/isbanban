@@ -37,11 +37,9 @@ class Insight extends CI_Controller {
 			'countVillage'	=> $this->m_insight->count('desa'),
 
 
-
 			// Donation
 			'countDonationTotal'		=> $this->m_insight->countDonationTotal(),
 			'countDonationTotalToday'	=> $this->m_insight->countDonationTotalToday($nowFull),
-
 
 
 			// Map Location
@@ -139,7 +137,7 @@ class Insight extends CI_Controller {
 			'countIOTangsel'		=> $this->m_insight->countRelawanByDepartemen('TGS', 'IO'),
 		];
 
-		$this->load->view('insight/index', $data);
+		$this->load->view('pages/insight/index', $data);
 	}
 }
 

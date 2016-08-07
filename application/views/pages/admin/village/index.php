@@ -1,53 +1,45 @@
-<div class="container-fluid">
-	<div class="side-body">
 
-	<?php if($this->session->flashdata('success') == true) { ?>
-	<div class="alert alert-success" role="alert">
-	    <strong>Whooops!</strong> Berhasil Menambahkan Data.
-	</div>
-	<?php } ?>
+<?php if($this->session->flashdata('success') == true) { ?>
+<div class="alert alert-success" role="alert">
+    <strong>Whooops!</strong> Berhasil Menambahkan Data.
+</div>
+<?php } ?>
 
-	<div class="row">
-		<div class="col-sm-12">
-			<a href="<?php echo base_url() ?>admin/village/add" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Data</a>
-		</div>
-	</div>
+<?php $this->load->view('partials/admin/panel-primary', array('url' => 'village/add')); ?>
 
-	<div class="card">
-	    <div class="card-body">
-	        <table class="datatable table table-striped" cellspacing="0" width="100%">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama</th>
-                        <th>Lokasi</th>
-                        <th>Latitude &amp; Longitude</th>
-                        <th>Created</th>
-                        <th>Updated</th>
-                        <th></th>
-                    </tr>
-                </thead>
+<div class="panel">
+    <div class="panel-body">
+        <table class="datatable table table-striped">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Lokasi</th>
+                    <th>Latitude &amp; Longitude</th>
+                    <th>Created</th>
+                    <th>Updated</th>
+                    <th></th>
+                </tr>
+            </thead>
 
-                <tbody>
-                	<?php $nomor=1; foreach($getAll as $item) { ?>
-                	<tr>
-                		<td><?php echo $nomor; ?></td>
-                        <td><?php echo $item->nama; ?></td>
-                        <td><?php echo $item->lokasi; ?></td>
-                        <td><u><?php echo $item->latitude; ?></u> &amp; <u><?php echo $item->longitude; ?></u></td>
-                        <td><?php $this->barnlibs->dateForHuman($item->created_at) ?></td>
-                        <td></td>
-                		<td>
-                            <a href="<?php echo base_url() ?>admin/village/edit/<?php echo $item->parameter_code; ?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i></a>     
-                            <a href="javascript:void(0);" onclick="deleteThis('<?php echo $item->parameter_code; ?>')" class="btn btn-danger btn-xs" data-toggle="dropdown"><i class="fa fa-trash"></i></a>     
-                        </td>
-                	</tr>
-                	<?php $nomor++; } ?>
-                </tbody>
-            </table>
-	    </div>
-	</div>
-	</div>
+            <tbody>
+            	<?php $nomor=1; foreach($getAll as $item) { ?>
+            	<tr>
+            		<td><?php echo $nomor; ?></td>
+                    <td><?php echo $item->nama; ?></td>
+                    <td><?php echo $item->lokasi; ?></td>
+                    <td><u><?php echo $item->latitude; ?></u> &amp; <u><?php echo $item->longitude; ?></u></td>
+                    <td><?php $this->barnlibs->dateForHuman($item->created_at) ?></td>
+                    <td></td>
+            		<td>
+                        <a href="<?php echo base_url() ?>admin/village/edit/<?php echo $item->parameter_code; ?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i></a>     
+                        <a href="javascript:void(0);" onclick="deleteThis('<?php echo $item->parameter_code; ?>')" class="btn btn-danger btn-xs" data-toggle="dropdown"><i class="fa fa-trash-o"></i></a>     
+                    </td>
+            	</tr>
+            	<?php $nomor++; } ?>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 

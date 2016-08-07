@@ -1,75 +1,67 @@
-<div class="container-fluid">
-	<div class="side-body">
-
 <!-- Alert Add Data -->
-	<?php if($this->session->flashdata('success') == true) { ?>
-	<div class="alert alert-success" role="alert">
-	    <strong>Whooops!</strong> Berhasil Menambahkan Data.
-	</div>
-	<?php } ?>
+<?php if($this->session->flashdata('success') == true) { ?>
+<div class="alert alert-success" role="alert">
+    <strong>Whooops!</strong> Berhasil Menambahkan Data.
+</div>
+<?php } ?>
 
 <!-- Alert Update Data -->
-    <?php if($this->session->flashdata('success-edit') == true) { ?>
-    <div class="alert alert-success" role="alert">
-        <strong>Whooops!</strong> Berhasil Mengubah Data.
+<?php if($this->session->flashdata('success-edit') == true) { ?>
+<div class="alert alert-success" role="alert">
+    <strong>Whooops!</strong> Berhasil Mengubah Data.
+</div>
+<?php } ?>
+
+<?php $this->load->view('partials/admin/panel-primary', array('url' => 'donation/add')); ?>
+
+<div class="panel">
+    <div class="panel-body">
+        <table class="datatable table table-striped">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Donasi</th>
+                    <th>Status</th>
+                    <th>Confirm Code</th>
+                    <th>Created</th>
+                    <th>Confirmed</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+            	<?php $nomor=1; foreach($getAll as $item) { ?>
+            	<tr
+                <?php if($item->status == 0) { ?>
+                class="warning"
+                <?php } ?>
+                >
+            		<td><?php echo $nomor; ?></td>
+                    <td><?php echo $item->nama; ?></td>
+                    <td><?php echo $item->donasi_jenis; ?></td>
+                    <td>
+                        <?php 
+                        if($item->status==0) { echo "Unconfirmed"; } else { echo "Confirmed"; }
+                        ?>
+                    </td>
+                    <td><?php echo $item->confirm_code; ?></td>
+                    <td><?php $this->barnlibs->dateForHuman($item->donasi_created_at) ?></td>
+                    <td><?php $this->barnlibs->dateForHuman($item->confirmed_at) ?></td>
+            		<td>
+                        <a href="<?php echo base_url() ?>admin/donation/view/<?php echo $item->parameter_code; ?>" class="btn btn-info btn-xs"><i class="fa fa-info-circle"></i></a>
+
+                        <a href="<?php echo base_url() ?>admin/donation/edit/<?php echo $item->parameter_code; ?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i></a>
+
+                        <a href="<?php echo base_url() ?>uploads/pdf/donation-request-<?php echo $item->confirm_code; ?>.pdf" target="_blank" class="btn btn-primary btn-xs"><i class="fa fa-download"></i></a>
+
+                        <!-- <a onclick="deleteThis('<?php echo $item->parameter_code; ?>')" href="javascript:void(0);" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a> -->
+                    </td>
+            	</tr>
+            	<?php $nomor++; } ?>
+            </tbody>
+        </table>
     </div>
-    <?php } ?>
-
-	<div class="row">
-		<div class="col-sm-12">
-			<a href="<?php echo base_url() ?>admin/donation/add" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Data</a>
-		</div>
-	</div>
-
-	<div class="card">
-	    <div class="card-body">
-	        <table class="datatable table table-striped" cellspacing="0" width="100%">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama</th>
-                        <th>Donasi</th>
-                        <th>Status</th>
-                        <th>Confirm Code</th>
-                        <th>Created</th>
-                        <th>Confirmed</th>
-                        <th></th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                	<?php $nomor=1; foreach($getAll as $item) { ?>
-                	<tr
-                    <?php if($item->status == 0) { ?>
-                    class="warning"
-                    <?php } ?>
-                    >
-                		<td><?php echo $nomor; ?></td>
-                        <td><?php echo $item->nama; ?></td>
-                        <td><?php echo $item->donasi_jenis; ?></td>
-                        <td>
-                            <?php 
-                            if($item->status==0) { echo "Unconfirmed"; } else { echo "Confirmed"; }
-                            ?>
-                        </td>
-                        <td><?php echo $item->confirm_code; ?></td>
-                        <td><?php $this->barnlibs->dateForHuman($item->donasi_created_at) ?></td>
-                        <td><?php $this->barnlibs->dateForHuman($item->confirmed_at) ?></td>
-                		<td>
-                            <a href="<?php echo base_url() ?>admin/donation/view/<?php echo $item->parameter_code; ?>" class="btn btn-info btn-xs"><i class="fa fa-info-circle"></i></a>
-
-                            <a href="<?php echo base_url() ?>admin/donation/edit/<?php echo $item->parameter_code; ?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i></a>
-
-                            <!-- <a onclick="deleteThis('<?php echo $item->parameter_code; ?>')" href="javascript:void(0);" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a> -->
-                        </td>
-                	</tr>
-                	<?php $nomor++; } ?>
-                </tbody>
-            </table>
-	    </div>
-	</div>
-
-	</div>
 </div>
 
 

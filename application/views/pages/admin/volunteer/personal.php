@@ -1,7 +1,4 @@
 <style>
-.row .col-sm-6 {
-	margin-bottom: 0px;
-}
 select option {
 	text-transform: capitalize;
 }

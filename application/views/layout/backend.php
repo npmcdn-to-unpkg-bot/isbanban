@@ -1,165 +1,67 @@
-<!--
-.########..##.......########....###.....######..########
-.##.....##.##.......##.........##.##...##....##.##......
-.##.....##.##.......##........##...##..##.......##......
-.########..##.......######...##.....##..######..######..
-.##........##.......##.......#########.......##.##......
-.##........##.......##.......##.....##.##....##.##......
-.##........########.########.##.....##..######..########
-
-.##.....##.########.##.......########.                  
-.##.....##.##.......##.......##.....##                  
-.##.....##.##.......##.......##.....##                  
-.#########.######...##.......########.                  
-.##.....##.##.......##.......##.......                  
-.##.....##.##.......##.......##.......                  
-.##.....##.########.########.##.......    
-              
-.########.....###....##....##.########.########.##....##
-.##.....##...##.##...###...##....##....##.......###...##
-.##.....##..##...##..####..##....##....##.......####..##
-.########..##.....##.##.##.##....##....######...##.##.##
-.##.....##.#########.##..####....##....##.......##..####
-.##.....##.##.....##.##...###....##....##.......##...###
-.########..##.....##.##....##....##....########.##....##
--->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title><?php echo $title; ?> &mdash; Istana Belajar Anak Banten</title>
-	<meta name="description" content="We Are Youth Led-Organization That Focus On Helping Education Of Children In Rural Areas.">
+	<head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	  <meta name="description" content="">
+	  <meta name="author" content="">
 
-    <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="<?php echo $title; ?> &mdash; Istana Belajar Anak Banten">
-    <meta itemprop="description" content="We Are Youth Led-Organization That Focus On Helping Education Of Children In Rural Areas.">
-    <?php if($meta_image) { ?>
-	<meta itemprop="image" content="<?php echo $meta_image; ?>">
-	<?php } else { ?>
-	<meta itemprop="image" content="<?php echo base_url() ?>template/assets/image/default-placeholder.png">
-	<?php } ?>
+	  <title>Dashboard &mdash; <?php echo $title; ?></title>
 
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@">
-    <meta name="twitter:title" content="<?php echo $title; ?> &#124; Istana Belajar Anak Banten">
-    <meta name="twitter:description" content="We Are Youth Led-Organization That Focus On Helping Education Of Children In Rural Areas.">
-    <?php if($meta_image) { ?>
-    <meta name="twitter:image:src" content="<?php echo $meta_image; ?>">
-    <?php } else { ?>
-    <meta name="twitter:image:src" content="<?php echo base_url() ?>template/assets/image/default-placeholder.png">
-    <?php } ?>
-
-    <!-- Open Graph data -->
-    <meta property="og:title" content="<?php echo $title; ?> &#124; Istana Belajar Anak Banten">
-    <meta property="og:url" content="<?php echo $meta_url; ?>">
-    <?php if($meta_image) { ?>
-    <meta property="og:image" content="<?php echo $meta_image; ?>">
-    <?php } else { ?>
-    <meta property="og:image" content="<?php echo base_url() ?>template/assets/image/default-placeholder.png">
-    <?php } ?>
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:description" content="We Are Youth Led-Organization That Focus On Helping Education Of Children In Rural Areas.">
-    <meta property="og:site_name" content="Istana Belajar Anak Banten">
-
-
-    <link rel="canonical" href="<?php echo $meta_url; ?>">
-	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
-	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-	<link rel="manifest" href="/manifest.json">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#21e2fc">
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#21e2fc">
-
-
-	<link rel="stylesheet" href="<?php echo base_url() ?>template/assets/css/site/theme.min.css">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:100,400,600,300italic,700' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
-	
-	<link rel="stylesheet" href="<?php echo base_url() ?>template/assets/vendor/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>template/assets/vendor/jasny-bootstrap/dist/css/jasny-bootstrap.min.css">
-
-	<script src="<?php echo base_url() ?>template/assets/vendor/jquery/dist/jquery.min.js"></script>
-	<script src="<?php echo base_url() ?>template/assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="<?php echo base_url() ?>template/assets/vendor/bootstrap-material-design/dist/js/material.min.js"></script>
-	<script src="<?php echo base_url() ?>template/assets/vendor/bootstrap-material-design/dist/js/ripples.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url() ?>template/assets/vendor/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
-	<script src="<?php echo base_url() ?>template/assets/vendor/fastclick/lib/fastclick.js"></script>
-	<script type="text/javascript">
-	$(document).ready(function(){	
-// Bootstrap Material
-		$.material.init();
-
-// Fastclick Init
-		if ('addEventListener' in document) {
-		    document.addEventListener('DOMContentLoaded', function() {
-		        FastClick.attach(document.body);
-		    }, false);
+	  <link href="<?php echo base_url() ?>template/assets/bracket/css/style.default.min.css" rel="stylesheet">
+	  <style>
+		.form-group	{
+			margin-bottom: 20px !important;
 		}
 
-		var domain = 'http://isbanban.org/';	
-		if($("header").hasClass('navbar-inverse')) {
-			$(".navbar-brand img").attr('src', domain +'template/assets/image/typetext-white.png')
+		.pd-0 {
+			padding:  0px;
 		}
+	  </style>
 
+	  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	  <!--[if lt IE 9]>
+	  <script src="js/html5shiv.js"></script>
+	  <script src="js/respond.min.js"></script>
+	  <![endif]-->
 
-		var navbarTrans = $("header").hasClass('navbar-inverse');
-		if(navbarTrans) {
-        $(document).on('scroll', function() {
-            if(navbarTrans && window.scrollY >= 250) {
-                $('header').addClass('navbar-default').removeClass('navbar-inverse');
-				$(".navbar-brand img").attr('src', domain +'template/assets/image/typetext-black.png')
-                navbarTrans = false;
-            } else if(! navbarTrans && window.scrollY < 250) {
-                $('header').addClass('navbar-inverse').removeClass('navbar-default');
-				$(".navbar-brand img").attr('src', domain +'template/assets/image/typetext-white.png')
-                navbarTrans = true;
-            }
-        })
-    }
-	})
-	</script>
+	<script src="<?php echo base_url() ?>template/assets/bracket/js/jquery-1.11.1.min.js"></script>
+	<script src="<?php echo base_url() ?>template/assets/bracket/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="<?php echo base_url() ?>template/assets/bracket/js/jquery-ui-1.10.3.min.js"></script>
+	<script src="<?php echo base_url() ?>template/assets/bracket/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url() ?>template/assets/bracket/js/modernizr.min.js"></script>
+	<script src="<?php echo base_url() ?>template/assets/bracket/js/jquery.sparkline.min.js"></script>
+	<script src="<?php echo base_url() ?>template/assets/bracket/js/toggles.min.js"></script>
+	<script src="<?php echo base_url() ?>template/assets/bracket/js/retina.min.js"></script>
+	<script src="<?php echo base_url() ?>template/assets/bracket/js/jquery.cookies.js"></script>
 
-	<!-- Shareholic -->
-	<script type='text/javascript' src='//dsms0mj1bbhn4.cloudfront.net/assets/pub/shareaholic.js' data-shr-siteid='7052b25fdf339afd6e55faacc466eee0' data-cfasync='false' async='async'></script>
+	<script src="<?php echo base_url() ?>template/assets/bracket/js/flot/jquery.flot.min.js"></script>
+	<script src="<?php echo base_url() ?>template/assets/bracket/js/flot/jquery.flot.resize.min.js"></script>
+	<script src="<?php echo base_url() ?>template/assets/bracket/js/flot/jquery.flot.spline.min.js"></script>
+	<script src="<?php echo base_url() ?>template/assets/bracket/js/morris.min.js"></script>
+	<script src="<?php echo base_url() ?>template/assets/bracket/js/raphael-2.1.0.min.js"></script>
 
-	<!-- Hotjar Tracking Code for http://isbanban.org -->
-	<script>
-	    (function(h,o,t,j,a,r){
-	        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-	        h._hjSettings={hjid:193264,hjsv:5};
-	        a=o.getElementsByTagName('head')[0];
-	        r=o.createElement('script');r.async=1;
-	        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-	        a.appendChild(r);
-	    })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
-	</script>
+	<script src="<?php echo base_url() ?>template/assets/bracket/js/custom.js"></script>
+	<script src="<?php echo base_url() ?>template/assets/bracket/js/dashboard.js"></script>
+	</head>
 
-	<!-- Google Analytics -->
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	<body class="stickyheader">
+		<section>
+		  	<?php $this->load->view('partials/admin/header'); ?>
 
-		ga('create', 'UA-78144706-1', 'auto');
-		ga('send', 'pageview');
-	</script>
+			<div class="mainpanel">
+				<div class="headerbar">
+					<a class="menutoggle"><i class="fa fa-bars"></i></a>      
+				</div>
 
+				<?php $this->load->view('partials/admin/pageheader', array('icon' => $icon, 'pagetitle' => $pagetitle)); ?>
 
-</head>
-<body>
-	<?php $this->load->view('partials/admin/header'); ?>
+				<div class="contentpanel">
+					<?php $this->load->view($page); ?>
+				</div>
+			</div><!-- mainpanel -->
 
-	<?php $this->load->view($page); ?>
-
-	<?php $this->load->view('partials/admin/footer'); ?>
-</body>
+		  	<?php $this->load->view('partials/admin/footer'); ?>
+		</section>
+	</body>
 </html>

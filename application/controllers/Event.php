@@ -53,13 +53,12 @@ class Event extends CI_Controller {
 			'current'		=> 'event',
 			'role'			=> 'normal',
 			'meta_image'	=> '',
+			'page'			=> 'pages/event/index',
 			'meta_url'		=> base_url().'event',
 			'getAll'		=> $this->m_event->getAll($page, $config["per_page"]),
 		];
 
-		$this->load->view('header', $data);
-		$this->load->view('event/index');
-		$this->load->view('footer');
+		$this->load->view('layout/default', $data);
 	}
 
 
@@ -95,12 +94,11 @@ class Event extends CI_Controller {
 			'title'			=> 'Events',
 			'current'		=> 'event',
 			'role'			=> 'normal',
+			'page'			=> 'pages/event/index',
 			'getAll'		=> $this->m_event->getAll($page, $config["per_page"]),
 		];
 
-		$this->load->view('header', $data);
-		$this->load->view('event/index');
-		$this->load->view('footer');
+		$this->load->view('layout/default', $data);
 	}
 
 	function detail($slug)
@@ -109,6 +107,7 @@ class Event extends CI_Controller {
 			'title'			=> 'Event',
 			'current'		=> 'event',
 			'role'			=> 'inverse',
+			'page'			=> 'pages/event/detail',
 			'getThis'		=> $this->m_event->getThis($slug)
 		];
 
@@ -124,9 +123,7 @@ class Event extends CI_Controller {
 			$data['meta_url']	=	base_url().'event/detail/'.$row->slug;
 		}
 
-		$this->load->view('header', $data);
-		$this->load->view('event/detail');
-		$this->load->view('footer');
+		$this->load->view('layout/default', $data);
 	}
 }
 

@@ -27,24 +27,23 @@ class Home extends CI_Controller {
 	function index()
 	{
 		$data	= [
-			'title'			=> 'Home',
-			'current'		=> 'home',
-			'role'			=> 'normal',
-			'meta_image'	=> '',
-			'meta_url'		=> base_url(),
-			'getBlogPost'	=> $this->m_home->getBlogPost('8', 'blog'),
-			'countVillage'	=> $this->m_home->countData('desa'),
-			'countRelawan'	=> $this->m_home->countData('relawan'),
-			'countCashDonation' => $this->m_home->countCashData(),
-			'countBookDonation' => $this->m_home->countBookData(),
-			'getFeedback'	=> $this->m_home->getFeedback(),
-			'getStrategicPartners'	=> $this->m_home->getStrategicPartners(),
-			'getMediaPartners'	=> $this->m_home->getMediaPartners(),
+			'title'                => 'Home',
+			'current'              => 'home',
+			'role'                 => 'normal',
+			'page'                 => 'pages/home/index',
+			'meta_image'           => '',
+			'meta_url'             => base_url(),
+			'getBlogPost'          => $this->m_home->getBlogPost('8', 'blog'),
+			'countVillage'         => $this->m_home->countData('desa'),
+			'countRelawan'         => $this->m_home->countData('relawan'),
+			'countCashDonation'    => $this->m_home->countCashData(),
+			'countBookDonation'    => $this->m_home->countBookData(),
+			'getFeedback'          => $this->m_home->getFeedback(),
+			'getStrategicPartners' => $this->m_home->getStrategicPartners(),
+			'getMediaPartners'     => $this->m_home->getMediaPartners(),
 		];
 
-		$this->load->view('header', $data);
-		$this->load->view('home/index');
-		$this->load->view('footer');
+		$this->load->view('layout/default', $data);
 	}
 }
 

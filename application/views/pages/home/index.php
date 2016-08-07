@@ -6,20 +6,7 @@
 	</div>
 </div>
 
-<!-- <div class="event-reminder">
-	<div class="container">
-		<a href="">
-			<div class="start">
-				<b>Activities: </b> Peringatan maulid nabi muhamad
-			</div>
-		</a>
-	</div>
-</div>
- -->
-
-
 <div class="content">
-<!-- 5W1H -->
 	<div class="container">
 		<div class="definition">
 			<div class="row remove-flex" style="display: -webkit-flex;display: flex;">
@@ -168,11 +155,6 @@
 		</div>
 	</div>
 
-
-
-
-
-
 <!-- Jumbotron Banner -->
 	<div class="jumbotron banner" style="background:url(http://unsplash.it/1280/600?image=1059) no-repeat center center; background-size: cover">
 		<div class="container">
@@ -209,9 +191,6 @@
 		</div>
 	</div>
 
-
-
-
 <!-- Blog Post -->
 	<div class="container">
 		<div class="post">
@@ -219,7 +198,7 @@
 			<div class="row">
 				<?php foreach ($getBlogPost as $item) { ?>
 				<div class="col-sm-6 col-md-4">
-					<?php $this->load->view('blog/posts', array('item' => $item)); ?>
+					<?php $this->load->view('pages/blog/posts', array('item' => $item)); ?>
 				</div>
 				<?php } ?>
 
@@ -231,7 +210,6 @@
 			</div>		
 		</div>		
 	</div>
-
 
 	<div class="jumbotron jumbotron-testimoni" style="margin-bottom: 0px">
 		<div class="container">

@@ -54,13 +54,12 @@ class People extends CI_Controller {
 			'current'		=> 'people',
 			'role'			=> 'normal',
 			'meta_image'	=> '',
+			'page'			=> 'pages/volunteer/index',
 			'meta_url'		=> 'people',
 			'getAll'		=> $this->m_people->getAll($page, $config["per_page"]),
 		];
 
-		$this->load->view('header', $data);
-		$this->load->view('volunteer/index');
-		$this->load->view('footer');
+		$this->load->view('layout/default', $data);
 	}
 
 	function page($number = FALSE) {
@@ -93,12 +92,11 @@ class People extends CI_Controller {
 			'title'			=> 'People',
 			'current'		=> 'people',
 			'role'			=> 'normal',
+			'page'			=> 'pages/volunteer/index',
 			'getAll'		=> $this->m_people->getAll($page, $config["per_page"]),
 		];
 
-		$this->load->view('header', $data);
-		$this->load->view('volunteer/index');
-		$this->load->view('footer');
+		$this->load->view('layout/default', $data);
 	}
 
 	function detail($slug)
@@ -107,7 +105,7 @@ class People extends CI_Controller {
 			'getThis' => $this->m_people->getThis($slug),	
 		];
 
-		$this->load->view('volunteer/modal', $data);
+		$this->load->view('pages/volunteer/modal', $data);
 	}
 }
 

@@ -44,9 +44,9 @@ class Blog extends CI_Controller {
 		$this->pagination->initialize($config);
 
 		if($this->uri->segment(2)) {
-			$page = ($this->uri->segment(2));
+			$pages = ($this->uri->segment(2));
 		} else {
-			$page = 0;
+			$pages = 0;
 		}
 
 		$data	= [
@@ -54,13 +54,12 @@ class Blog extends CI_Controller {
 			'current'		=> 'blog',
 			'role'			=> 'normal',
 			'meta_image'	=> '',
+			'page'			=> 'pages/blog/index',
 			'meta_url'		=> base_url().'blog',
-			'getAll'		=> $this->m_blog->getAll($page, $config["per_page"]),
+			'getAll'		=> $this->m_blog->getAll($pages, $config["per_page"]),
 		];
 
-		$this->load->view('header', $data);
-		$this->load->view('blog/index');
-		$this->load->view('footer');
+		$this->load->view('layout/default', $data);
 
 	}
 
@@ -86,20 +85,19 @@ class Blog extends CI_Controller {
 		$this->pagination->initialize($config);
 
 		if($this->uri->segment(3)) {
-			$page = ($this->uri->segment(3));
+			$pages = ($this->uri->segment(3));
 		} else {
-			$page = 0;
+			$pages = 0;
 		}
 
 		$data	= [
 			'title'			=> 'Blog',
 			'role'			=> 'normal',
-			'getAll'		=> $this->m_blog->getAll($page, $config["per_page"]),
+			'page'			=> 'pages/blog/index',
+			'getAll'		=> $this->m_blog->getAll($pages, $config["per_page"]),
 		];
 
-		$this->load->view('header', $data);
-		$this->load->view('blog/index');
-		$this->load->view('footer');
+		$this->load->view('layout/default', $data);
 	}
 
 
@@ -108,6 +106,7 @@ class Blog extends CI_Controller {
 			'title'			=> 'Blogs',
 			'current'		=> 'blog',
 			'role'			=> 'normal',
+			'page'			=> 'pages/blog/detail',
 			'getThis'		=> $this->m_blog->getThis($slug),
 			'getRandom'		=> $this->m_blog->getRandom(),
 		];
@@ -128,9 +127,7 @@ class Blog extends CI_Controller {
 			$data['title']		= ucfirst($row->judul);
 		}
 
-		$this->load->view('header', $data);
-		$this->load->view('blog/detail');
-		$this->load->view('footer');
+		$this->load->view('layout/default', $data);
 	}
 }
 

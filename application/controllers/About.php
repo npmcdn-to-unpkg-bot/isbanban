@@ -27,15 +27,14 @@ class About extends CI_Controller {
 	{
 		$data	= [
 			'title'			=> 'About Us',
+			'page'			=> 'pages/about/index',
 			'current'		=> 'about',
 			'role'			=> 'normal',
 			'meta_image'	=> '',
 			'meta_url'		=> base_url().'about',
 		];
 
-		$this->load->view('header', $data);
-		$this->load->view('about/index');
-		$this->load->view('footer');
+		$this->load->view('layout/default', $data);
 	}
 }
 

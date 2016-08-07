@@ -30,14 +30,13 @@ class Village extends CI_Controller {
 			'title'			=> 'Village',
 			'current'		=> 'village',
 			'role'			=> 'normal',
+			'page'			=> 'pages/village/index',
 			'meta_image'	=> '',
 			'meta_url'		=> base_url().'village',
 			'getAll'		=> $this->m_village->getAll(),
 		];
 
-		$this->load->view('header', $data);
-		$this->load->view('village/index');
-		$this->load->view('footer');
+		$this->load->view('layout/default', $data);
 	}
 
 	function detail($slug)
@@ -46,6 +45,7 @@ class Village extends CI_Controller {
 			'title'			=> 'Village',
 			'current'		=> 'village',
 			'role'			=> 'normal',
+			'page'			=> 'pages/village/detail',
 			'getThis'		=> $this->m_village->getThis($slug)
 		];
 
@@ -61,10 +61,7 @@ class Village extends CI_Controller {
 			$data['meta_url']		= base_url().'village/detail/'.$row->slug;
 		}
 
-		$this->load->view('header', $data);
-		$this->load->view('village/detail');
-		$this->load->view('footer');
-
+		$this->load->view('layout/default', $data);
 	}
 }
 

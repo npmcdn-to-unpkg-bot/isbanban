@@ -32,11 +32,13 @@ class Donate extends CI_Controller {
 			'current'		=> 'donate',
 			'role'			=> 'normal',
 			'meta_image'	=> '',
+			'page'			=> 'pages/donation/index',
 			'meta_url'		=> 'donate',
 			'totalBook'		=> $this->m_donation->countDonate('1'),
 			'totalMoney'	=> $this->m_donation->countDonate('3'),
 			'getBankAccount'=> $this->m_donation->getBankAccount(),
 		];
+
 		$config		= array(
 			array(
 				'field'	=> 'donatur_name',
@@ -149,9 +151,7 @@ class Donate extends CI_Controller {
 			}
 		}
 
-		$this->load->view('header', $data);
-		$this->load->view('donation/index');
-		$this->load->view('footer');
+		$this->load->view('layout/default', $data);
 	}
 
 

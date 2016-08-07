@@ -60,6 +60,6 @@
 				</div>
 			</div>
 			<?php } ?>
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal-dialog -->
+		</div>
+	</div>
 </div>

@@ -14,7 +14,7 @@
 			<div class="infinite-container">				
 				<?php foreach($getAll as $item) { ?>
 				<div class="col-sm-6 col-md-6 infinite-item">
-					<?php $this->load->view('blog/posts', array('item' => $item)); ?>
+					<?php $this->load->view('pages/blog/posts', array('item' => $item)); ?>
 				</div>
 				<?php } ?>
 			</div>

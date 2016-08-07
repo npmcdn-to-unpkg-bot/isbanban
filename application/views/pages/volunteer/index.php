@@ -21,7 +21,7 @@
 		<div class="row infinite-container">
 			<?php
 			foreach($getAll as $row) { ?>
-				<?php $this->load->view('volunteer/posts', array('row' => $row)); ?>
+				<?php $this->load->view('pages/volunteer/posts', array('row' => $row)); ?>
 			<?php } ?>
 		</div>
 

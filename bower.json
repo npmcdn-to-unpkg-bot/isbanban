@@ -24,7 +24,8 @@
   ],
   "devDependencies": {
     "bootstrap": "~3.3.6",
-    "pnotify": "https://github.com/sciactive/pnotify.git#~2.1.0"
+    "pnotify": "https://github.com/sciactive/pnotify.git#~2.1.0",
+    "select2": "^4.0.3"
   },
   "dependencies": {
     "ckeditor": "https://github.com/ckeditor/ckeditor-releases.git#~4.5.7",
@@ -41,6 +42,7 @@
     "slick-carousel": "https://github.com/kenwheeler/slick.git#^1.5.9",
     "scrollToBySpeed": "^0.3.0",
     "masonry": "^4.0.0",
-    "font-awesome": "^4.6.3"
+    "font-awesome": "^4.6.3",
+    "select2-bootstrap-theme": "^0.1.0-beta.8"
   }
 }

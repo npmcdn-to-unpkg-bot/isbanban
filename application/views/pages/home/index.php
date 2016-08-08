@@ -247,7 +247,7 @@
 <div class="jumbotron jumbotron-testimoni" style="background: #f5f5f5">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-6 text-center">
+			<div class="col-sm-6 text-center mg-b-20">
 				<h3 class="mg-b-20 mg-t-0">STRATEGIC PARTNER</h3>
 				<div class="partners">
 					<?php foreach($getStrategicPartners as $row) { ?>
@@ -260,7 +260,7 @@
 				</div>
 			</div>
 
-			<div class="col-sm-6 text-center">
+			<div class="col-sm-6 text-center mg-b-20">
 				<h3 class="mg-b-20 mg-t-0">MEDIA PARTNER</h3>
 				<div class="partners">
 					<?php foreach($getMediaPartners as $row) { ?>

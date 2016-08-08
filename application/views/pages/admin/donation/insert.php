@@ -70,10 +70,7 @@
 
                     <div class="form-group">
                         <label>Nomor Telefon</label>
-                        <div class="input-group">
-                            <div class="input-group-addon">+62</div>
-                            <input type="text" class="form-control" name="donatur_telefon">
-                        </div>
+                        <input type="text" class="form-control" name="donatur_telefon" placeholder="08xxx">
                     </div>
 
                     <div class="form-group">
@@ -154,11 +151,8 @@
                     <div class="form-if-money" style="display: none">
                         <div class="form-group">
                             <label>Jumlah Uang</label>
-                            <div class="input-group">
-                                <div class="input-group-addon">Rp</div>
-                                <input type="text" class="form-control moneyFormat" id="default">
-                                <input type="hidden" class="realFormat" name="donasi_banyak_uang">
-                            </div>
+                            <input type="text" class="form-control moneyFormat" id="default" placeholder="200.000">
+                            <input type="hidden" class="realFormat" name="donasi_banyak_uang">
                         </div>
 
                         <div class="form-group">

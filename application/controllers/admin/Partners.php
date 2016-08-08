@@ -33,12 +33,13 @@ class Partners extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'			=> 'partners',
+			'icon'			=> 'fa-male',
+			'pagetitle'		=> 'Partners',
+			'page'			=> 'pages/admin/partners/index',
 			'getAll'		=> $this->m_partners->getAll(),
 		];
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/partners/index');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	function add()
@@ -46,6 +47,9 @@ class Partners extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'			=> 'partners',
+			'icon'			=> 'fa-male',
+			'pagetitle'		=> 'Add Partners',
+			'page'			=> 'pages/admin/partners/add',
 			'getCategory'	=> $this->m_partners->getCategory(),
 		];
 
@@ -120,9 +124,7 @@ class Partners extends CI_Controller {
 			}
 		}
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/partners/add');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	function edit($parameter_code)
@@ -130,6 +132,9 @@ class Partners extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'			=> 'partners',
+			'icon'			=> 'fa-male',
+			'pagetitle'		=> 'Edit Partners',
+			'page'			=> 'pages/admin/partners/edit',
 			'getThis'		=> $this->m_partners->getThis($parameter_code),
 			'getCategory'	=> $this->m_partners->getCategory(),
 		];
@@ -201,9 +206,7 @@ class Partners extends CI_Controller {
 			}
 		}
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/partners/edit');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	function delete($parameter_code)

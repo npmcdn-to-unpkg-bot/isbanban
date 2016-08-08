@@ -16,7 +16,7 @@
 
 <div class="panel">
     <div class="panel-body">
-        <table class="datatable table table-striped">
+        <table class="datatable table table-hover">
             <thead>
                 <tr>
                     <th>No</th>
@@ -52,8 +52,6 @@
                         <a href="<?php echo base_url() ?>admin/donation/view/<?php echo $item->parameter_code; ?>" class="btn btn-info btn-xs"><i class="fa fa-info-circle"></i></a>
 
                         <a href="<?php echo base_url() ?>admin/donation/edit/<?php echo $item->parameter_code; ?>" class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i></a>
-
-                        <a href="<?php echo base_url() ?>uploads/pdf/donation-request-<?php echo $item->confirm_code; ?>.pdf" target="_blank" class="btn btn-primary btn-xs"><i class="fa fa-download"></i></a>
 
                         <!-- <a onclick="deleteThis('<?php echo $item->parameter_code; ?>')" href="javascript:void(0);" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a> -->
                     </td>

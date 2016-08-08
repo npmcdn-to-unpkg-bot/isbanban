@@ -1,37 +1,58 @@
-<div class="container-fluid">
-	<div class="side-body">
-
-    <?php foreach($getThis as $row) { ?>
+<?php foreach($getThis as $row) { ?>
 
     <?php if($row->status == 0) { ?>
     <div class="row">
         <div class="col-sm-12">
             <div class="panel panel-warning">
                 <div class="panel-heading">
-                    Informasi
+                    <div class="panel-title">
+                        Peringatan
+                    </div>
                 </div>
 
                 <div class="panel-body">
                     <p>
-                        Status donasi masih dinyatakan <em>Pending</em>. Silahkan menghubungi donatur yang terhormat <b><?php echo $row->donatur_nama; ?></b> melalui nomor <b><?php echo $row->telefon; ?></b> atau alamat email <b><?php echo $row->email; ?></b>
+                        Status donasi masih dinyatakan <em>Pending</em>. Silahkan menghubungi donatur yang terhormat <strong><?php echo $row->donatur_nama; ?></strong> melalui nomor <strong><?php echo $row->telefon; ?></strong> atau alamat email <strong><?php echo $row->email; ?></strong>
                     </p>
                 </div>
             </div>
         </div>
     </div>
+    <?php } else { ?>
+
+    <div class="panel">
+        <div class="panel-body">
+            <div class="pull-left">
+                <a href="#" class="btn btn-black">
+                    <i class="fa fa-file-pdf-o fa-fw"></i>
+                    Generate PDF
+                </a>
+
+                <a href="#" class="btn btn-primary-alt">
+                    <i class="fa fa-envelope-o fa-fw"></i> 
+                    Deliver PDF
+                </a>
+            </div>
+
+            <div class="pull-right">
+                <a href="<?php echo base_url() ?>uploads/pdf/donation-request-<?php echo $row->confirm_code; ?>.pdf" target="_blank" class="btn btn-primary-alt">
+                    <i class="fa fa-download"></i> Download PDF</a>
+            </div>
+        </div>
+    </div>
+
     <?php } ?>
 
     <div class="row">
-<!-- Personal Information -->
         <div class="col-sm-6">
-            <div class="card">
-                <div class="card-header no-border">                    
-                    <div class="card-title">
-                        <div class="title">Personal Information</div>
+            <div class="panel">
+                <div class="panel-heading no-border">                    
+                    <div class="panel-title">
+                        Personal Information
                     </div>
                 </div>
 
-                <div class="card-body">
+                <div class="panel-body pd-0">
                     <table class="table table-stripped">
                         <tr>
                             <td>Nama</td>
@@ -50,7 +71,7 @@
 
                         <tr>
                             <td colspan="2">
-                                <p>Additional Message:</p>
+                                <p>Additional Message</p>
 
                                 <p style="font-weight: normal">
                                     <?php echo $row->pesan; ?>
@@ -62,21 +83,19 @@
             </div>
         </div>
 
-
-<!-- General Information -->
         <div class="col-sm-6">
-            <div class="card">
-                <div class="card-header no-border">                    
-                    <div class="card-title">
-                        <div class="title">General Information</div>
+            <div class="panel">
+                <div class="panel-heading no-border">                    
+                    <div class="panel-title">
+                        General Information
                     </div>
                 </div>
 
-                <div class="card-body">
+                <div class="panel-body pd-0">
                     <table class="table table-stripped">
                         <tr>
                             <td>Confirm Code</td>
-                            <td><?php echo $row->confirm_code; ?></td>
+                            <td><strong><?php echo $row->confirm_code; ?></strong></td>
                         </tr>
 
                         <tr>
@@ -96,7 +115,7 @@
                         </tr>
 
                         <tr>
-                            <td>Banyak</td>
+                            <td>Jumlah</td>
                             <td>
                                 <?php if($row->id_jenis == 3) { ?>
                                 Rp. <?php echo number_format($row->donasi_banyak); ?>
@@ -121,7 +140,7 @@
                         <tr class="text-center">
                             <td colspan="2"  style="font-weight: normal">
                                 <div class="panel" style="margin-bottom: -20px">
-                                    <div class="panel-body">
+                                    <div class="panel-body pd-0">
                                         <?php echo $row->nama_bank; ?> <br>
                                         <?php echo $row->nama_rekening; ?> <br>
                                         <?php echo $row->nomor_rekening; ?>
@@ -135,15 +154,9 @@
             </div>
         </div>
     </div>
-	
-    <?php } ?>
-
-	</div>
-</div>
-
+<?php } ?>
 <style>
-.table tr td:first-child {
-    font-weight: bold;
-    width: 40%;
+table tr td:first-child {
+    width: 30%;
 }
 </style>

@@ -45,7 +45,7 @@
 	  </li>
 
 	  <li>
-		<a href="<?php echo base_url() ?>"><i class="fa fa-crosshairs"></i> <span>Preview Website</span></a>
+		<a href="<?php echo base_url() ?>" target="_blank"><i class="fa fa-crosshairs"></i> <span>Preview Website</span></a>
 	  </li>
 
 	  <li>

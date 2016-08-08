@@ -155,12 +155,13 @@ class Donation extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'			=> 'donation',
+			'icon'			=> 'fa-heart-o',
+			'pagetitle'		=> 'Donation Detail',
+			'page'			=> 'pages/admin/donation/view',
 			'getThis'		=> $this->m_donation->getThis($parameter_code)
 		];
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/donation/view');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
 	function edit($parameter_code)
@@ -168,13 +169,15 @@ class Donation extends CI_Controller {
 		$data	= [
 			'title'			=> 'Istana Belajar Anak Banten',
 			'role'			=> 'donation',
+			'icon'			=> 'fa-heart-o',
+			'pagetitle'		=> 'Edit Donation',
+			'page'			=> 'pages/admin/donation/edit',
 			'getThis'		=> $this->m_donation->getThis($parameter_code),
 			'getCategory'	=> $this->m_donation->getDonationCategory(),
 			'getBank'		=> $this->m_donation->getBankAccount()
 		];
 
 
-// Validation Configuration
 		$config	= array(
 			array(
 				'field'	=> 'donatur_nama',
@@ -247,12 +250,18 @@ class Donation extends CI_Controller {
 		}
 
 
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/donation/edit');
-		$this->load->view('admin/footer');
+		$this->load->view('layout/backend', $data);
 	}
 
-	
+	function do_generate($parameter_code)
+	{
+
+	}
+
+	function do_delivery($parameter_code) 
+	{
+
+	}
 }
 
 /* End of file welcome.php */

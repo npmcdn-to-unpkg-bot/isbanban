@@ -69,12 +69,11 @@ class Donate extends CI_Controller {
 		$this->form_validation->set_rules($config);
 
 
-// Create Unique Confirm Code
+		// Create Unique Confirm Code
 		$seed = str_split('abcdefghjkmnpqrstuvwxyz'.'ABCDEFGHJKMNPQRSTUVWXYZ');
 	    shuffle($seed);
 	    $rand = '';
 	    foreach (array_rand($seed, 2) as $k) $rand .= $seed[$k];
-// Confirm Code Random + Time
 	    $confirm_code	= "ISB".$rand.date('hi');
 
 		if($this->input->post()) {
@@ -94,60 +93,62 @@ class Donate extends CI_Controller {
 					'parameter_code'	=> strtolower(md5($this->input->post('donatur_name').$confirm_code)),
 				);
 
-// Insert to DB
-				$this->m_donation->insert($datadb);
+				// Insert to DB
+				if($this->m_donation->insert($datadb) == true) {
 
-// Setting for mail information
-				$data['confirm_code']		 	 = $confirm_code;
-				$data['donasi_date']		 	 = date('Y-m-d');
-				$data['donatur_nama']		 	 = $this->input->post('donatur_name');
-				$data['donasi_cash']		 	 = $this->input->post('donation_cash');
-				$data['donatur_number']			 = $this->input->post('donatur_number');
-				$data['donatur_email']			 = $this->input->post('donatur_email');
-				$data['donatur_message']		 = $this->input->post('donatur_message');
+					// Setting for mail information
+					$data['confirm_code']		 	 = $confirm_code;
+					$data['donasi_date']		 	 = date('Y-m-d');
+					$data['donatur_nama']		 	 = $this->input->post('donatur_name');
+					$data['donasi_cash']		 	 = $this->input->post('donation_cash');
+					$data['donatur_number']			 = $this->input->post('donatur_number');
+					$data['donatur_email']			 = $this->input->post('donatur_email');
+					$data['donatur_message']		 = $this->input->post('donatur_message');
 
-// Config Mail
-				$this->load->library('email');
-				$configMail = Array(
-					'protocol'  => 'smtp',
-					'smtp_host' => 'mail.smtp2go.com',
-					'smtp_port' => 587,
-					'smtp_user' => 'ihsan@isbanban.org',
-					'smtp_pass' => 'TWGAqI4wPReo',
-					'crlf'      => "\r\n",
-					'newline'   => "\r\n",
-					'mailtype'  => 'html',
-				);
+					// Config Mail
+					$this->load->library('email');
+					// $configMail = Array(
+					// 	'protocol'  => 'smtp',
+					// 	'smtp_host' => 'mail.smtp2go.com',
+					// 	'smtp_port' => 587,
+					// 	'smtp_user' => 'ihsan@isbanban.org',
+					// 	'smtp_pass' => 'TWGAqI4wPReo',
+					// 	'crlf'      => "\r\n",
+					// 	'newline'   => "\r\n",
+					// 	'mailtype'  => 'html',
+					// );
 
-				// $configMail = Array(
-				//   'protocol' 	=> 'smtp',
-				//   'smtp_host' 	=> 'mailtrap.io',
-				//   'smtp_port' 	=> 2525,
-				//   'smtp_user' 	=> '573617400c51f2f73',
-				//   'smtp_pass' 	=> '4ee968dc28496c',
-				//   'crlf' 		=> "\r\n",
-				//   'newline' 	=> "\r\n",
-				//   'mailtype'	=> 'html'
-				// );
-				$this->email->initialize($configMail);
+					$configMail = Array(
+					  'protocol' 	=> 'smtp',
+					  'smtp_host' 	=> 'mailtrap.io',
+					  'smtp_port' 	=> 2525,
+					  'smtp_user' 	=> '573617400c51f2f73',
+					  'smtp_pass' 	=> '4ee968dc28496c',
+					  'crlf' 		=> "\r\n",
+					  'newline' 	=> "\r\n",
+					  'mailtype'	=> 'html'
+					);
+					$this->email->initialize($configMail);
 
-				// Attach PDF
-				$data['path_pdf'] 	= base_url().'uploads/pdf/donation-request-'.$data['confirm_code'].".pdf";
+					// Attach PDF
+					$data['path_pdf'] 	= base_url().'uploads/pdf/donation-request-'.$data['confirm_code'].".pdf";
 
-// Send email
-				$this->do_pdf($data);
+					// Send email
+					$this->do_pdf($data);
+					$this->email->from('admin@isbanban.org', 'Istana Belajar Anak Banten');
+					$this->email->to($this->input->post('donatur_email'));
+					$this->email->cc('funding@isbanban.org'); 
+					$this->email->subject('Halo '.$data['donatur_nama'].', anda baru saja melakukan permohonan donasi');
+					$data['page']	= 'pages/mail/donation-request';
+			 		$message 		= $this->load->view('layout/mail', $data,TRUE);
+					$this->email->message($message);
+					$this->email->attach($data['path_pdf']);
+					$this->email->send();
 
-				$this->email->from('admin@isbanban.org', 'Istana Belajar Anak Banten');
-				$this->email->to($this->input->post('donatur_email')); 
-				$this->email->subject('Pemberitahuan Donasi');
-        		$message 	=$this->load->view('mail',$data,TRUE);
-				$this->email->message($message);
-				$this->email->attach($data['path_pdf']);
-				$this->email->send();
-
-
-// Alert for Donatur
-				$this->session->set_flashdata('success', true);
+					// Alert for Donatur
+					$this->session->set_flashdata('success', true);
+					redirect(base_url().'donate');
+				}
 			}
 		}
 
@@ -157,7 +158,8 @@ class Donate extends CI_Controller {
 
 	function do_pdf($data) {
 		//load the view and saved it into $html variable
-		$html=$this->load->view('pdf_template', $data, true);
+		$data['page']	= 'pages/mail/donation-success';
+		$html 			= $this->load->view('layout/pdf', $data, true);
 
 		// $pdfFilePath = "donation-request-"+$data['confirm_code']+".pdf";
 		$path 		= 'uploads/pdf/';

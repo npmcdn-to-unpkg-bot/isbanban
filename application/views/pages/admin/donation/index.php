@@ -1,5 +1,5 @@
 <!-- Alert Add Data -->
-<?php if($this->session->flashdata('success') == true) { ?>
+<?php if($this->session->flashdata('success')) { ?>
 <div class="alert alert-success" role="alert">
     <strong>Whooops!</strong> Berhasil Menambahkan Data.
 </div>

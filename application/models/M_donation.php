@@ -39,6 +39,7 @@ class M_donation extends CI_Model {
 	function insert($datadb)
 	{
 		$this->db->insert('donasi', $datadb);
+		return true;
 	}
 }
 

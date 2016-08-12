@@ -1,0 +1,12 @@
+<style>
+@page {
+  margin: 1cm 2cm;
+  font-size: 12px;
+}
+
+#footer {
+  position: fixed;
+  bottom: 20px;
+  width: 100%;
+}
+</style>

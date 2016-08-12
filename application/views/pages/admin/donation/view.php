@@ -1,5 +1,16 @@
-<?php foreach($getThis as $row) { ?>
+<?php if($this->session->flashdata('success-generate') == true) { ?>
+    <div class="alert alert-success">
+        <i class="fa fa-file-pdf-o"></i> The PDF file successfully created
+    </div>
+<?php } ?>
 
+<?php if($this->session->flashdata('success-deliver') == true) { ?>
+    <div class="alert alert-success">
+        <i class="fa fa-envelope-o"></i> The PDF successfully delivered
+    </div>
+<?php } ?>
+
+<?php foreach($getThis as $row) { ?>
     <?php if($row->status == 0) { ?>
     <div class="row">
         <div class="col-sm-12">
@@ -23,19 +34,19 @@
     <div class="panel">
         <div class="panel-body">
             <div class="pull-left">
-                <a href="#" class="btn btn-black">
+                <a href="<?php echo base_url() ?>admin/donation/generate/<?php echo $this->uri->segment(4); ?>/<?php echo $row->confirm_code; ?>" class="btn btn-black">
                     <i class="fa fa-file-pdf-o fa-fw"></i>
                     Generate PDF
                 </a>
 
-                <a href="#" class="btn btn-primary-alt">
+                <a href="<?php echo base_url() ?>admin/donation/deliver/<?php echo $this->uri->segment(4); ?>/<?php echo $row->confirm_code; ?>" class="btn btn-primary-alt">
                     <i class="fa fa-envelope-o fa-fw"></i> 
                     Deliver PDF
                 </a>
             </div>
 
             <div class="pull-right">
-                <a href="<?php echo base_url() ?>uploads/pdf/donation-request-<?php echo $row->confirm_code; ?>.pdf" target="_blank" class="btn btn-primary-alt">
+                <a href="<?php echo base_url() ?>uploads/pdf/donation-confirmed-<?php echo $row->confirm_code; ?>.pdf" target="_blank" class="btn btn-primary-alt">
                     <i class="fa fa-download"></i> Download PDF</a>
             </div>
         </div>

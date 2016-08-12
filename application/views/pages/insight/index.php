@@ -1,65 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
-	<title>Istana Belajar Anak Banten &mdash; Insight</title>
+<div class="hero hero-insight mg-b-20"style="background: url('http://unsplash.it/1280/500') no-repeat center center; background-size: cover !important; height: 400px">
+	<div class="container">
+		
+		<div class="bottom-content">
+			<div class="row">
+				<div class="col-xs-6">
+					<div class="h4 mg-0">Kamis</div>
+				</div>
 
-	<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
-	<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
-	<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-	<link rel="manifest" href="/manifest.json">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#21e2fc">
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#21e2fc">
+				<div class="col-xs-6 text-right">
+					<div class="h4 mg-0">25 Januari 2016</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-
-	<link rel="stylesheet" href="<?php echo base_url() ?>template/assets/css/site/theme.min.css">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,300italic,700' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
-	
-	<link rel="stylesheet" href="<?php echo base_url() ?>template/assets/vendor/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>template/assets/vendor/jasny-bootstrap/dist/css/jasny-bootstrap.min.css">
-
-	<script src="<?php echo base_url() ?>template/assets/vendor/jquery/dist/jquery.min.js"></script>
-	<script src="<?php echo base_url() ?>template/assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="<?php echo base_url() ?>template/assets/vendor/bootstrap-material-design/dist/js/material.min.js"></script>
-	<script src="<?php echo base_url() ?>template/assets/vendor/bootstrap-material-design/dist/js/ripples.min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url() ?>template/assets/vendor/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
-	<script src="<?php echo base_url() ?>template/assets/vendor/fastclick/lib/fastclick.js"></script>
-	<script type="text/javascript">
-	$(document).ready(function(){	
-// Bootstrap Material
-		$.material.init();
-
-// Fastclick Init
-		if ('addEventListener' in document) {
-		    document.addEventListener('DOMContentLoaded', function() {
-		        FastClick.attach(document.body);
-		    }, false);
-		}
-
-		var domain = 'http://isbanban.dev/';	
-		if($("header").hasClass('navbar-inverse')) {
-			$(".navbar-brand img").attr('src', domain +'template/assets/image/typetext-white.png')
-		}
-	})
-	</script>
-</head>
-<body style="background: #fafafa">
-
-<div class="container-fluid" style="margin-top:50px; margin-bottom: 50px">
+<div class="container">
 	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel panel-default">
+				<div class="panel-body pd-0">
+					<div id="barchart" style="height: 300px"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Full Ingsight -->
+		<div class="col-sm-3">
+			<div class="panel text-center">
+				<div class="panel-body">					
+					<h1 class="mg-t-10"><?php echo $countBlog; ?></h1>
+					<p>Blog</p>
+				</div>
+			</div>
+		</div>
 
-<!-- Donation -->
+		<div class="col-sm-3">
+			<div class="panel text-center">
+				<div class="panel-body">					
+					<h1 class="mg-t-10"><?php echo $countEvent; ?></h1>
+					<p>Event</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-3">
+			<div class="panel text-center">
+				<div class="panel-body">					
+					<h1 class="mg-t-10"><?php echo $countRelawan; ?></h1>
+					<p>Relawan</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-3">
+			<div class="panel text-center">
+				<div class="panel-body">					
+					<h1 class="mg-t-10"><?php echo $countVillage; ?></h1>
+					<p>Desa</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<!-- Donation -->
 		<div class="col-sm-6">
-			<div class="panel panel-insight">
+			<div class="panel text-center">
 				<div class="panel-body">
-					<h1 class="moneyFormat"><?php 
+					<h1 class="moneyFormat mg-t-10"><?php 
 						foreach($countDonationTotalToday as $row) {
 							if($row->jumlah_uang) {
 								echo $row->jumlah_uang;
@@ -74,9 +84,9 @@
 		</div>
 
 		<div class="col-sm-6">
-			<div class="panel panel-insight">
+			<div class="panel text-center">
 				<div class="panel-body">
-					<h1 class="moneyFormat"><?php foreach($countDonationTotal as $row) {
+					<h1 class="moneyFormat mg-t-10"><?php foreach($countDonationTotal as $row) {
 						if($row->jumlah_uang) {
 								echo $row->jumlah_uang;
 							} else {
@@ -87,121 +97,214 @@
 				</div>
 			</div>
 		</div>
+	</div>
+</div>
+
+<div id="map" style="height: 600px" class="mg-b-20"></div>
 
 
-<!-- Map  -->
+<style>
+	.table-anu tr td {vertical-align: middle}
+</style>
+<div class="container">
+	<div class="row">
 		<div class="col-sm-12">
-			<div class="panel panel-insight">
-				<div class="panel-body">					
-					<div id="map" style="height: 600px"></div>
-					<p style="margin-top:20px">Village Location</p>
-				</div>
-			</div>
+			<table class="table table-striped table-anu">
+				<thead>
+					<tr>
+						<th>
+							Chapter
+						</th>
+
+						<th>
+							Department
+						</th>
+
+						<th>
+							Jumlah
+						</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>
+							Kota Serang
+						</td>
+
+						<td style="width: 25%">
+							<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Laki-laki">
+								IT &amp; Social Media
+							</div>
+
+							<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Laki-laki">
+								Child Development
+							</div>
+
+							<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Laki-laki">
+								Fundraising
+							</div>
+
+							<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Laki-laki">
+								Volunteer Resource Development
+							</div>
+
+							<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Laki-laki">
+								Isbanban Community
+							</div>
+
+							<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Laki-laki">
+								Public Relation
+							</div>
+
+							<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Laki-laki">
+								Isbanban Official
+							</div>
+						<td>
+							
+						</td>
+
+						<td>
+							<div class="pull-right">
+								<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Laki-laki">
+									<?php echo $getRelawanKotSerangL; ?>
+								</div>
+
+								<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Perempuan">
+									<?php echo $getRelawanKotSerangP; ?>
+								</div>
+
+								<div class="label label-primary" data-toggle="tooltip" data-placement="top" title="Total">
+									<?php echo $getRelawanKotSerangT; ?>
+								</div>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							Kabupaten Serang 
+							<div class="pull-right">
+								<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Laki-laki">
+									<?php echo $getRelawanKabSerangL; ?>
+								</div>
+
+								<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Perempuan">
+									<?php echo $getRelawanKabSerangP; ?>
+								</div>
+
+								<div class="label label-primary" data-toggle="tooltip" data-placement="top" title="Total">
+									<?php echo $getRelawanKabSerangT; ?>
+								</div>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							Cilegon
+							<div class="pull-right">
+								<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Laki-laki">
+									<?php echo $getRelawanCilegonL; ?>
+								</div>
+
+								<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Perempuan">
+									<?php echo $getRelawanCilegonP; ?>
+								</div>
+
+								<div class="label label-primary" data-toggle="tooltip" data-placement="top" title="Total">
+									<?php echo $getRelawanCilegonT; ?>
+								</div>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							Pandeglang
+							<div class="pull-right">
+								<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Laki-laki">
+									<?php echo $getRelawanPandeglangL; ?>
+								</div>
+
+								<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Perempuan">
+									<?php echo $getRelawanPandeglangP; ?>
+								</div>
+
+								<div class="label label-primary" data-toggle="tooltip" data-placement="top" title="Total">
+									<?php echo $getRelawanPandeglangT; ?>
+								</div>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							Lebak
+							<div class="pull-right">
+								<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Laki-laki">
+									<?php echo $getRelawanLebakL; ?>
+								</div>
+
+								<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Perempuan">
+									<?php echo $getRelawanLebakP; ?>
+								</div>
+
+								<div class="label label-primary" data-toggle="tooltip" data-placement="top" title="Total">
+									<?php echo $getRelawanLebakT; ?>
+								</div>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							Kabupaten Tangerang
+							<div class="pull-right">
+								<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Laki-laki">
+									<?php echo $getRelawanKabTangL; ?>
+								</div>
+
+								<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Perempuan">
+									<?php echo $getRelawanKabTangP; ?>
+								</div>
+
+								<div class="label label-primary" data-toggle="tooltip" data-placement="top" title="Total">
+									<?php echo $getRelawanKabTangT; ?>
+								</div>
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							Tangerang Selatan
+							<div class="pull-right">
+								<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Laki-laki">
+									<?php echo $getRelawanTangselL; ?>
+								</div>
+
+								<div class="label label-default" data-toggle="tooltip" data-placement="top" title="Perempuan">
+									<?php echo $getRelawanTangselP; ?>
+								</div>
+
+								<div class="label label-primary" data-toggle="tooltip" data-placement="top" title="Total">
+									<?php echo $getRelawanTangselT; ?>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
+	</div>
+</div>
 
-<!-- Full Ingsight -->
-		<div class="col-sm-3">
-			<div class="panel panel-insight">
-				<div class="panel-body">					
-					<h1><?php echo $countBlog; ?></h1>
-					<p>Blog</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-sm-3">
-			<div class="panel panel-insight">
-				<div class="panel-body">					
-					<h1><?php echo $countEvent; ?></h1>
-					<p>Event</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-sm-3">
-			<div class="panel panel-insight">
-				<div class="panel-body">					
-					<h1><?php echo $countRelawan; ?></h1>
-					<p>Relawan</p>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-sm-3">
-			<div class="panel panel-insight">
-				<div class="panel-body">					
-					<h1><?php echo $countVillage; ?></h1>
-					<p>Desa</p>
-				</div>
-			</div>
-		</div>
-
-<!-- Relawan -->
-		<div class="col-sm-6">
-			<div class="panel panel-insight">
-				<div class="panel-body">
-					<table class="table table-striped">
-						<thead>
-							<tr>
-								<th>Chapter</th>
-								<th>Laki-laki</th>
-								<th>Perempuan</th>
-								<th>Total</th>
-							</tr>
-						</thead>
-
-						<tbody>
-							<tr>
-								<td>Kota Serang</td>
-								<td><?php echo $getRelawanKotSerangL; ?></td>
-								<td><?php echo $getRelawanKotSerangP; ?></td>
-								<td><?php echo $getRelawanKotSerangT; ?></td>
-							</tr>
-							<tr>
-								<td>Kabupaten Serang</td>
-								<td><?php echo $getRelawanKabSerangL; ?></td>
-								<td><?php echo $getRelawanKabSerangP; ?></td>
-								<td><?php echo $getRelawanKabSerangT; ?></td>
-							</tr>
-							<tr>
-								<td>Cilegon</td>
-								<td><?php echo $getRelawanCilegonL; ?></td>
-								<td><?php echo $getRelawanCilegonP; ?></td>
-								<td><?php echo $getRelawanCilegonT; ?></td>
-							</tr>
-							<tr>
-								<td>Pandeglang</td>
-								<td><?php echo $getRelawanPandeglangL; ?></td>
-								<td><?php echo $getRelawanPandeglangP; ?></td>
-								<td><?php echo $getRelawanPandeglangT; ?></td>
-							</tr>
-							<tr>
-								<td>Lebak</td>
-								<td><?php echo $getRelawanLebakL; ?></td>
-								<td><?php echo $getRelawanLebakP; ?></td>
-								<td><?php echo $getRelawanLebakT; ?></td>
-							</tr>
-							<tr>
-								<td>Kabupaten Tangerang</td>
-								<td><?php echo $getRelawanKabTangL; ?></td>
-								<td><?php echo $getRelawanKabTangP; ?></td>
-								<td><?php echo $getRelawanKabTangT; ?></td>
-							</tr>
-							<tr>
-								<td>Tangerang Selatan</td>
-								<td><?php echo $getRelawanTangselL; ?></td>
-								<td><?php echo $getRelawanTangselP; ?></td>
-								<td><?php echo $getRelawanTangselT; ?></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-sm-6">
-			<div class="panel panel-insight">
-				<div class="panel-body" style="height: 357px; overflow-y: scroll">
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="panel">
+				<div class="panel-body pd-0">
 					<table class="table table-striped">
 						<thead>
 							<tr>
@@ -212,7 +315,6 @@
 						</thead>
 
 						<tbody>
-<!-- Kot Ser -->
 							<tr>
 								<td style="vertical-align:middle" rowspan="7">Kota Serang</td>
 								<td>IT &amp; Sosial Media</td>
@@ -243,7 +345,7 @@
 								<td><?php echo $countIOKotSer; ?></td>
 							</tr>
 
-<!-- Kab Ser -->
+							<!-- Kab Ser -->
 							<tr>
 								<td style="vertical-align:middle" rowspan="7">Kabupaten Serang</td>
 								<td>IT &amp; Sosial Media</td>
@@ -274,7 +376,6 @@
 								<td><?php echo $countIOKabSer; ?></td>
 							</tr>
 
-<!-- Cilegon -->
 							<tr>
 								<td style="vertical-align:middle" rowspan="7">Cilegon</td>
 								<td>IT &amp; Sosial Media</td>
@@ -305,7 +406,6 @@
 								<td><?php echo $countIOCilegon; ?></td>
 							</tr>
 
-<!-- Lebak -->
 							<tr>
 								<td style="vertical-align:middle" rowspan="7">Lebak</td>
 								<td>IT &amp; Sosial Media</td>
@@ -336,7 +436,6 @@
 								<td><?php echo $countIOLebak; ?></td>
 							</tr>
 
-<!-- Pandeglang -->
 							<tr>
 								<td style="vertical-align:middle" rowspan="7">Pandeglang</td>
 								<td>IT &amp; Sosial Media</td>
@@ -367,68 +466,65 @@
 								<td><?php echo $countIOPandeglang; ?></td>
 							</tr>
 
-<!-- Kabupaten Tangerang -->
-						<tr>
-							<td style="vertical-align:middle" rowspan="7">Kabupaten Tangerang</td>
-							<td>IT &amp; Sosial Media</td>
-							<td><?php echo $countITKabTang; ?></td>
-						</tr>
-						<tr>
-							<td>Child Development</td>
-							<td><?php echo $countCDKabTang; ?></td>
-						</tr>
-						<tr>
-							<td>Fundraising</td>
-							<td><?php echo $countFNKabTang; ?></td>
-						</tr>
-						<tr>
-							<td>Volunteer Resource Development</td>
-							<td><?php echo $countVDKabTang; ?></td>
-						</tr>
-						<tr>
-							<td>Isbanban Community</td>
-							<td><?php echo $countICKabTang; ?></td>
-						</tr>
-						<tr>
-							<td>Public Relation</td>
-							<td><?php echo $countPRKabTang; ?></td>
-						</tr>
-						<tr>
-							<td>Isbanban Official</td>
-							<td><?php echo $countIOKabTang; ?></td>
-						</tr>
-						</tbody>
+							<tr>
+								<td style="vertical-align:middle" rowspan="7">Kabupaten Tangerang</td>
+								<td>IT &amp; Sosial Media</td>
+								<td><?php echo $countITKabTang; ?></td>
+							</tr>
+							<tr>
+								<td>Child Development</td>
+								<td><?php echo $countCDKabTang; ?></td>
+							</tr>
+							<tr>
+								<td>Fundraising</td>
+								<td><?php echo $countFNKabTang; ?></td>
+							</tr>
+							<tr>
+								<td>Volunteer Resource Development</td>
+								<td><?php echo $countVDKabTang; ?></td>
+							</tr>
+							<tr>
+								<td>Isbanban Community</td>
+								<td><?php echo $countICKabTang; ?></td>
+							</tr>
+							<tr>
+								<td>Public Relation</td>
+								<td><?php echo $countPRKabTang; ?></td>
+							</tr>
+							<tr>
+								<td>Isbanban Official</td>
+								<td><?php echo $countIOKabTang; ?></td>
+							</tr>
 
-<!-- Tangerang Selatan -->
-						<tr>
-							<td style="vertical-align:middle" rowspan="7">Tangerang Selatan</td>
-							<td>IT &amp; Sosial Media</td>
-							<td><?php echo $countITTangsel; ?></td>
-						</tr>
-						<tr>
-							<td>Child Development</td>
-							<td><?php echo $countCDTangsel; ?></td>
-						</tr>
-						<tr>
-							<td>Fundraising</td>
-							<td><?php echo $countFNTangsel; ?></td>
-						</tr>
-						<tr>
-							<td>Volunteer Resource Development</td>
-							<td><?php echo $countVDTangsel; ?></td>
-						</tr>
-						<tr>
-							<td>Isbanban Community</td>
-							<td><?php echo $countICTangsel; ?></td>
-						</tr>
-						<tr>
-							<td>Public Relation</td>
-							<td><?php echo $countPRTangsel; ?></td>
-						</tr>
-						<tr>
-							<td>Isbanban Official</td>
-							<td><?php echo $countIOTangsel; ?></td>
-						</tr>
+							<tr>
+								<td style="vertical-align:middle" rowspan="7">Tangerang Selatan</td>
+								<td>IT &amp; Sosial Media</td>
+								<td><?php echo $countITTangsel; ?></td>
+							</tr>
+							<tr>
+								<td>Child Development</td>
+								<td><?php echo $countCDTangsel; ?></td>
+							</tr>
+							<tr>
+								<td>Fundraising</td>
+								<td><?php echo $countFNTangsel; ?></td>
+							</tr>
+							<tr>
+								<td>Volunteer Resource Development</td>
+								<td><?php echo $countVDTangsel; ?></td>
+							</tr>
+							<tr>
+								<td>Isbanban Community</td>
+								<td><?php echo $countICTangsel; ?></td>
+							</tr>
+							<tr>
+								<td>Public Relation</td>
+								<td><?php echo $countPRTangsel; ?></td>
+							</tr>
+							<tr>
+								<td>Isbanban Official</td>
+								<td><?php echo $countIOTangsel; ?></td>
+							</tr>
 						</tbody>
 					</table>
 				</div>
@@ -440,15 +536,15 @@
 
 
 
-<style>
-table tr td {
-	text-align: left;
-}
-</style>
 <script src="<?php echo base_url() ?>template/assets/vendor/autoNumeric/autoNumeric.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJgV2HnjR7mqWBA5wp1ev6K2ItJ1g-PT8"></script>
 <script src="<?php echo base_url() ?>template/assets/vendor/google-maps/src/markerclusterer_compiled.js"></script>
 <script type="text/javascript">
+$(document).ready(function(){
+	$('[data-toggle=tooltip]').tooltip({
+        container: 'body',
+    });
+})
 function initialize() {
     var center = new google.maps.LatLng(-6.4444075, 105.9920291);
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -575,12 +671,15 @@ function initialize() {
             "name"      : "<?php echo $row->nama; ?>",
             "latitude"  : "<?php echo $row->latitude; ?>",
             "longitude" : "<?php echo $row->longitude; ?>",
+            "slug"		: "<?php echo $row->slug; ?>",
         },
         <?php } ?>
 
     ];
 
-    var clusterMarker = [];
+    var infowindow 		= new google.maps.InfoWindow();
+    var clusterMarker	= [];
+    var contentArray	= [];
 
     for (var i = 0; i < dataMarker.length; i++) {
         var marker = new google.maps.Marker({
@@ -588,30 +687,19 @@ function initialize() {
             map: map,
         });
 
+        var infoWindowContent =
+        ['<div class="info_content">' +
+        '<h4>' + dataMarker[i].name + '</h4>' +
+        '<p><b>Latitude:</b> ' + dataMarker[i].latitude + '<br> <b>Longitude:</b> ' + ': ' + dataMarker[i].longitude +'</p>' + '<a target="_blank" href="<?php echo base_url() ?>village/detail/' + dataMarker[i].slug +'">Selengkapnya</a>' +
+        '</div>'];
+
         clusterMarker.push(marker);
+        contentArray.push(infoWindowContent);
  
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
                 return function() {
-                    map.setCenter(marker.getPosition());
-                    $('#villageModal').modal('show');
-                    $('#villageModal').find('h4').text(dataMarker[i].name);
-
-                    if(dataMarker[i].alamat.length > 0) {   
-                        $('#villageModal').find('.fa-ul').show();
-                        $('#villageModal').find('.address').text(dataMarker[i].alamat);
-                    } else {
-                        $('#villageModal').find('.fa-ul').hide();
-                    }
-
-                    if(dataMarker[i].image.length > 0) {
-                        $('#villageModal').find('.park-image').attr('src', dataMarker[i].image);
-                    } else {
-                        $('#villageModal').find('.park-image').attr('src', 'http://kotahijau.dev/themes/kota-hijau/assets/images/placeholder-kh.png');
-                    }
-
-                    $('#villageModal').find('.link').attr('href', '/explore/'+dataMarker[i].slug);
-                    map.setZoom(8);
-                    document.getElementById("title").innerHTML = dataMarker[i].Alamat;
+                	infowindow.setContent(contentArray[i][0]);
+                	infowindow.open(map, marker);
                 }
         })(marker, i));;
     }
@@ -639,13 +727,41 @@ function initialize() {
 
     var markerCluster = new MarkerClusterer(map, clusterMarker, option);
 }
+
 google.maps.event.addDomListener(window, 'load', initialize);
-
-
 $(".moneyFormat").autoNumeric('init',{
     aSep: '.',
     dGroup: '3',
     aDec: " ",
     aPad: false
 });
+
+function getDonationRecent() {
+	$.ajax({
+		url: '<?php echo base_url() ?>insight/donation/recent',
+		type: 'get',
+		dataType: 'json',
+		success: function(data) {
+			// console.log(data);
+			var i = 0;
+			for(i; i < 10; i++) {
+				console.log(data[i].nama+" just request a donation "+data[i].donasi_banyak);
+			}
+		}
+	})
+}
+
+function getDonationCash() {
+	$.ajax({
+		url: '<?php echo base_url() ?>insight/donation/cash',
+		type: 'get',
+		dataType: 'json',
+		success: function(data) {
+			// console.log(data.asu);
+
+		}
+	})
+}
+
+getDonationRecent();
 </script>

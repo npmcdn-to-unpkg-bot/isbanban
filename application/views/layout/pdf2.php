@@ -64,7 +64,7 @@
 	</head>
 <body>
 	<div id="header">
-		<img src="<?php echo base_url() ?>template/assets/image/typetext-black.png" alt="" class="img-responsive img-logo">
+		<img src="<?php echo base_url() ?>template/assets/image/typetext-black.png" alt="" class="img-responsive img-logo" style="margin:0px auto">
 		<p>
 			Yayasan Istana Belajar Anak Banten <br>
 			Jl. Karya Bhakti 2A No. 98, Komplek KPPN Ciceri Serang, Banten <br>

@@ -156,6 +156,38 @@ class Donate extends CI_Controller {
 	}
 
 
+	public function data() {
+
+		$data	= [
+			'title'			=> 'Donation',
+			'current'		=> 'donate',
+			'role'			=> 'normal',
+			'meta_image'	=> '',
+			'page'			=> 'pages/donation/view',
+			'meta_url'		=> 'donate',
+		];
+
+		$this->load->view('layout/pdf2', $data);
+	}
+
+	public function get($paramter) {
+
+		switch($paramter) {
+			case "confirmed":
+			$data = $this->db->select('nama, created_at, donasi_banyak, is_anonim')
+			->where(array('status' => '1', 'id_jenis' => '3'))
+			->get('donasi')->result();
+			foreach($data as $key) {
+				if($key->is_anonim == 1) {
+					$key->nama = "Hamba Allah";
+				}
+			}
+			echo json_encode($data);
+			break;
+		}
+	}
+
+
 	function do_pdf($data) {
 		//load the view and saved it into $html variable
 		$data['page']	= 'pages/mail/donation-success';

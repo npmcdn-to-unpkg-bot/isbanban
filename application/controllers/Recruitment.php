@@ -96,8 +96,6 @@ class Recruitment extends CI_Controller {
 		$this->form_validation->set_rules($config);
 
 
-
-
 		if($this->input->post()) {
 
 			// Generate Slug
@@ -148,7 +146,7 @@ class Recruitment extends CI_Controller {
 				$this->m_recruitment->referensi($datareferensi);
 				$this->session->set_flashdata('success', true);
 
-// Send Mail
+				// Send Mail
 				$this->load->library('email');
 				$configMail = Array(
 					'protocol'  => 'smtp',
@@ -172,14 +170,14 @@ class Recruitment extends CI_Controller {
 				//   'newline' => "\r\n",
 				//   'mailtype'  => 'html',  
 				// );
+				
 				$this->email->initialize($configMail);
-
 				$data['relawan_nama']	= $this->input->post('nama');
-
 				$this->email->from('noreply@isbanban.org', 'Istana Belajar Anak Banten');
 				$this->email->to($this->input->post('email')); 
 				$this->email->subject('Pendaftaran Calon Relawan');
-        		$message=$this->load->view('mail_recruitment',$data,TRUE);
+				$data['page']		= 'pages/mail/recruitment';
+        		$message			= $this->load->view('layout/mail', $data, TRUE);
 				$this->email->message($message);
 				$this->email->send();
 				redirect('/recruitment');
@@ -187,7 +185,7 @@ class Recruitment extends CI_Controller {
 		}
 
 		// $this->load->view('recruitment', $data);
-		$this->load->view('errors/404_recruitment', $data);
+		$this->load->view('pages/errors/404_recruitment', $data);
 	}
 
 

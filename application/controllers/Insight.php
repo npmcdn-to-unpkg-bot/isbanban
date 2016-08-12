@@ -137,7 +137,48 @@ class Insight extends CI_Controller {
 			'countIOTangsel'		=> $this->m_insight->countRelawanByDepartemen('TGS', 'IO'),
 		];
 
-		$this->load->view('pages/insight/index', $data);
+		$data['page']		= 'pages/insight/index';
+		$this->load->view('layout/blank', $data);
+	}
+
+	function donation($parameter)
+	{
+
+		switch($parameter) {
+			case "recent":
+				$this->db->select('nama, donasi_banyak, is_anonim');
+				$k = $this->db->get('donasi', 0, 10)->result();
+				foreach($k as $key) {
+					if($key->is_anonim == 1) {
+						$key->nama = "Hamba Allah";
+					}
+				}
+				echo json_encode($k);
+				break;
+			case "cash":
+				$this->db->select('nama, donasi_banyak, is_anonim');
+				$k = $this->db->get_where('donasi', array('status' => '0', 'id_jenis' => '3'))->result();
+				foreach($k as $key) {
+					if($key->is_anonim == 1) {
+						$key->nama = "Hamba Allah";
+					}
+
+				};
+				echo json_encode($k);
+				break;
+			case "book":
+				echo json_encode($this->db->get_where('donasi', array('status' => '0', 'id_jenis' => '1'))->result());
+				break;
+			case "today":
+				$result = $this->db->select_sum('donasi_banyak')->where(array('status', '1'))->from('donasi')->result();
+				foreach($result as $fuck) {
+					$fuck->donasi_banyak = $anu;
+				}
+				echo json_encode($result);
+				break;
+		}
+
+		return;
 	}
 }
 

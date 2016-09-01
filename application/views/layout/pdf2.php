@@ -4,6 +4,7 @@
 	<link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="<?php echo base_url() ?>template/assets/helpers.css">
+	<title><?php if($title) { echo $title; } ?></title>
 	<style>
 	@page {
 	  margin: 0cm 0cm;

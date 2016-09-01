@@ -1,5 +1,5 @@
-<!-- <div class="jumbotron bigger" style="background: url(<?php echo base_url() ?>template/assets/image/bg-donation.jpg) no-repeat center center;"> -->
-<div class="jumbotron bigger" style="background: url(http://unsplash.it/1280/800?random&blur) no-repeat center center;">
+<div class="jumbotron bigger" style="background: url(<?php echo base_url() ?>template/assets/image/bg-donation.jpg) no-repeat center center;">
+<!-- <div class="jumbotron bigger" style="background: url(http://unsplash.it/1280/800?random&blur) no-repeat center center;"> -->
 	<div class="container">
 		<h1>Donation</h1>
 		<p class="lead">Your donation help us to make access of education through builiding a learning center and teaching for 455 children in 8 rural areas of Banten</p>
@@ -41,9 +41,23 @@
 
 <section>
 	<div class="container">
+		<div class="alert alert-info">
+			View our donator list <a href="<?php echo base_url() ?>donate/data" target="_blank">here</a>
+		</div>
+
 		<div class="row parent_sticky">
 			<div class="col-md-7 col-sm-6">
-				<div class="post-text-content">
+				<div class="page-header mg-0">
+					<div class="h4 mg-b-10">
+						How to Donate?
+					</div>
+				</div>
+
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/AL7PIofVqIw"></iframe>
+				</div>
+
+				<div class="post-text-content mg-t-20">
 					<p>
 						Melihat anak-anak di pelosok desa Banten dapat menikmati suasana belajar yang nyaman,
 						kaya akan wawasan pengetahuan dan memiliki kesempatan untuk melanjutkan belajar

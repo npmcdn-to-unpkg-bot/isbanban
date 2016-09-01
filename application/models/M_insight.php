@@ -78,6 +78,11 @@ class M_insight extends CI_Model {
 		$sql	= "SELECT * FROM relawan WHERE chapter='$chapter'";
 		return $this->db->query($sql)->num_rows();	
 	}
+
+	function getPerMonth($parameter) {
+		$sql 	= "SELECT SUM(donasi_banyak) as jumlah FROM DONASI WHERE status = 1 AND id_jenis = 3 AND MONTH(created_at) = $parameter AND YEAR(created_at) = 2016";
+		return $result	= $this->db->query($sql)->result();
+	}
 }
 
 /* End of file welcome.php */

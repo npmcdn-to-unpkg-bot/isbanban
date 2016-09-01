@@ -6,7 +6,7 @@
 <?php } ?>
 
 <!-- Alert Update Data -->
-<?php if($this->session->flashdata('success-edit') == true) { ?>
+<?php if($this->session->flashdata('success-edit')) { ?>
 <div class="alert alert-success" role="alert">
     <strong>Whooops!</strong> Berhasil Mengubah Data.
 </div>

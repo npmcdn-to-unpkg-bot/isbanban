@@ -9,28 +9,28 @@
 
 			<div class="social-media">
 				<ul class="fa-ul">
-					<li class="fa fa-li"><a href="https://www.facebook.com/IstanaBelajarAnakBanten/">
+					<li class="fa fa-li"><a href="https://www.facebook.com/IstanaBelajarAnakBanten/" target="_blank">
 						<span class="fa-stack fa-lg">
 						  <i class="fa fa-circle fa-stack-2x"></i>
 						  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
 						</span>
 					</a></li>
 
-					<li class="fa fa-li"><a href="https://twitter.com/isbanban">
+					<li class="fa fa-li"><a href="https://twitter.com/isbanban" target="_blank">
 						<span class="fa-stack fa-lg">
 						  <i class="fa fa-circle fa-stack-2x"></i>
 						  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
 						</span>
 					</a></li>
 
-					<li class="fa fa-li"><a href="https://www.instagram.com/isbanbanofficial/">
+					<li class="fa fa-li"><a href="https://www.instagram.com/isbanbanofficial/" target="_blank">
 						<span class="fa-stack fa-lg">
 						  <i class="fa fa-circle fa-stack-2x"></i>
 						  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
 						</span>
 					</a></li>
 
-					<li class="fa fa-li"><a href="https://youtube.com/isbanbanprofile">
+					<li class="fa fa-li"><a href="https://youtube.com/isbanbanprofile" target="_blank">
 						<span class="fa-stack fa-lg">
 						  <i class="fa fa-circle fa-stack-2x"></i>
 						  <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>

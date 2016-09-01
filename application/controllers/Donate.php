@@ -94,8 +94,7 @@ class Donate extends CI_Controller {
 				);
 
 				// Insert to DB
-				if($this->m_donation->insert($datadb) == true) {
-
+				if($this->m_donation->insert($datadb)) {
 					// Setting for mail information
 					$data['confirm_code']		 	 = $confirm_code;
 					$data['donasi_date']		 	 = date('Y-m-d');
@@ -107,27 +106,27 @@ class Donate extends CI_Controller {
 
 					// Config Mail
 					$this->load->library('email');
-					// $configMail = Array(
-					// 	'protocol'  => 'smtp',
-					// 	'smtp_host' => 'mail.smtp2go.com',
-					// 	'smtp_port' => 587,
-					// 	'smtp_user' => 'ihsan@isbanban.org',
-					// 	'smtp_pass' => 'TWGAqI4wPReo',
-					// 	'crlf'      => "\r\n",
-					// 	'newline'   => "\r\n",
-					// 	'mailtype'  => 'html',
-					// );
-
 					$configMail = Array(
-					  'protocol' 	=> 'smtp',
-					  'smtp_host' 	=> 'mailtrap.io',
-					  'smtp_port' 	=> 2525,
-					  'smtp_user' 	=> '573617400c51f2f73',
-					  'smtp_pass' 	=> '4ee968dc28496c',
-					  'crlf' 		=> "\r\n",
-					  'newline' 	=> "\r\n",
-					  'mailtype'	=> 'html'
+						'protocol'  => 'smtp',
+						'smtp_host' => 'mail.smtp2go.com',
+						'smtp_port' => 587,
+						'smtp_user' => 'ihsan@isbanban.org',
+						'smtp_pass' => 'TWGAqI4wPReo',
+						'crlf'      => "\r\n",
+						'newline'   => "\r\n",
+						'mailtype'  => 'html',
 					);
+
+					// $configMail = Array(
+					//   'protocol' 	=> 'smtp',
+					//   'smtp_host' 	=> 'mailtrap.io',
+					//   'smtp_port' 	=> 2525,
+					//   'smtp_user' 	=> '573617400c51f2f73',
+					//   'smtp_pass' 	=> '4ee968dc28496c',
+					//   'crlf' 		=> "\r\n",
+					//   'newline' 	=> "\r\n",
+					//   'mailtype'	=> 'html'
+					// );
 					$this->email->initialize($configMail);
 
 					// Attach PDF
@@ -159,7 +158,7 @@ class Donate extends CI_Controller {
 	public function data() {
 
 		$data	= [
-			'title'			=> 'Donation',
+			'title'			=> 'Donator List',
 			'current'		=> 'donate',
 			'role'			=> 'normal',
 			'meta_image'	=> '',
@@ -174,24 +173,25 @@ class Donate extends CI_Controller {
 
 		switch($paramter) {
 			case "confirmed":
-			$data = $this->db->select('nama, created_at, donasi_banyak, is_anonim')
-			->where(array('status' => '1', 'id_jenis' => '3'))
-			->get('donasi')->result();
-			foreach($data as $key) {
-				if($key->is_anonim == 1) {
-					$key->nama = "Hamba Allah";
+				$data = $this->db->select('nama, created_at, donasi_banyak, is_anonim, confirmed_at')
+				->where(array('status' => '1', 'id_jenis' => '3'))
+				->order_by('confirmed_at', 'desc')
+				->get('donasi')->result();
+				foreach($data as $key) {
+					if($key->is_anonim == 1) {
+						$key->nama 			= "Hamba Allah";
+					}
 				}
-			}
-			echo json_encode($data);
-			break;
+				echo json_encode($data);
+				break;
 		}
 	}
 
 
 	function do_pdf($data) {
 		//load the view and saved it into $html variable
-		$data['page']	= 'pages/mail/donation-success';
-		$html 			= $this->load->view('layout/pdf', $data, true);
+		$data['page']	= 'pages/pdf/donation-request';
+		$html 			= $this->load->view('layout/pdf2', $data, true);
 
 		// $pdfFilePath = "donation-request-"+$data['confirm_code']+".pdf";
 		$path 		= 'uploads/pdf/';

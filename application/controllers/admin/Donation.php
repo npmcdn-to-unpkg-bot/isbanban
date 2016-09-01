@@ -109,8 +109,8 @@ class Donation extends CI_Controller {
 		// Additional Validation If Donation is Money
 		if($this->input->post('donasi_jenis')==3) {
 			$this->form_validation->set_rules('donasi_banyak_uang', 'Jumlah Donasi', 'required');
-			$this->form_validation->set_rules('donatur_rekening', 'Nomor Rekening', 'required');
-			$this->form_validation->set_rules('donatur_pemilik', 'Rekening Donatur', 'required');
+			// $this->form_validation->set_rules('donatur_rekening', 'Nomor Rekening', 'required');
+			// $this->form_validation->set_rules('donatur_pemilik', 'Rekening Donatur', 'required');
 			$this->form_validation->set_rules('donasi_ke', 'Rekening Tujuan', 'required');
 			$countMuch = $this->input->post('donasi_banyak_uang');
 		} else {
@@ -217,8 +217,8 @@ class Donation extends CI_Controller {
 
 		} else if($this->input->post('jenis_donasi')==3) {
 			$this->form_validation->set_rules('donasi_banyak_uang', 'Jumlah Donasi', 'required');
-			$this->form_validation->set_rules('donatur_rekening', 'Nomor Rekening', 'required');
-			$this->form_validation->set_rules('donatur_pemilik', 'Pemiliki Rekening', 'required');
+			// $this->form_validation->set_rules('donatur_rekening', 'Nomor Rekening', 'required');
+			// $this->form_validation->set_rules('donatur_pemilik', 'Pemiliki Rekening', 'required');
 			$this->form_validation->set_rules('donasi_ke', 'Rekening Tujuan', 'required');
 			$countMuch = $this->input->post('donasi_banyak_uang');
 		}
@@ -239,12 +239,12 @@ class Donation extends CI_Controller {
 					'donasi_transfer'   	=>$this->input->post('donasi_ke'),
 				);
 
-				$this->m_donation->update($parameter_code, $datadb);
-				$this->session->set_flashdata('succes-edit', true);
-				redirect('admin/donation');
+				if($this->m_donation->update($parameter_code, $datadb)) {
+					$this->session->set_flashdata('success-edit', true);
+					redirect('admin/donation');
+				}
 			}
 		}
-
 
 		$this->load->view('layout/backend', $data);
 	}
@@ -281,27 +281,27 @@ class Donation extends CI_Controller {
 
 		// Config Mail
 		$this->load->library('email');
-		// $configMail = Array(
-		// 	'protocol'  => 'smtp',
-		// 	'smtp_host' => 'mail.smtp2go.com',
-		// 	'smtp_port' => 587,
-		// 	'smtp_user' => 'ihsan@isbanban.org',
-		// 	'smtp_pass' => 'TWGAqI4wPReo',
-		// 	'crlf'      => "\r\n",
-		// 	'newline'   => "\r\n",
-		// 	'mailtype'  => 'html',
-		// );
-		
 		$configMail = Array(
-		  'protocol' 	=> 'smtp',
-		  'smtp_host' 	=> 'mailtrap.io',
-		  'smtp_port' 	=> 2525,
-		  'smtp_user' 	=> '573617400c51f2f73',
-		  'smtp_pass' 	=> '4ee968dc28496c',
-		  'crlf' 		=> "\r\n",
-		  'newline' 	=> "\r\n",
-		  'mailtype'	=> 'html'
+			'protocol'  => 'smtp',
+			'smtp_host' => 'mail.smtp2go.com',
+			'smtp_port' => 587,
+			'smtp_user' => 'ihsan@isbanban.org',
+			'smtp_pass' => 'TWGAqI4wPReo',
+			'crlf'      => "\r\n",
+			'newline'   => "\r\n",
+			'mailtype'  => 'html',
 		);
+		
+		// $configMail = Array(
+		//   'protocol' 	=> 'smtp',
+		//   'smtp_host' 	=> 'mailtrap.io',
+		//   'smtp_port' 	=> 2525,
+		//   'smtp_user' 	=> '573617400c51f2f73',
+		//   'smtp_pass' 	=> '4ee968dc28496c',
+		//   'crlf' 		=> "\r\n",
+		//   'newline' 	=> "\r\n",
+		//   'mailtype'	=> 'html'
+		// );
 		$this->email->initialize($configMail);
 
 		// Attach PDF
@@ -318,15 +318,16 @@ class Donation extends CI_Controller {
 
 		$this->email->message($message);
 		$this->email->attach($data['path_pdf']);
-		$this->email->send();
 
-		$this->session->set_flashdata('success-deliver', true);
-		redirect(base_url().'admin/donation/view/'.$parameter_code);
+		if($this->email->send()) {
+			$this->session->set_flashdata('success-deliver', true);
+			redirect(base_url().'admin/donation/view/'.$parameter_code);
+		}
 	}
 
 	function do_pdf($data) {
 		//load the view and saved it into $html variable
-		$data['page']	= 'pages/pdf/donation-test';
+		$data['page']	= 'pages/pdf/donation-success';
 		$html 			= $this->load->view('layout/pdf2', $data, true);
 
 		// $pdfFilePath = "donation-request-"+$data['confirm_code']+".pdf";

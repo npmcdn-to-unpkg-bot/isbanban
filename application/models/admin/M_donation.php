@@ -67,12 +67,12 @@ class M_donation extends CI_Model {
 
 	function update($parameter_code, $data)
 	{
-		$this->db->where('parameter_code', $parameter_code)->update('donasi', $data);
+		return $this->db->where('parameter_code', $parameter_code)->update('donasi', $data);
 	}
 
 	function insert($data)
 	{
-		$this->db->insert('donasi', $data);
+		return $this->db->insert('donasi', $data);
 	}
 
 }

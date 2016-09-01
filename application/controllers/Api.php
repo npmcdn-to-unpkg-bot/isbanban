@@ -37,9 +37,9 @@ class Api extends REST_Controller {
 
     public function people_get($slug)
     {
-        $slug   = $this->uri->segment(3);
-        $sql    = "SELECT * FROM relawan WHERE nama LIKE '%$slug%' ";
-        $query    = $this->db->query($sql)->result();
+        $slug       = $this->uri->segment(3);
+        $sql        = "SELECT nama, slug FROM relawan WHERE nama LIKE '%$slug%' ";
+        $query      = $this->db->query($sql)->result();
         $this->response($query);
 
         
